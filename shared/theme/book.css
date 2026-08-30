@@ -1,0 +1,466 @@
+/* ==========================================================================
+   사회과학 통계 입문 시리즈 — 공통 디자인 시스템
+   4권 전체가 이 파일 하나를 공유합니다. 권별 차이는 --accent 계열 변수만.
+   ========================================================================== */
+
+/* ---------- 1. 폰트 ---------- */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../fonts/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 45 920;
+  font-display: block;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+  font-weight: 400; font-display: block;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../fonts/jetbrains-mono-latin-700-normal.woff2') format('woff2');
+  font-weight: 700; font-display: block;
+}
+
+/* ---------- 2. 디자인 토큰 ---------- */
+:root {
+  /* 권별로 build.mjs가 덮어씀 */
+  --accent:        #0E7490;
+  --accent-deep:   #0B5A6E;
+  --accent-tint:   #ECF7F9;
+  --accent-line:   #A8D5DE;
+
+  --navy:      #16243F;
+  --navy-deep: #0D1728;
+
+  --ink:       #101828;
+  --ink-mid:   #344054;
+  --ink-soft:  #667085;
+  --ink-faint: #98A2B3;
+
+  --rule:      #E4E7EC;
+  --rule-soft: #F2F4F7;
+  --paper:     #FFFFFF;
+
+  --warn:      #B54708;
+  --warn-tint: #FFFAEB;
+  --warn-line: #FEC84B;
+
+  --ok:        #067647;
+  --ok-tint:   #ECFDF3;
+  --ok-line:   #75E0A7;
+
+  --body-size: 10.4pt;
+  --body-lead: 1.78;
+}
+
+/* ---------- 3. 페이지 설정 ---------- */
+@page            { size: A4; margin: 21mm 18mm 20mm; }
+@page cover      { size: A4; margin: 0; }
+@page fullbleed  { size: A4; margin: 0; }
+
+* { box-sizing: border-box; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+  font-size: var(--body-size);
+  line-height: var(--body-lead);
+  color: var(--ink);
+  background: var(--paper);
+  font-weight: 400;
+  word-break: keep-all;      /* 한글 어절 단위 줄바꿈 */
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+}
+
+/* ==========================================================================
+   4. 표지
+   ========================================================================== */
+.cover {
+  page: cover;
+  position: relative;
+  width: 210mm; height: 297mm;
+  overflow: hidden;
+  background: linear-gradient(157deg, var(--navy-deep) 0%, var(--navy) 46%, var(--accent-deep) 100%);
+  color: #fff;
+  display: flex; flex-direction: column;
+  padding: 26mm 20mm 20mm;
+}
+/* 배경 장식: 정규분포 곡선 실루엣 */
+.cover__deco {
+  position: absolute; inset: auto 0 0 0; height: 120mm;
+  opacity: .13; pointer-events: none;
+}
+.cover__grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+  background-size: 14mm 14mm;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 62%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 62%);
+}
+.cover > * { position: relative; z-index: 2; }
+
+.cover__series {
+  font-size: 9.5pt; font-weight: 600; letter-spacing: .22em;
+  text-transform: uppercase; color: rgba(255,255,255,.72);
+}
+.cover__vol {
+  margin-top: 14mm;
+  display: inline-flex; align-items: baseline; gap: 3mm;
+  align-self: flex-start;
+  padding: 2.2mm 5mm;
+  border: 1.2px solid rgba(255,255,255,.34);
+  border-radius: 999px;
+  font-size: 9pt; font-weight: 600; letter-spacing: .06em;
+  color: rgba(255,255,255,.9);
+}
+.cover__title {
+  margin: 9mm 0 0;
+  font-size: 33pt; font-weight: 800; line-height: 1.26;
+  letter-spacing: -.024em;
+}
+.cover__title em {
+  font-style: normal;
+  color: #7FE3F0;
+}
+.cover__sub {
+  margin-top: 7mm;
+  font-size: 12.5pt; font-weight: 400; line-height: 1.62;
+  color: rgba(255,255,255,.80);
+  max-width: 128mm;
+}
+.cover__rule {
+  margin-top: 11mm; width: 26mm; height: 3px;
+  background: #7FE3F0; border-radius: 2px;
+}
+.cover__points {
+  margin-top: auto; padding-top: 14mm;
+  display: flex; flex-direction: column; gap: 3.4mm;
+}
+.cover__points li {
+  list-style: none;
+  font-size: 10.2pt; font-weight: 500;
+  color: rgba(255,255,255,.88);
+  padding-left: 7.5mm; position: relative;
+}
+.cover__points li::before {
+  content: ''; position: absolute; left: 0; top: .62em;
+  width: 3.6mm; height: 3.6mm; border-radius: 50%;
+  border: 1.6px solid #7FE3F0;
+}
+.cover__foot {
+  margin-top: 13mm; padding-top: 6mm;
+  border-top: 1px solid rgba(255,255,255,.20);
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-size: 9.5pt; color: rgba(255,255,255,.68);
+}
+.cover__author { font-weight: 600; color: rgba(255,255,255,.92); font-size: 10.5pt; }
+
+/* ==========================================================================
+   5. 목차
+   ========================================================================== */
+.toc { break-before: page; }
+.toc__title {
+  font-size: 20pt; font-weight: 800; letter-spacing: -.02em;
+  color: var(--navy); margin: 0 0 2mm;
+}
+.toc__lead { color: var(--ink-soft); font-size: 9.6pt; margin: 0 0 9mm; }
+.toc__part {
+  display: flex; align-items: baseline; gap: 3mm;
+  margin: 7mm 0 3mm; padding-bottom: 2.2mm;
+  border-bottom: 1.6px solid var(--accent);
+  font-size: 12pt; font-weight: 700; color: var(--navy);
+}
+.toc__part span {
+  font-size: 9pt; font-weight: 700; color: var(--accent);
+  letter-spacing: .1em;
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li {
+  display: flex; align-items: baseline; gap: 2.5mm;
+  padding: 1.9mm 0; font-size: 10pt; color: var(--ink-mid);
+  border-bottom: 1px dotted var(--rule);
+}
+.toc li b { font-weight: 600; color: var(--ink); min-width: 9mm; }
+.toc li i { font-style: normal; flex: 1; }
+.toc li em {
+  font-style: normal; color: var(--ink-faint); font-size: 9pt;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   6. 챕터 오프너
+   ========================================================================== */
+.chapter { break-before: page; }
+.chapter__head {
+  border-bottom: 2.2px solid var(--navy);
+  padding-bottom: 6mm; margin-bottom: 8mm;
+}
+.chapter__num {
+  display: block;
+  font-size: 8.8pt; font-weight: 700; letter-spacing: .2em;
+  color: var(--accent); margin-bottom: 3.5mm;
+}
+.chapter__title {
+  margin: 0; font-size: 23pt; font-weight: 800;
+  letter-spacing: -.028em; line-height: 1.24; color: var(--navy);
+}
+.chapter__lead {
+  margin: 5mm 0 0; font-size: 10.6pt; line-height: 1.72;
+  color: var(--ink-mid); max-width: 150mm;
+}
+
+/* ==========================================================================
+   7. 본문 타이포
+   ========================================================================== */
+h2 {
+  margin: 9mm 0 3.5mm;
+  font-size: 14pt; font-weight: 750; letter-spacing: -.022em;
+  color: var(--navy); line-height: 1.4;
+  break-after: avoid;
+}
+h2::before {
+  content: ''; display: inline-block;
+  width: 3.2mm; height: 3.2mm; margin-right: 2.6mm;
+  background: var(--accent); border-radius: 1px;
+  vertical-align: 1px;
+}
+h3 {
+  margin: 6.5mm 0 2.5mm;
+  font-size: 11.4pt; font-weight: 700; color: var(--ink);
+  letter-spacing: -.015em; break-after: avoid;
+}
+h4 {
+  margin: 5mm 0 2mm;
+  font-size: 10.4pt; font-weight: 700; color: var(--accent-deep);
+  break-after: avoid;
+}
+p { margin: 0 0 3.4mm; }
+strong { font-weight: 700; color: var(--ink); }
+em { font-style: normal; font-weight: 600; color: var(--accent-deep); }
+a { color: var(--accent-deep); text-decoration: none; }
+
+ul, ol { margin: 0 0 4mm; padding-left: 5.5mm; }
+li { margin-bottom: 1.6mm; }
+li::marker { color: var(--accent); font-weight: 700; }
+
+hr {
+  border: 0; height: 1px; background: var(--rule);
+  margin: 8mm 0;
+}
+
+/* 용어 강조 (첫 등장) */
+.term {
+  font-weight: 700; color: var(--accent-deep);
+  border-bottom: 1.5px solid var(--accent-line);
+  padding-bottom: .5px;
+}
+
+/* ==========================================================================
+   8. 콜아웃 박스
+   ========================================================================== */
+.callout {
+  break-inside: avoid;
+  margin: 5mm 0; padding: 4.5mm 5mm 4.5mm 5.5mm;
+  border-radius: 2mm;
+  border-left: 3.2px solid var(--accent);
+  background: var(--accent-tint);
+  font-size: 9.9pt; line-height: 1.7;
+}
+.callout__label {
+  display: block;
+  font-size: 8.6pt; font-weight: 800; letter-spacing: .1em;
+  color: var(--accent-deep); margin-bottom: 2.2mm;
+}
+.callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
+
+.callout--warn { border-left-color: var(--warn-line); background: var(--warn-tint); }
+.callout--warn .callout__label { color: var(--warn); }
+.callout--ok   { border-left-color: var(--ok-line); background: var(--ok-tint); }
+.callout--ok .callout__label { color: var(--ok); }
+.callout--paper{ border-left-color: var(--navy); background: #F5F7FA; }
+.callout--paper .callout__label { color: var(--navy); }
+
+/* ==========================================================================
+   9. R 코드 / 콘솔 출력
+   ========================================================================== */
+.code {
+  break-inside: avoid;
+  margin: 4.5mm 0;
+  border-radius: 2mm; overflow: hidden;
+  border: 1px solid #1E293B;
+}
+.code__bar {
+  background: #0F172A; color: #94A3B8;
+  font-size: 8.2pt; font-weight: 600; letter-spacing: .08em;
+  padding: 1.9mm 4mm;
+  display: flex; align-items: center; gap: 2mm;
+  border-bottom: 1px solid #1E293B;
+}
+.code__bar::before {
+  content: ''; width: 2.4mm; height: 2.4mm; border-radius: 50%;
+  background: #38BDF8; flex: none;
+}
+pre {
+  margin: 0; padding: 4mm;
+  background: #111C2E; color: #E2E8F0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.7pt; line-height: 1.66;
+  white-space: pre-wrap; word-break: break-all;
+  tab-size: 2;
+}
+pre .c  { color: #64748B; font-style: italic; }   /* 주석 */
+pre .f  { color: #7DD3FC; }                        /* 함수 */
+pre .s  { color: #86EFAC; }                        /* 문자열 */
+pre .n  { color: #FDBA74; }                        /* 숫자 */
+pre .k  { color: #C4B5FD; font-weight: 700; }      /* 키워드 */
+pre .o  { color: #F0ABFC; }                        /* 연산자 */
+
+/* 콘솔 출력 (밝은 배경) */
+.out {
+  break-inside: avoid;
+  margin: -1mm 0 4.5mm;
+  border: 1px solid var(--rule);
+  border-top: 0;
+  border-radius: 0 0 2mm 2mm;
+  background: #FBFCFD;
+}
+.out__bar {
+  font-size: 8pt; font-weight: 700; letter-spacing: .1em;
+  color: var(--ink-faint); padding: 1.6mm 4mm 0;
+}
+.out pre {
+  background: transparent; color: var(--ink-mid);
+  font-size: 8.4pt; padding: 1.5mm 4mm 3.5mm;
+}
+
+/* 인라인 코드 */
+code:not(pre code) {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .88em;
+  background: var(--rule-soft);
+  color: var(--accent-deep);
+  padding: .5mm 1.4mm; border-radius: 1mm;
+  border: 1px solid var(--rule);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   10. 표 (논문 3선표 / 일반표)
+   ========================================================================== */
+table {
+  width: 100%; border-collapse: collapse;
+  margin: 4.5mm 0; font-size: 9.2pt;
+  break-inside: avoid;
+  font-variant-numeric: tabular-nums;
+}
+caption {
+  caption-side: top; text-align: left;
+  font-size: 9pt; font-weight: 700; color: var(--navy);
+  padding-bottom: 2mm;
+}
+th {
+  font-weight: 700; color: var(--navy);
+  text-align: left; padding: 2.4mm 2.5mm;
+  background: var(--rule-soft);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+td {
+  padding: 2.3mm 2.5mm;
+  border-bottom: 1px solid var(--rule-soft);
+  color: var(--ink-mid);
+}
+tbody tr:last-child td { border-bottom: 1px solid var(--rule); }
+td.num, th.num { text-align: right; }
+
+/* APA 3선표 */
+table.apa th { background: transparent; border-top: 1.6px solid var(--ink); border-bottom: 1px solid var(--ink); }
+table.apa td { border-bottom: 0; }
+table.apa tbody tr:last-child td { border-bottom: 1.6px solid var(--ink); }
+table.note {
+  margin-top: -3mm;
+}
+.tbl-note {
+  font-size: 8.4pt; color: var(--ink-soft);
+  margin: -2.5mm 0 5mm; line-height: 1.6;
+}
+
+/* ==========================================================================
+   11. 도식 / 그림
+   ========================================================================== */
+figure {
+  break-inside: avoid;
+  margin: 5.5mm 0; text-align: center;
+}
+figure svg, figure img { max-width: 100%; height: auto; }
+figcaption {
+  margin-top: 2.5mm;
+  font-size: 8.6pt; color: var(--ink-soft); text-align: center;
+}
+figcaption b { color: var(--navy); font-weight: 700; }
+
+/* ==========================================================================
+   12. 수식
+   ========================================================================== */
+.formula {
+  break-inside: avoid;
+  margin: 4.5mm 0; padding: 4mm 5mm;
+  background: #FAFBFC;
+  border: 1px solid var(--rule);
+  border-radius: 2mm;
+  text-align: center;
+  font-size: 11pt;
+  font-family: 'JetBrains Mono', 'Pretendard', monospace;
+  color: var(--navy);
+}
+.formula small {
+  display: block; margin-top: 2.5mm;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 8.6pt; color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   13. 체크리스트 / 요약
+   ========================================================================== */
+.check {
+  break-inside: avoid;
+  margin: 5mm 0; padding: 5mm;
+  border: 1.4px solid var(--accent-line);
+  border-radius: 2.5mm;
+  background: #fff;
+}
+.check__title {
+  font-size: 10pt; font-weight: 800; color: var(--navy);
+  margin: 0 0 3mm;
+}
+.check ul { list-style: none; padding: 0; margin: 0; }
+.check li {
+  padding-left: 6.5mm; position: relative;
+  font-size: 9.6pt; color: var(--ink-mid); margin-bottom: 2.2mm;
+}
+.check li::before {
+  content: ''; position: absolute; left: 0; top: .38em;
+  width: 3.4mm; height: 3.4mm;
+  border: 1.4px solid var(--accent); border-radius: .8mm;
+}
+
+/* 한 줄 요약 스트립 */
+.recap {
+  break-inside: avoid;
+  margin: 6mm 0 0; padding: 4mm 5mm;
+  background: var(--navy); color: #fff;
+  border-radius: 2mm;
+  font-size: 9.8pt; line-height: 1.7;
+}
+.recap b { color: #7FE3F0; font-weight: 700; }
+
+/* ==========================================================================
+   14. 페이지 나눔 제어
+   ========================================================================== */
+.page-break { break-before: page; }
+.keep       { break-inside: avoid; }

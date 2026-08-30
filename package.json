@@ -1,0 +1,20 @@
+{
+  "name": "socialstat-ebook",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "사회과학 통계 입문 시리즈 — 전자책 빌드 파이프라인",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:1": "node build.mjs 01-basic-statistics",
+    "build:2": "node build.mjs 02-regression",
+    "build:3": "node build.mjs 03-factor-analysis",
+    "build:4": "node build.mjs 04-sem"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.3.1",
+    "pdf-lib": "^1.17.1",
+    "playwright-core": "^1.49.0"
+  }
+}
