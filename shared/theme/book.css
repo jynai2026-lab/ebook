@@ -457,7 +457,9 @@ figcaption b { color: var(--navy); font-weight: 700; }
   border-radius: 2mm;
   font-size: 9.8pt; line-height: 1.7;
 }
-.recap b { color: #7FE3F0; font-weight: 700; }
+.recap b, .recap strong { color: #7FE3F0; font-weight: 700; }
+.recap em { color: #B9E6F0; }
+.recap p:last-child { margin-bottom: 0; }
 
 /* ==========================================================================
    14. 페이지 나눔 제어
