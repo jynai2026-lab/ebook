@@ -61,6 +61,11 @@ function highlightR(src) {
  *   $$ 수식 $$
  */
 function preprocess(src) {
+  // CommonMark의 right-flanking 규칙상, 닫는 **이 구두점 바로 뒤이면서 한글 바로 앞에
+  // 오면 강조로 인식되지 않는다. 한국어 원고에서 흔한 형태라 먼저 태그로 바꿔 둔다.
+  // (콜아웃 본문도 여기서 함께 처리되도록 블록을 잘라내기 전에 실행한다)
+  src = src.replace(/\*\*([^*\n]*[)\]'"’”.!?])\*\*(?=[가-힣])/g, '<strong>$1</strong>');
+
   const blocks = [];
   const keep = html => `\n\n<!--BLK${blocks.push(html) - 1}-->\n\n`;
 
