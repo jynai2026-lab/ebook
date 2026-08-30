@@ -1,0 +1,26 @@
+<svg viewBox="0 0 900 250" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="40" width="185" height="120" rx="10" fill="#FBFCFD" stroke="#98A2B3" stroke-width="2.5"/>
+<text x="112" y="72" font-size="17" fill="#98A2B3" font-weight="800" text-anchor="middle">편차</text>
+<text x="112" y="104" font-size="17" fill="#101828" font-weight="700" text-anchor="middle" font-style="italic">X − M</text>
+<text x="112" y="136" font-size="12.5" fill="#667085" text-anchor="middle">평균에서 얼마나 떨어졌나</text>
+<path d="M215,100 L255,100" stroke="#344054" stroke-width="2.5"/>
+<path d="M247,93 L255,100 L247,107" stroke="#344054" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="245" y="40" width="185" height="120" rx="10" fill="#FBFCFD" stroke="#16243F" stroke-width="2.5"/>
+<text x="337" y="72" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">제곱합 SS</text>
+<text x="337" y="104" font-size="17" fill="#101828" font-weight="700" text-anchor="middle" font-style="italic">Σ(X − M)²</text>
+<text x="337" y="136" font-size="12.5" fill="#667085" text-anchor="middle">떨어진 정도를 모두 합침</text>
+<path d="M440,100 L480,100" stroke="#344054" stroke-width="2.5"/>
+<path d="M472,93 L480,100 L472,107" stroke="#344054" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="470" y="40" width="185" height="120" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<text x="562" y="72" font-size="17" fill="#0E7490" font-weight="800" text-anchor="middle">분산 s²</text>
+<text x="562" y="104" font-size="17" fill="#101828" font-weight="700" text-anchor="middle" font-style="italic">SS / (n−1)</text>
+<text x="562" y="136" font-size="12.5" fill="#667085" text-anchor="middle">하나당 평균 얼마나 떨어졌나</text>
+<path d="M665,100 L705,100" stroke="#344054" stroke-width="2.5"/>
+<path d="M697,93 L705,100 L697,107" stroke="#344054" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="695" y="40" width="185" height="120" rx="10" fill="#FBFCFD" stroke="#C2452F" stroke-width="2.5"/>
+<text x="787" y="72" font-size="17" fill="#C2452F" font-weight="800" text-anchor="middle">표준편차 s</text>
+<text x="787" y="104" font-size="17" fill="#101828" font-weight="700" text-anchor="middle" font-style="italic">√s²</text>
+<text x="787" y="136" font-size="12.5" fill="#667085" text-anchor="middle">원래 단위로 되돌림</text>
+<text x="450" y="200" font-size="16" fill="#101828" text-anchor="middle">자료 7, 3, 5, 4, 2, 3 을 넣으면   SS = 16  →  s² = 16 / 5 = 3.2  →  s = 1.79</text>
+<text x="450" y="228" font-size="14" fill="#344054" text-anchor="middle">표준편차는 "평균에서 평균적으로 이만큼 떨어져 있다"는 뜻이다</text>
+</svg>

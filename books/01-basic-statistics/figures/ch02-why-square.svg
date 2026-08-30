@@ -1,0 +1,35 @@
+<svg viewBox="0 0 900 290" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="430" height="246" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="26" y="34" font-size="18" fill="#16243F" font-weight="800">절댓값을 씌우면</text>
+<path d="M40,190 L400,190" stroke="#344054" stroke-width="2"/>
+<rect x="66" y="162" width="42" height="28" rx="3" fill="#98A2B3" opacity=".85"/>
+<text x="87" y="154" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">1</text>
+<text x="87" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 1</text>
+<rect x="146" y="134" width="42" height="56" rx="3" fill="#98A2B3" opacity=".85"/>
+<text x="167" y="126" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">2</text>
+<text x="167" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 2</text>
+<rect x="226" y="106" width="42" height="84" rx="3" fill="#98A2B3" opacity=".85"/>
+<text x="247" y="98" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">3</text>
+<text x="247" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 3</text>
+<rect x="306" y="78" width="42" height="112" rx="3" fill="#98A2B3" opacity=".85"/>
+<text x="327" y="70" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">4</text>
+<text x="327" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 4</text>
+<text x="215" y="244" font-size="14" fill="#667085" text-anchor="middle">큰 편차와 작은 편차를 같은 비중으로 센다</text>
+<rect x="470" y="0" width="430" height="246" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="3"/>
+<text x="496" y="34" font-size="18" fill="#16243F" font-weight="800">제곱을 하면</text>
+<path d="M510,190 L870,190" stroke="#344054" stroke-width="2"/>
+<rect x="536" y="183" width="42" height="7" rx="3" fill="#0E7490" opacity=".85"/>
+<text x="557" y="175" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">1</text>
+<text x="557" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 1</text>
+<rect x="616" y="162" width="42" height="28" rx="3" fill="#0E7490" opacity=".85"/>
+<text x="637" y="154" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">4</text>
+<text x="637" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 2</text>
+<rect x="696" y="127" width="42" height="63" rx="3" fill="#0E7490" opacity=".85"/>
+<text x="717" y="119" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">9</text>
+<text x="717" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 3</text>
+<rect x="776" y="78" width="42" height="112" rx="3" fill="#0E7490" opacity=".85"/>
+<text x="797" y="70" font-size="13" fill="#101828" font-weight="700" text-anchor="middle">16</text>
+<text x="797" y="212" font-size="12" fill="#667085" text-anchor="middle">편차 4</text>
+<text x="685" y="244" font-size="14" fill="#667085" text-anchor="middle">큰 편차에 더 큰 벌점을 준다</text>
+<text x="450" y="278" font-size="14" fill="#344054" text-anchor="middle">제곱을 쓰면 평균에서 멀리 떨어진 값이 흩어짐에 더 크게 반영된다. 대신 단위가 제곱이 되어 표준편차로 되돌린다</text>
+</svg>
