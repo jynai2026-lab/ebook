@@ -108,8 +108,9 @@ function preprocess(src, figDir) {
     return keep(`<figure>${svg}${cap ? `<figcaption>${md.renderInline(cap)}</figcaption>` : ''}</figure>`);
   });
 
+  // 캡션은 인라인 수식·코드가 이미 자리표시자로 바뀐 뒤라 esc하면 안 된다. 본문과 같은 인라인 렌더를 태운다.
   src = src.replace(/^\$\$\n([\s\S]*?)\n\$\$(?:[ \t]*\(([^\n]+)\))?/gm, (_, f, note) =>
-    keep(`<div class="formula">${tex(f, true)}${note ? `<small>${esc(note)}</small>` : ''}</div>`));
+    keep(`<div class="formula">${tex(f, true)}${note ? `<small>${md.renderInline(note)}</small>` : ''}</div>`));
 
   const KIND = {
     key:   ['callout', '핵심 정리'],

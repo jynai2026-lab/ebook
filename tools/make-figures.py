@@ -120,23 +120,24 @@ def fig_distributions(dens):
         b.append(f'<text x="{px:.0f}" y="{BASE+26}" font-size="14" fill="{SOFT}" text-anchor="middle">{v}</text>')
     b.append(f'<text x="{(L+R)/2:.0f}" y="{BASE+52}" font-size="14" fill="{SOFT}" text-anchor="middle">자아존중감 (5점 리커트 문항 평균)</text>')
 
-    def curve(key, color, fill):
+    def build(key, color, fill):
         d = dens[key]
-        pts = []
-        for x, y in zip(d['x'], d['y']):
-            px = L + (R - L) * (x - 1) / 4.2
-            py = BASE - (y / peak) * (BASE - TOP)
-            pts.append(f'{px:.1f},{py:.1f}')
+        pts = [f'{L + (R-L)*(x-1)/4.2:.1f},{BASE - (y/peak)*(BASE-TOP):.1f}'
+               for x, y in zip(d['x'], d['y'])]
         line = 'M' + ' L'.join(pts)
         area = line + f' L{L + (R-L)*(d["x"][-1]-1)/4.2:.1f},{BASE} L{L + (R-L)*(d["x"][0]-1)/4.2:.1f},{BASE} Z'
-        b.append(f'<path d="{area}" fill="{fill}" opacity=".55"/>')
-        b.append(f'<path d="{line}" fill="none" stroke="{color}" stroke-width="2.6"/>')
-        mx = L + (R - L) * (d['mean'] - 1) / 4.2
-        b.append(f'<path d="M{mx:.0f},{BASE} L{mx:.0f},{TOP-4}" stroke="{color}" stroke-width="2" stroke-dasharray="5 4"/>')
-        return mx
+        return line, area, L + (R - L) * (d['mean'] - 1) / 4.2, color, fill
 
-    mx_m = curve('male', NAVY, '#C7D0DE')
-    mx_f = curve('female', TEAL, TEAL_TINT)
+    layers = [build('male', NAVY, '#C7D0DE'), build('female', TEAL, TEAL_TINT)]
+    # 채움 -> 평균선 -> 곡선 순. 뒤 곡선의 채움이 앞 곡선의 선을 덮지 않게 한다.
+    for _, area, _, _, fill in layers:
+        b.append(f'<path d="{area}" fill="{fill}" opacity=".55"/>')
+    for _, _, mx, color, _ in layers:
+        b.append(f'<path d="M{mx:.0f},{BASE} L{mx:.0f},{TOP-4}" stroke="{color}" stroke-width="2" stroke-dasharray="5 4"/>')
+    for line, _, _, color, _ in layers:
+        b.append(f'<path d="{line}" fill="none" stroke="{color}" stroke-width="2.6"/>')
+
+    mx_m, mx_f = layers[0][2], layers[1][2]
 
     # 두 평균이 0.41점 차이라 라벨이 겹친다. 위아래로 어긋나게 두고 각각 바깥쪽으로 정렬.
     b.append(f'<text x="{mx_m-6:.0f}" y="{TOP-8}" font-size="14" font-weight="700" fill="{NAVY}" text-anchor="end">남성 3.29</text>')
@@ -155,23 +156,34 @@ def fig_equal_variance():
     """등분산 가정의 의미 — 출발선이 같았는가"""
     W, H = 900, 330
     b = []
-    peak = 1 / (0.55 * math.sqrt(2 * math.pi))   # 가장 뾰족한 곡선 기준
+    SDS = (0.55, 0.55, 0.42, 1.05)               # 네 곡선의 표준편차
+    # 축척 기준은 실제로 그리는 곡선 중 가장 뾰족한 것이어야 한다.
+    # 그렇지 않으면 더 좁은 곡선이 상한을 넘어 제목을 침범한다.
+    peak = 1 / (min(SDS) * math.sqrt(2 * math.pi))
 
     def panel(x0, title, sd1, sd2, verdict, vcolor, note):
         x1 = x0 + 410
         b.append(f'<rect x="{x0}" y="0" width="410" height="{H}" rx="10" fill="#FBFCFD" stroke="{RULE}" stroke-width="2"/>')
         b.append(f'<text x="{x0+24}" y="34" font-size="18" font-weight="800" fill="{NAVY}">{title}</text>')
-        base, top = 224, 62
+        # 제목 아래로 곡선이 올라오지 않도록 top을 충분히 내린다
+        base, top = 228, 78
         px0, px1 = x0 + 30, x1 - 30
         b.append(f'<path d="M{px0},{base} L{px1},{base}" stroke="{MID}" stroke-width="2"/>')
+
+        curves = []
         for mu, sd, color, fill in ((2.4, sd1, NAVY, '#C7D0DE'), (3.8, sd2, TEAL, TEAL_TINT)):
             d = normal_path(mu, sd, 0.6, 5.6, px0, px1, base, base - top, peak)
+            curves.append((d, mu, color, fill))
+        # 반투명 채움이 다른 곡선의 선을 덮지 않도록 채움을 모두 먼저 그린다
+        for d, _, _, fill in curves:
             b.append(f'<path d="{d} L{px1},{base} L{px0},{base} Z" fill="{fill}" opacity=".5"/>')
-            b.append(f'<path d="{d}" fill="none" stroke="{color}" stroke-width="2.6"/>')
+        for d, mu, color, _ in curves:
             mx = px0 + (px1 - px0) * (mu - 0.6) / 5.0
             b.append(f'<path d="M{mx:.0f},{base} L{mx:.0f},{top+4}" stroke="{color}" stroke-width="1.8" stroke-dasharray="4 4"/>')
-        b.append(f'<text x="{x0+205}" y="266" font-size="17" font-weight="800" fill="{vcolor}" text-anchor="middle">{verdict}</text>')
-        b.append(f'<text x="{x0+205}" y="294" font-size="14" fill="{SOFT}" text-anchor="middle">{note}</text>')
+            b.append(f'<path d="{d}" fill="none" stroke="{color}" stroke-width="2.6"/>')
+
+        b.append(f'<text x="{x0+205}" y="270" font-size="17" font-weight="800" fill="{vcolor}" text-anchor="middle">{verdict}</text>')
+        b.append(f'<text x="{x0+205}" y="296" font-size="14" fill="{SOFT}" text-anchor="middle">{note}</text>')
 
     panel(0, '퍼진 정도가 같다', 0.55, 0.55,
           '출발선이 같았다', TEAL, '평균 차이를 처치의 결과로 볼 수 있다')
@@ -263,6 +275,112 @@ def fig_ci():
     write('ci-zero.svg', svg(W, H, '\n'.join(b)))
 
 
+# ---------------------------------------------------------------- 그림 6
+def fig_t_distribution(td):
+    """t분포에서 p값이 무엇인지 — 관측된 t가 어디에 떨어졌는가"""
+    W, H = 900, 340
+    L, R, BASE, TOP = 60, 860, 250, 46
+    b = []
+    xs, ys = td['x'], td['y']
+    peak = max(ys)
+    crit, obs = td['crit'], td['obs']
+
+    def px(x): return L + (R - L) * (x + 4.5) / 9.0
+    def py(y): return BASE - (y / peak) * (BASE - TOP)
+
+    # 기각역 채우기
+    for lo, hi in ((-4.5, -crit), (crit, 4.5)):
+        pts = [f'{px(lo):.1f},{BASE:.1f}']
+        for x, y in zip(xs, ys):
+            if lo <= x <= hi: pts.append(f'{px(x):.1f},{py(y):.1f}')
+        pts.append(f'{px(hi):.1f},{BASE:.1f}')
+        b.append(f'<path d="M{" L".join(pts)} Z" fill="{CORAL}" opacity=".22"/>')
+
+    line = 'M' + ' L'.join(f'{px(x):.1f},{py(y):.1f}' for x, y in zip(xs, ys))
+    b.append(f'<path d="{line}" fill="none" stroke="{NAVY}" stroke-width="2.6"/>')
+    b.append(f'<path d="M{L},{BASE} L{R},{BASE}" stroke="{MID}" stroke-width="2"/>')
+
+    # 임계값
+    for c, lab in ((-crit, '−1.97'), (crit, '+1.97')):
+        b.append(f'<path d="M{px(c):.0f},{BASE} L{px(c):.0f},{TOP+34}" stroke="{CORAL}" stroke-width="2" stroke-dasharray="5 4"/>')
+        b.append(f'<text x="{px(c):.0f}" y="{TOP+26}" font-size="13" font-weight="700" fill="{CORAL}" text-anchor="middle">{lab}</text>')
+
+    # 관측값
+    b.append(f'<path d="M{px(obs):.0f},{BASE} L{px(obs):.0f},{TOP}" stroke="{TEAL}" stroke-width="3"/>')
+    b.append(f'<circle cx="{px(obs):.0f}" cy="{BASE}" r="6" fill="{TEAL}"/>')
+    b.append(f'<text x="{px(obs):.0f}" y="{TOP-8}" font-size="15" font-weight="800" fill="{TEAL}" text-anchor="middle">우리 결과 t = −3.93</text>')
+
+    b.append(f'<text x="{px(0):.0f}" y="{BASE+26}" font-size="14" fill="{SOFT}" text-anchor="middle">0</text>')
+    b.append(f'<text x="{(L+R)/2:.0f}" y="{BASE+52}" font-size="14" fill="{SOFT}" text-anchor="middle">t 값 (자유도 238)</text>')
+
+    b.append(f'<text x="{px(-3.2):.0f}" y="{BASE-14}" font-size="13" fill="{CORAL}" text-anchor="middle">기각역 2.5%</text>')
+    b.append(f'<text x="{px(3.2):.0f}" y="{BASE-14}" font-size="13" fill="{CORAL}" text-anchor="middle">기각역 2.5%</text>')
+
+    b.append(f'<text x="{(L+R)/2:.0f}" y="{H-8}" font-size="14" fill="{MID}" text-anchor="middle">'
+             f'영가설이 참이라면 t는 대부분 가운데에 떨어진다. 우리 결과는 꼬리 밖에 있다.</text>')
+    write('t-distribution.svg', svg(W, H, '\n'.join(b)))
+
+
+# ---------------------------------------------------------------- 그림 7
+def fig_sample_size():
+    """같은 차이인데 표본만 커지면 유의해진다"""
+    W, H = 900, 300
+    b = []
+    rows = [(20, 0.59, .5567), (50, 0.94, .3508), (100, 1.33, .1864),
+            (300, 2.30, .0220), (1000, 4.19, .0001)]
+    x0, bw = 190, 480
+    b.append(f'<text x="26" y="30" font-size="17" font-weight="800" fill="{NAVY}">평균 차이 0.15점, 표준편차 0.8로 고정 — 표본크기만 바꿨을 때</text>')
+
+    for i, (n, t, p) in enumerate(rows):
+        y = 68 + i * 44
+        sig = p < .05
+        color = TEAL if sig else FAINT
+        b.append(f'<text x="150" y="{y+5}" font-size="15" font-weight="700" fill="{INK}" text-anchor="end">n = {n}</text>')
+        w = min(bw, bw * t / 4.5)
+        b.append(f'<rect x="{x0}" y="{y-11}" width="{w:.0f}" height="22" rx="4" fill="{color}" opacity=".85"/>')
+        b.append(f'<text x="{x0+w+12:.0f}" y="{y+5}" font-size="14" font-weight="700" fill="{color}">'
+                 f'p = {p:.4f}{" ✓ 유의" if sig else ""}</text>')
+
+    # .05 기준선
+    xc = x0 + bw * 1.97 / 4.5
+    b.append(f'<path d="M{xc:.0f},52 L{xc:.0f},{68+len(rows)*44-18}" stroke="{CORAL}" stroke-width="2" stroke-dasharray="5 4"/>')
+    b.append(f'<text x="{xc:.0f}" y="44" font-size="13" font-weight="700" fill="{CORAL}" text-anchor="middle">유의성 경계</text>')
+
+    b.append(f'<text x="450" y="{H-12}" font-size="14" fill="{MID}" text-anchor="middle">'
+             f'차이의 크기는 그대로다. p값만 작아진다. 그래서 효과크기를 따로 본다.</text>')
+    write('sample-size-p.svg', svg(W, H, '\n'.join(b)))
+
+
+# ---------------------------------------------------------------- 그림 8
+def fig_effect_size():
+    """Cohen's d가 얼마나 겹치는지"""
+    W, H = 900, 300
+    b = []
+    peak = 1 / math.sqrt(2 * math.pi)
+    panels = [(0, 0.2, '작은 효과', False), (305, 0.5, '중간 효과', True), (610, 0.8, '큰 효과', False)]
+    for x0, d, lab, ours in panels:
+        w = 290
+        stroke = TEAL if ours else RULE
+        sw = 3 if ours else 2
+        b.append(f'<rect x="{x0}" y="0" width="{w}" height="{H-40}" rx="10" fill="#FBFCFD" stroke="{stroke}" stroke-width="{sw}"/>')
+        base, top = 190, 62
+        px0, px1 = x0 + 22, x0 + w - 22
+        b.append(f'<path d="M{px0},{base} L{px1},{base}" stroke="{MID}" stroke-width="2"/>')
+        for mu, color, fill in ((-d/2, NAVY, '#C7D0DE'), (d/2, TEAL, TEAL_TINT)):
+            pth = normal_path(mu, 1.0, -3.4, 3.4, px0, px1, base, base - top, peak)
+            b.append(f'<path d="{pth} L{px1},{base} L{px0},{base} Z" fill="{fill}" opacity=".5"/>')
+            b.append(f'<path d="{pth}" fill="none" stroke="{color}" stroke-width="2.4"/>')
+        b.append(f'<text x="{x0+w/2:.0f}" y="{base+34}" font-size="17" font-weight="800" fill="{INK}" text-anchor="middle">d = {d}</text>')
+        b.append(f'<text x="{x0+w/2:.0f}" y="{base+56}" font-size="14" fill="{SOFT}" text-anchor="middle">{lab}</text>')
+        if ours:
+            b.append(f'<rect x="{x0+w/2-58:.0f}" y="22" width="116" height="26" rx="13" fill="{TEAL}"/>')
+            b.append(f'<text x="{x0+w/2:.0f}" y="40" font-size="13" font-weight="800" fill="#fff" text-anchor="middle">우리 결과 0.51</text>')
+
+    b.append(f'<text x="450" y="{H-10}" font-size="14" fill="{MID}" text-anchor="middle">'
+             f'd가 커질수록 두 분포가 덜 겹친다. 겹침이 적을수록 두 집단이 실질적으로 다르다는 뜻이다.</text>')
+    write('effect-size.svg', svg(W, H, '\n'.join(b)))
+
+
 if __name__ == '__main__':
     dens_path = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, 'tools', 'dens.json')
     print('그림 생성')
@@ -270,6 +388,13 @@ if __name__ == '__main__':
     fig_equal_variance()
     fig_normality()
     fig_ci()
+    fig_sample_size()
+    fig_effect_size()
+    td_path = os.path.join(ROOT, 'tools', 'tdist.json')
+    if os.path.exists(td_path):
+        fig_t_distribution(json.load(open(td_path, encoding='utf-8')))
+    else:
+        print('  ! tools/tdist.json 없음 — t분포 그림은 건너뜀 (tools/tdist.R 실행 필요)')
     if os.path.exists(dens_path):
         fig_distributions(json.load(open(dens_path, encoding='utf-8')))
     else:

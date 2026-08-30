@@ -244,8 +244,14 @@ body {
   font-size: 104px; font-weight: 800; line-height: 1.22;
   letter-spacing: -.04em; color: #FFD84D;
 }
+.thumb__lines p {
+  font-size: 60px; font-weight: 700; line-height: 1.34;
+  letter-spacing: -.03em; color: #E8E0D2; margin-bottom: 30px;
+}
+.thumb__lines p b { color: #9A9184; font-weight: 700; }
+.thumb__lines p:last-child { margin-bottom: 0; color: #FFD84D; }
 .thumb__box {
-  margin-top: 56px; padding: 30px 56px;
+  margin-top: 40px; padding: 30px 56px;
   border: 4px solid #F1EAE0; border-radius: 14px;
   font-size: 44px; font-weight: 800; letter-spacing: -.025em;
   color: #F1EAE0;
