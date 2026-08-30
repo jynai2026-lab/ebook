@@ -466,3 +466,23 @@ figcaption b { color: var(--navy); font-weight: 700; }
    ========================================================================== */
 .page-break { break-before: page; }
 .keep       { break-inside: avoid; }
+
+/* ==========================================================================
+   15. 인용 — 핵심 질문을 한 줄로 던질 때
+   ========================================================================== */
+blockquote {
+  break-inside: avoid;
+  margin: 5mm 0 5mm 2mm;
+  padding: 3.5mm 0 3.5mm 5mm;
+  border-left: 3px solid var(--accent);
+  font-size: 10.6pt; font-weight: 600; line-height: 1.66;
+  color: var(--navy);
+}
+blockquote p { margin-bottom: 2mm; }
+blockquote p:last-child { margin-bottom: 0; }
+
+/* 콜아웃 안의 인용은 한 번 더 들여쓰지 않음 */
+.callout blockquote {
+  margin-left: 0; border-left-color: rgba(0,0,0,.18);
+  font-weight: 500; font-size: 9.9pt;
+}
