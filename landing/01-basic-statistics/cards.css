@@ -1,0 +1,255 @@
+/* ==========================================================================
+   래피드 상세페이지 카드 — 1권 기초통계
+   1080px 폭 세로형 카드. render-cards.mjs가 카드별로 PNG를 뽑습니다.
+   레퍼런스(윤자동 상세페이지) 문법: 크림 배경 + 초굵은 헤드라인 + 인버트 하이라이트
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../shared/fonts/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 45 920;
+  font-display: block;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../../shared/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500; font-display: block;
+}
+
+:root {
+  --cream:   #F1EAE0;
+  --cream-2: #E9E0D3;
+  --ink:     #17150F;
+  --ink-2:   #46403708;
+  --sub:     #6B655C;
+  --pill:    #DBD2C4;
+  --coral:   #D9614C;
+  --coral-t: #F7E2DD;
+  --teal:    #0E7490;
+  --teal-t:  #DCEEF2;
+  --line:    #CFC5B5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: #8A8A8A;
+  color: var(--ink);
+  word-break: keep-all;
+}
+
+/* 카드 하나 = PNG 한 장 */
+.card {
+  width: 1080px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+  padding: 96px 88px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 24px;
+}
+.card--tall  { min-height: 1350px; justify-content: center; }
+.card--sq    { min-height: 1080px; }
+.card--auto  { min-height: 0; }
+.card--dark  { background: var(--ink); color: var(--cream); }
+.card--center { align-items: center; text-align: center; justify-content: center; }
+
+/* ---------- 공통 타이포 ---------- */
+.pill {
+  display: inline-block;
+  background: var(--pill);
+  color: #4A443B;
+  font-size: 30px; font-weight: 700; letter-spacing: -.01em;
+  padding: 16px 38px; border-radius: 999px;
+  margin-bottom: 56px;
+}
+.card--dark .pill { background: #2E2A22; color: #C9C0B1; }
+
+.h {
+  font-size: 92px; font-weight: 800; line-height: 1.26;
+  letter-spacing: -.035em;
+}
+.h--sm { font-size: 74px; }
+.h--xs { font-size: 60px; }
+
+/* 인버트 하이라이트 — 레퍼런스의 핵심 장치 */
+.hl {
+  background: var(--ink); color: var(--cream);
+  padding: 2px 18px 10px; margin: 0 2px;
+  display: inline-block; line-height: 1.06;
+}
+.card--dark .hl { background: var(--cream); color: var(--ink); }
+.hl--coral { background: var(--coral); color: #fff; }
+.hl--teal  { background: var(--teal);  color: #fff; }
+
+.sub {
+  margin-top: 44px;
+  font-size: 36px; font-weight: 600; color: #4A443B; line-height: 1.62;
+}
+.body {
+  margin-top: 26px;
+  font-size: 31px; font-weight: 400; color: var(--sub); line-height: 1.78;
+}
+.body b { font-weight: 700; color: var(--ink); }
+.card--dark .body { color: #B8AFA0; }
+.card--dark .body b { color: var(--cream); }
+
+.spacer { flex: 1; min-height: 40px; }
+.card--tall > .toc, .card--tall > .list { flex: none; }
+
+/* 상단 라벨 */
+.eyebrow {
+  font-size: 26px; font-weight: 800; letter-spacing: .16em;
+  color: var(--teal); margin-bottom: 28px;
+}
+.card--dark .eyebrow { color: #6FD3E8; }
+
+/* ---------- 목차 리스트 ---------- */
+.toc { margin-top: 20px; }
+.toc__part {
+  display: flex; align-items: baseline; gap: 20px;
+  margin: 46px 0 18px; padding-bottom: 16px;
+  border-bottom: 3px solid var(--ink);
+  font-size: 36px; font-weight: 800;
+}
+.toc__part span { font-size: 24px; font-weight: 800; color: var(--teal); letter-spacing: .1em; }
+.toc__row {
+  display: flex; align-items: baseline; gap: 22px;
+  padding: 17px 0; border-bottom: 1px solid var(--line);
+  font-size: 31px; color: #3D382F;
+}
+.toc__row b { font-weight: 700; min-width: 62px; color: var(--teal); }
+
+/* ---------- 체크 목록 ---------- */
+.list { margin-top: 16px; }
+.list__row {
+  display: flex; gap: 24px; align-items: flex-start;
+  font-size: 33px; line-height: 1.6; color: #3D382F;
+  padding: 20px 0;
+}
+.list__row i {
+  font-style: normal; flex: none;
+  width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 26px; font-weight: 800; color: #fff;
+  margin-top: 4px;
+}
+.list__row i.y { background: var(--teal); }
+.list__row i.n { background: #B6ADA0; }
+
+/* ---------- 스펙 박스 ---------- */
+.spec {
+  margin-top: 48px; border: 3px solid var(--ink); border-radius: 10px;
+  overflow: hidden;
+}
+.spec__row {
+  display: flex; font-size: 30px;
+  border-bottom: 1px solid var(--line);
+}
+.spec__row:last-child { border-bottom: 0; }
+.spec__row dt {
+  width: 260px; flex: none; padding: 26px 30px;
+  font-weight: 700; background: var(--cream-2);
+}
+.spec__row dd { padding: 26px 30px; font-weight: 500; color: #3D382F; }
+
+/* ---------- CTA ---------- */
+.price {
+  font-size: 110px; font-weight: 800; letter-spacing: -.04em;
+  line-height: 1.1;
+}
+.price small { font-size: 44px; font-weight: 700; }
+.price-note { margin-top: 20px; font-size: 32px; color: var(--sub); font-weight: 600; }
+
+.cta {
+  margin-top: 56px;
+  background: var(--ink); color: var(--cream);
+  font-size: 44px; font-weight: 800; letter-spacing: -.02em;
+  padding: 40px 72px; border-radius: 999px;
+  display: inline-block;
+}
+.card--dark .cta { background: #FFD84D; color: var(--ink); }
+
+.fineprint {
+  margin-top: 44px; font-size: 25px; color: var(--sub); line-height: 1.7;
+}
+.card--dark .fineprint { color: #8F8778; }
+
+/* ---------- 일러스트 영역 ---------- */
+.art { margin-top: 76px; }
+.art svg { width: 100%; height: auto; display: block; }
+
+/* 코드/결과 목업 */
+.mock {
+  margin-top: 56px; border-radius: 14px; overflow: hidden;
+  border: 3px solid var(--ink);
+  box-shadow: 14px 14px 0 rgba(23,21,15,.14);
+}
+.mock__bar {
+  background: var(--ink); color: #B8AFA0;
+  font-size: 24px; font-weight: 600; padding: 18px 28px;
+  display: flex; gap: 14px; align-items: center;
+}
+.mock__bar em {
+  font-style: normal; width: 16px; height: 16px; border-radius: 50%;
+  background: #4A443B; display: inline-block;
+}
+.mock__body {
+  background: #FBF8F3; padding: 34px 32px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 25px; line-height: 1.72; color: #3D382F;
+  white-space: pre;
+}
+.mock__body .c { color: #9A9184; }
+.mock__body .k { color: var(--teal); font-weight: 500; }
+.mock__body .hi { background: #FFE9A8; padding: 2px 6px; }
+
+/* 미리보기 페이지 목업 */
+.pages { display: flex; gap: 26px; margin-top: 56px; }
+.pages img {
+  width: 100%; border: 2px solid var(--line); border-radius: 6px;
+  box-shadow: 8px 8px 0 rgba(23,21,15,.10);
+}
+.pages > div { flex: 1; }
+.pages figcaption {
+  margin-top: 18px; font-size: 23px; color: var(--sub); text-align: center; font-weight: 600;
+}
+
+/* ==========================================================================
+   대표이미지 (상품 목록 썸네일) — 1080x1080
+   ========================================================================== */
+.card--thumb {
+  min-height: 1080px;
+  background: #0B0A08;
+  color: #fff;
+  padding: 92px 80px;
+  justify-content: center;
+}
+.thumb__glow {
+  position: absolute; left: 50%; top: 58%;
+  width: 1200px; height: 700px; transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(255,216,77,.16), transparent 62%);
+  pointer-events: none;
+}
+.card--thumb > *:not(.thumb__glow) { position: relative; z-index: 2; }
+.thumb__series {
+  font-size: 28px; font-weight: 700; letter-spacing: .1em;
+  color: #8F8778; margin-bottom: 44px;
+}
+.thumb__h {
+  font-size: 104px; font-weight: 800; line-height: 1.22;
+  letter-spacing: -.04em; color: #FFD84D;
+}
+.thumb__box {
+  margin-top: 56px; padding: 30px 56px;
+  border: 4px solid #F1EAE0; border-radius: 14px;
+  font-size: 44px; font-weight: 800; letter-spacing: -.025em;
+  color: #F1EAE0;
+}
+.thumb__foot {
+  margin-top: 44px; font-size: 30px; font-weight: 600; color: #9A9184;
+}
