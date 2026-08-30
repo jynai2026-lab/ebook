@@ -1,0 +1,103 @@
+<svg viewBox="0 0 900 340" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="430" height="340" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<rect x="470" y="0" width="430" height="340" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="26" y="34" font-size="19" font-weight="800" fill="#16243F">이 집단과 저 집단이 다른가</text>
+<text x="26" y="58" font-size="15" fill="#667085">개인은 사라지고 집단의 대표값만 남는다</text>
+<circle cx="113" cy="128" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="114" cy="112" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="96" cy="114" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="149" cy="126" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="147" cy="123" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="130" cy="122" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="77" cy="135" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="133" cy="128" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="76" cy="83" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="97" cy="109" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="128" cy="117" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="134" cy="105" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="128" cy="126" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="103" cy="152" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="134" cy="142" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="104" cy="103" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="111" cy="116" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="136" cy="123" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="108" cy="99" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="106" cy="142" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="99" cy="123" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="131" cy="88" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="301" cy="144" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="248" cy="112" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="297" cy="102" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="313" cy="117" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="262" cy="135" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="317" cy="137" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="337" cy="125" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="303" cy="92" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="316" cy="106" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="288" cy="93" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="275" cy="107" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="334" cy="77" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="262" cy="123" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="338" cy="130" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="251" cy="68" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="309" cy="103" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="271" cy="138" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="329" cy="121" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="306" cy="127" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="341" cy="130" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="313" cy="129" r="3.2" fill="#98A2B3" opacity=".75"/>
+<circle cx="259" cy="144" r="3.2" fill="#98A2B3" opacity=".75"/>
+<path d="M120,158 L120,186 M300,158 L300,186" stroke="#E4E7EC" stroke-width="2"/>
+<text x="210" y="180" font-size="13" fill="#98A2B3" text-anchor="middle">뭉친다</text>
+<circle cx="120" cy="212" r="13" fill="#0E7490"/>
+<text x="120" y="247" font-size="15" font-weight="700" fill="#101828" text-anchor="middle">남성</text>
+<text x="120" y="267" font-size="15" fill="#0E7490" text-anchor="middle">M = 3.29</text>
+<circle cx="300" cy="212" r="13" fill="#0E7490"/>
+<text x="300" y="247" font-size="15" font-weight="700" fill="#101828" text-anchor="middle">여성</text>
+<text x="300" y="267" font-size="15" fill="#0E7490" text-anchor="middle">M = 3.70</text>
+<path d="M137,212 L283,212" stroke="#C2452F" stroke-width="2.5" stroke-dasharray="6 5"/>
+<text x="210" y="303" font-size="16" font-weight="700" fill="#C2452F" text-anchor="middle">이 거리만 궁금하다</text>
+<text x="210" y="325" font-size="14" fill="#667085" text-anchor="middle">t-검정 · 분산분석</text>
+<text x="496" y="34" font-size="19" font-weight="800" fill="#16243F">한 변수가 움직이면 다른 변수도 움직이는가</text>
+<text x="496" y="58" font-size="15" fill="#667085">개인이 점으로 끝까지 남는다</text>
+<path d="M540,258 L860,258 M540,258 L540,88" stroke="#344054" stroke-width="2"/>
+<text x="700" y="284" font-size="14" fill="#667085" text-anchor="middle">변수 X</text>
+<text x="516" y="176" font-size="14" fill="#667085" text-anchor="middle" transform="rotate(-90 516 176)">변수 Y</text>
+<circle cx="686" cy="147" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="690" cy="167" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="702" cy="166" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="704" cy="169" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="738" cy="160" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="642" cy="196" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="579" cy="243" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="564" cy="216" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="843" cy="133" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="734" cy="154" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="599" cy="245" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="570" cy="240" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="608" cy="220" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="689" cy="185" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="682" cy="196" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="742" cy="139" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="700" cy="166" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="634" cy="191" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="847" cy="139" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="762" cy="146" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="645" cy="204" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="573" cy="250" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="779" cy="112" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="666" cy="211" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="836" cy="112" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="614" cy="216" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="821" cy="96" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="670" cy="199" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="574" cy="215" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="632" cy="187" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="578" cy="212" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="776" cy="178" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="587" cy="230" r="3.6" fill="#0E7490" opacity=".6"/>
+<circle cx="570" cy="245" r="3.6" fill="#0E7490" opacity=".6"/>
+<path d="M552,244 L848,104" stroke="#C2452F" stroke-width="2.5"/>
+<text x="700" y="303" font-size="16" font-weight="700" fill="#C2452F" text-anchor="middle">이 맞물림이 궁금하다</text>
+<text x="700" y="325" font-size="14" fill="#667085" text-anchor="middle">상관분석 · 회귀분석</text>
+</svg>

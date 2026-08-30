@@ -113,3 +113,30 @@ LANG=C.UTF-8 Rscript 스크립트.R          # 한글 출력에는 UTF-8 로케�
 
 예제 데이터는 `books/01-basic-statistics/data/sample_data.csv`에 함께 넣어,
 독자가 책의 코드를 그대로 복사해 같은 숫자를 재현할 수 있게 했습니다.
+
+## 본문 그림
+
+```bash
+LANG=C.UTF-8 Rscript tools/densities.R > tools/dens.json   # 실제 데이터 계산
+python3 tools/make-figures.py                              # SVG 생성
+npm run build:1
+```
+
+`tools/make-figures.py`가 `books/<권>/figures/*.svg`를 만듭니다. 원고에서는
+이렇게 부릅니다.
+
+```markdown
+!fig[**그림 4-3** 캡션입니다.](equal-variance.svg)
+```
+
+빌드가 SVG를 **인라인으로** 삽입합니다. `<img>`로 걸면 SVG 안에서 본문 폰트를
+쓸 수 없어 한글이 깨지기 때문입니다. 캡션에는 마크다운을 쓸 수 있습니다.
+
+그림은 두 종류입니다.
+
+- **개념도** — 말로 설명하기 어려운 것을 그림으로. 캡션에 `(개념도)`를 붙여
+  실제 데이터가 아님을 밝힙니다.
+- **데이터 그림** — R이 계산한 실제 값으로 그립니다. 숫자를 지어내지 않습니다.
+
+색은 `shared/theme/book.css`의 토큰과 맞춰 두었으므로, 본문 색을 바꾸면
+`tools/make-figures.py` 상단 상수도 함께 고칩니다.

@@ -60,7 +60,7 @@ function highlightR(src) {
  *   ```r  / ```out / ```svg
  *   $$ 수식 $$
  */
-function preprocess(src) {
+function preprocess(src, figDir) {
   // CommonMark의 right-flanking 규칙상, 닫는 **이 구두점 바로 뒤이면서 한글 바로 앞에
   // 오면 강조로 인식되지 않는다. 한국어 원고에서 흔한 형태라 먼저 태그로 바꿔 둔다.
   // (콜아웃 본문도 여기서 함께 처리되도록 블록을 잘라내기 전에 실행한다)
@@ -76,6 +76,15 @@ function preprocess(src) {
     keep(`<div class="out"><div class="out__bar">${esc(label || '실행 결과')}</div><pre>${esc(code.replace(/\n$/, ''))}</pre></div>`));
 
   src = src.replace(/```svg\n([\s\S]*?)```/g, (_, svg) => keep(svg));
+
+  // !fig[캡션](파일.svg) — figures/ 의 SVG를 인라인으로 넣는다.
+  // <img>로 걸면 SVG 안에서 본문 폰트를 못 써 한글이 깨지므로 반드시 인라인.
+  src = src.replace(/^!fig\[([^\]]*)\]\(([^)]+)\)\s*$/gm, (m, cap, file) => {
+    const path = join(figDir || '', file);
+    if (!existsSync(path)) { console.warn(`  ! 그림 없음: ${file}`); return m; }
+    const svg = readFileSync(path, 'utf8').replace(/<\?xml[^>]*\?>/, '');
+    return keep(`<figure>${svg}${cap ? `<figcaption>${md.renderInline(cap)}</figcaption>` : ''}</figure>`);
+  });
 
   src = src.replace(/^\$\$\n([\s\S]*?)\n\$\$(?:[ \t]*\(([^\n]+)\))?/gm, (_, f, note) =>
     keep(`<div class="formula">${esc(f.trim())}${note ? `<small>${esc(note)}</small>` : ''}</div>`));
@@ -107,7 +116,7 @@ function preprocess(src) {
 }
 
 /** manuscript/*.md 한 장(章) 파싱 */
-function parseChapter(raw) {
+function parseChapter(raw, figDir) {
   const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   const meta = {};
   let body = raw;
@@ -118,7 +127,7 @@ function parseChapter(raw) {
       if (kv) meta[kv[1]] = kv[2].trim();
     }
   }
-  return { meta, html: preprocess(body) };
+  return { meta, html: preprocess(body, figDir) };
 }
 
 /* ---------------------------------------------------------------- 조립 */
@@ -236,7 +245,8 @@ async function buildBook(slug) {
   const files = existsSync(mdir) ? readdirSync(mdir).filter(f => f.endsWith('.md')).sort() : [];
   if (!files.length) { console.log(`  - ${slug}: 원고 없음, 건너뜀`); return; }
 
-  const chapters = files.map(f => parseChapter(readFileSync(join(mdir, f), 'utf8')));
+  const figDir = join(dir, 'figures');
+  const chapters = files.map(f => parseChapter(readFileSync(join(mdir, f), 'utf8'), figDir));
   const htmlPath = join(dir, '.build.html');
   writeFileSync(htmlPath, assemble(cfg, chapters));
 
