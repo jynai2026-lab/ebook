@@ -409,15 +409,16 @@ figcaption b { color: var(--navy); font-weight: 700; }
    ========================================================================== */
 .formula {
   break-inside: avoid;
-  margin: 4.5mm 0; padding: 4mm 5mm;
+  margin: 4.5mm 0; padding: 5mm 5mm 4.5mm;
   background: #FAFBFC;
   border: 1px solid var(--rule);
   border-radius: 2mm;
   text-align: center;
-  font-size: 11pt;
-  font-family: 'JetBrains Mono', 'Pretendard', monospace;
   color: var(--navy);
 }
+/* 수식 조판은 KaTeX가 맡는다. 크기만 본문에 맞춘다. */
+.formula .katex { font-size: 1.18em; }
+.katex { color: var(--navy); }
 .formula small {
   display: block; margin-top: 2.5mm;
   font-family: 'Pretendard', sans-serif;

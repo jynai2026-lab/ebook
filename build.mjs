@@ -13,6 +13,7 @@ import { chromium } from 'playwright-core';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import MarkdownIt from 'markdown-it';
 import attrs from 'markdown-it-attrs';
+import katex from 'katex';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const CHROME = [
@@ -54,6 +55,19 @@ function highlightR(src) {
   return out.replace(/(\d+)/g, (_, i) => tokens[+i]);
 }
 
+
+/** LaTeX -> KaTeX HTML. 실패해도 빌드를 멈추지 않고 원본을 보여준다. */
+function tex(src, display) {
+  try {
+    return katex.renderToString(src.trim(), {
+      displayMode: display, throwOnError: false, strict: false, output: 'html',
+    });
+  } catch (e) {
+    console.warn(`  ! 수식 오류: ${src.trim().slice(0, 40)} — ${e.message}`);
+    return `<code>${esc(src)}</code>`;
+  }
+}
+
 /**
  * 저자 친화 문법 → HTML
  *   :::key / :::warn / :::ok / :::paper / :::check / :::recap ... :::
@@ -68,6 +82,8 @@ function preprocess(src, figDir) {
 
   const blocks = [];
   const keep = html => `\n\n<!--BLK${blocks.push(html) - 1}-->\n\n`;
+  // 문단 중간에 들어가는 조각은 빈 줄 없이 감싼다
+  const keepInline = html => `<!--BLK${blocks.push(html) - 1}-->`;
 
   src = src.replace(/```r(?:[ \t]+([^\n]+))?\n([\s\S]*?)```/g, (_, label, code) =>
     keep(`<div class="code"><div class="code__bar">${esc(label || 'R')}</div><pre>${highlightR(code.replace(/\n$/, ''))}</pre></div>`));
@@ -76,6 +92,12 @@ function preprocess(src, figDir) {
     keep(`<div class="out"><div class="out__bar">${esc(label || '실행 결과')}</div><pre>${esc(code.replace(/\n$/, ''))}</pre></div>`));
 
   src = src.replace(/```svg\n([\s\S]*?)```/g, (_, svg) => keep(svg));
+
+  // 인라인 코드(`df$gender` 등)를 먼저 빼둬야 R의 $가 수식으로 오인되지 않는다
+  src = src.replace(/`([^`\n]+)`/g, (_, code) => keepInline(`<code>${esc(code)}</code>`));
+
+  // $...$ 인라인 수식
+  src = src.replace(/\$([^\s$][^$\n]*?)\$/g, (_, f) => keepInline(tex(f, false)));
 
   // !fig[캡션](파일.svg) — figures/ 의 SVG를 인라인으로 넣는다.
   // <img>로 걸면 SVG 안에서 본문 폰트를 못 써 한글이 깨지므로 반드시 인라인.
@@ -87,7 +109,7 @@ function preprocess(src, figDir) {
   });
 
   src = src.replace(/^\$\$\n([\s\S]*?)\n\$\$(?:[ \t]*\(([^\n]+)\))?/gm, (_, f, note) =>
-    keep(`<div class="formula">${esc(f.trim())}${note ? `<small>${esc(note)}</small>` : ''}</div>`));
+    keep(`<div class="formula">${tex(f, true)}${note ? `<small>${esc(note)}</small>` : ''}</div>`));
 
   const KIND = {
     key:   ['callout', '핵심 정리'],
@@ -191,6 +213,7 @@ function assemble(cfg, chapters) {
   return `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
 <title>${esc(cfg.title || '')}</title>
+<link rel="stylesheet" href="../../shared/theme/katex.min.css">
 <link rel="stylesheet" href="../../shared/theme/book.css">
 ${vars ? `<style>:root{${vars}}</style>` : ''}
 </head><body>
