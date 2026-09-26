@@ -111,21 +111,48 @@ def tex(x, y, latex, size=15, color=INK, anchor='middle', w=380, h=None, baselin
             f'<span data-tex="{safe}"></span></div></foreignObject>')
 
 
-def _wide(s, size):
-    """글자 폭 어림. 한글은 글자크기만큼, 로마자·숫자·기호는 그 절반쯤 잡는다."""
-    return sum(size if ord(c) > 0x2000 else size * 0.55 for c in s)
+CANVAS_W = 900          # 그림 SVG의 표준 폭
 
 
-def label_tex(cx, y, korean, latex, size=15, color=INK, weight=700, gap=5):
-    """'분산 s²'처럼 한글과 기호가 섞인 이름표를 가운데 정렬로 놓는다.
+def rich(x, y, parts, size=15, color=INK, anchor='middle', weight=None, w=None, h=None):
+    """한글과 수식이 섞인 한 줄을 배치한다.
 
-    한글은 본문 글꼴로, 기호는 KaTeX로 조판해야 본문 수식과 모양이 맞는다.
-    두 조각의 폭을 어림해 전체가 cx에 가운데 오도록 자리를 잡는다.
+    파이썬에서 글자 폭을 어림해 좌표를 계산하면 어림이 틀린 만큼 간격이
+    벌어진다. 그래서 조각을 그대로 넘기고 정렬은 브라우저(flex)에 맡긴다.
+
+    parts: ('t', '글자') 또는 ('m', 'LaTeX') 의 나열.
+           간격은 글자 조각 안의 공백으로 준다 (white-space: pre).
+    y는 text()와 같은 글줄 기준선이다.
     """
-    kw = _wide(korean, size)
-    mw = _wide(latex.replace('^', '').replace('_', '').replace('\\', ''), size * 1.05)
-    total = kw + gap + mw
-    x = cx - total / 2
-    out = [text(x, y, korean, size, color, weight)] if korean else []
-    out.append(tex(x + kw + gap, y, latex, size, color, 'start', w=mw + 40, baseline=True))
-    return '\n'.join(out)
+    h = h or size * 2.8
+    y -= size * 0.36
+    just = {'middle': 'center', 'start': 'flex-start', 'end': 'flex-end'}[anchor]
+    if w is None:
+        # 글상자가 그림 밖으로 나가면 잘리므로, 놓일 자리에 맞춰 폭을 잡는다
+        room = {'middle': 2 * min(x, CANVAS_W - x), 'start': CANVAS_W - x, 'end': x}[anchor]
+        w = max(60, min(760, room))
+    fx = {'middle': x - w / 2, 'start': x, 'end': x - w}[anchor]
+
+    inner = []
+    for kind, val in parts:
+        if not val:
+            continue
+        if kind == 't':
+            esc = val.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+            fw = f'font-weight:{weight};' if weight else ''
+            inner.append(f'<span style="white-space:pre;{fw}">{esc}</span>')
+        else:
+            safe = (val.replace('&', '&amp;').replace('<', '&lt;')
+                       .replace('>', '&gt;').replace('"', '&quot;'))
+            inner.append(f'<span data-tex="{safe}"></span>')
+    return (f'<foreignObject x="{fx:.0f}" y="{y - h / 2:.0f}" '
+            f'width="{w:.0f}" height="{h:.0f}">'
+            f'<div xmlns="http://www.w3.org/1999/xhtml" class="figtex" '
+            f'style="justify-content:{just};font-size:{size}px;color:{color}">'
+            f'{"".join(inner)}</div></foreignObject>')
+
+
+def label_tex(cx, y, korean, latex, size=15, color=INK, weight=700, gap=None):
+    """'분산 s²'처럼 한글과 기호가 섞인 이름표를 가운데 정렬로 놓는다."""
+    return rich(cx, y, [('t', korean + ' ' if korean else ''), ('m', latex)],
+                size, color, 'middle', weight)

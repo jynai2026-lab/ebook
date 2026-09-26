@@ -44,7 +44,7 @@ const html = `<!doctype html><meta charset="utf-8">
   .c { margin-bottom:18px; border:1px solid #E4E7EC; border-radius:8px; padding:10px; }
   .t { font-size:11px; color:#98A2B3; margin-bottom:6px; }
   svg { width:100%; height:auto; display:block; }
-  .figtex { display:flex; align-items:center; width:100%; height:100%; line-height:1; }
+  .figtex { display:flex; align-items:center; flex-wrap:nowrap; width:100%; height:100%; line-height:1; }
   .figtex .katex { font-size:1em; }
 </style>${cards}`;
 const htmlPath = join(OUT, 'sheet.html');

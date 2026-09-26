@@ -63,24 +63,19 @@
 <circle cx="45" cy="149" r="4" fill="#98A2B3" opacity=".7"/>
 <circle cx="53" cy="212" r="4" fill="#98A2B3" opacity=".7"/>
 <circle cx="79" cy="152" r="4" fill="#98A2B3" opacity=".7"/>
-<text x="37" y="262" font-size="13" fill="#667085">우리가 알고 싶은 것은</text>
-<foreignObject x="180" y="239" width="55" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13px;color:#667085"><span data-tex="\mu"></span></div></foreignObject>
+<foreignObject x="0" y="239" width="232" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span style="white-space:pre;">우리가 알고 싶은 것은 </span><span data-tex="\mu"></span></div></foreignObject>
 <path d="M238,73 L282,73" stroke="#E4E7EC" stroke-width="2"/>
 <rect x="288" y="56" width="166" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
-<text x="326" y="78" font-size="13.5" fill="#0E7490" font-weight="700">표본 1  →</text>
-<foreignObject x="401" y="54" width="56" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="M_1"></span></div></foreignObject>
+<foreignObject x="291" y="54" width="160" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13.5px;color:#0E7490"><span style="white-space:pre;font-weight:700;">표본 1   </span><span data-tex="\to\;M_1"></span></div></foreignObject>
 <path d="M238,125 L282,125" stroke="#E4E7EC" stroke-width="2"/>
 <rect x="288" y="108" width="166" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
-<text x="326" y="130" font-size="13.5" fill="#0E7490" font-weight="700">표본 2  →</text>
-<foreignObject x="401" y="106" width="56" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="M_2"></span></div></foreignObject>
+<foreignObject x="291" y="106" width="160" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13.5px;color:#0E7490"><span style="white-space:pre;font-weight:700;">표본 2   </span><span data-tex="\to\;M_2"></span></div></foreignObject>
 <path d="M238,177 L282,177" stroke="#E4E7EC" stroke-width="2"/>
 <rect x="288" y="160" width="166" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
-<text x="326" y="182" font-size="13.5" fill="#0E7490" font-weight="700">표본 3  →</text>
-<foreignObject x="401" y="158" width="56" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="M_3"></span></div></foreignObject>
+<foreignObject x="291" y="158" width="160" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13.5px;color:#0E7490"><span style="white-space:pre;font-weight:700;">표본 3   </span><span data-tex="\to\;M_3"></span></div></foreignObject>
 <text x="371" y="236" font-size="22" fill="#98A2B3" font-weight="700" text-anchor="middle">⋮</text>
 <rect x="282" y="250" width="178" height="34" rx="7" fill="#FBFCFD" stroke="#A8D5DE" stroke-width="2" stroke-dasharray="5 4"/>
-<text x="289" y="272" font-size="13.5" fill="#0E7490" font-weight="700">표본</text>
-<foreignObject x="321" y="248" width="173" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="\infty \;\to\; M_\infty"></span></div></foreignObject>
+<foreignObject x="286" y="248" width="170" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13.5px;color:#0E7490"><span style="white-space:pre;font-weight:700;">표본 </span><span data-tex="\infty \;\to\; M_\infty"></span></div></foreignObject>
 <text x="371" y="306" font-size="13" fill="#667085" text-anchor="middle">같은 크기의 표본을 무한히 뽑는다면</text>
 <text x="371" y="326" font-size="12.5" fill="#98A2B3" text-anchor="middle">(머릿속에서만 하는 일이다)</text>
 <path d="M498.0,235.5 L501.2,235.4 L504.5,235.3 L507.8,235.1 L511.0,235.0 L514.2,234.8 L517.5,234.5 L520.8,234.3 L524.0,233.9 L527.2,233.6 L530.5,233.1 L533.8,232.7 L537.0,232.1 L540.2,231.4 L543.5,230.7 L546.8,229.9 L550.0,228.9 L553.2,227.9 L556.5,226.7 L559.8,225.4 L563.0,223.9 L566.2,222.3 L569.5,220.4 L572.8,218.5 L576.0,216.3 L579.2,213.9 L582.5,211.3 L585.8,208.5 L589.0,205.5 L592.2,202.2 L595.5,198.8 L598.8,195.1 L602.0,191.1 L605.2,187.0 L608.5,182.6 L611.8,178.1 L615.0,173.3 L618.2,168.4 L621.5,163.4 L624.8,158.2 L628.0,152.9 L631.2,147.5 L634.5,142.1 L637.8,136.7 L641.0,131.3 L644.2,125.9 L647.5,120.7 L650.8,115.5 L654.0,110.6 L657.2,105.9 L660.5,101.4 L663.8,97.3 L667.0,93.4 L670.2,90.0 L673.5,86.9 L676.8,84.2 L680.0,82.0 L683.2,80.3 L686.5,79.0 L689.8,78.3 L693.0,78.0 L696.2,78.3 L699.5,79.0 L702.8,80.3 L706.0,82.0 L709.2,84.2 L712.5,86.9 L715.8,90.0 L719.0,93.4 L722.2,97.3 L725.5,101.4 L728.8,105.9 L732.0,110.6 L735.2,115.5 L738.5,120.7 L741.8,125.9 L745.0,131.3 L748.2,136.7 L751.5,142.1 L754.8,147.5 L758.0,152.9 L761.2,158.2 L764.5,163.4 L767.8,168.4 L771.0,173.3 L774.2,178.1 L777.5,182.6 L780.8,187.0 L784.0,191.1 L787.2,195.1 L790.5,198.8 L793.8,202.2 L797.0,205.5 L800.2,208.5 L803.5,211.3 L806.8,213.9 L810.0,216.3 L813.2,218.5 L816.5,220.4 L819.8,222.3 L823.0,223.9 L826.2,225.4 L829.5,226.7 L832.8,227.9 L836.0,228.9 L839.2,229.9 L842.5,230.7 L845.8,231.4 L849.0,232.1 L852.2,232.7 L855.5,233.1 L858.8,233.6 L862.0,233.9 L865.2,234.3 L868.5,234.5 L871.8,234.8 L875.0,235.0 L878.2,235.1 L881.5,235.3 L884.8,235.4 L888.0,235.5 L888.0,236 L498.0,236 Z" fill="#ECF7F9" opacity=".65"/>
@@ -183,12 +178,9 @@
 <circle cx="684" cy="236" r="5.5" fill="#0E7490"/>
 <foreignObject x="654" y="235" width="60" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#0E7490"><span data-tex="M_3"></span></div></foreignObject>
 <path d="M693,236 L693,62" stroke="#16243F" stroke-width="2" stroke-dasharray="5 4"/>
-<foreignObject x="707" y="39" width="40" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:14px;color:#16243F"><span data-tex="\mu"></span></div></foreignObject>
-<text x="723" y="64" font-size="13" fill="#16243F" font-weight="700">= M들의 평균</text>
+<foreignObject x="705" y="40" width="195" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#16243F"><span data-tex="\mu"></span><span style="white-space:pre;font-weight:700;"> = M들의 평균</span></div></foreignObject>
 <text x="693" y="284" font-size="13.5" fill="#667085" text-anchor="middle">표본평균 M이 쌓여 만든 분포</text>
 <text x="450" y="344" font-size="15" fill="#101828" text-anchor="middle">표집분포는 사람들의 점수가 모인 분포가 아니라, 표본평균이라는 통계치가 모인 분포다</text>
-<text x="212" y="370" font-size="14" fill="#101828" text-anchor="end">무한히 많은</text>
-<foreignObject x="218" y="345" width="230" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:14px;color:#101828"><span data-tex="M_1,\, M_2,\, M_3,\, \ldots,\, M_\infty"></span></div></foreignObject>
-<text x="378" y="370" font-size="14" fill="#101828">를 모두 늘어놓으면 이 곡선이 된다</text>
+<foreignObject x="70" y="345" width="760" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:14px;color:#101828"><span style="white-space:pre;">무한히 많은 </span><span data-tex="M_1,\, M_2,\, M_3,\, \ldots,\, M_\infty"></span><span style="white-space:pre;"> 를 모두 늘어놓으면 이 곡선이 된다</span></div></foreignObject>
 <text x="450" y="392" font-size="14" fill="#344054" text-anchor="middle">실제로 그려본 적은 없지만, 그 모양을 알기 때문에 추론이 가능해진다</text>
 </svg>

@@ -6,22 +6,19 @@
 <path d="M215,102 L255,102" stroke="#344054" stroke-width="2.5"/>
 <path d="M247,95 L255,102 L247,109" stroke="#344054" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="245" y="40" width="185" height="124" rx="10" fill="#FBFCFD" stroke="#16243F" stroke-width="2.5"/>
-<text x="299" y="72" font-size="17" fill="#16243F" font-weight="800">제곱합</text>
-<foreignObject x="355" y="42" width="60" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:17px;color:#16243F"><span data-tex="SS"></span></div></foreignObject>
+<foreignObject x="0" y="42" width="674" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#16243F"><span style="white-space:pre;font-weight:800;">제곱합 </span><span data-tex="SS"></span></div></foreignObject>
 <foreignObject x="247" y="84" width="180" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#101828"><span data-tex="\sum (X - M)^2"></span></div></foreignObject>
 <text x="337" y="144" font-size="12.5" fill="#667085" text-anchor="middle">떨어진 정도를 모두 합침</text>
 <path d="M440,102 L480,102" stroke="#344054" stroke-width="2.5"/>
 <path d="M472,95 L480,102 L472,109" stroke="#344054" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="470" y="40" width="185" height="124" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
-<text x="533" y="72" font-size="17" fill="#0E7490" font-weight="800">분산</text>
-<foreignObject x="572" y="42" width="60" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:17px;color:#0E7490"><span data-tex="s^2"></span></div></foreignObject>
+<foreignObject x="224" y="42" width="676" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#0E7490"><span style="white-space:pre;font-weight:800;">분산 </span><span data-tex="s^2"></span></div></foreignObject>
 <foreignObject x="472" y="84" width="180" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#101828"><span data-tex="\dfrac{SS}{n-1}"></span></div></foreignObject>
 <text x="562" y="144" font-size="12.5" fill="#667085" text-anchor="middle">하나당 평균 얼마나 떨어졌나</text>
 <path d="M665,102 L705,102" stroke="#344054" stroke-width="2.5"/>
 <path d="M697,95 L705,102 L697,109" stroke="#344054" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="695" y="40" width="185" height="124" rx="10" fill="#FBFCFD" stroke="#C2452F" stroke-width="2.5"/>
-<text x="746" y="72" font-size="17" fill="#C2452F" font-weight="800">표준편차</text>
-<foreignObject x="819" y="42" width="50" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:17px;color:#C2452F"><span data-tex="s"></span></div></foreignObject>
+<foreignObject x="674" y="42" width="226" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#C2452F"><span style="white-space:pre;font-weight:800;">표준편차 </span><span data-tex="s"></span></div></foreignObject>
 <foreignObject x="697" y="84" width="180" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#101828"><span data-tex="\sqrt{s^2}"></span></div></foreignObject>
 <text x="787" y="144" font-size="12.5" fill="#667085" text-anchor="middle">원래 단위로 되돌림</text>
 <text x="450" y="204" font-size="15" fill="#101828" text-anchor="middle">자료 7, 3, 5, 4, 2, 3 을 넣으면</text>

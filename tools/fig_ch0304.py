@@ -127,7 +127,7 @@ def fig_sampling_concept():
     for _ in range(62):
         b.append(f'<circle cx="{random.uniform(26,206):.0f}" cy="{random.uniform(82,236):.0f}" '
                  f'r="4" fill="{FAINT}" opacity=".7"/>')
-    b.append(label_tex(116, 262, '우리가 알고 싶은 것은', r'\mu', 13, SOFT, None))
+    b.append(rich(116, 262, [('t', '우리가 알고 싶은 것은 '), ('m', r'\mu')], 13, SOFT))
 
     # ---- 가운데: 표본을 무한히 뽑는다 ----
     rows = [('1', 'M_1'), ('2', 'M_2'), ('3', 'M_3')]
@@ -136,12 +136,14 @@ def fig_sampling_concept():
         b.append(f'<path d="M238,{y+17} L282,{y+17}" stroke="{RULE}" stroke-width="2"/>')
         b.append(f'<rect x="288" y="{y}" width="166" height="34" rx="7" fill="{PAPER}" '
                  f'stroke="{TEAL}" stroke-width="2"/>')
-        b.append(label_tex(371, y + 22, f'표본 {idx}  →', m, 13.5, TEAL, 700))
+        b.append(rich(371, y + 22, [('t', f'표본 {idx}   '), ('m', r'\to\;' + m)],
+                      13.5, TEAL, weight=700, w=160))
     # 계속 이어진다는 표시
     b.append(text(371, 236, '⋮', 22, FAINT, 700, 'middle'))
     b.append(f'<rect x="282" y="250" width="178" height="34" rx="7" fill="{PAPER}" '
              f'stroke="{TEAL_LINE}" stroke-width="2" stroke-dasharray="5 4"/>')
-    b.append(label_tex(371, 272, '표본', r'\infty \;\to\; M_\infty', 13.5, TEAL, 700))
+    b.append(rich(371, 272, [('t', '표본 '), ('m', r'\infty \;\to\; M_\infty')],
+                  13.5, TEAL, weight=700, w=170))
     b.append(text(371, 306, '같은 크기의 표본을 무한히 뽑는다면', 13, SOFT, None, 'middle'))
     b.append(text(371, 326, '(머릿속에서만 하는 일이다)', 12.5, FAINT, None, 'middle'))
 
@@ -169,17 +171,17 @@ def fig_sampling_concept():
         b.append(f'<circle cx="{sx(v):.0f}" cy="{base}" r="5.5" fill="{TEAL}"/>')
         b.append(tex(sx(v), base + 22, m, 13, TEAL, 'middle', w=60, baseline=True))
     b.append(dashed(sx(0), base, top - 16, NAVY, 2))
-    b.append(tex(sx(0) + 14, top - 14, r'\mu', 14, NAVY, 'start', w=40, baseline=True))
-    b.append(text(sx(0) + 30, top - 14, '= M들의 평균', 13, NAVY, 700))
+    b.append(rich(sx(0) + 12, top - 14, [('m', r'\mu'), ('t', ' = M들의 평균')],
+                  13.5, NAVY, 'start', weight=700))
     b.append(text((px0 + px1) / 2, base + 48, '표본평균 M이 쌓여 만든 분포', 13.5, SOFT, None, 'middle'))
 
     # ---- 아래 설명 ----
     b.append(caption(450, H - 56,
                      '표집분포는 사람들의 점수가 모인 분포가 아니라, 표본평균이라는 통계치가 모인 분포다', 15, INK))
-    b.append(text(212, H - 30, '무한히 많은', 14, INK, None, 'end'))
-    b.append(tex(218, H - 30, r'M_1,\, M_2,\, M_3,\, \ldots,\, M_\infty', 14, INK, 'start',
-                 w=230, baseline=True))
-    b.append(text(378, H - 30, '를 모두 늘어놓으면 이 곡선이 된다', 14, INK))
+    b.append(rich(450, H - 30,
+                  [('t', '무한히 많은 '),
+                   ('m', r'M_1,\, M_2,\, M_3,\, \ldots,\, M_\infty'),
+                   ('t', ' 를 모두 늘어놓으면 이 곡선이 된다')], 14, INK))
     b.append(caption(450, H - 8, '실제로 그려본 적은 없지만, 그 모양을 알기 때문에 추론이 가능해진다', 14))
     write('ch04-sampling-concept.svg', svg(W, H, '\n'.join(b)))
 
