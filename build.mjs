@@ -82,8 +82,14 @@ function preprocess(src, figDir) {
 
   const blocks = [];
   const keep = html => `\n\n<!--BLK${blocks.push(html) - 1}-->\n\n`;
-  // 문단 중간에 들어가는 조각은 빈 줄 없이 감싼다
-  const keepInline = html => `<!--BLK${blocks.push(html) - 1}-->`;
+
+  // 문단 중간에 들어가는 조각에는 HTML 주석을 쓸 수 없다. 두 가지가 깨진다.
+  //  1) 콜아웃 라벨은 esc()를 거치므로 <!--...-->가 &lt;!--...--&gt;로 변해 복원되지 않는다.
+  //  2) 문단이 자리표시자로 시작하면 markdown-it이 그 줄을 HTML 블록으로 보고
+  //     같은 줄의 **강조**를 전부 날린다 (CommonMark HTML block type 2).
+  // 그래서 마크다운도 esc()도 건드리지 않는 사설영역 문자를 쓴다.
+  const IN0 = '\uE000', IN1 = '\uE001';
+  const keepInline = html => `${IN0}${blocks.push(html) - 1}${IN1}`;
 
   src = src.replace(/```r(?:[ \t]+([^\n]+))?\n([\s\S]*?)```/g, (_, label, code) =>
     keep(`<div class="code"><div class="code__bar">${esc(label || 'R')}</div><pre>${highlightR(code.replace(/\n$/, ''))}</pre></div>`));
@@ -133,8 +139,25 @@ function preprocess(src, figDir) {
     keep(`<div class="recap">${md.render(body)}</div>`));
 
   let html = md.render(src);
-  html = html.replace(/<p>\s*<!--BLK(\d+)-->\s*<\/p>/g, (_, i) => blocks[+i])
-             .replace(/<!--BLK(\d+)-->/g, (_, i) => blocks[+i]);
+
+  // 콜아웃·체크리스트 같은 블록은 그 자체가 자리표시자로 보관되는데,
+  // 안에 인라인 코드나 수식의 자리표시자가 또 들어 있다. String.replace는
+  // 끼워 넣은 문자열을 다시 훑지 않으므로 한 번만 돌리면 중첩된 것이 남는다.
+  // 더 바뀌지 않을 때까지 반복한다.
+  const restore = h => h
+    .replace(/<p>\s*<!--BLK(\d+)-->\s*<\/p>/g, (_, i) => blocks[+i])
+    .replace(/<!--BLK(\d+)-->/g, (_, i) => blocks[+i])
+    .replace(/\uE000(\d+)\uE001/g, (_, i) => blocks[+i]);
+
+  for (let pass = 0; pass < 10; pass++) {
+    const next = restore(html);
+    if (next === html) break;
+    html = next;
+  }
+
+  const left = html.match(/<!--BLK\d+-->|\uE000\d+\uE001/g);
+  if (left) throw new Error(`자리표시자가 복원되지 않았습니다 (${left.length}개): ${left.slice(0, 3).join(', ')}`);
+
   return html;
 }
 
