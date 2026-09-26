@@ -6,8 +6,9 @@
  * script.json의 beats[].say 를 한 문장씩 음성으로 만들고, 각 길이를 재서
  * 타임라인을 짠다. 영상은 이 타임라인을 따라 움직이므로 싱크가 어긋나지 않는다.
  *
- *   GEMINI_API_KEY 있음  →  Google Gemini TTS로 실제 음성을 만든다
- *   GEMINI_API_KEY 없음  →  문장 길이로 어림한 무음을 넣는다 (화면 초안 확인용)
+ *   키 있음  →  Google Gemini TTS로 실제 음성을 만든다
+ *   키 없음  →  문장 길이로 어림한 무음을 넣는다 (화면 초안 확인용)
+ *   키 위치: GEMINI_API_KEY 환경변수, 또는 ~/.config/ebook/gemini.key
  *
  * 같은 문장·목소리·모델이면 다시 부르지 않고 캐시를 쓴다. 무료 한도를 아끼려는 것.
  *
@@ -26,7 +27,11 @@ if (!existsSync(join(dir, 'script.json'))) {
 }
 const script = JSON.parse(readFileSync(join(dir, 'script.json'), 'utf8'));
 
-const KEY = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY || '';
+// 키는 환경변수 또는 저장소 밖의 파일(~/.config/ebook/gemini.key)에서 읽는다.
+// 저장소 안에는 절대 두지 않는다.
+const KEY_FILE = join(process.env.HOME || '/root', '.config', 'ebook', 'gemini.key');
+const KEY = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY
+             || (existsSync(KEY_FILE) ? readFileSync(KEY_FILE, 'utf8') : '')).trim();
 const API = 'https://generativelanguage.googleapis.com/v1beta';
 const RATE = 24000;                 // 모든 조각을 이 표본율로 맞춘다
 const LEAD = 0.35, GAP = 0.2, TAIL = 2.8;   // 앞 여백, 문장 사이, 끝 안내 카드
