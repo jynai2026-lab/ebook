@@ -234,11 +234,13 @@ def fig_normality():
             cum += y
             if cum >= tot / 2: med_i = i; break
         mean_i = int(sum(i * y for i, y in enumerate(ys)) / tot)
-        for idx, lab, color in ((mean_i, '평균', CORAL), (med_i, '중앙값', NAVY)):
+        # 두 선이 거의 붙는 경우가 있어 라벨을 좌우로 갈라 놓는다
+        for idx, lab, color, side in ((med_i, '중앙값', NAVY, -1), (mean_i, '평균', CORAL, 1)):
             px = px0 + (px1 - px0) * idx / n
             b.append(f'<path d="M{px:.0f},{base} L{px:.0f},{top}" stroke="{color}" stroke-width="2" stroke-dasharray="5 4"/>')
-            dy = 0 if lab == '평균' else 20
-            b.append(f'<text x="{px:.0f}" y="{top-6+dy if lab=="평균" else top+14}" font-size="14" font-weight="700" fill="{color}" text-anchor="middle">{lab}</text>')
+            anchor = 'end' if side < 0 else 'start'
+            b.append(f'<text x="{px + side * 6:.0f}" y="{top-6}" font-size="14" font-weight="700" '
+                     f'fill="{color}" text-anchor="{anchor}">{lab}</text>')
 
         b.append(f'<text x="{x0+205}" y="248" font-size="16" font-weight="800" fill="{vcolor}" text-anchor="middle">{verdict}</text>')
 
@@ -329,6 +331,7 @@ def fig_sample_size():
     rows = [(20, 0.59, .5567), (50, 0.94, .3508), (100, 1.33, .1864),
             (300, 2.30, .0220), (1000, 4.19, .0001)]
     x0, bw = 190, 480
+    xc = x0 + bw * 1.97 / 4.5          # .05 기준선 자리 (라벨 배치에도 쓴다)
     b.append(f'<text x="26" y="30" font-size="17" font-weight="800" fill="{NAVY}">평균 차이 0.15점, 표준편차 0.8로 고정 — 표본크기만 바꿨을 때</text>')
 
     for i, (n, t, p) in enumerate(rows):
@@ -338,11 +341,12 @@ def fig_sample_size():
         b.append(f'<text x="150" y="{y+5}" font-size="15" font-weight="700" fill="{INK}" text-anchor="end">n = {n}</text>')
         w = min(bw, bw * t / 4.5)
         b.append(f'<rect x="{x0}" y="{y-11}" width="{w:.0f}" height="22" rx="4" fill="{color}" opacity=".85"/>')
-        b.append(f'<text x="{x0+w+12:.0f}" y="{y+5}" font-size="14" font-weight="700" fill="{color}">'
+        # 막대가 기준선에 못 미치면 라벨이 선을 가로지르므로 선 오른쪽으로 민다
+        lx = max(x0 + w + 12, xc + 14)
+        b.append(f'<text x="{lx:.0f}" y="{y+5}" font-size="14" font-weight="700" fill="{color}">'
                  f'p = {p:.4f}{" ✓ 유의" if sig else ""}</text>')
 
     # .05 기준선
-    xc = x0 + bw * 1.97 / 4.5
     b.append(f'<path d="M{xc:.0f},52 L{xc:.0f},{68+len(rows)*44-18}" stroke="{CORAL}" stroke-width="2" stroke-dasharray="5 4"/>')
     b.append(f'<text x="{xc:.0f}" y="44" font-size="13" font-weight="700" fill="{CORAL}" text-anchor="middle">유의성 경계</text>')
 

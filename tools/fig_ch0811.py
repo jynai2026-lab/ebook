@@ -55,7 +55,7 @@ def fig_difference():
     b.append(f'<rect x="772" y="106" width="118" height="76" rx="9" fill="{NAVY}"/>')
     b.append(text(831, 134, '단일표본', 14, '#fff', 800, 'middle'))
     b.append(text(831, 156, 't-검정', 14, '#fff', 800, 'middle'))
-    b.append(text(831, 196, 'H₀ : μ_D = 0', 13, NAVY, 700, 'middle'))
+    b.append(tex(831, 198, r'H_0 : \mu_D = 0', 14, NAVY, 'middle', w=200))
     b.append(caption(450, H - 12, '원점수는 더 이상 쓰이지 않는다. 검정이 묻는 것은 "이 변화량들의 평균이 0인가" 하나뿐이다', 14.5, INK))
     write('ch08-difference.svg', svg(W, H, '\n'.join(b)))
 
@@ -183,7 +183,7 @@ def fig_alpha_inflation():
              f'stroke-width="1.8" stroke-dasharray="6 4"/>')
     b.append(f'<path d="M{px1},{ypos(.05):.0f} L{px1+16},{ypos(.05):.0f}" stroke="{TEAL}" '
              f'stroke-width="1.8" stroke-dasharray="6 4"/>')
-    b.append(text(px1 + 20, ypos(.05) + 5, 'α = .05', 13, TEAL, 800))
+    b.append(tex(px1 + 20, ypos(.05) + 5, r'\alpha = .05', 13, TEAL, 'start', w=90, baseline=True))
     for v in (0, .2, .4, .6):
         b.append(text(px0 - 12, ypos(v) + 5, f'{v:.1f}', 12.5, FAINT, None, 'end'))
     bw = 74
@@ -255,7 +255,8 @@ def fig_ss_partition():
 
     px, pv = xs[0], 62.0
     b.append(f'<circle cx="{px}" cy="{ypos(pv):.0f}" r="6.5" fill="{CORAL}"/>')
-    b.append(text(px + 14, ypos(pv) + 5, 'Xᵢ₁  (집단 A의 한 사람)', 13, CORAL, 700))
+    b.append(tex(px + 14, ypos(pv) + 5, 'X_{i1}', 13.5, CORAL, 'start', w=50, baseline=True))
+    b.append(text(px + 48, ypos(pv) + 5, '(집단 A의 한 사람)', 13, CORAL, 700))
 
     bars = [
         (px - 46, pv, gm[0], CORAL, '집단 내 편차', '개인차'),
@@ -275,17 +276,20 @@ def fig_ss_partition():
         b.append(text(80, y, lab, 13, INK, 700))
         b.append(text(190, y, f'— {note}', 12.5, SOFT))
     b.append(caption(450, 36, '한 사람이 전체 평균에서 벗어난 거리는 정확히 두 조각으로 나뉜다', 16, INK))
-    b.append(text(392, base + 52, '(Xᵢⱼ − X̄) = (X̄ⱼ − X̄) + (Xᵢⱼ − X̄ⱼ)', 15, INK, 700))
-    b.append(text(392, base + 80, '각각을 제곱해 모두 더한 것이 SS_T = SS_B + SS_W 이다', 13, SOFT))
+    b.append(tex(392, base + 52, r'(X_{ij} - \bar{X}) = (\bar{X_j} - \bar{X}) + (X_{ij} - \bar{X_j})',
+                 15.5, INK, 'start', w=460, baseline=True))
+    b.append(text(392, base + 80, '각각을 제곱해 모두 더한 것이', 13, SOFT))
+    b.append(tex(572, base + 80, r'SS_T = SS_B + SS_W', 13.5, SOFT, 'start', w=200, baseline=True))
+    b.append(text(706, base + 80, '이다', 13, SOFT))
     write('ch09-ss-partition.svg', svg(W, H, '\n'.join(b)))
 
 
 def fig_f_structure():
     """F값의 구조"""
-    W, H = 900, 250
+    W, H = 900, 262
     b = []
     cx = 450
-    b.append(text(cx, 54, 'F  =', 26, NAVY, 800, 'end'))
+    b.append(tex(cx - 6, 56, 'F =', 26, NAVY, 'end', w=90))
     # 분자
     b.append(f'<rect x="{cx+16}" y="30" width="330" height="40" rx="8" fill="{TEAL_TINT}" '
              f'stroke="{TEAL}" stroke-width="2"/>')
@@ -298,15 +302,16 @@ def fig_f_structure():
 
     b.append(text(cx - 260, 56, '처치효과가 0이면', 14, MID, 700))
     b.append(text(cx - 260, 80, '분자와 분모가 같아져', 14, MID, 700))
-    b.append(text(cx - 260, 104, 'F = 1 이 된다', 15, NAVY, 800))
-    b.append(text(cx - 260, 132, 'F가 1보다 충분히 크면', 13.5, SOFT))
+    b.append(tex(cx - 260, 108, 'F = 1', 15, NAVY, 'start', w=70, baseline=True))
+    b.append(text(cx - 205, 108, '이 된다', 15, NAVY, 800))
+    b.append(text(cx - 260, 134, 'F가 1보다 충분히 크면', 13.5, SOFT))
     b.append(text(cx - 260, 152, '개인차만으로는 설명되지', 13.5, SOFT))
     b.append(text(cx - 260, 172, '않는 무언가가 있다는 뜻', 13.5, SOFT))
 
-    b.append(f'<rect x="{cx+16}" y="152" width="330" height="54" rx="8" fill="{PAPER}" '
+    b.append(f'<rect x="{cx+16}" y="152" width="330" height="62" rx="8" fill="{PAPER}" '
              f'stroke="{RULE}" stroke-width="2"/>')
-    b.append(text(cx + 181, 176, '교수법 자료:  F = 209.43 / 11.56', 14, INK, 700, 'middle'))
-    b.append(text(cx + 181, 196, '= 18.12', 15, NAVY, 800, 'middle'))
+    b.append(text(cx + 181, 172, '교수법 자료', 13, SOFT, 700, 'middle'))
+    b.append(tex(cx + 181, 194, r'F = \dfrac{209.43}{11.56} = 18.12', 16, INK, 'middle', w=300))
     b.append(caption(450, H - 12, '7장에서 t값을 "관찰된 차이 ÷ 그 차이가 변동하는 정도"로 읽었던 것과 같은 구조다', 14))
     write('ch09-f-structure.svg', svg(W, H, '\n'.join(b)))
 
@@ -340,11 +345,13 @@ def fig_f_distribution():
         b.append(f'<path d="M{sx(v):.0f},{base} L{sx(v):.0f},{base+6}" stroke="{MID}" stroke-width="1.6"/>')
         b.append(text(sx(v), base + 22, str(v), 12.5, FAINT, None, 'middle'))
     b.append(dashed(sx(crit), base, top + 44, CORAL, 2.2))
-    b.append(text(sx(crit) + 8, top + 56, '임계값 3.354 (α = .05)', 13.5, CORAL, 800))
+    b.append(text(sx(crit) + 8, top + 56, '임계값 3.354', 13.5, CORAL, 800))
+    b.append(tex(sx(crit) + 94, top + 56, r'(\alpha = .05)', 13.5, CORAL, 'start', w=110, baseline=True))
     b.append(f'<circle cx="{sx(18.12):.0f}" cy="{base}" r="6" fill="{NAVY}"/>')
     b.append(dashed(sx(18.12), base, top + 90, NAVY, 2.2))
     b.append(text(sx(18.12), top + 84, '우리 결과 F = 18.12', 13.5, NAVY, 800, 'middle'))
-    b.append(text(px0 + 6, top - 4, 'F 분포 (df₁ = 2, df₂ = 27)', 14, SOFT))
+    b.append(text(px0 + 6, top - 4, 'F 분포', 14, SOFT))
+    b.append(tex(px0 + 52, top - 4, r'(df_1 = 2,\; df_2 = 27)', 14, SOFT, 'start', w=190, baseline=True))
     b.append(caption(450, H - 34, '분산의 비율이므로 음수가 없고, 0에서 시작해 오른쪽으로 길게 늘어진다', 14.5, INK))
     b.append(caption(450, H - 12, '기각역이 오른쪽 꼬리에만 있는 일방검정이다', 13.5))
     write('ch09-f-distribution.svg', svg(W, H, '\n'.join(b)))
@@ -401,14 +408,14 @@ def fig_t_vs_anova():
         b.append(f'<rect x="90" y="{y}" width="250" height="30" rx="6" fill="{CORAL_TINT}" '
                  f'stroke="{CORAL}" stroke-width="1.6"/>')
         b.append(text(160, y + 20, p, 13.5, INK, 700, 'middle'))
-        b.append(text(300, y + 20, 'α = .05', 13, CORAL, 700, 'middle'))
+        b.append(tex(300, y + 20, r'\alpha = .05', 13, CORAL, 'middle', w=90))
     b.append(text(215, 198, '군집당 오류 .143 — 통제 실패', 14.5, CORAL, 800, 'middle'))
 
     b.append(panel(470, 0, 430, H - 52, stroke=TEAL, sw=2.5))
     b.append(text(685, 34, '분산분석 한 번', 16, TEAL, 800, 'middle'))
     b.append(f'<rect x="530" y="86" width="310" height="62" rx="8" fill="{TEAL_TINT}" '
              f'stroke="{TEAL}" stroke-width="2"/>')
-    b.append(text(685, 112, 'H₀ : μ_A = μ_B = μ_C', 16, INK, 800, 'middle'))
+    b.append(tex(685, 114, r'H_0 : \mu_A = \mu_B = \mu_C', 17, INK, 'middle', w=300))
     b.append(text(685, 134, '세 평균이 모두 같은가?', 13, MID, None, 'middle'))
     b.append(text(685, 198, '군집당 오류 .05 — 유지', 14.5, TEAL, 800, 'middle'))
     b.append(caption(450, H - 14, '대신 기각되어도 어느 집단끼리 다른지는 알려주지 않는다. 그 확인이 10장의 다중비교다', 14, INK))
@@ -451,7 +458,7 @@ def fig_familywise():
         y = 100 + i * 28
         b.append(f'<rect x="60" y="{y}" width="{140}" height="20" rx="4" fill="{CORAL}" opacity=".35"/>')
         b.append(text(50, y + 15, lab, 12.5, MID, 700, 'end'))
-        b.append(text(212, y + 15, 'α = .05', 12.5, CORAL, 700))
+        b.append(tex(212, y + 15, r'\alpha = .05', 13, CORAL, 'start', w=90, baseline=True))
     b.append(text(215, 196, '쌓이면 군집당 .143', 15, CORAL, 800, 'middle'))
 
     b.append(panel(470, 40, 430, 172, stroke=TEAL, sw=2.5))
@@ -460,7 +467,7 @@ def fig_familywise():
         y = 100 + i * 28
         b.append(f'<rect x="530" y="{y}" width="{140}" height="20" rx="4" fill="{TEAL}" opacity=".35"/>')
         b.append(text(520, y + 15, lab, 12.5, MID, 700, 'end'))
-        b.append(text(682, y + 15, 'α = .0167', 12.5, TEAL, 700))
+        b.append(tex(682, y + 15, r'\alpha = .0167', 13, TEAL, 'start', w=100, baseline=True))
     b.append(text(685, 196, '전체가 .049로 묶인다', 15, TEAL, 800, 'middle'))
     b.append(caption(450, 26, '연구자가 통제해야 할 것은 개별 비교가 아니라 비교들의 묶음이다', 15.5, INK))
     b.append(caption(450, H - 14, '다중비교 방법들은 모두 "군집당 .05를 유지하면서 개별 비교를 어떻게 할 것인가"에 대한 답이다', 14))
@@ -651,29 +658,30 @@ def fig_ss_split():
     total_w, x0 = 800, 50
     # 위: 일원
     b.append(text(x0, 42, '일원분산분석', 15, SOFT, 800))
-    parts1 = [('설명되는 변동  SS_B', .38, TEAL), ('오차  SS_W', .62, FAINT)]
+    parts1 = [('설명되는 변동', 'SS_B', .38, TEAL), ('오차', 'SS_W', .62, FAINT)]
     xx = x0
-    for lab, frac, c in parts1:
+    for lab, sym, frac, c in parts1:
         w = total_w * frac
         b.append(f'<rect x="{xx:.0f}" y="56" width="{w-4:.0f}" height="44" rx="6" fill="{c}" opacity=".35" '
                  f'stroke="{c}" stroke-width="2"/>')
-        b.append(text(xx + w / 2 - 2, 84, lab, 13.5, INK, 700, 'middle'))
+        b.append(text(xx + w / 2 - 34, 84, lab, 13.5, INK, 700, 'middle'))
+        b.append(tex(xx + w / 2 + 12, 84, sym, 13.5, INK, 'start', w=70, baseline=True))
         xx += w
     # 아래: 이원
     b.append(text(x0, 142, '이원분산분석', 15, NAVY, 800))
-    parts2 = [('SS_A\n성별', .012, NAVY), ('SS_B  학교 유형', .40, TEAL),
-              ('SS_AB\n상호작용', .066, AMBER), ('오차  SS_S/AB', .522, FAINT)]
+    parts2 = [('성별', 'SS_A', .012, NAVY), ('학교 유형', 'SS_B', .40, TEAL),
+              ('상호작용', 'SS_{AB}', .066, AMBER), ('오차', 'SS_{S/AB}', .522, FAINT)]
     xx = x0
-    for lab, frac, c in parts2:
+    for lab, sym, frac, c in parts2:
         w = total_w * frac
         b.append(f'<rect x="{xx:.0f}" y="156" width="{max(w-4,6):.0f}" height="44" rx="6" fill="{c}" '
                  f'opacity=".35" stroke="{c}" stroke-width="2"/>')
-        lines = lab.split('\n')
-        if w > 70:
-            for k, ln in enumerate(lines):
-                b.append(text(xx + w / 2 - 2, 178 + (k - (len(lines) - 1) / 2) * 16, ln, 13, INK, 700, 'middle'))
+        if w > 110:
+            b.append(text(xx + w / 2 - 30, 184, lab, 13, INK, 700, 'middle'))
+            b.append(tex(xx + w / 2 + 6, 184, sym, 13.5, INK, 'start', w=90, baseline=True))
         else:
-            b.append(text(xx + w / 2 - 2, 218, lines[0], 11.5, INK, 700, 'middle'))
+            # 칸이 좁으면 막대 아래에 기호만 적는다
+            b.append(tex(xx + w / 2, 222, sym, 12.5, INK, 'middle', w=90))
         xx += w
     b.append(caption(450, 26, '전체 변동을 어떻게 나누는가', 16.5, INK))
     b.append(caption(450, H - 14, '요인을 하나 더 넣으면 그만큼 오차에서 빠져나간다. 분모가 작아지니 F가 커진다', 14, INK))
@@ -737,7 +745,8 @@ def fig_interaction_plot():
     b.append(f'<rect x="{xs[2]-40:.0f}" y="{ypos(84):.0f}" width="80" height="{ypos(74)-ypos(84):.0f}" '
              f'rx="8" fill="none" stroke="{AMBER}" stroke-width="2.4" stroke-dasharray="5 4"/>')
     b.append(text(xs[2], ypos(84) - 12, '7.6점 차이', 13.5, AMBER, 800, 'middle'))
-    b.append(caption(450, 44, '성별 × 학교 유형  F(2, 102) = 6.27, p = .003', 16, INK))
+    b.append(text(280, 44, '성별 × 학교 유형', 16, INK, 700))
+    b.append(tex(400, 44, r'F(2,\,102) = 6.27,\; p = .003', 16, INK, 'start', w=260, baseline=True))
     b.append(caption(450, H - 34, '분반과 합반에서는 남녀가 거의 겹치는데 단성학교에서만 벌어진다', 14.5, INK))
     b.append(caption(450, H - 12, '방향이 반대인 차이들이 주변평균에서는 상쇄되어 사라진다', 13.5))
     write('ch11-interaction-plot.svg', svg(W, H, '\n'.join(b)))

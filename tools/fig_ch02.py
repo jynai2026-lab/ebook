@@ -69,7 +69,9 @@ def fig_deviation():
 
     b.append(text(px0 - 26, base + 34, '편차', 14, SOFT, 700, 'end'))
     b.append(f'<path d="M{px0+10},{base+50} L{px1},{base+50}" stroke="{RULE}" stroke-width="1.5"/>')
-    b.append(caption(450, base + 78, '편차를 모두 더하면  (+3) + (−1) + (+1) + 0 + (−2) + (−1) = 0', 16, INK))
+    b.append(text(26, base + 78, '편차를 모두 더하면', 15, INK, 700))
+    b.append(tex(186, base + 78, r'(+3) + (-1) + (+1) + 0 + (-2) + (-1) = 0', 16, INK, 'start',
+                 w=520, baseline=True))
     b.append(caption(450, base + 104,
                      '평균은 편차의 합이 0이 되는 지점이다. 그래서 편차를 그냥 더해서는 흩어진 정도를 잴 수 없다', 14, SOFT))
     write('ch02-deviation.svg', svg(W, H, '\n'.join(b)))
@@ -77,7 +79,7 @@ def fig_deviation():
 
 def fig_why_square():
     """왜 제곱하는가 — 절댓값과 제곱의 차이"""
-    W, H = 900, 290
+    W, H = 900, 306
     b = []
     for x0, title, note, color in (
         (0, '절댓값을 씌우면', '큰 편차와 작은 편차를 같은 비중으로 센다', FAINT),
@@ -98,7 +100,7 @@ def fig_why_square():
             b.append(f'<rect x="{x:.0f}" y="{base-h:.0f}" width="{step*0.52:.0f}" height="{h:.0f}" rx="3" fill="{color}" opacity=".85"/>')
             b.append(text(x + step * 0.26, base - h - 8, str(v), 13, INK, 700, 'middle'))
             b.append(text(x + step * 0.26, base + 22, f'편차 {d}', 12, SOFT, None, 'middle'))
-        b.append(text(x0 + 215, base + 54, note, 14, SOFT, None, 'middle'))
+        b.append(text(x0 + 215, base + 50, note, 14, SOFT, None, 'middle'))
 
     b.append(caption(450, H - 12,
                      '제곱을 쓰면 평균에서 멀리 떨어진 값이 흩어짐에 더 크게 반영된다. 대신 단위가 제곱이 되어 표준편차로 되돌린다', 14))
@@ -107,31 +109,36 @@ def fig_why_square():
 
 def fig_ss_flow():
     """SS -> 분산 -> 표준편차 흐름"""
-    W, H = 900, 250
+    W, H = 900, 262
     b = []
+    # 이름표의 기호(SS, s², s)도 본문 수식과 같은 모양이어야 한다
     boxes = [
-        (20, '편차', 'X − M', '평균에서 얼마나 떨어졌나', FAINT),
-        (245, '제곱합 SS', 'Σ(X − M)²', '떨어진 정도를 모두 합침', NAVY),
-        (470, '분산 s²', 'SS / (n−1)', '하나당 평균 얼마나 떨어졌나', TEAL),
-        (695, '표준편차 s', '√s²', '원래 단위로 되돌림', CORAL),
+        (20, '편차', '', r'X - M', '평균에서 얼마나 떨어졌나', FAINT),
+        (245, '제곱합', 'SS', r'\sum (X - M)^2', '떨어진 정도를 모두 합침', NAVY),
+        (470, '분산', 's^2', r'\dfrac{SS}{n-1}', '하나당 평균 얼마나 떨어졌나', TEAL),
+        (695, '표준편차', 's', r'\sqrt{s^2}', '원래 단위로 되돌림', CORAL),
     ]
-    for x, title, formula, note, color in boxes:
-        b.append(f'<rect x="{x}" y="40" width="185" height="120" rx="10" fill="{PAPER}" stroke="{color}" stroke-width="2.5"/>')
-        b.append(text(x + 92, 72, title, 17, color, 800, 'middle'))
-        b.append(text(x + 92, 104, formula, 17, INK, 700, 'middle', ' font-style="italic"'))
-        b.append(text(x + 92, 136, note, 12.5, SOFT, None, 'middle'))
+    for x, title, sym, formula, note, color in boxes:
+        b.append(f'<rect x="{x}" y="40" width="185" height="124" rx="10" fill="{PAPER}" stroke="{color}" stroke-width="2.5"/>')
+        if sym:
+            b.append(label_tex(x + 92, 72, title, sym, 17, color, 800))
+        else:
+            b.append(text(x + 92, 72, title, 17, color, 800, 'middle'))
+        b.append(tex(x + 92, 108, formula, 17, INK, 'middle', w=180))
+        b.append(text(x + 92, 144, note, 12.5, SOFT, None, 'middle'))
         if x < 695:
-            b.append(f'<path d="M{x+195},100 L{x+235},100" stroke="{MID}" stroke-width="2.5"/>')
-            b.append(f'<path d="M{x+227},93 L{x+235},100 L{x+227},107" stroke="{MID}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
+            b.append(f'<path d="M{x+195},102 L{x+235},102" stroke="{MID}" stroke-width="2.5"/>')
+            b.append(f'<path d="M{x+227},95 L{x+235},102 L{x+227},109" stroke="{MID}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>')
 
-    b.append(caption(450, 200, '자료 7, 3, 5, 4, 2, 3 을 넣으면   SS = 16  →  s² = 16 / 5 = 3.2  →  s = 1.79', 16, INK))
-    b.append(caption(450, 228, '표준편차는 "평균에서 평균적으로 이만큼 떨어져 있다"는 뜻이다', 14))
+    b.append(text(450, 204, '자료 7, 3, 5, 4, 2, 3 을 넣으면', 15, INK, None, 'middle'))
+    b.append(tex(450, 230, r'SS = 16 \;\rightarrow\; s^2 = \dfrac{16}{5} = 3.2 \;\rightarrow\; s = \sqrt{3.2} = 1.79',
+                 16, INK, 'middle', w=640))
     write('ch02-ss-flow.svg', svg(W, H, '\n'.join(b)))
 
 
 def fig_n_minus_1():
     """왜 n이 아니라 n-1로 나누는가"""
-    W, H = 900, 300
+    W, H = 900, 312
     b = []
     b.append(text(26, 30, '표본은 모집단보다 덜 퍼져 보인다', 18, NAVY, 800))
 
@@ -153,13 +160,16 @@ def fig_n_minus_1():
     lo, hi = min(xs), max(xs)
     b.append(f'<path d="M{sx(lo):.0f},{base+16} L{sx(hi):.0f},{base+16}" stroke="{TEAL}" stroke-width="3"/>')
     b.append(f'<path d="M{sx(lo):.0f},{base+9} L{sx(lo):.0f},{base+23} M{sx(hi):.0f},{base+9} L{sx(hi):.0f},{base+23}" stroke="{TEAL}" stroke-width="3"/>')
-    b.append(text(sx((lo + hi) / 2), base + 42, '표본이 실제로 퍼진 범위', 14, TEAL, 700, 'middle'))
+    b.append(text(sx((lo + hi) / 2), base + 40, '표본이 실제로 퍼진 범위', 14, TEAL, 700, 'middle'))
     b.append(f'<path d="M{sx(-3.2):.0f},{base+16} L{sx(3.2):.0f},{base+16}" stroke="{NAVY}" stroke-width="1.5" stroke-dasharray="4 4"/>')
-    b.append(text(sx(-3.2), base + 42, '모집단이 퍼진 범위', 13, NAVY, None, 'start'))
+    # 모집단 범위 라벨은 점선 왼쪽 끝 바깥에 둔다. 표본 범위 라벨과 같은 줄에 두면 겹친다.
+    b.append(text(sx(-3.2) - 8, base + 21, '모집단이 퍼진 범위', 13, NAVY, 700, 'end'))
 
-    b.append(caption(450, H - 42,
-                     '표본은 극단값을 놓치기 쉬워 분산을 과소추정한다. n 대신 n−1로 나누면 그만큼 값이 커진다', 15, INK))
-    b.append(caption(450, H - 16, '이 보정을 자유도라고 부른다', 14))
+    b.append(caption(450, H - 46,
+                     '표본은 극단값을 놓치기 쉬워 분산을 과소추정한다.', 15, INK))
+    b.append(text(292, H - 22, 'n 대신', 15, INK, None, 'end'))
+    b.append(tex(298, H - 22, r'n-1', 15, INK, 'start', w=40, baseline=True))
+    b.append(text(336, H - 22, '로 나누면 그만큼 값이 커진다. 이 보정을 자유도라고 부른다', 15, INK))
     write('ch02-n-minus-1.svg', svg(W, H, '\n'.join(b)))
 
 
@@ -187,8 +197,9 @@ def fig_sd_meaning():
 
     for v in (-3, -2, -1, 0, 1, 2, 3):
         b.append(dashed(sx(v), base, base - 8, MID, 1.5, '2 3'))
-        lab = 'M' if v == 0 else (f'M{v:+d}SD' if abs(v) == 1 else f'M{v:+d}SD')
-        b.append(text(sx(v), base + 24, lab, 13, SOFT, None, 'middle'))
+        # 빼기 기호를 제대로 찍으려면 수식으로 조판해야 한다 (하이픈이 아니다)
+        lab = 'M' if v == 0 else f'M {"+" if v > 0 else "-"} {abs(v)}SD'
+        b.append(tex(sx(v), base + 24, lab, 13, SOFT, 'middle', w=120, baseline=True))
 
     for lo, hi, pct, y in ((-1, 1, '68%', top + 46), (-2, 2, '95%', top + 88), (-3, 3, '99.7%', top + 128)):
         b.append(f'<path d="M{sx(lo):.0f},{y} L{sx(hi):.0f},{y}" stroke="{CORAL}" stroke-width="2"/>')
@@ -203,13 +214,13 @@ def fig_sd_meaning():
 
 def fig_zscore():
     """표준점수 — 단위가 다른 두 점수를 비교한다"""
-    W, H = 900, 320
+    W, H = 900, 336
     b = []
     subjects = [('수학', 70, 5, 72.8, 0.56, 0), ('영어', 90, 8, 94, 0.50, 470)]
     for name, mu, sd, raw, z, x0 in subjects:
-        b.append(panel(x0, 0, 430, 200))
+        b.append(panel(x0, 0, 430, 214))
         b.append(text(x0 + 26, 34, f'{name}  (평균 {mu}, 표준편차 {sd})', 16, NAVY, 800))
-        px0, px1, base, top = x0 + 36, x0 + 394, 158, 62
+        px0, px1, base, top = x0 + 36, x0 + 394, 152, 60
         sx = scale(mu - 3.4 * sd, mu + 3.4 * sd, px0, px1)
         pts = normal_pts(mu, sd, mu - 3.4 * sd, mu + 3.4 * sd)
         peak = max(y for _, y in pts)
@@ -221,11 +232,12 @@ def fig_zscore():
         b.append(dashed(sx(raw), base, top - 2, CORAL, 2.4))
         b.append(f'<circle cx="{sx(raw):.0f}" cy="{base}" r="6" fill="{CORAL}"/>')
         b.append(text(sx(raw), top - 10, f'{raw}점', 15, CORAL, 800, 'middle'))
-        b.append(text(x0 + 215, base + 26, f'z = ({raw} − {mu}) / {sd} = {z}', 15, INK, 700, 'middle'))
+        b.append(tex(x0 + 215, base + 32,
+                     rf'z = \dfrac{{{raw} - {mu}}}{{{sd}}} = {z}', 16, INK, 'middle', w=300))
 
-    b.append(f'<rect x="270" y="222" width="360" height="46" rx="23" fill="{NAVY}"/>')
-    b.append(text(450, 251, '수학 0.56  >  영어 0.50', 19, '#fff', 800, 'middle'))
-    b.append(caption(450, 296,
+    b.append(f'<rect x="270" y="236" width="360" height="46" rx="23" fill="{NAVY}"/>')
+    b.append(text(450, 265, '수학 0.56  >  영어 0.50', 19, '#fff', 800, 'middle'))
+    b.append(caption(450, 314,
                      '원점수는 영어가 훨씬 높지만, 각 과목 안에서의 위치로 바꾸면 수학을 더 잘 본 것이다', 15, INK))
     write('ch02-zscore.svg', svg(W, H, '\n'.join(b)))
 

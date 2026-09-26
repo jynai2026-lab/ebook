@@ -25,7 +25,8 @@
 <path d="M166,236 L780,236" stroke="#344054" stroke-width="2"/>
 <rect x="680" y="99" width="80" height="62" rx="8" fill="none" stroke="#B54708" stroke-width="2.4" stroke-dasharray="5 4"/>
 <text x="720" y="87" font-size="13.5" fill="#B54708" font-weight="800" text-anchor="middle">7.6점 차이</text>
-<text x="450" y="44" font-size="16" fill="#101828" text-anchor="middle">성별 × 학교 유형  F(2, 102) = 6.27, p = .003</text>
+<text x="280" y="44" font-size="16" fill="#101828" font-weight="700">성별 × 학교 유형</text>
+<foreignObject x="400" y="16" width="260" height="45"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:16px;color:#101828"><span data-tex="F(2,\,102) = 6.27,\; p = .003"></span></div></foreignObject>
 <text x="450" y="286" font-size="14.5" fill="#101828" text-anchor="middle">분반과 합반에서는 남녀가 거의 겹치는데 단성학교에서만 벌어진다</text>
 <text x="450" y="308" font-size="13.5" fill="#344054" text-anchor="middle">방향이 반대인 차이들이 주변평균에서는 상쇄되어 사라진다</text>
 </svg>

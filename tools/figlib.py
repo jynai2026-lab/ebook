@@ -80,3 +80,52 @@ def dashed(x, y0, y1, color, w=2, dash='5 4'):
 
 def caption(x, y, s, size=14, color=MID):
     return text(x, y, s, size, color, anchor='middle')
+
+
+def tex(x, y, latex, size=15, color=INK, anchor='middle', w=380, h=None, baseline=False):
+    """수식을 KaTeX로 조판해 넣는다.
+
+    SVG의 <text>로는 분수를 가로선으로, 근호를 제대로 된 기호로 그릴 수 없다.
+    그래서 자리표시자만 남기고, 빌드(build.mjs)가 SVG를 본문에 끼워 넣을 때
+    KaTeX HTML로 바꾼다.
+
+    (x, y)는 수식이 놓일 자리다. anchor가 'middle'이면 가운데, 'start'면
+    왼쪽 끝, 'end'면 오른쪽 끝이 그 x에 온다. w는 글상자의 폭일 뿐이고
+    배경이 없으므로 넉넉히 잡아도 다른 요소를 가리지 않는다.
+
+    baseline=True면 y를 text()와 같은 글줄 기준선으로 본다. 한 줄 안에서
+    text()와 나란히 놓을 때 쓴다. 기본값(False)은 y를 수식의 세로 가운데로
+    보므로, 분수처럼 위아래로 뻗는 수식을 홀로 놓을 때 알맞다.
+    """
+    if baseline:
+        y -= size * 0.36
+    h = h or size * 2.8
+    just = {'middle': 'center', 'start': 'flex-start', 'end': 'flex-end'}[anchor]
+    fx = {'middle': x - w / 2, 'start': x, 'end': x - w}[anchor]
+    safe = (latex.replace('&', '&amp;').replace('<', '&lt;')
+                 .replace('>', '&gt;').replace('"', '&quot;'))
+    return (f'<foreignObject x="{fx:.0f}" y="{y - h / 2:.0f}" '
+            f'width="{w:.0f}" height="{h:.0f}">'
+            f'<div xmlns="http://www.w3.org/1999/xhtml" class="figtex" '
+            f'style="justify-content:{just};font-size:{size}px;color:{color}">'
+            f'<span data-tex="{safe}"></span></div></foreignObject>')
+
+
+def _wide(s, size):
+    """글자 폭 어림. 한글은 글자크기만큼, 로마자·숫자·기호는 그 절반쯤 잡는다."""
+    return sum(size if ord(c) > 0x2000 else size * 0.55 for c in s)
+
+
+def label_tex(cx, y, korean, latex, size=15, color=INK, weight=700, gap=5):
+    """'분산 s²'처럼 한글과 기호가 섞인 이름표를 가운데 정렬로 놓는다.
+
+    한글은 본문 글꼴로, 기호는 KaTeX로 조판해야 본문 수식과 모양이 맞는다.
+    두 조각의 폭을 어림해 전체가 cx에 가운데 오도록 자리를 잡는다.
+    """
+    kw = _wide(korean, size)
+    mw = _wide(latex.replace('^', '').replace('_', '').replace('\\', ''), size * 1.05)
+    total = kw + gap + mw
+    x = cx - total / 2
+    out = [text(x, y, korean, size, color, weight)] if korean else []
+    out.append(tex(x + kw + gap, y, latex, size, color, 'start', w=mw + 40, baseline=True))
+    return '\n'.join(out)

@@ -2,13 +2,13 @@
 <text x="26" y="30" font-size="17" font-weight="800" fill="#16243F">평균 차이 0.15점, 표준편차 0.8로 고정 — 표본크기만 바꿨을 때</text>
 <text x="150" y="73" font-size="15" font-weight="700" fill="#101828" text-anchor="end">n = 20</text>
 <rect x="190" y="57" width="63" height="22" rx="4" fill="#98A2B3" opacity=".85"/>
-<text x="265" y="73" font-size="14" font-weight="700" fill="#98A2B3">p = 0.5567</text>
+<text x="414" y="73" font-size="14" font-weight="700" fill="#98A2B3">p = 0.5567</text>
 <text x="150" y="117" font-size="15" font-weight="700" fill="#101828" text-anchor="end">n = 50</text>
 <rect x="190" y="101" width="100" height="22" rx="4" fill="#98A2B3" opacity=".85"/>
-<text x="302" y="117" font-size="14" font-weight="700" fill="#98A2B3">p = 0.3508</text>
+<text x="414" y="117" font-size="14" font-weight="700" fill="#98A2B3">p = 0.3508</text>
 <text x="150" y="161" font-size="15" font-weight="700" fill="#101828" text-anchor="end">n = 100</text>
 <rect x="190" y="145" width="142" height="22" rx="4" fill="#98A2B3" opacity=".85"/>
-<text x="344" y="161" font-size="14" font-weight="700" fill="#98A2B3">p = 0.1864</text>
+<text x="414" y="161" font-size="14" font-weight="700" fill="#98A2B3">p = 0.1864</text>
 <text x="150" y="205" font-size="15" font-weight="700" fill="#101828" text-anchor="end">n = 300</text>
 <rect x="190" y="189" width="245" height="22" rx="4" fill="#0E7490" opacity=".85"/>
 <text x="447" y="205" font-size="14" font-weight="700" fill="#0E7490">p = 0.0220 ✓ 유의</text>

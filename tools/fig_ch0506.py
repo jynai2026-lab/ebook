@@ -20,7 +20,7 @@ def fig_why_null():
     b.append(f'<path d="{line}" fill="none" stroke="{TEAL}" stroke-width="2.6"/>')
     b.append(axis(px0, px1, base))
     b.append(dashed(sx(0), base, top + 4, TEAL, 2))
-    b.append(text(sx(0), base + 22, '차이 = 0', 14, TEAL, 700, 'middle'))
+    b.append(tex(sx(0), base + 24, r'\mu_1 - \mu_2 = 0', 14, TEAL, 'middle', w=200))
     b.append(text(215, base + 48, '중심이 정해지니 확률을 계산할 수 있다', 13.5, SOFT, None, 'middle'))
 
     # 오른쪽: 대립가설
@@ -81,29 +81,36 @@ def fig_pvalue():
 
 def fig_error_table():
     """제1종 · 제2종 오류 2×2"""
-    W, H = 900, 330
+    W, H = 900, 348
     b = []
-    x0, y0, cw, ch = 250, 74, 300, 88
+    x0, y0, cw, ch = 250, 74, 300, 96
     b.append(text(x0 + cw, 34, '실   제', 15, NAVY, 800, 'middle'))
-    b.append(text(x0 + cw / 2, 62, 'H₀이 참 (효과 없음)', 14, MID, 700, 'middle'))
-    b.append(text(x0 + cw * 1.5, 62, 'H₁이 참 (효과 있음)', 14, MID, 700, 'middle'))
+    for i, (h, note) in enumerate((('H_0', '이 참 (효과 없음)'), ('H_1', '이 참 (효과 있음)'))):
+        mid = x0 + cw * (0.5 + i)
+        b.append(tex(mid - 62, 62, h, 14, MID, 'start', w=40, baseline=True))
+        b.append(text(mid - 42, 62, note, 14, MID, 700, 'start'))
     for k, chr_ in enumerate('판단'):
         b.append(text(74, y0 + ch - 10 + k * 22, chr_, 15, NAVY, 800, 'middle'))
     b.append(text(238, y0 + 50, '기각 실패', 14, MID, 700, 'end'))
-    b.append(text(238, y0 + ch + 50, 'H₀ 기각', 14, MID, 700, 'end'))
+    b.append(tex(238 - 34, y0 + ch + 50, 'H_0', 14, MID, 'end', w=60, baseline=True))
+    b.append(text(238, y0 + ch + 50, '기각', 14, MID, 700, 'end'))
 
+    # (칸 이름, 수식, 풀이말) — 수식은 KaTeX로 조판한다
     cells = [
-        (0, 0, TEAL_TINT, TEAL, '옳은 판단', '1 − α'),
-        (1, 0, CORAL_TINT, CORAL, '제2종 오류 (β)', '있는 것을 놓침'),
-        (0, 1, CORAL_TINT, CORAL, '제1종 오류 (α)', '없는 것을 발견했다고 주장'),
-        (1, 1, TEAL_TINT, TEAL, '검정력 (1 − β)', '있는 것을 찾아냄'),
+        (0, 0, TEAL_TINT, TEAL, '옳은 판단', r'1 - \alpha', None),
+        (1, 0, CORAL_TINT, CORAL, '제2종 오류', r'\beta', '있는 것을 놓침'),
+        (0, 1, CORAL_TINT, CORAL, '제1종 오류', r'\alpha', '없는 것을 발견했다고 주장'),
+        (1, 1, TEAL_TINT, TEAL, '검정력', r'1 - \beta', '있는 것을 찾아냄'),
     ]
-    for cx, cy, fill, stroke, t1, t2 in cells:
+    for cx, cy, fill, stroke, t1, formula, t2 in cells:
         x, y = x0 + cx * cw, y0 + cy * ch
+        cx0 = x + cw / 2 - 3
         b.append(f'<rect x="{x}" y="{y}" width="{cw-6}" height="{ch-6}" rx="8" '
                  f'fill="{fill}" stroke="{stroke}" stroke-width="2"/>')
-        b.append(text(x + cw / 2 - 3, y + 36, t1, 15.5, stroke, 800, 'middle'))
-        b.append(text(x + cw / 2 - 3, y + 60, t2, 13, MID, None, 'middle'))
+        b.append(text(cx0, y + 32, t1, 15.5, stroke, 800, 'middle'))
+        b.append(tex(cx0, y + 52, formula, 15, stroke, 'middle', w=180))
+        if t2:
+            b.append(text(cx0, y + 78, t2, 12.5, MID, None, 'middle'))
 
     b.append(caption(450, H - 38, '대각선 둘은 옳은 판단이고, 나머지 둘이 오류다. 통계학은 제1종 오류를 더 엄격하게 막는다', 15, INK))
     b.append(caption(450, H - 14, '없는 효과를 발표하면 그 위에 후속 연구가 쌓이기 때문이다', 13.5))
@@ -161,10 +168,12 @@ def fig_alpha_beta():
     b.append(f'<path d="{a}" fill="{CORAL}" opacity=".8"/>')
     b.append(f'<path d="{sl}" fill="none" stroke="{CORAL}" stroke-width="2"/>')
 
-    for pts, c, lab, lx in ((p0, NAVY, 'H₀ 분포 (효과 없음)', 0), (p1, TEAL, 'H₁ 분포 (효과 있음)', 3)):
+    for pts, c, lab, note, lx in ((p0, NAVY, 'H_0', '분포 (효과 없음)', 0),
+                                  (p1, TEAL, 'H_1', '분포 (효과 있음)', 3)):
         line, _ = curve_paths(pts, sx, base, top, peak)
         b.append(f'<path d="{line}" fill="none" stroke="{c}" stroke-width="2.6"/>')
-        b.append(text(sx(lx), top - 10, lab, 14, c, 800, 'middle'))
+        b.append(tex(sx(lx) - 62, top - 10, lab, 14, c, 'start', w=40, baseline=True))
+        b.append(text(sx(lx) - 40, top - 10, note, 14, c, 800, 'start'))
     b.append(axis(px0, px1, base))
     b.append(dashed(sx(crit), base + 6, top - 26, INK, 2.2, '6 4'))
     b.append(text(sx(crit), top - 34, '기각선', 13.5, INK, 800, 'middle'))
@@ -290,7 +299,8 @@ def fig_ci_coverage(rows=None):
                  f'stroke-width="{1.6 if ok else 2.4}"/>')
         b.append(f'<circle cx="{sx(m):.1f}" cy="{y:.1f}" r="1.7" fill="{TEAL if ok else CORAL}"/>')
     b.append(f'<path d="M{sx(mu):.0f},{top-16} L{sx(mu):.0f},{bot+14}" stroke="{NAVY}" stroke-width="2.4"/>')
-    b.append(text(sx(mu), top - 24, 'μ = 3.50 (모평균)', 14.5, NAVY, 800, 'middle'))
+    b.append(tex(sx(mu) - 26, top - 19, r'\mu = 3.50', 14.5, NAVY, 'end', w=120, baseline=True))
+    b.append(text(sx(mu) - 22, top - 19, '(모평균)', 14, NAVY, 800, 'start'))
     miss = sum(1 for m, lo, hi in rows if not (lo <= mu <= hi))
     b.append(f'<rect x="{px0}" y="{H-62}" width="13" height="13" rx="3" fill="{TEAL_LINE}"/>')
     b.append(text(px0 + 22, H - 51, f'모평균을 포함한 구간 {n-miss}개', 13.5, INK, 700))

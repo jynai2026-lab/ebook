@@ -42,6 +42,9 @@ const stripped = html
 bad('처리되지 않은 **강조**', [...stripped.matchAll(/\*\*[^*\n]{1,40}\*\*/g)].map(m => m[0]));
 bad('처리되지 않은 $수식$', [...stripped.matchAll(/\$[^$\n]{1,40}\$/g)].map(m => m[0]));
 bad('빈 캡션 / 깨진 표', [...html.matchAll(/<figcaption>\s*<\/figcaption>/g)].map(() => '빈 figcaption'));
+bad('조판되지 않은 그림 수식', [...html.matchAll(/data-tex="([^"]*)"/g)].map(m => m[1]));
+
+const onDiskEarly = () => readdirSync(FIGDIR).filter(f => f.endsWith('.svg'));
 
 // ---------------------------------------------------------------- 원고
 const files = readdirSync(MAN).filter(f => f.endsWith('.md')).sort();
@@ -64,9 +67,21 @@ for (const f of files) {
 }
 
 bad('그림 파일 존재', missing);
+
+// 그림 안의 수식은 <text>가 아니라 figlib.tex()로 조판해야 한다.
+// 분수를 /로 쓰거나 근호를 √ 문자로 찍으면 본문 수식과 모양이 어긋난다.
+const rawMath = [];
+for (const f of onDiskEarly()) {
+  const svg = readFileSync(join(FIGDIR, f), 'utf8');
+  for (const m of svg.matchAll(/<text[^>]*>([^<]*)<\/text>/g)) {
+    const t = m[1];
+    if (/√|[∑Σ]|[A-Za-z가-힣]\s*[²³]|\b[A-Za-z]+\s*\/\s*[A-Za-z(]/.test(t)) rawMath.push(`${f}: "${t}"`);
+  }
+}
+bad('그림 안에 <text>로 찍힌 수식', rawMath);
 bad('그림 번호 순서', numbering);
 
-const onDisk = readdirSync(FIGDIR).filter(f => f.endsWith('.svg'));
+const onDisk = onDiskEarly();
 const orphan = onDisk.filter(f => !used.has(f));
 if (orphan.length) console.log(`  [참고] 원고에서 쓰이지 않는 그림 ${orphan.length}개: ${orphan.join(', ')}`);
 
@@ -85,6 +100,23 @@ for (const f of files) {
   });
 }
 bad('피하기로 한 어투·단어', register);
+
+// 원고 본문의 수식도 $...$ 로 감싸 KaTeX가 조판해야 한다.
+// 유니코드 첨자·근호·X̄ 를 그냥 쓰면 본문 수식과 글꼴이 어긋난다.
+const RAW = /√|[∑Σ]|[A-Za-z]\s*[²³]|[₀-₉]|[ᵢⱼₖ]|X̄/;
+const prose = [];
+for (const f of files) {
+  let src = readFileSync(join(MAN, f), 'utf8')
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/\$\$[\s\S]*?\$\$/g, '')
+    .replace(/\$[^\n$]*\$/g, '')
+    .replace(/`[^`\n]*`/g, '');
+  src.split('\n').forEach((line, i) => {
+    const m = line.match(RAW);
+    if (m) prose.push(`${f}:${i + 1} "${m[0]}" — ${line.trim().slice(0, 56)}`);
+  });
+}
+bad('원고에 $ 없이 쓴 수식', prose);
 
 console.log(fail ? `\n총 ${fail}건이 걸렸습니다.` : '\n모두 통과했습니다.');
 process.exit(fail ? 1 : 0);

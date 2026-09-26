@@ -35,6 +35,6 @@
 <rect x="772" y="106" width="118" height="76" rx="9" fill="#16243F"/>
 <text x="831" y="134" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">단일표본</text>
 <text x="831" y="156" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">t-검정</text>
-<text x="831" y="196" font-size="13" fill="#16243F" font-weight="700" text-anchor="middle">H₀ : μ_D = 0</text>
+<foreignObject x="731" y="178" width="200" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:14px;color:#16243F"><span data-tex="H_0 : \mu_D = 0"></span></div></foreignObject>
 <text x="450" y="288" font-size="14.5" fill="#101828" text-anchor="middle">원점수는 더 이상 쓰이지 않는다. 검정이 묻는 것은 "이 변화량들의 평균이 0인가" 하나뿐이다</text>
 </svg>

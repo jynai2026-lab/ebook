@@ -8,7 +8,8 @@
 <path d="M694,115 L846,115" stroke="#0E7490" stroke-width="3"/>
 <text x="770" y="105" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">집단 C  77.3</text>
 <circle cx="350" cy="210" r="6.5" fill="#C2452F"/>
-<text x="364" y="215" font-size="13" fill="#C2452F" font-weight="700">Xᵢ₁  (집단 A의 한 사람)</text>
+<foreignObject x="364" y="191" width="50" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#C2452F"><span data-tex="X_{i1}"></span></div></foreignObject>
+<text x="398" y="215" font-size="13" fill="#C2452F" font-weight="700">(집단 A의 한 사람)</text>
 <path d="M304,210 L304,171" stroke="#C2452F" stroke-width="2.6"/>
 <path d="M299,210 L309,210" stroke="#C2452F" stroke-width="2.6"/>
 <path d="M299,171 L309,171" stroke="#C2452F" stroke-width="2.6"/>
@@ -29,6 +30,8 @@
 <text x="80" y="316" font-size="13" fill="#101828" font-weight="700">총 편차</text>
 <text x="190" y="316" font-size="12.5" fill="#667085">— SS_T의 재료</text>
 <text x="450" y="36" font-size="16" fill="#101828" text-anchor="middle">한 사람이 전체 평균에서 벗어난 거리는 정확히 두 조각으로 나뉜다</text>
-<text x="392" y="280" font-size="15" fill="#101828" font-weight="700">(Xᵢⱼ − X̄) = (X̄ⱼ − X̄) + (Xᵢⱼ − X̄ⱼ)</text>
-<text x="392" y="308" font-size="13" fill="#667085">각각을 제곱해 모두 더한 것이 SS_T = SS_B + SS_W 이다</text>
+<foreignObject x="392" y="253" width="460" height="43"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:15.5px;color:#101828"><span data-tex="(X_{ij} - \bar{X}) = (\bar{X_j} - \bar{X}) + (X_{ij} - \bar{X_j})"></span></div></foreignObject>
+<text x="392" y="308" font-size="13" fill="#667085">각각을 제곱해 모두 더한 것이</text>
+<foreignObject x="572" y="284" width="200" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#667085"><span data-tex="SS_T = SS_B + SS_W"></span></div></foreignObject>
+<text x="706" y="308" font-size="13" fill="#667085">이다</text>
 </svg>

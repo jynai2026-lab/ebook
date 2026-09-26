@@ -6,24 +6,24 @@ from figlib import *
 # ================================================================ 3장
 def fig_normal_anatomy():
     """정규분포는 두 숫자로 완전히 결정된다"""
-    W, H = 900, 320
+    W, H = 900, 348
     b = []
     px0, px1, base, top = 70, 830, 224, 58
     sx = scale(-6, 6, px0, px1)
-    specs = [(0, 1.0, NAVY, 'M = 0, SD = 1'), (0, 1.8, TEAL, 'M = 0, SD = 1.8'),
-             (2.4, 1.0, CORAL, 'M = 2.4, SD = 1')]
+    specs = [(0, 1.0, NAVY, r'M = 0,\; SD = 1'), (0, 1.8, TEAL, r'M = 0,\; SD = 1.8'),
+             (2.4, 1.0, CORAL, r'M = 2.4,\; SD = 1')]
     allpts = [(mu, sd, c, lab, normal_pts(mu, sd, -6, 6, 120)) for mu, sd, c, lab in specs]
     peak = max(y for *_, pts in allpts for _, y in pts)
 
     for i, (mu, sd, c, lab, pts) in enumerate(allpts):
         line, _ = curve_paths(pts, sx, base, top, peak)
         b.append(f'<path d="{line}" fill="none" stroke="{c}" stroke-width="2.6"/>')
-        b.append(f'<rect x="{110 + i*250}" y="{H-58}" width="14" height="14" rx="3" fill="{c}"/>')
-        b.append(text(132 + i * 250, H - 46, lab, 14, INK, 600))
+        b.append(f'<rect x="{112 + i*250}" y="{H-40}" width="14" height="14" rx="3" fill="{c}"/>')
+        b.append(tex(134 + i * 250, H - 33, lab, 14.5, INK, 'start', w=210))
 
     b.append(axis(px0, px1, base))
     b.append(text(px0 + 6, top + 4, '평균이 위치를, 표준편차가 폭을 정한다', 15, SOFT))
-    b.append(caption(450, base + 40, '두 숫자만 알면 곡선의 모든 지점이 결정된다. 그래서 M과 SD만 보고해도 분포를 복원할 수 있다', 14))
+    b.append(caption(450, base + 42, '두 숫자만 알면 곡선의 모든 지점이 결정된다. 그래서 M과 SD만 보고해도 분포를 복원할 수 있다', 14))
     write('ch03-normal-anatomy.svg', svg(W, H, '\n'.join(b)))
 
 
@@ -151,7 +151,7 @@ def fig_sampling_concept():
 
 def fig_se_shrink():
     """표본이 커지면 표집분포가 좁아진다"""
-    W, H = 900, 300
+    W, H = 900, 340
     b = []
     px0, px1, base, top = 80, 820, 216, 54
     sx = scale(-1.2, 1.2, px0, px1)
@@ -174,7 +174,7 @@ def fig_se_shrink():
 
 def fig_sd_vs_se():
     """표준편차와 표준오차는 다른 것을 잰다"""
-    W, H = 900, 250
+    W, H = 900, 270
     b = []
     for x0, title, subject, note, color in (
         (0, '표준편차 (SD)', '사람들이 서로 얼마나 다른가', '자료 자체의 성질 · 표본이 커져도 줄지 않는다', NAVY),
@@ -184,8 +184,8 @@ def fig_sd_vs_se():
         b.append(text(x0 + 215, 40, title, 19, color, 800, 'middle'))
         b.append(text(x0 + 215, 78, subject, 16, INK, 700, 'middle'))
         b.append(text(x0 + 215, 114, note, 13.5, SOFT, None, 'middle'))
-        b.append(text(x0 + 215, 158, 'SD' if color == NAVY else 'SE = SD / √n', 18, color, 800, 'middle',
-                      ' font-style="italic"'))
+        b.append(tex(x0 + 215, 168, 'SD' if color == NAVY else r'SE = \dfrac{SD}{\sqrt{n}}',
+                     19, color, 'middle', w=260))
     b.append(caption(450, H - 12, '논문 표에 SD를 쓸지 SE를 쓸지는 무엇을 말하려는지에 달렸다', 14))
     write('ch04-sd-vs-se.svg', svg(W, H, '\n'.join(b)))
 

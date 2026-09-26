@@ -200,7 +200,8 @@
 <path d="M382.2,250.0 L589.6,250.0" stroke="#A8D5DE" stroke-width="1.6"/>
 <circle cx="485.9" cy="250.0" r="1.7" fill="#0E7490"/>
 <path d="M450,56 L450,264" stroke="#16243F" stroke-width="2.4"/>
-<text x="450" y="48" font-size="14.5" fill="#16243F" font-weight="800" text-anchor="middle">μ = 3.50 (모평균)</text>
+<foreignObject x="304" y="27" width="120" height="41"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-end;font-size:14.5px;color:#16243F"><span data-tex="\mu = 3.50"></span></div></foreignObject>
+<text x="428" y="53" font-size="14" fill="#16243F" font-weight="800" text-anchor="start">(모평균)</text>
 <rect x="60" y="268" width="13" height="13" rx="3" fill="#A8D5DE"/>
 <text x="82" y="279" font-size="13.5" fill="#101828" font-weight="700">모평균을 포함한 구간 97개</text>
 <rect x="340" y="268" width="13" height="13" rx="3" fill="#C2452F"/>

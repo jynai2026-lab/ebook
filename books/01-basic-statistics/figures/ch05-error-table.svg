@@ -1,23 +1,29 @@
-<svg viewBox="0 0 900 330" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 900 348" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
 <text x="550" y="34" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">실   제</text>
-<text x="400" y="62" font-size="14" fill="#344054" font-weight="700" text-anchor="middle">H₀이 참 (효과 없음)</text>
-<text x="700" y="62" font-size="14" fill="#344054" font-weight="700" text-anchor="middle">H₁이 참 (효과 있음)</text>
-<text x="74" y="152" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">판</text>
-<text x="74" y="174" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">단</text>
+<foreignObject x="338" y="37" width="40" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:14px;color:#344054"><span data-tex="H_0"></span></div></foreignObject>
+<text x="358" y="62" font-size="14" fill="#344054" font-weight="700" text-anchor="start">이 참 (효과 없음)</text>
+<foreignObject x="638" y="37" width="40" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:14px;color:#344054"><span data-tex="H_1"></span></div></foreignObject>
+<text x="658" y="62" font-size="14" fill="#344054" font-weight="700" text-anchor="start">이 참 (효과 있음)</text>
+<text x="74" y="160" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">판</text>
+<text x="74" y="182" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">단</text>
 <text x="238" y="124" font-size="14" fill="#344054" font-weight="700" text-anchor="end">기각 실패</text>
-<text x="238" y="212" font-size="14" fill="#344054" font-weight="700" text-anchor="end">H₀ 기각</text>
-<rect x="250" y="74" width="294" height="82" rx="8" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
-<text x="397" y="110" font-size="15.5" fill="#0E7490" font-weight="800" text-anchor="middle">옳은 판단</text>
-<text x="397" y="134" font-size="13" fill="#344054" text-anchor="middle">1 − α</text>
-<rect x="550" y="74" width="294" height="82" rx="8" fill="#FBEAE6" stroke="#C2452F" stroke-width="2"/>
-<text x="697" y="110" font-size="15.5" fill="#C2452F" font-weight="800" text-anchor="middle">제2종 오류 (β)</text>
-<text x="697" y="134" font-size="13" fill="#344054" text-anchor="middle">있는 것을 놓침</text>
-<rect x="250" y="162" width="294" height="82" rx="8" fill="#FBEAE6" stroke="#C2452F" stroke-width="2"/>
-<text x="397" y="198" font-size="15.5" fill="#C2452F" font-weight="800" text-anchor="middle">제1종 오류 (α)</text>
-<text x="397" y="222" font-size="13" fill="#344054" text-anchor="middle">없는 것을 발견했다고 주장</text>
-<rect x="550" y="162" width="294" height="82" rx="8" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
-<text x="697" y="198" font-size="15.5" fill="#0E7490" font-weight="800" text-anchor="middle">검정력 (1 − β)</text>
-<text x="697" y="222" font-size="13" fill="#344054" text-anchor="middle">있는 것을 찾아냄</text>
-<text x="450" y="292" font-size="15" fill="#101828" text-anchor="middle">대각선 둘은 옳은 판단이고, 나머지 둘이 오류다. 통계학은 제1종 오류를 더 엄격하게 막는다</text>
-<text x="450" y="316" font-size="13.5" fill="#344054" text-anchor="middle">없는 효과를 발표하면 그 위에 후속 연구가 쌓이기 때문이다</text>
+<foreignObject x="144" y="195" width="60" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-end;font-size:14px;color:#344054"><span data-tex="H_0"></span></div></foreignObject>
+<text x="238" y="220" font-size="14" fill="#344054" font-weight="700" text-anchor="end">기각</text>
+<rect x="250" y="74" width="294" height="90" rx="8" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<text x="397" y="106" font-size="15.5" fill="#0E7490" font-weight="800" text-anchor="middle">옳은 판단</text>
+<foreignObject x="307" y="105" width="180" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#0E7490"><span data-tex="1 - \alpha"></span></div></foreignObject>
+<rect x="550" y="74" width="294" height="90" rx="8" fill="#FBEAE6" stroke="#C2452F" stroke-width="2"/>
+<text x="697" y="106" font-size="15.5" fill="#C2452F" font-weight="800" text-anchor="middle">제2종 오류</text>
+<foreignObject x="607" y="105" width="180" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#C2452F"><span data-tex="\beta"></span></div></foreignObject>
+<text x="697" y="152" font-size="12.5" fill="#344054" text-anchor="middle">있는 것을 놓침</text>
+<rect x="250" y="170" width="294" height="90" rx="8" fill="#FBEAE6" stroke="#C2452F" stroke-width="2"/>
+<text x="397" y="202" font-size="15.5" fill="#C2452F" font-weight="800" text-anchor="middle">제1종 오류</text>
+<foreignObject x="307" y="201" width="180" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#C2452F"><span data-tex="\alpha"></span></div></foreignObject>
+<text x="397" y="248" font-size="12.5" fill="#344054" text-anchor="middle">없는 것을 발견했다고 주장</text>
+<rect x="550" y="170" width="294" height="90" rx="8" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<text x="697" y="202" font-size="15.5" fill="#0E7490" font-weight="800" text-anchor="middle">검정력</text>
+<foreignObject x="607" y="201" width="180" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#0E7490"><span data-tex="1 - \beta"></span></div></foreignObject>
+<text x="697" y="248" font-size="12.5" fill="#344054" text-anchor="middle">있는 것을 찾아냄</text>
+<text x="450" y="310" font-size="15" fill="#101828" text-anchor="middle">대각선 둘은 옳은 판단이고, 나머지 둘이 오류다. 통계학은 제1종 오류를 더 엄격하게 막는다</text>
+<text x="450" y="334" font-size="13.5" fill="#344054" text-anchor="middle">없는 효과를 발표하면 그 위에 후속 연구가 쌓이기 때문이다</text>
 </svg>

@@ -3,7 +3,7 @@
 <path d="M110,214 L110,62" stroke="#344054" stroke-width="2"/>
 <path d="M110,201 L790,201" stroke="#0E7490" stroke-width="1.8" stroke-dasharray="6 4"/>
 <path d="M790,201 L806,201" stroke="#0E7490" stroke-width="1.8" stroke-dasharray="6 4"/>
-<text x="810" y="206" font-size="13" fill="#0E7490" font-weight="800">α = .05</text>
+<foreignObject x="810" y="183" width="90" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13px;color:#0E7490"><span data-tex="\alpha = .05"></span></div></foreignObject>
 <text x="98" y="219" font-size="12.5" fill="#98A2B3" text-anchor="end">0.0</text>
 <text x="98" y="168" font-size="12.5" fill="#98A2B3" text-anchor="end">0.2</text>
 <text x="98" y="118" font-size="12.5" fill="#98A2B3" text-anchor="end">0.4</text>

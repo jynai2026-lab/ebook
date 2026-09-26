@@ -7,19 +7,19 @@
 <path d="M70.0,221.7 L75.4,221.7 L80.9,221.6 L86.3,221.6 L91.7,221.5 L97.1,221.4 L102.6,221.3 L108.0,221.1 L113.4,221.0 L118.9,220.8 L124.3,220.6 L129.7,220.3 L135.1,220.1 L140.6,219.7 L146.0,219.4 L151.4,219.0 L156.9,218.5 L162.3,218.0 L167.7,217.4 L173.1,216.7 L178.6,215.9 L184.0,215.1 L189.4,214.1 L194.9,213.1 L200.3,211.9 L205.7,210.6 L211.1,209.2 L216.6,207.6 L222.0,205.9 L227.4,204.0 L232.9,202.0 L238.3,199.8 L243.7,197.4 L249.1,194.8 L254.6,192.1 L260.0,189.1 L265.4,186.0 L270.9,182.7 L276.3,179.1 L281.7,175.4 L287.1,171.5 L292.6,167.4 L298.0,163.1 L303.4,158.7 L308.9,154.1 L314.3,149.4 L319.7,144.5 L325.1,139.5 L330.6,134.5 L336.0,129.4 L341.4,124.2 L346.9,119.0 L352.3,113.9 L357.7,108.7 L363.1,103.7 L368.6,98.7 L374.0,93.9 L379.4,89.2 L384.9,84.8 L390.3,80.5 L395.7,76.6 L401.1,72.9 L406.6,69.5 L412.0,66.4 L417.4,63.7 L422.9,61.4 L428.3,59.5 L433.7,58.0 L439.1,56.9 L444.6,56.2 L450.0,56.0 L455.4,56.2 L460.9,56.9 L466.3,58.0 L471.7,59.5 L477.1,61.4 L482.6,63.7 L488.0,66.4 L493.4,69.5 L498.9,72.9 L504.3,76.6 L509.7,80.5 L515.1,84.8 L520.6,89.2 L526.0,93.9 L531.4,98.7 L536.9,103.7 L542.3,108.7 L547.7,113.9 L553.1,119.0 L558.6,124.2 L564.0,129.4 L569.4,134.5 L574.9,139.5 L580.3,144.5 L585.7,149.4 L591.1,154.1 L596.6,158.7 L602.0,163.1 L607.4,167.4 L612.9,171.5 L618.3,175.4 L623.7,179.1 L629.1,182.7 L634.6,186.0 L640.0,189.1 L645.4,192.1 L650.9,194.8 L656.3,197.4 L661.7,199.8 L667.1,202.0 L672.6,204.0 L678.0,205.9 L683.4,207.6 L688.9,209.2 L694.3,210.6 L699.7,211.9 L705.1,213.1 L710.6,214.1 L716.0,215.1 L721.4,215.9 L726.9,216.7 L732.3,217.4 L737.7,218.0 L743.1,218.5 L748.6,219.0 L754.0,219.4 L759.4,219.7 L764.9,220.1 L770.3,220.3 L775.7,220.6 L781.1,220.8 L786.6,221.0 L792.0,221.1 L797.4,221.3 L802.9,221.4 L808.3,221.5 L813.7,221.6 L819.1,221.6 L824.6,221.7 L830.0,221.7" fill="none" stroke="#16243F" stroke-width="2.6"/>
 <path d="M70,222 L830,222" stroke="#344054" stroke-width="2"/>
 <path d="M133,222 L133,214" stroke="#344054" stroke-width="1.5" stroke-dasharray="2 3"/>
-<text x="133" y="246" font-size="13" fill="#667085" text-anchor="middle">M-3SD</text>
+<foreignObject x="73" y="223" width="120" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span data-tex="M - 3SD"></span></div></foreignObject>
 <path d="M239,222 L239,214" stroke="#344054" stroke-width="1.5" stroke-dasharray="2 3"/>
-<text x="239" y="246" font-size="13" fill="#667085" text-anchor="middle">M-2SD</text>
+<foreignObject x="179" y="223" width="120" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span data-tex="M - 2SD"></span></div></foreignObject>
 <path d="M344,222 L344,214" stroke="#344054" stroke-width="1.5" stroke-dasharray="2 3"/>
-<text x="344" y="246" font-size="13" fill="#667085" text-anchor="middle">M-1SD</text>
+<foreignObject x="284" y="223" width="120" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span data-tex="M - 1SD"></span></div></foreignObject>
 <path d="M450,222 L450,214" stroke="#344054" stroke-width="1.5" stroke-dasharray="2 3"/>
-<text x="450" y="246" font-size="13" fill="#667085" text-anchor="middle">M</text>
+<foreignObject x="390" y="223" width="120" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span data-tex="M"></span></div></foreignObject>
 <path d="M556,222 L556,214" stroke="#344054" stroke-width="1.5" stroke-dasharray="2 3"/>
-<text x="556" y="246" font-size="13" fill="#667085" text-anchor="middle">M+1SD</text>
+<foreignObject x="496" y="223" width="120" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span data-tex="M + 1SD"></span></div></foreignObject>
 <path d="M661,222 L661,214" stroke="#344054" stroke-width="1.5" stroke-dasharray="2 3"/>
-<text x="661" y="246" font-size="13" fill="#667085" text-anchor="middle">M+2SD</text>
+<foreignObject x="601" y="223" width="120" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span data-tex="M + 2SD"></span></div></foreignObject>
 <path d="M767,222 L767,214" stroke="#344054" stroke-width="1.5" stroke-dasharray="2 3"/>
-<text x="767" y="246" font-size="13" fill="#667085" text-anchor="middle">M+3SD</text>
+<foreignObject x="707" y="223" width="120" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#667085"><span data-tex="M + 3SD"></span></div></foreignObject>
 <path d="M344,102 L556,102" stroke="#C2452F" stroke-width="2"/>
 <path d="M344,96 L344,108 M556,96 L556,108" stroke="#C2452F" stroke-width="2"/>
 <text x="450" y="94" font-size="14" fill="#C2452F" font-weight="700" text-anchor="middle">68%</text>

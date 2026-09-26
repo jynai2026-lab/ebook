@@ -1,13 +1,13 @@
-<svg viewBox="0 0 900 250" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
-<rect x="0" y="0" width="430" height="204" rx="10" fill="#FBFCFD" stroke="#16243F" stroke-width="2.5"/>
+<svg viewBox="0 0 900 270" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="430" height="224" rx="10" fill="#FBFCFD" stroke="#16243F" stroke-width="2.5"/>
 <text x="215" y="40" font-size="19" fill="#16243F" font-weight="800" text-anchor="middle">표준편차 (SD)</text>
 <text x="215" y="78" font-size="16" fill="#101828" font-weight="700" text-anchor="middle">사람들이 서로 얼마나 다른가</text>
 <text x="215" y="114" font-size="13.5" fill="#667085" text-anchor="middle">자료 자체의 성질 · 표본이 커져도 줄지 않는다</text>
-<text x="215" y="158" font-size="18" fill="#16243F" font-weight="800" text-anchor="middle" font-style="italic">SD</text>
-<rect x="470" y="0" width="430" height="204" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<foreignObject x="85" y="141" width="260" height="53"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:19px;color:#16243F"><span data-tex="SD"></span></div></foreignObject>
+<rect x="470" y="0" width="430" height="224" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
 <text x="685" y="40" font-size="19" fill="#0E7490" font-weight="800" text-anchor="middle">표준오차 (SE)</text>
 <text x="685" y="78" font-size="16" fill="#101828" font-weight="700" text-anchor="middle">내 평균이 얼마나 못 미더운가</text>
 <text x="685" y="114" font-size="13.5" fill="#667085" text-anchor="middle">추정의 정밀도 · 표본이 커지면 줄어든다</text>
-<text x="685" y="158" font-size="18" fill="#0E7490" font-weight="800" text-anchor="middle" font-style="italic">SE = SD / √n</text>
-<text x="450" y="238" font-size="14" fill="#344054" text-anchor="middle">논문 표에 SD를 쓸지 SE를 쓸지는 무엇을 말하려는지에 달렸다</text>
+<foreignObject x="555" y="141" width="260" height="53"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:19px;color:#0E7490"><span data-tex="SE = \dfrac{SD}{\sqrt{n}}"></span></div></foreignObject>
+<text x="450" y="258" font-size="14" fill="#344054" text-anchor="middle">논문 표에 SD를 쓸지 SE를 쓸지는 무엇을 말하려는지에 달렸다</text>
 </svg>

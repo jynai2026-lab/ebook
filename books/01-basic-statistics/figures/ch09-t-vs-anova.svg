@@ -3,18 +3,18 @@
 <text x="215" y="34" font-size="16" fill="#C2452F" font-weight="800" text-anchor="middle">t-검정을 세 번</text>
 <rect x="90" y="72" width="250" height="30" rx="6" fill="#FBEAE6" stroke="#C2452F" stroke-width="1.6"/>
 <text x="160" y="92" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">A vs B</text>
-<text x="300" y="92" font-size="13" fill="#C2452F" font-weight="700" text-anchor="middle">α = .05</text>
+<foreignObject x="255" y="74" width="90" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#C2452F"><span data-tex="\alpha = .05"></span></div></foreignObject>
 <rect x="90" y="110" width="250" height="30" rx="6" fill="#FBEAE6" stroke="#C2452F" stroke-width="1.6"/>
 <text x="160" y="130" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">A vs C</text>
-<text x="300" y="130" font-size="13" fill="#C2452F" font-weight="700" text-anchor="middle">α = .05</text>
+<foreignObject x="255" y="112" width="90" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#C2452F"><span data-tex="\alpha = .05"></span></div></foreignObject>
 <rect x="90" y="148" width="250" height="30" rx="6" fill="#FBEAE6" stroke="#C2452F" stroke-width="1.6"/>
 <text x="160" y="168" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">B vs C</text>
-<text x="300" y="168" font-size="13" fill="#C2452F" font-weight="700" text-anchor="middle">α = .05</text>
+<foreignObject x="255" y="150" width="90" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#C2452F"><span data-tex="\alpha = .05"></span></div></foreignObject>
 <text x="215" y="198" font-size="14.5" fill="#C2452F" font-weight="800" text-anchor="middle">군집당 오류 .143 — 통제 실패</text>
 <rect x="470" y="0" width="430" height="208" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
 <text x="685" y="34" font-size="16" fill="#0E7490" font-weight="800" text-anchor="middle">분산분석 한 번</text>
 <rect x="530" y="86" width="310" height="62" rx="8" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
-<text x="685" y="112" font-size="16" fill="#101828" font-weight="800" text-anchor="middle">H₀ : μ_A = μ_B = μ_C</text>
+<foreignObject x="535" y="90" width="300" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#101828"><span data-tex="H_0 : \mu_A = \mu_B = \mu_C"></span></div></foreignObject>
 <text x="685" y="134" font-size="13" fill="#344054" text-anchor="middle">세 평균이 모두 같은가?</text>
 <text x="685" y="198" font-size="14.5" fill="#0E7490" font-weight="800" text-anchor="middle">군집당 오류 .05 — 유지</text>
 <text x="450" y="246" font-size="14" fill="#101828" text-anchor="middle">대신 기각되어도 어느 집단끼리 다른지는 알려주지 않는다. 그 확인이 10장의 다중비교다</text>

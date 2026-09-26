@@ -26,6 +26,7 @@
 <text x="800" y="234" font-size="15" fill="#16243F" font-weight="700" text-anchor="middle">-1</text>
 <text x="64" y="234" font-size="14" fill="#667085" font-weight="700" text-anchor="end">편차</text>
 <path d="M100,250 L830,250" stroke="#E4E7EC" stroke-width="1.5"/>
-<text x="450" y="278" font-size="16" fill="#101828" text-anchor="middle">편차를 모두 더하면  (+3) + (−1) + (+1) + 0 + (−2) + (−1) = 0</text>
+<text x="26" y="278" font-size="15" fill="#101828" font-weight="700">편차를 모두 더하면</text>
+<foreignObject x="186" y="250" width="520" height="45"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:16px;color:#101828"><span data-tex="(+3) + (-1) + (+1) + 0 + (-2) + (-1) = 0"></span></div></foreignObject>
 <text x="450" y="304" font-size="14" fill="#667085" text-anchor="middle">평균은 편차의 합이 0이 되는 지점이다. 그래서 편차를 그냥 더해서는 흩어진 정도를 잴 수 없다</text>
 </svg>

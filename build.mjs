@@ -69,6 +69,15 @@ function tex(src, display) {
   }
 }
 
+/** 그림 SVG 안의 수식 자리표시자를 KaTeX로 조판한다 (figlib.tex 가 심어 둔다). */
+function renderFigTex(svg) {
+  return svg.replace(/<span data-tex="([^"]*)"\s*><\/span>/g, (_, raw) => {
+    const latex = raw.replace(/&quot;/g, '"').replace(/&gt;/g, '>')
+                     .replace(/&lt;/g, '<').replace(/&amp;/g, '&');
+    return tex(latex, false);
+  });
+}
+
 /**
  * 저자 친화 문법 → HTML
  *   :::key / :::warn / :::ok / :::paper / :::check / :::recap ... :::
@@ -98,7 +107,7 @@ function preprocess(src, figDir) {
   src = src.replace(/```out(?:[ \t]+([^\n]+))?\n([\s\S]*?)```/g, (_, label, code) =>
     keep(`<div class="out"><div class="out__bar">${esc(label || '실행 결과')}</div><pre>${esc(code.replace(/\n$/, ''))}</pre></div>`));
 
-  src = src.replace(/```svg\n([\s\S]*?)```/g, (_, svg) => keep(svg));
+  src = src.replace(/```svg\n([\s\S]*?)```/g, (_, svg) => keep(renderFigTex(svg)));
 
   // 인라인 코드(`df$gender` 등)를 먼저 빼둬야 R의 $가 수식으로 오인되지 않는다
   src = src.replace(/`([^`\n]+)`/g, (_, code) => keepInline(`<code>${esc(code)}</code>`));
@@ -111,7 +120,7 @@ function preprocess(src, figDir) {
   src = src.replace(/^!fig\[([^\]]*)\]\(([^)]+)\)\s*$/gm, (m, cap, file) => {
     const path = join(figDir || '', file);
     if (!existsSync(path)) { console.warn(`  ! 그림 없음: ${file}`); return m; }
-    const svg = readFileSync(path, 'utf8').replace(/<\?xml[^>]*\?>/, '');
+    const svg = renderFigTex(readFileSync(path, 'utf8').replace(/<\?xml[^>]*\?>/, ''));
     return keep(`<figure>${svg}${cap ? `<figcaption>${md.renderInline(cap)}</figcaption>` : ''}</figure>`);
   });
 
