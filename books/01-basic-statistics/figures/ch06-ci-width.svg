@@ -1,0 +1,26 @@
+<svg viewBox="0 0 900 290" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M190,78 L800,78" stroke="#E4E7EC" stroke-width="1.2"/>
+<rect x="245" y="66" width="500" height="24" rx="5" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="495" cy="78" r="4.5" fill="#0E7490"/>
+<text x="174" y="83" font-size="14" fill="#101828" font-weight="700" text-anchor="end">n = 25</text>
+<text x="804" y="83" font-size="13.5" fill="#667085">폭 0.688</text>
+<path d="M190,124 L800,124" stroke="#E4E7EC" stroke-width="1.2"/>
+<rect x="375" y="112" width="240" height="24" rx="5" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="495" cy="124" r="4.5" fill="#0E7490"/>
+<text x="174" y="129" font-size="14" fill="#101828" font-weight="700" text-anchor="end">n = 100</text>
+<text x="804" y="129" font-size="13.5" fill="#667085">폭 0.331</text>
+<path d="M190,170 L800,170" stroke="#E4E7EC" stroke-width="1.2"/>
+<rect x="418" y="158" width="154" height="24" rx="5" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="495" cy="170" r="4.5" fill="#0E7490"/>
+<text x="174" y="175" font-size="14" fill="#101828" font-weight="700" text-anchor="end">n = 240</text>
+<text x="804" y="175" font-size="13.5" fill="#667085">폭 0.212</text>
+<path d="M190,216 L800,216" stroke="#E4E7EC" stroke-width="1.2"/>
+<rect x="435" y="204" width="119" height="24" rx="5" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="495" cy="216" r="4.5" fill="#0E7490"/>
+<text x="174" y="221" font-size="14" fill="#101828" font-weight="700" text-anchor="end">n = 400</text>
+<text x="804" y="221" font-size="13.5" fill="#667085">폭 0.164</text>
+<path d="M495,56 L495,238" stroke="#16243F" stroke-width="1.8" stroke-dasharray="5 4"/>
+<text x="495" y="46" font-size="13.5" fill="#16243F" font-weight="700" text-anchor="middle">표본평균</text>
+<text x="450" y="254" font-size="14" fill="#101828" text-anchor="middle">25명에서 100명으로 75명을 더 모으면 폭이 0.357 줄지만,</text>
+<text x="450" y="276" font-size="14" fill="#101828" text-anchor="middle">240명에서 400명으로 160명을 더 모아도 0.048밖에 줄지 않는다 — 수확체감</text>
+</svg>

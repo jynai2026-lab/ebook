@@ -264,7 +264,9 @@ hr {
    8. 콜아웃 박스
    ========================================================================== */
 .callout {
-  break-inside: avoid;
+  /* 통째로 avoid하면 긴 콜아웃이 다음 쪽으로 밀려 하단이 크게 빈다.
+     나뉘도록 두되 한 줄만 떨어져 나가는 것은 막는다. */
+  orphans: 3; widows: 3;
   margin: 5mm 0; padding: 4.5mm 5mm 4.5mm 5.5mm;
   border-radius: 2mm;
   border-left: 3.2px solid var(--accent);
@@ -429,7 +431,7 @@ figcaption b { color: var(--navy); font-weight: 700; }
    13. 체크리스트 / 요약
    ========================================================================== */
 .check {
-  break-inside: avoid;
+  orphans: 3; widows: 3;
   margin: 5mm 0; padding: 5mm;
   border: 1.4px solid var(--accent-line);
   border-radius: 2.5mm;
@@ -468,6 +470,9 @@ figcaption b { color: var(--navy); font-weight: 700; }
 .page-break { break-before: page; }
 .keep       { break-inside: avoid; }
 
+/* 문단이 한 줄만 남기고 넘어가지 않게 한다 */
+p, li { orphans: 2; widows: 2; }
+
 /* ==========================================================================
    15. 인용 — 핵심 질문을 한 줄로 던질 때
    ========================================================================== */
@@ -486,4 +491,17 @@ blockquote p:last-child { margin-bottom: 0; }
 .callout blockquote {
   margin-left: 0; border-left-color: rgba(0,0,0,.18);
   font-weight: 500; font-size: 9.9pt;
+}
+
+/* ==========================================================================
+   16. 목차 쪽번호 표식
+   ========================================================================== */
+/* 목차의 쪽번호를 매기려면 각 장이 PDF 몇 쪽에서 시작하는지 알아야 한다.
+   빌드가 1차 렌더에서 이 표식을 찾아 쪽을 읽고, 2차 렌더에서 목차를 채운다.
+   흰 글씨라 지면에는 보이지 않는다. */
+.pagemark {
+  /* 흐름에서 빼면(position:absolute) 장 시작 한 쪽 앞에 찍혀 쪽번호가 어긋난다.
+     그래서 이미 있는 글줄 안에 끼워 넣고 크기만 없앤다. */
+  font-size: 1pt; line-height: 0; color: #fff;
+  user-select: none;
 }

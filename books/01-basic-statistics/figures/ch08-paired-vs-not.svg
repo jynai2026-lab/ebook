@@ -1,0 +1,26 @@
+<svg viewBox="0 0 900 320" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="430" height="264" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<text x="215" y="34" font-size="15.5" fill="#0E7490" font-weight="800" text-anchor="middle">짝을 유지 (paired = TRUE)</text>
+<text x="215" y="76" font-size="26" fill="#0E7490" font-weight="800" text-anchor="middle">t = 6.36</text>
+<text x="215" y="98" font-size="13" fill="#667085" text-anchor="middle">df = 39</text>
+<path d="M50,156 L380,156" stroke="#E4E7EC" stroke-width="1.6"/>
+<path d="M83,136 L83,176" stroke="#16243F" stroke-width="2"/>
+<text x="83" y="194" font-size="13" fill="#16243F" font-weight="700" text-anchor="middle">0</text>
+<rect x="181" y="145" width="92" height="22" rx="5" fill="#0E7490" opacity=".22" stroke="#0E7490" stroke-width="2"/>
+<circle cx="227" cy="156" r="5" fill="#0E7490"/>
+<text x="215" y="218" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">95% CI 폭 0.278</text>
+<text x="215" y="240" font-size="13" fill="#667085" text-anchor="middle">평균 차이 0.437 (동일)</text>
+<rect x="470" y="0" width="430" height="264" rx="10" fill="#FBFCFD" stroke="#C2452F" stroke-width="2.5"/>
+<text x="685" y="34" font-size="15.5" fill="#C2452F" font-weight="800" text-anchor="middle">짝을 무시 (paired = FALSE)</text>
+<text x="685" y="76" font-size="26" fill="#C2452F" font-weight="800" text-anchor="middle">t = 2.50</text>
+<text x="685" y="98" font-size="13" fill="#667085" text-anchor="middle">df = 78</text>
+<path d="M520,156 L850,156" stroke="#E4E7EC" stroke-width="1.6"/>
+<path d="M553,136 L553,176" stroke="#16243F" stroke-width="2"/>
+<text x="553" y="194" font-size="13" fill="#16243F" font-weight="700" text-anchor="middle">0</text>
+<rect x="582" y="145" width="230" height="22" rx="5" fill="#C2452F" opacity=".22" stroke="#C2452F" stroke-width="2"/>
+<circle cx="697" cy="156" r="5" fill="#C2452F"/>
+<text x="685" y="218" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">95% CI 폭 0.696</text>
+<text x="685" y="240" font-size="13" fill="#667085" text-anchor="middle">평균 차이 0.437 (동일)</text>
+<text x="450" y="288" font-size="14.5" fill="#101828" text-anchor="middle">평균 차이는 똑같은 0.437이다. 달라진 것은 그 차이를 재는 잣대, 곧 표준오차뿐이다</text>
+<text x="450" y="310" font-size="13.5" fill="#344054" text-anchor="middle">두 점수의 상관 .888만큼 표준오차가 줄어 t값이 2.5배 커졌다</text>
+</svg>

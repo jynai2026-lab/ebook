@@ -1,0 +1,40 @@
+<svg viewBox="0 0 900 300" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="44" width="340" height="200" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="190" y="32" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">원자료 — 짝지어진 두 점수</text>
+<text x="78" y="74" font-size="13.5" fill="#667085" font-weight="700" text-anchor="middle">id</text>
+<text x="186" y="74" font-size="13.5" fill="#667085" font-weight="700" text-anchor="middle">사전</text>
+<text x="294" y="74" font-size="13.5" fill="#667085" font-weight="700" text-anchor="middle">사후</text>
+<text x="78" y="102" font-size="14" fill="#101828" text-anchor="middle">1</text>
+<text x="186" y="102" font-size="14" fill="#101828" text-anchor="middle">3.25</text>
+<text x="294" y="102" font-size="14" fill="#101828" text-anchor="middle">3.89</text>
+<text x="78" y="130" font-size="14" fill="#101828" text-anchor="middle">2</text>
+<text x="186" y="130" font-size="14" fill="#101828" text-anchor="middle">3.70</text>
+<text x="294" y="130" font-size="14" fill="#101828" text-anchor="middle">4.97</text>
+<text x="78" y="158" font-size="14" fill="#101828" text-anchor="middle">3</text>
+<text x="186" y="158" font-size="14" fill="#101828" text-anchor="middle">2.19</text>
+<text x="294" y="158" font-size="14" fill="#101828" text-anchor="middle">3.04</text>
+<text x="78" y="186" font-size="14" fill="#101828" text-anchor="middle">4</text>
+<text x="186" y="186" font-size="14" fill="#101828" text-anchor="middle">2.17</text>
+<text x="294" y="186" font-size="14" fill="#101828" text-anchor="middle">1.88</text>
+<text x="78" y="214" font-size="14" fill="#101828" text-anchor="middle">⋮</text>
+<text x="186" y="214" font-size="14" fill="#101828" text-anchor="middle">⋮</text>
+<text x="294" y="214" font-size="14" fill="#101828" text-anchor="middle">⋮</text>
+<text x="190" y="262" font-size="13" fill="#C2452F" font-weight="700" text-anchor="middle">두 값이 서로 얽혀 있다 (r = .89)</text>
+<path d="M372,144 L448,144" stroke="#0E7490" stroke-width="2.6"/><path d="M440.0,149.0 L448.0,144.0 L440.0,139.0" fill="none" stroke="#0E7490" stroke-width="2.6"/>
+<text x="410" y="130" font-size="13.5" fill="#0E7490" font-weight="800" text-anchor="middle">뺄셈</text>
+<rect x="460" y="44" width="230" height="200" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<text x="575" y="32" font-size="15" fill="#0E7490" font-weight="800" text-anchor="middle">차이점수 D</text>
+<text x="575" y="74" font-size="13.5" fill="#667085" font-weight="700" text-anchor="middle">사후 − 사전</text>
+<text x="575" y="102" font-size="14" fill="#101828" font-weight="600" text-anchor="middle">+0.64</text>
+<text x="575" y="130" font-size="14" fill="#101828" font-weight="600" text-anchor="middle">+1.27</text>
+<text x="575" y="158" font-size="14" fill="#101828" font-weight="600" text-anchor="middle">+0.85</text>
+<text x="575" y="186" font-size="14" fill="#101828" font-weight="600" text-anchor="middle">−0.29</text>
+<text x="575" y="214" font-size="14" fill="#101828" font-weight="600" text-anchor="middle">⋮</text>
+<text x="575" y="262" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">서로 독립이다</text>
+<path d="M702,144 L762,144" stroke="#16243F" stroke-width="2.6"/><path d="M754.0,149.0 L762.0,144.0 L754.0,139.0" fill="none" stroke="#16243F" stroke-width="2.6"/>
+<rect x="772" y="106" width="118" height="76" rx="9" fill="#16243F"/>
+<text x="831" y="134" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">단일표본</text>
+<text x="831" y="156" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">t-검정</text>
+<text x="831" y="196" font-size="13" fill="#16243F" font-weight="700" text-anchor="middle">H₀ : μ_D = 0</text>
+<text x="450" y="288" font-size="14.5" fill="#101828" text-anchor="middle">원점수는 더 이상 쓰이지 않는다. 검정이 묻는 것은 "이 변화량들의 평균이 0인가" 하나뿐이다</text>
+</svg>

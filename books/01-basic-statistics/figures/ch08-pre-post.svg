@@ -1,0 +1,150 @@
+<svg viewBox="0 0 900 350" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="430" height="304" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="215" y="32" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">원점수 — 사람마다 출발선이 다르다</text>
+<path d="M130,149.9 L310,125.0" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,132.4 L310,82.9" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,191.2 L310,158.1" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,192.0 L310,203.3" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,178.7 L310,162.8" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,177.2 L310,153.8" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,166.7 L310,144.8" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,114.8 L310,89.5" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,149.5 L310,136.6" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,121.1 L310,81.7" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,168.6 L310,174.5" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,148.3 L310,144.4" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,174.5 L310,175.6" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,159.6 L310,138.2" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,105.9 L310,97.7" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,113.7 L310,81.7" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,189.3 L310,193.5" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,174.8 L310,141.3" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,165.1 L310,125.0" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,154.2 L310,176.4" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,151.5 L310,121.4" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,153.8 L310,105.1" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,128.1 L310,89.1" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,197.1 L310,183.8" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,149.1 L310,117.9" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,156.9 L310,161.6" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,155.4 L310,146.8" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,150.7 L310,133.5" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,153.8 L310,115.6" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,180.3 L310,167.4" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,202.9 L310,208.0" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,175.2 L310,171.7" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,192.0 L310,176.8" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,159.6 L310,152.2" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,146.8 L310,141.3" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,176.0 L310,152.2" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,109.8 L310,81.7" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,122.2 L310,120.3" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,185.0 L310,173.7" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<path d="M130,145.6 L310,130.8" stroke="#A8D5DE" stroke-width="1.2" opacity=".75"/>
+<circle cx="130" cy="149.9" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="132.4" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="191.2" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="192.0" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="178.7" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="177.2" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="166.7" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="114.8" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="149.5" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="121.1" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="168.6" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="148.3" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="174.5" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="159.6" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="105.9" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="113.7" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="189.3" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="174.8" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="165.1" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="154.2" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="151.5" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="153.8" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="128.1" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="197.1" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="149.1" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="156.9" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="155.4" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="150.7" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="153.8" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="180.3" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="202.9" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="175.2" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="192.0" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="159.6" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="146.8" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="176.0" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="109.8" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="122.2" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="185.0" r="2.6" fill="#98A2B3"/>
+<circle cx="130" cy="145.6" r="2.6" fill="#98A2B3"/>
+<circle cx="310" cy="125.0" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="82.9" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="158.1" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="203.3" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="162.8" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="153.8" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="144.8" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="89.5" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="136.6" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="81.7" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="174.5" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="144.4" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="175.6" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="138.2" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="97.7" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="81.7" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="193.5" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="141.3" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="125.0" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="176.4" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="121.4" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="105.1" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="89.1" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="183.8" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="117.9" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="161.6" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="146.8" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="133.5" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="115.6" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="167.4" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="208.0" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="171.7" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="176.8" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="152.2" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="141.3" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="152.2" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="81.7" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="120.3" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="173.7" r="2.6" fill="#0E7490"/>
+<circle cx="310" cy="130.8" r="2.6" fill="#0E7490"/>
+<path d="M92,158 L168,158" stroke="#16243F" stroke-width="3"/>
+<text x="130" y="246" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">사전  M = 3.04</text>
+<path d="M272,141 L348,141" stroke="#16243F" stroke-width="3"/>
+<text x="310" y="246" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">사후  M = 3.48</text>
+<text x="215" y="268" font-size="13" fill="#667085" text-anchor="middle">두 분포가 넓게 겹쳐 있다</text>
+<rect x="470" y="0" width="430" height="304" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<text x="685" y="32" font-size="15" fill="#0E7490" font-weight="800" text-anchor="middle">차이점수 — 개인차가 빠진 뒤</text>
+<rect x="536.0" y="199.2" width="23.0" height="16.8" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="561.0" y="199.2" width="23.0" height="16.8" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="586.0" y="149.0" width="23.0" height="67.0" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="611.0" y="165.8" width="23.0" height="50.2" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="636.0" y="132.2" width="23.0" height="83.8" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="661.0" y="82.0" width="23.0" height="134.0" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="686.0" y="149.0" width="23.0" height="67.0" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="711.0" y="132.2" width="23.0" height="83.8" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="736.0" y="149.0" width="23.0" height="67.0" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="761.0" y="165.8" width="23.0" height="50.2" rx="2" fill="#0E7490" opacity=".7"/>
+<rect x="786.0" y="182.5" width="23.0" height="33.5" rx="2" fill="#0E7490" opacity=".7"/>
+<path d="M510,216 L860,216" stroke="#344054" stroke-width="2"/>
+<path d="M622,222 L622,74" stroke="#C2452F" stroke-width="2.4" stroke-dasharray="5 4"/>
+<text x="622" y="66" font-size="13" fill="#C2452F" font-weight="800" text-anchor="middle">0 (변화 없음)</text>
+<path d="M683,222 L683,74" stroke="#16243F" stroke-width="2.6"/>
+<text x="689" y="66" font-size="13.5" fill="#16243F" font-weight="800">M = 0.437</text>
+<text x="685" y="244" font-size="13.5" fill="#101828" font-weight="700" text-anchor="middle">SD가 0.65·0.89 → 0.435로 줄었다</text>
+<text x="685" y="264" font-size="13" fill="#667085" text-anchor="middle">0에서 뚜렷이 떨어져 있다</text>
+<text x="450" y="336" font-size="14.5" fill="#101828" text-anchor="middle">짝을 유지하면 개인의 원래 수준이 뺄셈으로 상쇄되고, 변화량만 남는다</text>
+</svg>

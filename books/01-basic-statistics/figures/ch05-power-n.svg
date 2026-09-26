@@ -1,0 +1,29 @@
+<svg viewBox="0 0 900 300" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M100,218 L820,218" stroke="#344054" stroke-width="2"/>
+<path d="M100,218 L100,58" stroke="#344054" stroke-width="2"/>
+<path d="M100,90 L820,90" stroke="#C2452F" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="816" y="80" font-size="13.5" fill="#C2452F" font-weight="700" text-anchor="end">목표 .80</text>
+<text x="88" y="223" font-size="12.5" fill="#98A2B3" text-anchor="end">0.0</text>
+<text x="88" y="191" font-size="12.5" fill="#98A2B3" text-anchor="end">0.2</text>
+<text x="88" y="159" font-size="12.5" fill="#98A2B3" text-anchor="end">0.4</text>
+<text x="88" y="127" font-size="12.5" fill="#98A2B3" text-anchor="end">0.6</text>
+<text x="88" y="95" font-size="12.5" fill="#98A2B3" text-anchor="end">0.8</text>
+<text x="88" y="63" font-size="12.5" fill="#98A2B3" text-anchor="end">1.0</text>
+<rect x="117" y="164" width="78" height="54" rx="5" fill="#A8D5DE"/>
+<text x="156" y="186" font-size="14" fill="#101828" font-weight="800" text-anchor="middle">0.338</text>
+<text x="156" y="240" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">n = 20</text>
+<rect x="257" y="142" width="78" height="76" rx="5" fill="#A8D5DE"/>
+<text x="296" y="164" font-size="14" fill="#101828" font-weight="800" text-anchor="middle">0.478</text>
+<text x="296" y="240" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">n = 30</text>
+<rect x="397" y="106" width="78" height="112" rx="5" fill="#A8D5DE"/>
+<text x="436" y="128" font-size="14" fill="#101828" font-weight="800" text-anchor="middle">0.697</text>
+<text x="436" y="240" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">n = 50</text>
+<rect x="537" y="90" width="78" height="128" rx="5" fill="#0E7490"/>
+<text x="576" y="112" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">0.801</text>
+<text x="576" y="240" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">n = 64</text>
+<rect x="677" y="68" width="78" height="150" rx="5" fill="#0E7490"/>
+<text x="716" y="90" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">0.940</text>
+<text x="716" y="240" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">n = 100</text>
+<text x="106" y="54" font-size="14" fill="#667085">검정력 (효과크기 d = 0.50, α = .05 고정)</text>
+<text x="450" y="288" font-size="14.5" fill="#101828" text-anchor="middle">각 집단 30명으로는 실재하는 중간 크기 효과의 절반 이상을 놓친다. 64명이 되어야 .80을 넘는다</text>
+</svg>

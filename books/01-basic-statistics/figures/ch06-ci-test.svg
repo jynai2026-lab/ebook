@@ -1,0 +1,24 @@
+<svg viewBox="0 0 900 340" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M130,104 L810,104" stroke="#E4E7EC" stroke-width="1.6"/>
+<rect x="532" y="91" width="144" height="26" rx="5" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="604" cy="104" r="5" fill="#0E7490"/>
+<path d="M266,82 L266,126" stroke="#C2452F" stroke-width="2.6"/>
+<circle cx="266" cy="104" r="6" fill="#C2452F"/>
+<text x="266" y="74" font-size="13.5" fill="#C2452F" font-weight="800" text-anchor="middle">기준값 3.0</text>
+<text x="814" y="109" font-size="13" fill="#667085"></text>
+<text x="116" y="109" font-size="13" fill="#344054" font-weight="700" text-anchor="end">구간 밖</text>
+<text x="604" y="144" font-size="13.5" fill="#C2452F" font-weight="700" text-anchor="middle">p < .001, 기각</text>
+<path d="M130,216 L810,216" stroke="#E4E7EC" stroke-width="1.6"/>
+<rect x="532" y="203" width="144" height="26" rx="5" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="604" cy="216" r="5" fill="#0E7490"/>
+<path d="M538,194 L538,238" stroke="#0E7490" stroke-width="2.6"/>
+<circle cx="538" cy="216" r="6" fill="#0E7490"/>
+<text x="538" y="186" font-size="13.5" fill="#0E7490" font-weight="800" text-anchor="middle">기준값 3.4</text>
+<text x="814" y="221" font-size="13" fill="#667085"></text>
+<text x="116" y="221" font-size="13" fill="#344054" font-weight="700" text-anchor="end">구간 안</text>
+<text x="604" y="256" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">p = .072, 기각 실패</text>
+<text x="532" y="62" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">3.391</text>
+<text x="676" y="62" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">3.603</text>
+<text x="604" y="40" font-size="15" fill="#0E7490" font-weight="800" text-anchor="middle">95% 신뢰구간</text>
+<text x="450" y="328" font-size="14.5" fill="#101828" text-anchor="middle">기준값이 구간 안에 들어오면 기각되지 않는다. 신뢰구간과 유의확률은 언제나 같은 답을 준다</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg viewBox="0 0 900 320" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<text x="160" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">표본크기</text>
+<text x="360" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">평균 차이</text>
+<text x="550" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">유의확률 p</text>
+<text x="760" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">효과크기 d</text>
+<rect x="80" y="86" width="740" height="34" rx="7" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1"/>
+<text x="160" y="109" font-size="14" fill="#101828" font-weight="700" text-anchor="middle">n = 50</text>
+<text x="360" y="109" font-size="14" fill="#344054" text-anchor="middle">1점</text>
+<text x="550" y="109" font-size="14" fill="#667085" text-anchor="middle">0.6374</text>
+<text x="760" y="109" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.067</text>
+<rect x="80" y="126" width="740" height="34" rx="7" fill="#fff" stroke="#E4E7EC" stroke-width="1"/>
+<text x="160" y="149" font-size="14" fill="#101828" font-weight="700" text-anchor="middle">n = 100</text>
+<text x="360" y="149" font-size="14" fill="#344054" text-anchor="middle">1점</text>
+<text x="550" y="149" font-size="14" fill="#667085" text-anchor="middle">0.5050</text>
+<text x="760" y="149" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.067</text>
+<rect x="80" y="166" width="740" height="34" rx="7" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1"/>
+<text x="160" y="189" font-size="14" fill="#101828" font-weight="700" text-anchor="middle">n = 400</text>
+<text x="360" y="189" font-size="14" fill="#344054" text-anchor="middle">1점</text>
+<text x="550" y="189" font-size="14" fill="#667085" text-anchor="middle">0.1824</text>
+<text x="760" y="189" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.067</text>
+<rect x="80" y="206" width="740" height="34" rx="7" fill="#fff" stroke="#E4E7EC" stroke-width="1"/>
+<text x="160" y="229" font-size="14" fill="#101828" font-weight="700" text-anchor="middle">n = 1,000</text>
+<text x="360" y="229" font-size="14" fill="#344054" text-anchor="middle">1점</text>
+<text x="550" y="229" font-size="14" fill="#C2452F" font-weight="800" text-anchor="middle">0.0350  ✔ 유의</text>
+<text x="760" y="229" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.067</text>
+<text x="450" y="40" font-size="16" fill="#101828" text-anchor="middle">100점 만점에서 1점 차이. 표본크기만 바꿨다</text>
+<text x="450" y="288" font-size="14.5" fill="#101828" text-anchor="middle">평균 차이도 효과크기도 그대로인데 p값만 작아져 결론이 뒤집힌다</text>
+<text x="450" y="310" font-size="13.5" fill="#344054" text-anchor="middle">효과크기 공식에는 표본크기가 들어가지 않기 때문이다</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg viewBox="0 0 900 320" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M166,217 L780,217" stroke="#E4E7EC" stroke-width="1"/>
+<text x="158" y="222" font-size="12.5" fill="#98A2B3" text-anchor="end">65</text>
+<path d="M166,186 L780,186" stroke="#E4E7EC" stroke-width="1"/>
+<text x="158" y="191" font-size="12.5" fill="#98A2B3" text-anchor="end">70</text>
+<path d="M166,155 L780,155" stroke="#E4E7EC" stroke-width="1"/>
+<text x="158" y="160" font-size="12.5" fill="#98A2B3" text-anchor="end">75</text>
+<path d="M166,124 L780,124" stroke="#E4E7EC" stroke-width="1"/>
+<text x="158" y="129" font-size="12.5" fill="#98A2B3" text-anchor="end">80</text>
+<path d="M166,93 L780,93" stroke="#E4E7EC" stroke-width="1"/>
+<text x="158" y="98" font-size="12.5" fill="#98A2B3" text-anchor="end">85</text>
+<path d="M220,208 L470,159 L720,102" fill="none" stroke="#0E7490" stroke-width="3.2"/>
+<circle cx="220" cy="208" r="6" fill="#0E7490" stroke="#fff" stroke-width="2"/>
+<circle cx="470" cy="159" r="6" fill="#0E7490" stroke="#fff" stroke-width="2"/>
+<circle cx="720" cy="102" r="6" fill="#0E7490" stroke="#fff" stroke-width="2"/>
+<text x="788" y="107" font-size="15" fill="#0E7490" font-weight="800">남</text>
+<path d="M220,204 L470,144 L720,149" fill="none" stroke="#C2452F" stroke-width="3.2"/>
+<circle cx="220" cy="204" r="6" fill="#C2452F" stroke="#fff" stroke-width="2"/>
+<circle cx="470" cy="144" r="6" fill="#C2452F" stroke="#fff" stroke-width="2"/>
+<circle cx="720" cy="149" r="6" fill="#C2452F" stroke="#fff" stroke-width="2"/>
+<text x="788" y="154" font-size="15" fill="#C2452F" font-weight="800">여</text>
+<text x="220" y="260" font-size="13" fill="#344054" font-weight="700" text-anchor="middle">남녀공학/분반</text>
+<text x="470" y="260" font-size="13" fill="#344054" font-weight="700" text-anchor="middle">남녀공학/합반</text>
+<text x="720" y="260" font-size="13" fill="#344054" font-weight="700" text-anchor="middle">단성학교</text>
+<path d="M166,236 L780,236" stroke="#344054" stroke-width="2"/>
+<rect x="680" y="99" width="80" height="62" rx="8" fill="none" stroke="#B54708" stroke-width="2.4" stroke-dasharray="5 4"/>
+<text x="720" y="87" font-size="13.5" fill="#B54708" font-weight="800" text-anchor="middle">7.6점 차이</text>
+<text x="450" y="44" font-size="16" fill="#101828" text-anchor="middle">성별 × 학교 유형  F(2, 102) = 6.27, p = .003</text>
+<text x="450" y="286" font-size="14.5" fill="#101828" text-anchor="middle">분반과 합반에서는 남녀가 거의 겹치는데 단성학교에서만 벌어진다</text>
+<text x="450" y="308" font-size="13.5" fill="#344054" text-anchor="middle">방향이 반대인 차이들이 주변평균에서는 상쇄되어 사라진다</text>
+</svg>

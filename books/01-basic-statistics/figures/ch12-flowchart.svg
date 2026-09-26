@@ -1,0 +1,69 @@
+<svg viewBox="0 0 900 480" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="300" y="10" width="300" height="40" rx="8" fill="#16243F" stroke="#16243F" stroke-width="0"/>
+<text x="450" y="35" font-size="15" fill="#fff" font-weight="800" text-anchor="middle">종속변수(결과)의 척도는?</text>
+<path d="M450,50 L450,69 M300,69 L800,69 M300,69 L300,88 M800,69 L800,88" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<rect x="171" y="88" width="258" height="48" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="300" y="108" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">연속형 (등간 · 비율)</text>
+<text x="300" y="126" font-size="12" fill="#98A2B3" text-anchor="middle">점수, 소득, 리커트 평균</text>
+<rect x="700" y="88" width="200" height="48" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="800" y="108" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">범주형 (명목 · 서열)</text>
+<text x="800" y="126" font-size="12" fill="#98A2B3" text-anchor="middle">찬반, 합격 여부</text>
+<path d="M300,136 L300,157 M133,157 L620,157 M133,157 L133,178 M398,157 L398,178 M620,157 L620,178" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<rect x="75" y="178" width="116" height="46" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="133" y="197" font-size="12.5" fill="#344054" text-anchor="middle">독립변수</text>
+<text x="133" y="214" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">범주형 · 2집단</text>
+<rect x="324" y="178" width="148" height="46" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="398" y="197" font-size="12.5" fill="#344054" text-anchor="middle">독립변수</text>
+<text x="398" y="214" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">범주형 · 3집단 이상</text>
+<rect x="560" y="178" width="120" height="46" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="620" y="197" font-size="12.5" fill="#344054" text-anchor="middle">독립변수</text>
+<text x="620" y="214" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">연속형</text>
+<path d="M133,224 L133,243 M70,243 L196,243 M70,243 L70,262 M196,243 L196,262" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<rect x="12" y="262" width="116" height="42" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="70" y="280" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">독립</text>
+<text x="70" y="296" font-size="11" fill="#98A2B3" text-anchor="middle">서로 다른 사람</text>
+<rect x="138" y="262" width="116" height="42" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="196" y="280" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">대응</text>
+<text x="196" y="296" font-size="11" fill="#98A2B3" text-anchor="middle">같은 사람 2회</text>
+<path d="M398,224 L398,243 M330,243 L466,243 M330,243 L330,262 M466,243 L466,262" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<rect x="272" y="262" width="116" height="42" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="330" y="280" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">요인 1개</text>
+<text x="330" y="296" font-size="11" fill="#98A2B3" text-anchor="middle">독립변수 하나</text>
+<rect x="408" y="262" width="116" height="42" rx="7" fill="#fff" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="466" y="280" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">요인 2개</text>
+<text x="466" y="296" font-size="11" fill="#98A2B3" text-anchor="middle">독립변수 둘</text>
+<path d="M620,224 L620,330  M800,136 L800,330" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<path d="M70,304 L70,330 M196,304 L196,330 M330,304 L330,330 M466,304 L466,330" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<rect x="6" y="330" width="128" height="44" rx="8" fill="#0E7490" stroke="#0E7490" stroke-width="0"/>
+<text x="70" y="350" font-size="13" fill="#fff" font-weight="800" text-anchor="middle">독립표본 t</text>
+<text x="70" y="366" font-size="11" fill="#CFEAF0" text-anchor="middle">7장</text>
+<path d="M70,374 L70,394" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<text x="70" y="408" font-size="11.5" fill="#667085" text-anchor="middle">평균 차이</text>
+<rect x="132" y="330" width="128" height="44" rx="8" fill="#0E7490" stroke="#0E7490" stroke-width="0"/>
+<text x="196" y="350" font-size="13" fill="#fff" font-weight="800" text-anchor="middle">종속표본 t</text>
+<text x="196" y="366" font-size="11" fill="#CFEAF0" text-anchor="middle">8장</text>
+<path d="M196,374 L196,394" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<text x="196" y="408" font-size="11.5" fill="#667085" text-anchor="middle">변화량</text>
+<rect x="266" y="330" width="128" height="44" rx="8" fill="#0E7490" stroke="#0E7490" stroke-width="0"/>
+<text x="330" y="350" font-size="13" fill="#fff" font-weight="800" text-anchor="middle">일원분산분석</text>
+<text x="330" y="366" font-size="11" fill="#CFEAF0" text-anchor="middle">9 · 10장</text>
+<path d="M330,374 L330,394" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<text x="330" y="408" font-size="11.5" fill="#667085" text-anchor="middle">어느 집단?</text>
+<rect x="402" y="330" width="128" height="44" rx="8" fill="#0E7490" stroke="#0E7490" stroke-width="0"/>
+<text x="466" y="350" font-size="13" fill="#fff" font-weight="800" text-anchor="middle">이원분산분석</text>
+<text x="466" y="366" font-size="11" fill="#CFEAF0" text-anchor="middle">11장</text>
+<path d="M466,374 L466,394" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<text x="466" y="408" font-size="11.5" fill="#667085" text-anchor="middle">상호작용</text>
+<rect x="556" y="330" width="128" height="44" rx="8" fill="#0E7490" stroke="#0E7490" stroke-width="0"/>
+<text x="620" y="350" font-size="13" fill="#fff" font-weight="800" text-anchor="middle">상관분석</text>
+<text x="620" y="366" font-size="11" fill="#CFEAF0" text-anchor="middle">2권</text>
+<path d="M620,374 L620,394" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<text x="620" y="408" font-size="11.5" fill="#667085" text-anchor="middle">관계 방향 · 강도</text>
+<rect x="736" y="330" width="128" height="44" rx="8" fill="#0E7490" stroke="#0E7490" stroke-width="0"/>
+<text x="800" y="350" font-size="13" fill="#fff" font-weight="800" text-anchor="middle">카이제곱 검정</text>
+<text x="800" y="366" font-size="11" fill="#CFEAF0" text-anchor="middle">2권</text>
+<path d="M800,374 L800,394" stroke="#A8D5DE" stroke-width="1.6" fill="none"/>
+<text x="800" y="408" font-size="11.5" fill="#667085" text-anchor="middle">빈도 차이</text>
+<rect x="60" y="432" width="780" height="34" rx="8" fill="#ECF7F9" stroke="#A8D5DE" stroke-width="1.6"/>
+<text x="450" y="454" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">영향력의 크기까지 알고 싶다면 → 회귀분석 (2권)  ·  측정도구를 검증하려면 → 요인분석 (3권)</text>
+</svg>

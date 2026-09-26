@@ -1,0 +1,21 @@
+<svg viewBox="0 0 900 260" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="430" height="204" rx="10" fill="#FBFCFD" stroke="#16243F" stroke-width="2.5"/>
+<text x="215" y="36" font-size="18" fill="#16243F" font-weight="800" text-anchor="middle">점추정</text>
+<rect x="470" y="0" width="430" height="204" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<text x="685" y="36" font-size="18" fill="#0E7490" font-weight="800" text-anchor="middle">구간추정</text>
+<path d="M50,152 L380,152" stroke="#344054" stroke-width="2"/>
+<circle cx="215" cy="152" r="7" fill="#16243F"/>
+<text x="215" y="134" font-size="15" fill="#16243F" font-weight="800" text-anchor="middle">M = 3.50</text>
+<text x="215" y="84" font-size="14" fill="#344054" text-anchor="middle">값 하나를 찍는다</text>
+<text x="215" y="182" font-size="13" fill="#667085" text-anchor="middle">얼마나 믿을 만한지는 말해주지 않는다</text>
+<path d="M520,152 L850,152" stroke="#344054" stroke-width="2"/>
+<rect x="628" y="139" width="114" height="26" rx="5" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="685" cy="152" r="6" fill="#0E7490"/>
+<path d="M628,139 L628,165" stroke="#0E7490" stroke-width="2.6"/>
+<path d="M742,139 L742,165" stroke="#0E7490" stroke-width="2.6"/>
+<text x="628" y="130" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">3.39</text>
+<text x="742" y="130" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">3.60</text>
+<text x="685" y="84" font-size="14" fill="#344054" text-anchor="middle">값 + 흔들릴 수 있는 범위</text>
+<text x="685" y="182" font-size="13" fill="#667085" text-anchor="middle">구간이 좁을수록 정밀한 추정이다</text>
+<text x="450" y="244" font-size="14.5" fill="#101828" text-anchor="middle">구간 = 추정치 ± (임계값 × 표준오차). 이 형태는 이후 모든 신뢰구간에서 똑같이 반복된다</text>
+</svg>

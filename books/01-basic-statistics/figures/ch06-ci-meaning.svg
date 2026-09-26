@@ -1,0 +1,17 @@
+<svg viewBox="0 0 900 250" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="0" width="430" height="204" rx="10" fill="#FBEAE6" stroke="#C2452F" stroke-width="2.5"/>
+<text x="215" y="40" font-size="17" fill="#C2452F" font-weight="800" text-anchor="middle">✕  틀린 해석</text>
+<text x="215" y="84" font-size="15.5" fill="#101828" font-weight="700" text-anchor="middle">"모평균이 이 구간에 있을</text>
+<text x="215" y="108" font-size="15.5" fill="#101828" font-weight="700" text-anchor="middle">확률이 95%다"</text>
+<text x="215" y="140" font-size="13" fill="#344054" text-anchor="middle">모평균은 고정된 상수이고</text>
+<text x="215" y="160" font-size="13" fill="#344054" text-anchor="middle">구간도 이미 확정된 숫자다.</text>
+<text x="215" y="180" font-size="13" fill="#344054" text-anchor="middle">들어 있거나 아니거나 둘 중 하나다.</text>
+<rect x="470" y="0" width="430" height="204" rx="10" fill="#ECF7F9" stroke="#0E7490" stroke-width="2.5"/>
+<text x="685" y="40" font-size="17" fill="#0E7490" font-weight="800" text-anchor="middle">✔  옳은 해석</text>
+<text x="685" y="84" font-size="15.5" fill="#101828" font-weight="700" text-anchor="middle">"같은 방식으로 구간을 만들면</text>
+<text x="685" y="108" font-size="15.5" fill="#101828" font-weight="700" text-anchor="middle">그중 95%가 모평균을 담는다"</text>
+<text x="685" y="140" font-size="13" fill="#344054" text-anchor="middle">95%가 수식하는 것은 구간이 아니라</text>
+<text x="685" y="160" font-size="13" fill="#344054" text-anchor="middle">구간을 만드는 절차다.</text>
+<text x="685" y="180" font-size="13" fill="#344054" text-anchor="middle">지금 이 구간이 맞는지는 알 수 없다.</text>
+<text x="450" y="236" font-size="14" fill="#101828" text-anchor="middle">심사에서 가장 자주 지적되는 대목이므로 표현을 정확히 써야 한다</text>
+</svg>

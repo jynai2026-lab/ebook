@@ -1,0 +1,38 @@
+<svg viewBox="0 0 900 310" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<text x="324" y="76" font-size="13.5" fill="#16243F" font-weight="800" text-anchor="middle">보정 없음</text>
+<text x="478" y="76" font-size="13.5" fill="#16243F" font-weight="800" text-anchor="middle">Tukey HSD</text>
+<text x="634" y="76" font-size="13.5" fill="#16243F" font-weight="800" text-anchor="middle">Bonferroni</text>
+<text x="788" y="76" font-size="13.5" fill="#16243F" font-weight="800" text-anchor="middle">Holm</text>
+<text x="228" y="120" font-size="14.5" fill="#101828" font-weight="800" text-anchor="end">B − A</text>
+<rect x="252" y="98" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="324" y="122" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.0014</text>
+<rect x="407" y="98" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="478" y="122" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.0040</text>
+<rect x="562" y="98" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="634" y="122" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.0043</text>
+<rect x="717" y="98" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="788" y="122" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.0029</text>
+<text x="228" y="166" font-size="14.5" fill="#101828" font-weight="800" text-anchor="end">C − A</text>
+<rect x="252" y="144" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="324" y="168" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">< .001</text>
+<rect x="407" y="144" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="478" y="168" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">< .001</text>
+<rect x="562" y="144" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="634" y="168" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">< .001</text>
+<rect x="717" y="144" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="788" y="168" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">< .001</text>
+<text x="228" y="212" font-size="14.5" fill="#101828" font-weight="800" text-anchor="end">C − B</text>
+<rect x="252" y="190" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="324" y="214" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.0219</text>
+<rect x="407" y="190" width="143" height="34" rx="6" fill="#FBEAE6" stroke="#C2452F" stroke-width="1.8"/>
+<text x="478" y="214" font-size="14" fill="#C2452F" font-weight="800" text-anchor="middle">0.0552</text>
+<rect x="562" y="190" width="143" height="34" rx="6" fill="#FBEAE6" stroke="#C2452F" stroke-width="1.8"/>
+<text x="634" y="214" font-size="14" fill="#C2452F" font-weight="800" text-anchor="middle">0.0656</text>
+<rect x="717" y="190" width="143" height="34" rx="6" fill="#ECF7F9" stroke="#0E7490" stroke-width="1.8"/>
+<text x="788" y="214" font-size="14" fill="#0E7490" font-weight="800" text-anchor="middle">0.0219</text>
+<rect x="244" y="184" width="624" height="46" rx="8" fill="none" stroke="#B54708" stroke-width="2.6"/>
+<text x="556" y="250" font-size="13.5" fill="#B54708" font-weight="800" text-anchor="middle">↑ 이 한 줄에서 결론이 갈린다</text>
+<text x="450" y="42" font-size="16.5" fill="#101828" text-anchor="middle">같은 자료, 같은 비교. 보정 방법만 바꾼 결과</text>
+<text x="450" y="278" font-size="14.5" fill="#101828" text-anchor="middle">C−B 한 쌍에서 보정 없음과 Holm은 유의하고, Tukey와 Bonferroni는 유의하지 않다</text>
+<text x="450" y="300" font-size="13.5" fill="#344054" text-anchor="middle">그래서 방법은 분석 전에 정해두고, 결과가 어떻게 나오든 그대로 보고한다</text>
+</svg>

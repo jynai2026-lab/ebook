@@ -1,0 +1,52 @@
+<svg viewBox="0 0 900 280" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="8" y="44" width="216" height="176" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="116" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">상호작용 없음</text>
+<path d="M54,173 L190,132" stroke="#0E7490" stroke-width="2.8"/>
+<circle cx="54" cy="173" r="4.5" fill="#0E7490"/>
+<circle cx="190" cy="132" r="4.5" fill="#0E7490"/>
+<path d="M54,146 L190,105" stroke="#C2452F" stroke-width="2.8"/>
+<circle cx="54" cy="146" r="4.5" fill="#C2452F"/>
+<circle cx="190" cy="105" r="4.5" fill="#C2452F"/>
+<path d="M46,186 L198,186" stroke="#344054" stroke-width="2"/>
+<text x="54" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 1</text>
+<text x="190" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 2</text>
+<text x="116" y="226" font-size="12.5" fill="#667085" text-anchor="middle">선이 평행하다</text>
+<rect x="232" y="44" width="216" height="176" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="340" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">서열적 상호작용</text>
+<path d="M278,173 L414,119" stroke="#0E7490" stroke-width="2.8"/>
+<circle cx="278" cy="173" r="4.5" fill="#0E7490"/>
+<circle cx="414" cy="119" r="4.5" fill="#0E7490"/>
+<path d="M278,159 L414,146" stroke="#C2452F" stroke-width="2.8"/>
+<circle cx="278" cy="159" r="4.5" fill="#C2452F"/>
+<circle cx="414" cy="146" r="4.5" fill="#C2452F"/>
+<path d="M270,186 L422,186" stroke="#344054" stroke-width="2"/>
+<text x="278" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 1</text>
+<text x="414" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 2</text>
+<text x="340" y="226" font-size="12.5" fill="#667085" text-anchor="middle">기울기가 다르다</text>
+<rect x="456" y="44" width="216" height="176" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="564" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">비서열적 (교차)</text>
+<path d="M502,173 L638,119" stroke="#0E7490" stroke-width="2.8"/>
+<circle cx="502" cy="173" r="4.5" fill="#0E7490"/>
+<circle cx="638" cy="119" r="4.5" fill="#0E7490"/>
+<path d="M502,119 L638,173" stroke="#C2452F" stroke-width="2.8"/>
+<circle cx="502" cy="119" r="4.5" fill="#C2452F"/>
+<circle cx="638" cy="173" r="4.5" fill="#C2452F"/>
+<path d="M494,186 L646,186" stroke="#344054" stroke-width="2"/>
+<text x="502" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 1</text>
+<text x="638" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 2</text>
+<text x="564" y="226" font-size="12.5" fill="#667085" text-anchor="middle">방향이 뒤집힌다</text>
+<rect x="680" y="44" width="216" height="176" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="788" y="72" font-size="14" fill="#16243F" font-weight="800" text-anchor="middle">한쪽만 효과</text>
+<path d="M726,159 L862,159" stroke="#0E7490" stroke-width="2.8"/>
+<circle cx="726" cy="159" r="4.5" fill="#0E7490"/>
+<circle cx="862" cy="159" r="4.5" fill="#0E7490"/>
+<path d="M726,173 L862,105" stroke="#C2452F" stroke-width="2.8"/>
+<circle cx="726" cy="173" r="4.5" fill="#C2452F"/>
+<circle cx="862" cy="105" r="4.5" fill="#C2452F"/>
+<path d="M718,186 L870,186" stroke="#344054" stroke-width="2"/>
+<text x="726" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 1</text>
+<text x="862" y="204" font-size="11.5" fill="#98A2B3" text-anchor="middle">수준 2</text>
+<text x="788" y="226" font-size="12.5" fill="#667085" text-anchor="middle">한 선만 움직인다</text>
+<text x="450" y="30" font-size="15.5" fill="#101828" text-anchor="middle">가로축에 한 요인, 선으로 다른 요인. 셀 평균을 이어 그린다</text>
+<text x="450" y="268" font-size="14" fill="#101828" text-anchor="middle">선이 평행하면 상호작용이 없다. 기울기가 다르거나 교차하면 있다</text>
+</svg>

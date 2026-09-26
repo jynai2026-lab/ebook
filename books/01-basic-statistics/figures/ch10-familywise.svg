@@ -1,0 +1,28 @@
+<svg viewBox="0 0 900 270" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="40" width="430" height="172" rx="10" fill="#FBFCFD" stroke="#C2452F" stroke-width="2.5"/>
+<text x="215" y="72" font-size="16" fill="#C2452F" font-weight="800" text-anchor="middle">보정하지 않으면</text>
+<rect x="60" y="100" width="140" height="20" rx="4" fill="#C2452F" opacity=".35"/>
+<text x="50" y="115" font-size="12.5" fill="#344054" font-weight="700" text-anchor="end">비교 1</text>
+<text x="212" y="115" font-size="12.5" fill="#C2452F" font-weight="700">α = .05</text>
+<rect x="60" y="128" width="140" height="20" rx="4" fill="#C2452F" opacity=".35"/>
+<text x="50" y="143" font-size="12.5" fill="#344054" font-weight="700" text-anchor="end">비교 2</text>
+<text x="212" y="143" font-size="12.5" fill="#C2452F" font-weight="700">α = .05</text>
+<rect x="60" y="156" width="140" height="20" rx="4" fill="#C2452F" opacity=".35"/>
+<text x="50" y="171" font-size="12.5" fill="#344054" font-weight="700" text-anchor="end">비교 3</text>
+<text x="212" y="171" font-size="12.5" fill="#C2452F" font-weight="700">α = .05</text>
+<text x="215" y="196" font-size="15" fill="#C2452F" font-weight="800" text-anchor="middle">쌓이면 군집당 .143</text>
+<rect x="470" y="40" width="430" height="172" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<text x="685" y="72" font-size="16" fill="#0E7490" font-weight="800" text-anchor="middle">보정하면</text>
+<rect x="530" y="100" width="140" height="20" rx="4" fill="#0E7490" opacity=".35"/>
+<text x="520" y="115" font-size="12.5" fill="#344054" font-weight="700" text-anchor="end">비교 1</text>
+<text x="682" y="115" font-size="12.5" fill="#0E7490" font-weight="700">α = .0167</text>
+<rect x="530" y="128" width="140" height="20" rx="4" fill="#0E7490" opacity=".35"/>
+<text x="520" y="143" font-size="12.5" fill="#344054" font-weight="700" text-anchor="end">비교 2</text>
+<text x="682" y="143" font-size="12.5" fill="#0E7490" font-weight="700">α = .0167</text>
+<rect x="530" y="156" width="140" height="20" rx="4" fill="#0E7490" opacity=".35"/>
+<text x="520" y="171" font-size="12.5" fill="#344054" font-weight="700" text-anchor="end">비교 3</text>
+<text x="682" y="171" font-size="12.5" fill="#0E7490" font-weight="700">α = .0167</text>
+<text x="685" y="196" font-size="15" fill="#0E7490" font-weight="800" text-anchor="middle">전체가 .049로 묶인다</text>
+<text x="450" y="26" font-size="15.5" fill="#101828" text-anchor="middle">연구자가 통제해야 할 것은 개별 비교가 아니라 비교들의 묶음이다</text>
+<text x="450" y="256" font-size="14" fill="#344054" text-anchor="middle">다중비교 방법들은 모두 "군집당 .05를 유지하면서 개별 비교를 어떻게 할 것인가"에 대한 답이다</text>
+</svg>

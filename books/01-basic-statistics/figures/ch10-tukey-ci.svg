@@ -1,0 +1,25 @@
+<svg viewBox="0 0 900 290" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M314,52 L314,214" stroke="#16243F" stroke-width="2.4"/>
+<text x="314" y="42" font-size="13.5" fill="#16243F" font-weight="800" text-anchor="middle">차이 = 0</text>
+<path d="M240,84 L760,84" stroke="#E4E7EC" stroke-width="1"/>
+<rect x="366" y="73" width="240" height="22" rx="5" fill="#0E7490" opacity=".2" stroke="#0E7490" stroke-width="2"/>
+<circle cx="486" cy="84" r="5.5" fill="#0E7490"/>
+<text x="228" y="89" font-size="14.5" fill="#101828" font-weight="800" text-anchor="end">B − A</text>
+<text x="774" y="89" font-size="13.5" fill="#0E7490" font-weight="700">p = 0.0040</text>
+<path d="M240,130 L760,130" stroke="#E4E7EC" stroke-width="1"/>
+<rect x="484" y="119" width="240" height="22" rx="5" fill="#0E7490" opacity=".2" stroke="#0E7490" stroke-width="2"/>
+<circle cx="604" cy="130" r="5.5" fill="#0E7490"/>
+<text x="228" y="135" font-size="14.5" fill="#101828" font-weight="800" text-anchor="end">C − A</text>
+<text x="774" y="135" font-size="13.5" fill="#0E7490" font-weight="700">p < .001</text>
+<path d="M240,176 L760,176" stroke="#E4E7EC" stroke-width="1"/>
+<rect x="312" y="165" width="240" height="22" rx="5" fill="#C2452F" opacity=".2" stroke="#C2452F" stroke-width="2"/>
+<circle cx="432" cy="176" r="5.5" fill="#C2452F"/>
+<text x="228" y="181" font-size="14.5" fill="#101828" font-weight="800" text-anchor="end">C − B</text>
+<text x="774" y="181" font-size="13.5" fill="#C2452F" font-weight="700">p = 0.0552</text>
+<ellipse cx="314" cy="176" rx="24" ry="19" fill="none" stroke="#C2452F" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M250,232 L760,232" stroke="#344054" stroke-width="2"/>
+<text x="314" y="250" font-size="12.5" fill="#98A2B3" text-anchor="middle">0</text>
+<text x="473" y="250" font-size="12.5" fill="#98A2B3" text-anchor="middle">5</text>
+<text x="632" y="250" font-size="12.5" fill="#98A2B3" text-anchor="middle">10</text>
+<text x="450" y="280" font-size="14.5" fill="#101828" text-anchor="middle">군집당 오류를 보정한 신뢰구간이다. 0을 걸치는 구간(붉은 점선)은 C−B 하나뿐이다</text>
+</svg>

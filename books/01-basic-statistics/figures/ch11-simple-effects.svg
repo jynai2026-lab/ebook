@@ -1,0 +1,19 @@
+<svg viewBox="0 0 900 250" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="34" width="430" height="160" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.5"/>
+<text x="215" y="68" font-size="18" fill="#0E7490" font-weight="800" text-anchor="middle">남학생</text>
+<text x="215" y="106" font-size="20" fill="#101828" font-weight="800" text-anchor="middle">F(2, 51) = 28.17</text>
+<text x="215" y="132" font-size="14" fill="#667085" text-anchor="middle">p < .001</text>
+<rect x="65" y="152" width="300" height="22" rx="5" fill="#E4E7EC"/>
+<rect x="65" y="152" width="300" height="22" rx="5" fill="#0E7490" opacity=".7"/>
+<text x="215" y="168" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">SS = 2,612</text>
+<rect x="470" y="34" width="430" height="160" rx="10" fill="#FBFCFD" stroke="#C2452F" stroke-width="2.5"/>
+<text x="685" y="68" font-size="18" fill="#C2452F" font-weight="800" text-anchor="middle">여학생</text>
+<text x="685" y="106" font-size="20" fill="#101828" font-weight="800" text-anchor="middle">F(2, 51) = 14.56</text>
+<text x="685" y="132" font-size="14" fill="#667085" text-anchor="middle">p < .001</text>
+<rect x="535" y="152" width="300" height="22" rx="5" fill="#E4E7EC"/>
+<rect x="535" y="152" width="118" height="22" rx="5" fill="#C2452F" opacity=".7"/>
+<text x="685" y="168" font-size="12.5" fill="#101828" font-weight="700" text-anchor="middle">SS = 1,024</text>
+<text x="450" y="22" font-size="16" fill="#101828" text-anchor="middle">상호작용이 유의하면 다른 요인의 수준별로 나누어 확인한다</text>
+<text x="450" y="218" font-size="14.5" fill="#101828" text-anchor="middle">두 집단 모두 학교 유형의 효과는 유의하지만 크기가 두 배 이상 다르다</text>
+<text x="450" y="240" font-size="13.5" fill="#344054" text-anchor="middle">학교 유형이 남학생의 성적에 더 크게 작용한다 — 상호작용이 유의했던 이유</text>
+</svg>

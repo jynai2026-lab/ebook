@@ -1,0 +1,29 @@
+<svg viewBox="0 0 900 250" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="24" y="52" width="268" height="132" rx="10" fill="#FBFCFD" stroke="#A8D5DE" stroke-width="2"/>
+<text x="158" y="86" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">사전 · 사후</text>
+<circle cx="124" cy="122" r="13" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="192" cy="122" r="13" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<path d="M137,122 L179,122" stroke="#0E7490" stroke-width="2.4"/>
+<text x="158" y="162" font-size="13.5" fill="#344054" text-anchor="middle">같은 사람을 두 번</text>
+<rect x="120" y="41" width="76" height="22" rx="11" fill="#0E7490"/>
+<text x="158" y="56" font-size="12" fill="#fff" font-weight="700" text-anchor="middle">반복측정</text>
+<rect x="316" y="52" width="268" height="132" rx="10" fill="#FBFCFD" stroke="#A8D5DE" stroke-width="2"/>
+<text x="450" y="86" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">남매 · 부부</text>
+<circle cx="416" cy="122" r="13" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="484" cy="122" r="13" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<path d="M429,122 L471,122" stroke="#0E7490" stroke-width="2.4"/>
+<text x="450" y="162" font-size="13.5" fill="#344054" text-anchor="middle">짝지어진 두 사람</text>
+<rect x="412" y="41" width="76" height="22" rx="11" fill="#0E7490"/>
+<text x="450" y="56" font-size="12" fill="#fff" font-weight="700" text-anchor="middle">짝 자료</text>
+<rect x="608" y="52" width="268" height="132" rx="10" fill="#FBFCFD" stroke="#A8D5DE" stroke-width="2"/>
+<text x="742" y="86" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">중간 · 기말</text>
+<circle cx="708" cy="122" r="13" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="776" cy="122" r="13" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<path d="M721,122 L763,122" stroke="#0E7490" stroke-width="2.4"/>
+<text x="742" y="162" font-size="13.5" fill="#344054" text-anchor="middle">같은 학생의 두 시험</text>
+<rect x="704" y="41" width="76" height="22" rx="11" fill="#0E7490"/>
+<text x="742" y="56" font-size="12" fill="#fff" font-weight="700" text-anchor="middle">반복측정</text>
+<text x="450" y="32" font-size="16" fill="#101828" text-anchor="middle">두 측정치가 서로 얽혀 있는 설계들</text>
+<text x="450" y="218" font-size="14.5" fill="#101828" text-anchor="middle">관측치가 80개여도 독립적인 정보는 40개뿐이다. 자유도가 78이 아니라 39인 이유다</text>
+<text x="450" y="240" font-size="13.5" fill="#344054" text-anchor="middle">종속적인 관측치는 아무리 많아도 표본크기에 1 이상 기여하지 못한다</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg viewBox="0 0 900 270" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="44" width="430" height="172" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="215" y="74" font-size="15.5" fill="#667085" font-weight="800" text-anchor="middle">주변평균만 보면</text>
+<rect x="130" y="135" width="60" height="33" rx="5" fill="#98A2B3" opacity=".4"/>
+<text x="160" y="125" font-size="13" fill="#344054" font-weight="700" text-anchor="middle">남 74.84</text>
+<rect x="240" y="146" width="60" height="22" rx="5" fill="#98A2B3" opacity=".4"/>
+<text x="270" y="136" font-size="13" fill="#344054" font-weight="700" text-anchor="middle">여 73.26</text>
+<path d="M100,168 L330,168" stroke="#344054" stroke-width="2"/>
+<text x="215" y="196" font-size="14.5" fill="#667085" font-weight="700" text-anchor="middle">거의 같다 → p = .201</text>
+<rect x="470" y="44" width="430" height="172" rx="10" fill="#FBFCFD" stroke="#B54708" stroke-width="2.5"/>
+<text x="685" y="72" font-size="15.5" fill="#B54708" font-weight="800" text-anchor="middle">셀 평균을 보면</text>
+<text x="540" y="118" font-size="13" fill="#344054" font-weight="700" text-anchor="end">분반</text>
+<text x="600" y="118" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">66.57</text>
+<text x="680" y="118" font-size="13.5" fill="#C2452F" font-weight="700" text-anchor="middle">67.12</text>
+<text x="770" y="118" font-size="13.5" fill="#98A2B3" font-weight="800" text-anchor="middle">-0.55</text>
+<text x="540" y="146" font-size="13" fill="#344054" font-weight="700" text-anchor="end">합반</text>
+<text x="600" y="146" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">74.38</text>
+<text x="680" y="146" font-size="13.5" fill="#C2452F" font-weight="700" text-anchor="middle">76.73</text>
+<text x="770" y="146" font-size="13.5" fill="#98A2B3" font-weight="800" text-anchor="middle">-2.35</text>
+<text x="540" y="174" font-size="13" fill="#344054" font-weight="700" text-anchor="end">단성</text>
+<text x="600" y="174" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">83.58</text>
+<text x="680" y="174" font-size="13.5" fill="#C2452F" font-weight="700" text-anchor="middle">75.94</text>
+<text x="770" y="174" font-size="13.5" fill="#B54708" font-weight="800" text-anchor="middle">+7.64</text>
+<text x="600" y="96" font-size="12.5" fill="#0E7490" font-weight="800" text-anchor="middle">남</text>
+<text x="680" y="96" font-size="12.5" fill="#C2452F" font-weight="800" text-anchor="middle">여</text>
+<text x="770" y="96" font-size="12.5" fill="#344054" font-weight="800" text-anchor="middle">차이</text>
+<path d="M540,104 L800,104" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="685" y="204" font-size="14" fill="#B54708" font-weight="800" text-anchor="middle">단성학교에서만 7.64점 벌어진다</text>
+<text x="450" y="30" font-size="16.5" fill="#101828" text-anchor="middle">성별 주효과가 유의하지 않다 ≠ 성별이 성적과 무관하다</text>
+<text x="450" y="258" font-size="14" fill="#101828" text-anchor="middle">방향이 반대인 차이들이 평균을 내는 과정에서 서로 상쇄된 것이다</text>
+</svg>

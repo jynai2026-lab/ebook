@@ -1,0 +1,62 @@
+<svg viewBox="0 0 900 300" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M122,215 L800,215" stroke="#E4E7EC" stroke-width="1"/>
+<text x="114" y="220" font-size="12.5" fill="#98A2B3" text-anchor="end">60</text>
+<path d="M122,186 L800,186" stroke="#E4E7EC" stroke-width="1"/>
+<text x="114" y="191" font-size="12.5" fill="#98A2B3" text-anchor="end">65</text>
+<path d="M122,157 L800,157" stroke="#E4E7EC" stroke-width="1"/>
+<text x="114" y="162" font-size="12.5" fill="#98A2B3" text-anchor="end">70</text>
+<path d="M122,129 L800,129" stroke="#E4E7EC" stroke-width="1"/>
+<text x="114" y="134" font-size="12.5" fill="#98A2B3" text-anchor="end">75</text>
+<path d="M122,100 L800,100" stroke="#E4E7EC" stroke-width="1"/>
+<text x="114" y="105" font-size="12.5" fill="#98A2B3" text-anchor="end">80</text>
+<path d="M122,72 L800,72" stroke="#E4E7EC" stroke-width="1"/>
+<text x="114" y="77" font-size="12.5" fill="#98A2B3" text-anchor="end">85</text>
+<path d="M130,140 L800,140" stroke="#16243F" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="802" y="145" font-size="12" fill="#667085"></text>
+<rect x="244" y="148" width="52" height="39" rx="5" fill="#ECF7F9" stroke="#A8D5DE" stroke-width="1.6"/>
+<circle cx="252" cy="186.0" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="261" cy="157.4" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="270" cy="168.9" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="279" cy="157.4" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="288" cy="203.1" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="252" cy="157.4" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="261" cy="134.6" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="270" cy="168.9" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="279" cy="157.4" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="288" cy="186.0" r="3.2" fill="#0E7490" opacity=".65"/>
+<path d="M230,168 L310,168" stroke="#16243F" stroke-width="3"/>
+<text x="270" y="250" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">교수법 A</text>
+<text x="270" y="270" font-size="13" fill="#667085" text-anchor="middle">M = 68.2   SD = 3.43</text>
+<rect x="439" y="118" width="52" height="39" rx="5" fill="#ECF7F9" stroke="#A8D5DE" stroke-width="1.6"/>
+<circle cx="447" cy="163.1" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="456" cy="140.3" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="465" cy="134.6" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="474" cy="128.9" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="483" cy="174.6" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="447" cy="117.4" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="456" cy="111.7" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="465" cy="128.9" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="474" cy="140.3" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="483" cy="128.9" r="3.2" fill="#0E7490" opacity=".65"/>
+<path d="M425,137 L505,137" stroke="#16243F" stroke-width="3"/>
+<text x="465" y="250" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">교수법 B</text>
+<text x="465" y="270" font-size="13" fill="#667085" text-anchor="middle">M = 73.6   SD = 3.37</text>
+<rect x="634" y="96" width="52" height="39" rx="5" fill="#ECF7F9" stroke="#A8D5DE" stroke-width="1.6"/>
+<circle cx="642" cy="128.9" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="651" cy="134.6" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="660" cy="117.4" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="669" cy="100.3" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="678" cy="157.4" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="642" cy="94.6" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="651" cy="106.0" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="660" cy="111.7" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="669" cy="106.0" r="3.2" fill="#0E7490" opacity=".65"/>
+<circle cx="678" cy="100.3" r="3.2" fill="#0E7490" opacity=".65"/>
+<path d="M620,116 L700,116" stroke="#16243F" stroke-width="3"/>
+<text x="660" y="250" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">교수법 C</text>
+<text x="660" y="270" font-size="13" fill="#667085" text-anchor="middle">M = 77.3   SD = 3.40</text>
+<path d="M130,226 L800,226" stroke="#344054" stroke-width="2"/>
+<text x="114" y="62" font-size="13" fill="#667085" text-anchor="end">점수</text>
+<text x="796" y="130" font-size="13" fill="#16243F" font-weight="700" text-anchor="end">전체 평균 73.03</text>
+<text x="450" y="288" font-size="14.5" fill="#101828" text-anchor="middle">평균은 순서대로 올라가고, 흩어진 정도(상자 = ±1SD)는 세 집단이 거의 같다</text>
+</svg>

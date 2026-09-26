@@ -1,0 +1,34 @@
+<svg viewBox="0 0 900 360" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M270,142 L866,142" stroke="#16243F" stroke-width="2.4" stroke-dasharray="7 5"/>
+<text x="866" y="132" font-size="13.5" fill="#16243F" font-weight="700" text-anchor="end">전체 평균 73.03</text>
+<path d="M274,171 L426,171" stroke="#0E7490" stroke-width="3"/>
+<text x="350" y="161" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">집단 A  68.2</text>
+<path d="M484,138 L636,138" stroke="#0E7490" stroke-width="3"/>
+<text x="560" y="158" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">집단 B  73.6</text>
+<path d="M694,115 L846,115" stroke="#0E7490" stroke-width="3"/>
+<text x="770" y="105" font-size="13" fill="#0E7490" font-weight="700" text-anchor="middle">집단 C  77.3</text>
+<circle cx="350" cy="210" r="6.5" fill="#C2452F"/>
+<text x="364" y="215" font-size="13" fill="#C2452F" font-weight="700">Xᵢ₁  (집단 A의 한 사람)</text>
+<path d="M304,210 L304,171" stroke="#C2452F" stroke-width="2.6"/>
+<path d="M299,210 L309,210" stroke="#C2452F" stroke-width="2.6"/>
+<path d="M299,171 L309,171" stroke="#C2452F" stroke-width="2.6"/>
+<path d="M304,171 L304,142" stroke="#0E7490" stroke-width="2.6"/>
+<path d="M299,171 L309,171" stroke="#0E7490" stroke-width="2.6"/>
+<path d="M299,142 L309,142" stroke="#0E7490" stroke-width="2.6"/>
+<path d="M254,210 L254,142" stroke="#16243F" stroke-width="2.6"/>
+<path d="M249,210 L259,210" stroke="#16243F" stroke-width="2.6"/>
+<path d="M249,142 L259,142" stroke="#16243F" stroke-width="2.6"/>
+<path d="M60,238 L866,238" stroke="#344054" stroke-width="2"/>
+<rect x="60" y="262" width="12" height="12" rx="3" fill="#C2452F"/>
+<text x="80" y="272" font-size="13" fill="#101828" font-weight="700">집단 내 편차</text>
+<text x="190" y="272" font-size="12.5" fill="#667085">— 개인차</text>
+<rect x="60" y="284" width="12" height="12" rx="3" fill="#0E7490"/>
+<text x="80" y="294" font-size="13" fill="#101828" font-weight="700">집단 간 편차</text>
+<text x="190" y="294" font-size="12.5" fill="#667085">— 처치효과</text>
+<rect x="60" y="306" width="12" height="12" rx="3" fill="#16243F"/>
+<text x="80" y="316" font-size="13" fill="#101828" font-weight="700">총 편차</text>
+<text x="190" y="316" font-size="12.5" fill="#667085">— SS_T의 재료</text>
+<text x="450" y="36" font-size="16" fill="#101828" text-anchor="middle">한 사람이 전체 평균에서 벗어난 거리는 정확히 두 조각으로 나뉜다</text>
+<text x="392" y="280" font-size="15" fill="#101828" font-weight="700">(Xᵢⱼ − X̄) = (X̄ⱼ − X̄) + (Xᵢⱼ − X̄ⱼ)</text>
+<text x="392" y="308" font-size="13" fill="#667085">각각을 제곱해 모두 더한 것이 SS_T = SS_B + SS_W 이다</text>
+</svg>

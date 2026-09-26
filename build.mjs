@@ -9,6 +9,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { execFileSync } from 'child_process';
 import { chromium } from 'playwright-core';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import MarkdownIt from 'markdown-it';
@@ -78,7 +79,7 @@ function preprocess(src, figDir) {
   // CommonMark의 right-flanking 규칙상, 닫는 **이 구두점 바로 뒤이면서 한글 바로 앞에
   // 오면 강조로 인식되지 않는다. 한국어 원고에서 흔한 형태라 먼저 태그로 바꿔 둔다.
   // (콜아웃 본문도 여기서 함께 처리되도록 블록을 잘라내기 전에 실행한다)
-  src = src.replace(/\*\*([^*\n]*[)\]'"’”.!?])\*\*(?=[가-힣])/g, '<strong>$1</strong>');
+  src = src.replace(/\*\*([^*\n]*[)\]'"’”.,!?%:;·…\-~])\*\*(?=[가-힣])/g, '<strong>$1</strong>');
 
   const blocks = [];
   const keep = html => `\n\n<!--BLK${blocks.push(html) - 1}-->\n\n`;
@@ -202,7 +203,7 @@ function buildCover(cfg) {
 </section>`;
 }
 
-function buildToc(cfg, chapters) {
+function buildToc(cfg, chapters, pageOf = {}) {
   let html = `<section class="toc"><h1 class="toc__title">목차</h1>`;
   if (cfg.tocLead) html += `<p class="toc__lead">${esc(cfg.tocLead)}</p>`;
   let part = null, open = false;
@@ -214,17 +215,22 @@ function buildToc(cfg, chapters) {
       open = true;
     }
     if (!open) { html += '<ul>'; open = true; }
-    html += `<li><b>${esc(ch.meta.num || '')}</b><i>${esc(ch.meta.title || '')}</i></li>`;
+    const pg = pageOf[ch.meta.num];
+    html += `<li><b>${esc(ch.meta.num || '')}</b><i>${esc(ch.meta.title || '')}</i>`
+          + `<em>${pg == null ? '' : pg}</em></li>`;
   }
   if (open) html += '</ul>';
   return html + '</section>';
 }
 
 function buildChapter(ch) {
+  // 목차 쪽번호를 매기려면 이 장이 PDF 몇 쪽에서 시작하는지 알아야 한다.
+  // 새 줄을 만들지 않도록 이미 있는 장 번호 안에 흰 글씨로 끼워 넣는다.
+  const mark = ch.meta.num ? `<span class="pagemark">§CH${esc(ch.meta.num)}§</span>` : '';
   return `
 <section class="chapter">
   <header class="chapter__head">
-    ${ch.meta.num ? `<span class="chapter__num">${esc(ch.meta.num)}</span>` : ''}
+    ${ch.meta.num ? `<span class="chapter__num">${esc(ch.meta.num)}${mark}</span>` : ''}
     <h1 class="chapter__title">${esc(ch.meta.title || '')}</h1>
     ${ch.meta.lead ? `<p class="chapter__lead">${esc(ch.meta.lead)}</p>` : ''}
   </header>
@@ -232,7 +238,7 @@ function buildChapter(ch) {
 </section>`;
 }
 
-function assemble(cfg, chapters) {
+function assemble(cfg, chapters, pageOf = {}) {
   const vars = Object.entries(cfg.accent || {}).map(([k, v]) => `--${k}: ${v};`).join(' ');
   return `<!doctype html>
 <html lang="ko"><head><meta charset="utf-8">
@@ -242,7 +248,7 @@ function assemble(cfg, chapters) {
 ${vars ? `<style>:root{${vars}}</style>` : ''}
 </head><body>
 ${buildCover(cfg)}
-${buildToc(cfg, chapters)}
+${buildToc(cfg, chapters, pageOf)}
 ${chapters.map(buildChapter).join('\n')}
 </body></html>`;
 }
@@ -283,6 +289,18 @@ async function stampPageNumbers(pdfPath, accentHex) {
   return pages.length;
 }
 
+/** 1차 렌더 결과에서 장별 시작 쪽을 읽는다. 실패하면 목차 쪽번호만 비운다. */
+function readChapterPages(pdfPath) {
+  try {
+    const out = execFileSync('python3', [join(ROOT, 'tools', 'toc-pages.py'), pdfPath],
+                             { encoding: 'utf8' });
+    return JSON.parse(out);
+  } catch (e) {
+    console.log('  - 목차 쪽번호를 읽지 못했습니다:', e.message.split('\n')[0]);
+    return {};
+  }
+}
+
 /* ---------------------------------------------------------------- 메인 */
 async function buildBook(slug) {
   const dir = join(ROOT, 'books', slug);
@@ -295,13 +313,21 @@ async function buildBook(slug) {
   const figDir = join(dir, 'figures');
   const chapters = files.map(f => parseChapter(readFileSync(join(mdir, f), 'utf8'), figDir));
   const htmlPath = join(dir, '.build.html');
-  writeFileSync(htmlPath, assemble(cfg, chapters));
 
   mkdirSync(join(ROOT, 'dist'), { recursive: true });
   const name = cfg.filename || slug;
   const pdfPath = join(ROOT, 'dist', `${name}.pdf`);
 
+  // 1차: 쪽번호 없이 한 번 찍어서 각 장이 몇 쪽에서 시작하는지 알아낸다.
+  writeFileSync(htmlPath, assemble(cfg, chapters));
   await renderPdf(htmlPath, pdfPath);
+  const pageOf = readChapterPages(pdfPath);
+
+  // 2차: 목차에 그 쪽번호를 넣어 다시 찍는다.
+  if (Object.keys(pageOf).length) {
+    writeFileSync(htmlPath, assemble(cfg, chapters, pageOf));
+    await renderPdf(htmlPath, pdfPath);
+  }
   const n = await stampPageNumbers(pdfPath, (cfg.accent || {}).accent);
   const kb = (readFileSync(pdfPath).length / 1024).toFixed(0);
 

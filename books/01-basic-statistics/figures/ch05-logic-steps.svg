@@ -1,0 +1,37 @@
+<svg viewBox="0 0 900 250" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="26.0" y="60" width="148" height="106" rx="10" fill="#FBFCFD" stroke="#16243F" stroke-width="2.2"/>
+<circle cx="100.0" cy="86" r="15" fill="#16243F"/>
+<text x="100" y="91" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">1</text>
+<text x="100" y="124" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">영가설이 참이라고</text>
+<text x="100" y="143" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">가정한다</text>
+<path d="M180.0,113 L198.0,113" stroke="#98A2B3" stroke-width="2.2"/>
+<path d="M193.0,108 L199.0,113 L193.0,118" fill="none" stroke="#98A2B3" stroke-width="2.2"/>
+<rect x="201.0" y="60" width="148" height="106" rx="10" fill="#FBFCFD" stroke="#16243F" stroke-width="2.2"/>
+<circle cx="275.0" cy="86" r="15" fill="#16243F"/>
+<text x="275" y="91" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">2</text>
+<text x="275" y="124" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">그 가정 위에서</text>
+<text x="275" y="143" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">분포를 그린다</text>
+<path d="M355.0,113 L373.0,113" stroke="#98A2B3" stroke-width="2.2"/>
+<path d="M368.0,108 L374.0,113 L368.0,118" fill="none" stroke="#98A2B3" stroke-width="2.2"/>
+<rect x="376.0" y="60" width="148" height="106" rx="10" fill="#FBFCFD" stroke="#0E7490" stroke-width="2.2"/>
+<circle cx="450.0" cy="86" r="15" fill="#0E7490"/>
+<text x="450" y="91" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">3</text>
+<text x="450" y="124" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">내 결과가</text>
+<text x="450" y="143" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">어디에 있는지 본다</text>
+<path d="M530.0,113 L548.0,113" stroke="#98A2B3" stroke-width="2.2"/>
+<path d="M543.0,108 L549.0,113 L543.0,118" fill="none" stroke="#98A2B3" stroke-width="2.2"/>
+<rect x="551.0" y="60" width="148" height="106" rx="10" fill="#FBFCFD" stroke="#C2452F" stroke-width="2.2"/>
+<circle cx="625.0" cy="86" r="15" fill="#C2452F"/>
+<text x="625" y="91" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">4</text>
+<text x="625" y="124" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">너무 바깥이면</text>
+<text x="625" y="143" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">가정을 의심한다</text>
+<path d="M705.0,113 L723.0,113" stroke="#98A2B3" stroke-width="2.2"/>
+<path d="M718.0,108 L724.0,113 L718.0,118" fill="none" stroke="#98A2B3" stroke-width="2.2"/>
+<rect x="726.0" y="60" width="148" height="106" rx="10" fill="#FBFCFD" stroke="#C2452F" stroke-width="2.2"/>
+<circle cx="800.0" cy="86" r="15" fill="#C2452F"/>
+<text x="800" y="91" font-size="14" fill="#fff" font-weight="800" text-anchor="middle">5</text>
+<text x="800" y="124" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">영가설을</text>
+<text x="800" y="143" font-size="13.5" fill="#101828" font-weight="600" text-anchor="middle">기각한다</text>
+<text x="450" y="32" font-size="16" fill="#101828" text-anchor="middle">가설검정은 대립가설을 증명하는 절차가 아니라, 영가설을 소거하는 절차다</text>
+<text x="450" y="234" font-size="14" fill="#344054" text-anchor="middle">그래서 "기각에 실패했다"고 말하지 "영가설이 맞다"고 말하지 않는다</text>
+</svg>
