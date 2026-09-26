@@ -1,83 +1,194 @@
-<svg viewBox="0 0 900 330" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
-<rect x="0" y="0" width="250" height="250" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
-<text x="125" y="32" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">모집단</text>
-<circle cx="148" cy="179" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="181" cy="211" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="171" cy="208" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="36" cy="134" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="209" cy="164" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="201" cy="78" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="119" cy="99" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="133" cy="152" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="32" cy="95" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="83" cy="207" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="175" cy="86" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="181" cy="82" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="147" cy="80" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="30" cy="199" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="70" cy="94" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="217" cy="200" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="85" cy="214" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="132" cy="168" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="69" cy="211" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="161" cy="215" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="200" cy="108" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="99" cy="87" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="58" cy="70" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="87" cy="156" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="31" cy="168" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="94" cy="110" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="186" cy="137" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="90" cy="137" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="164" cy="69" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="215" cy="64" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="172" cy="195" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="33" cy="186" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="100" cy="153" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="32" cy="67" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="64" cy="213" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="67" cy="181" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="207" cy="211" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="95" cy="117" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="130" cy="184" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="51" cy="180" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="181" cy="198" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="37" cy="211" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="47" cy="115" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="146" cy="207" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="95" cy="208" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="134" cy="110" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="90" cy="88" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="45" cy="84" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="161" cy="219" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="61" cy="68" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="217" cy="145" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="107" cy="98" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="143" cy="192" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="117" cy="127" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="41" cy="207" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="36" cy="139" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="189" cy="81" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="169" cy="212" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="150" cy="186" r="4" fill="#98A2B3" opacity=".7"/>
-<circle cx="50" cy="130" r="4" fill="#98A2B3" opacity=".7"/>
-<text x="125" y="238" font-size="13" fill="#667085" text-anchor="middle">우리는 여기를 알고 싶다</text>
-<path d="M258,78 L316,78" stroke="#E4E7EC" stroke-width="2"/>
-<rect x="320" y="62" width="128" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
-<text x="384" y="84" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">표본 1 → M</text>
-<path d="M258,140 L316,140" stroke="#E4E7EC" stroke-width="2"/>
-<rect x="320" y="124" width="128" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
-<text x="384" y="146" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">표본 2 → M</text>
-<path d="M258,202 L316,202" stroke="#E4E7EC" stroke-width="2"/>
-<rect x="320" y="186" width="128" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
-<text x="384" y="208" font-size="13.5" fill="#0E7490" font-weight="700" text-anchor="middle">표본 3 → M</text>
-<text x="384" y="258" font-size="13" fill="#667085" text-anchor="middle">표본을 무한히 반복해서 뽑는다면</text>
-<text x="384" y="278" font-size="13" fill="#98A2B3" text-anchor="middle">(실제로는 상상만 한다)</text>
-<path d="M490.0,213.5 L493.2,213.4 L496.5,213.3 L499.8,213.2 L503.0,213.0 L506.2,212.8 L509.5,212.6 L512.8,212.3 L516.0,212.0 L519.2,211.7 L522.5,211.3 L525.8,210.8 L529.0,210.2 L532.2,209.6 L535.5,208.9 L538.8,208.1 L542.0,207.2 L545.2,206.2 L548.5,205.0 L551.8,203.8 L555.0,202.4 L558.2,200.8 L561.5,199.0 L564.8,197.1 L568.0,195.0 L571.2,192.7 L574.5,190.2 L577.8,187.5 L581.0,184.6 L584.2,181.5 L587.5,178.2 L590.8,174.6 L594.0,170.8 L597.2,166.8 L600.5,162.7 L603.8,158.3 L607.0,153.7 L610.2,149.0 L613.5,144.1 L616.8,139.1 L620.0,134.0 L623.2,128.9 L626.5,123.7 L629.8,118.4 L633.0,113.2 L636.2,108.1 L639.5,103.0 L642.8,98.1 L646.0,93.4 L649.2,88.8 L652.5,84.5 L655.8,80.5 L659.0,76.8 L662.2,73.5 L665.5,70.5 L668.8,68.0 L672.0,65.9 L675.2,64.2 L678.5,63.0 L681.8,62.2 L685.0,62.0 L688.2,62.2 L691.5,63.0 L694.8,64.2 L698.0,65.9 L701.2,68.0 L704.5,70.5 L707.8,73.5 L711.0,76.8 L714.2,80.5 L717.5,84.5 L720.8,88.8 L724.0,93.4 L727.2,98.1 L730.5,103.0 L733.8,108.1 L737.0,113.2 L740.2,118.4 L743.5,123.7 L746.8,128.9 L750.0,134.0 L753.2,139.1 L756.5,144.1 L759.8,149.0 L763.0,153.7 L766.2,158.3 L769.5,162.7 L772.8,166.8 L776.0,170.8 L779.2,174.6 L782.5,178.2 L785.8,181.5 L789.0,184.6 L792.2,187.5 L795.5,190.2 L798.8,192.7 L802.0,195.0 L805.2,197.1 L808.5,199.0 L811.8,200.8 L815.0,202.4 L818.2,203.8 L821.5,205.0 L824.8,206.2 L828.0,207.2 L831.2,208.1 L834.5,208.9 L837.8,209.6 L841.0,210.2 L844.2,210.8 L847.5,211.3 L850.8,211.7 L854.0,212.0 L857.2,212.3 L860.5,212.6 L863.8,212.8 L867.0,213.0 L870.2,213.2 L873.5,213.3 L876.8,213.4 L880.0,213.5 L880.0,214 L490.0,214 Z" fill="#ECF7F9" opacity=".7"/>
-<path d="M490.0,213.5 L493.2,213.4 L496.5,213.3 L499.8,213.2 L503.0,213.0 L506.2,212.8 L509.5,212.6 L512.8,212.3 L516.0,212.0 L519.2,211.7 L522.5,211.3 L525.8,210.8 L529.0,210.2 L532.2,209.6 L535.5,208.9 L538.8,208.1 L542.0,207.2 L545.2,206.2 L548.5,205.0 L551.8,203.8 L555.0,202.4 L558.2,200.8 L561.5,199.0 L564.8,197.1 L568.0,195.0 L571.2,192.7 L574.5,190.2 L577.8,187.5 L581.0,184.6 L584.2,181.5 L587.5,178.2 L590.8,174.6 L594.0,170.8 L597.2,166.8 L600.5,162.7 L603.8,158.3 L607.0,153.7 L610.2,149.0 L613.5,144.1 L616.8,139.1 L620.0,134.0 L623.2,128.9 L626.5,123.7 L629.8,118.4 L633.0,113.2 L636.2,108.1 L639.5,103.0 L642.8,98.1 L646.0,93.4 L649.2,88.8 L652.5,84.5 L655.8,80.5 L659.0,76.8 L662.2,73.5 L665.5,70.5 L668.8,68.0 L672.0,65.9 L675.2,64.2 L678.5,63.0 L681.8,62.2 L685.0,62.0 L688.2,62.2 L691.5,63.0 L694.8,64.2 L698.0,65.9 L701.2,68.0 L704.5,70.5 L707.8,73.5 L711.0,76.8 L714.2,80.5 L717.5,84.5 L720.8,88.8 L724.0,93.4 L727.2,98.1 L730.5,103.0 L733.8,108.1 L737.0,113.2 L740.2,118.4 L743.5,123.7 L746.8,128.9 L750.0,134.0 L753.2,139.1 L756.5,144.1 L759.8,149.0 L763.0,153.7 L766.2,158.3 L769.5,162.7 L772.8,166.8 L776.0,170.8 L779.2,174.6 L782.5,178.2 L785.8,181.5 L789.0,184.6 L792.2,187.5 L795.5,190.2 L798.8,192.7 L802.0,195.0 L805.2,197.1 L808.5,199.0 L811.8,200.8 L815.0,202.4 L818.2,203.8 L821.5,205.0 L824.8,206.2 L828.0,207.2 L831.2,208.1 L834.5,208.9 L837.8,209.6 L841.0,210.2 L844.2,210.8 L847.5,211.3 L850.8,211.7 L854.0,212.0 L857.2,212.3 L860.5,212.6 L863.8,212.8 L867.0,213.0 L870.2,213.2 L873.5,213.3 L876.8,213.4 L880.0,213.5" fill="none" stroke="#0E7490" stroke-width="2.6"/>
-<path d="M490,214 L880,214" stroke="#344054" stroke-width="2"/>
-<text x="685" y="34" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">표집분포</text>
-<text x="685" y="240" font-size="13.5" fill="#667085" text-anchor="middle">표본평균 M들이 이루는 분포</text>
-<text x="450" y="296" font-size="15" fill="#101828" text-anchor="middle">표집분포는 사람들의 점수가 모인 분포가 아니라, 표본평균이라는 통계치가 모인 분포다</text>
-<text x="450" y="320" font-size="14" fill="#344054" text-anchor="middle">실제로 그려본 적은 없지만, 그 모양을 알기 때문에 추론이 가능해진다</text>
+<svg viewBox="0 0 900 400" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="24" width="232" height="252" rx="10" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="2"/>
+<text x="116" y="56" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">모집단</text>
+<circle cx="138" cy="196" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="169" cy="227" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="159" cy="224" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="31" cy="154" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="196" cy="182" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="188" cy="99" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="110" cy="120" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="124" cy="170" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="28" cy="115" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="76" cy="223" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="164" cy="107" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="169" cy="103" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="137" cy="102" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="26" cy="216" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="64" cy="115" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="203" cy="216" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="78" cy="230" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="123" cy="186" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="63" cy="227" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="150" cy="231" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="187" cy="128" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="91" cy="108" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="52" cy="92" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="80" cy="175" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="27" cy="186" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="87" cy="130" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="173" cy="156" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="83" cy="156" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="153" cy="91" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="202" cy="86" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="161" cy="212" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="29" cy="203" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="92" cy="171" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="28" cy="89" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="59" cy="229" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="61" cy="198" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="193" cy="227" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="88" cy="137" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="120" cy="201" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="45" cy="197" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="170" cy="214" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="33" cy="228" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="42" cy="134" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="136" cy="223" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="87" cy="224" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="124" cy="130" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="83" cy="109" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="40" cy="105" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="150" cy="235" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="55" cy="89" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="204" cy="164" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="99" cy="119" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="133" cy="209" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="108" cy="147" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="36" cy="223" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="32" cy="158" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="177" cy="102" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="158" cy="228" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="139" cy="203" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="45" cy="149" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="53" cy="212" r="4" fill="#98A2B3" opacity=".7"/>
+<circle cx="79" cy="152" r="4" fill="#98A2B3" opacity=".7"/>
+<text x="37" y="262" font-size="13" fill="#667085">우리가 알고 싶은 것은</text>
+<foreignObject x="180" y="239" width="55" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13px;color:#667085"><span data-tex="\mu"></span></div></foreignObject>
+<path d="M238,73 L282,73" stroke="#E4E7EC" stroke-width="2"/>
+<rect x="288" y="56" width="166" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
+<text x="326" y="78" font-size="13.5" fill="#0E7490" font-weight="700">표본 1  →</text>
+<foreignObject x="401" y="54" width="56" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="M_1"></span></div></foreignObject>
+<path d="M238,125 L282,125" stroke="#E4E7EC" stroke-width="2"/>
+<rect x="288" y="108" width="166" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
+<text x="326" y="130" font-size="13.5" fill="#0E7490" font-weight="700">표본 2  →</text>
+<foreignObject x="401" y="106" width="56" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="M_2"></span></div></foreignObject>
+<path d="M238,177 L282,177" stroke="#E4E7EC" stroke-width="2"/>
+<rect x="288" y="160" width="166" height="34" rx="7" fill="#FBFCFD" stroke="#0E7490" stroke-width="2"/>
+<text x="326" y="182" font-size="13.5" fill="#0E7490" font-weight="700">표본 3  →</text>
+<foreignObject x="401" y="158" width="56" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="M_3"></span></div></foreignObject>
+<text x="371" y="236" font-size="22" fill="#98A2B3" font-weight="700" text-anchor="middle">⋮</text>
+<rect x="282" y="250" width="178" height="34" rx="7" fill="#FBFCFD" stroke="#A8D5DE" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="289" y="272" font-size="13.5" fill="#0E7490" font-weight="700">표본</text>
+<foreignObject x="321" y="248" width="173" height="38"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:13.5px;color:#0E7490"><span data-tex="\infty \;\to\; M_\infty"></span></div></foreignObject>
+<text x="371" y="306" font-size="13" fill="#667085" text-anchor="middle">같은 크기의 표본을 무한히 뽑는다면</text>
+<text x="371" y="326" font-size="12.5" fill="#98A2B3" text-anchor="middle">(머릿속에서만 하는 일이다)</text>
+<path d="M498.0,235.5 L501.2,235.4 L504.5,235.3 L507.8,235.1 L511.0,235.0 L514.2,234.8 L517.5,234.5 L520.8,234.3 L524.0,233.9 L527.2,233.6 L530.5,233.1 L533.8,232.7 L537.0,232.1 L540.2,231.4 L543.5,230.7 L546.8,229.9 L550.0,228.9 L553.2,227.9 L556.5,226.7 L559.8,225.4 L563.0,223.9 L566.2,222.3 L569.5,220.4 L572.8,218.5 L576.0,216.3 L579.2,213.9 L582.5,211.3 L585.8,208.5 L589.0,205.5 L592.2,202.2 L595.5,198.8 L598.8,195.1 L602.0,191.1 L605.2,187.0 L608.5,182.6 L611.8,178.1 L615.0,173.3 L618.2,168.4 L621.5,163.4 L624.8,158.2 L628.0,152.9 L631.2,147.5 L634.5,142.1 L637.8,136.7 L641.0,131.3 L644.2,125.9 L647.5,120.7 L650.8,115.5 L654.0,110.6 L657.2,105.9 L660.5,101.4 L663.8,97.3 L667.0,93.4 L670.2,90.0 L673.5,86.9 L676.8,84.2 L680.0,82.0 L683.2,80.3 L686.5,79.0 L689.8,78.3 L693.0,78.0 L696.2,78.3 L699.5,79.0 L702.8,80.3 L706.0,82.0 L709.2,84.2 L712.5,86.9 L715.8,90.0 L719.0,93.4 L722.2,97.3 L725.5,101.4 L728.8,105.9 L732.0,110.6 L735.2,115.5 L738.5,120.7 L741.8,125.9 L745.0,131.3 L748.2,136.7 L751.5,142.1 L754.8,147.5 L758.0,152.9 L761.2,158.2 L764.5,163.4 L767.8,168.4 L771.0,173.3 L774.2,178.1 L777.5,182.6 L780.8,187.0 L784.0,191.1 L787.2,195.1 L790.5,198.8 L793.8,202.2 L797.0,205.5 L800.2,208.5 L803.5,211.3 L806.8,213.9 L810.0,216.3 L813.2,218.5 L816.5,220.4 L819.8,222.3 L823.0,223.9 L826.2,225.4 L829.5,226.7 L832.8,227.9 L836.0,228.9 L839.2,229.9 L842.5,230.7 L845.8,231.4 L849.0,232.1 L852.2,232.7 L855.5,233.1 L858.8,233.6 L862.0,233.9 L865.2,234.3 L868.5,234.5 L871.8,234.8 L875.0,235.0 L878.2,235.1 L881.5,235.3 L884.8,235.4 L888.0,235.5 L888.0,236 L498.0,236 Z" fill="#ECF7F9" opacity=".65"/>
+<path d="M498.0,235.5 L501.2,235.4 L504.5,235.3 L507.8,235.1 L511.0,235.0 L514.2,234.8 L517.5,234.5 L520.8,234.3 L524.0,233.9 L527.2,233.6 L530.5,233.1 L533.8,232.7 L537.0,232.1 L540.2,231.4 L543.5,230.7 L546.8,229.9 L550.0,228.9 L553.2,227.9 L556.5,226.7 L559.8,225.4 L563.0,223.9 L566.2,222.3 L569.5,220.4 L572.8,218.5 L576.0,216.3 L579.2,213.9 L582.5,211.3 L585.8,208.5 L589.0,205.5 L592.2,202.2 L595.5,198.8 L598.8,195.1 L602.0,191.1 L605.2,187.0 L608.5,182.6 L611.8,178.1 L615.0,173.3 L618.2,168.4 L621.5,163.4 L624.8,158.2 L628.0,152.9 L631.2,147.5 L634.5,142.1 L637.8,136.7 L641.0,131.3 L644.2,125.9 L647.5,120.7 L650.8,115.5 L654.0,110.6 L657.2,105.9 L660.5,101.4 L663.8,97.3 L667.0,93.4 L670.2,90.0 L673.5,86.9 L676.8,84.2 L680.0,82.0 L683.2,80.3 L686.5,79.0 L689.8,78.3 L693.0,78.0 L696.2,78.3 L699.5,79.0 L702.8,80.3 L706.0,82.0 L709.2,84.2 L712.5,86.9 L715.8,90.0 L719.0,93.4 L722.2,97.3 L725.5,101.4 L728.8,105.9 L732.0,110.6 L735.2,115.5 L738.5,120.7 L741.8,125.9 L745.0,131.3 L748.2,136.7 L751.5,142.1 L754.8,147.5 L758.0,152.9 L761.2,158.2 L764.5,163.4 L767.8,168.4 L771.0,173.3 L774.2,178.1 L777.5,182.6 L780.8,187.0 L784.0,191.1 L787.2,195.1 L790.5,198.8 L793.8,202.2 L797.0,205.5 L800.2,208.5 L803.5,211.3 L806.8,213.9 L810.0,216.3 L813.2,218.5 L816.5,220.4 L819.8,222.3 L823.0,223.9 L826.2,225.4 L829.5,226.7 L832.8,227.9 L836.0,228.9 L839.2,229.9 L842.5,230.7 L845.8,231.4 L849.0,232.1 L852.2,232.7 L855.5,233.1 L858.8,233.6 L862.0,233.9 L865.2,234.3 L868.5,234.5 L871.8,234.8 L875.0,235.0 L878.2,235.1 L881.5,235.3 L884.8,235.4 L888.0,235.5" fill="none" stroke="#0E7490" stroke-width="2.6"/>
+<path d="M498,236 L888,236" stroke="#344054" stroke-width="2"/>
+<text x="693" y="46" font-size="17" fill="#16243F" font-weight="800" text-anchor="middle">표집분포</text>
+<circle cx="622.8" cy="206.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="714.7" cy="217.9" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="616.8" cy="225.2" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="689.2" cy="216.7" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="623.3" cy="227.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="618.9" cy="222.1" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="781.0" cy="212.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="749.3" cy="228.9" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="840.4" cy="213.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="676.4" cy="214.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="698.5" cy="216.3" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="701.3" cy="228.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="708.7" cy="229.2" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="732.7" cy="217.9" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="590.4" cy="216.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="733.2" cy="213.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="608.5" cy="218.1" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="693.1" cy="222.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="690.2" cy="208.2" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="679.9" cy="224.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="644.8" cy="222.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="781.4" cy="219.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="734.8" cy="208.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="583.8" cy="208.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="787.5" cy="230.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="724.5" cy="217.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="814.9" cy="204.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="675.1" cy="213.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="706.4" cy="209.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="690.0" cy="221.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="717.3" cy="204.9" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="694.5" cy="223.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="664.3" cy="227.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="788.3" cy="225.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="730.6" cy="215.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="657.7" cy="211.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="705.1" cy="226.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="675.3" cy="219.1" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="670.6" cy="224.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="674.1" cy="209.1" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="844.4" cy="222.1" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="722.6" cy="219.7" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="666.9" cy="207.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="676.4" cy="204.3" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="672.5" cy="224.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="687.9" cy="221.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="791.6" cy="222.3" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="715.3" cy="214.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="704.1" cy="223.7" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="648.5" cy="218.2" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="660.1" cy="205.1" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="618.4" cy="207.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="700.7" cy="225.2" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="764.1" cy="208.7" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="796.3" cy="223.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="727.7" cy="205.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="780.4" cy="224.9" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="805.8" cy="214.3" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="656.4" cy="219.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="705.8" cy="205.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="702.8" cy="223.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="680.6" cy="208.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="650.6" cy="214.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="683.4" cy="211.3" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="727.3" cy="228.2" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="702.9" cy="207.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="765.8" cy="214.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="668.8" cy="224.7" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="818.8" cy="229.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="685.5" cy="228.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="754.9" cy="225.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="642.3" cy="226.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="747.9" cy="220.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="817.6" cy="212.9" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="591.1" cy="212.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="665.8" cy="229.1" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="677.0" cy="229.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="768.3" cy="205.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="645.3" cy="229.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="649.9" cy="211.0" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="643.3" cy="221.7" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="715.7" cy="215.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="692.9" cy="210.8" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="768.9" cy="211.7" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="638.0" cy="209.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="739.0" cy="212.2" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="665.8" cy="206.6" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="734.1" cy="209.4" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="649.8" cy="207.5" r="2.4" fill="#0E7490" opacity=".35"/>
+<circle cx="639" cy="236" r="5.5" fill="#0E7490"/>
+<foreignObject x="609" y="235" width="60" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#0E7490"><span data-tex="M_1"></span></div></foreignObject>
+<circle cx="719" cy="236" r="5.5" fill="#0E7490"/>
+<foreignObject x="689" y="235" width="60" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#0E7490"><span data-tex="M_2"></span></div></foreignObject>
+<circle cx="684" cy="236" r="5.5" fill="#0E7490"/>
+<foreignObject x="654" y="235" width="60" height="36"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:13px;color:#0E7490"><span data-tex="M_3"></span></div></foreignObject>
+<path d="M693,236 L693,62" stroke="#16243F" stroke-width="2" stroke-dasharray="5 4"/>
+<foreignObject x="707" y="39" width="40" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:14px;color:#16243F"><span data-tex="\mu"></span></div></foreignObject>
+<text x="723" y="64" font-size="13" fill="#16243F" font-weight="700">= M들의 평균</text>
+<text x="693" y="284" font-size="13.5" fill="#667085" text-anchor="middle">표본평균 M이 쌓여 만든 분포</text>
+<text x="450" y="344" font-size="15" fill="#101828" text-anchor="middle">표집분포는 사람들의 점수가 모인 분포가 아니라, 표본평균이라는 통계치가 모인 분포다</text>
+<text x="212" y="370" font-size="14" fill="#101828" text-anchor="end">무한히 많은</text>
+<foreignObject x="218" y="345" width="230" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:14px;color:#101828"><span data-tex="M_1,\, M_2,\, M_3,\, \ldots,\, M_\infty"></span></div></foreignObject>
+<text x="378" y="370" font-size="14" fill="#101828">를 모두 늘어놓으면 이 곡선이 된다</text>
+<text x="450" y="392" font-size="14" fill="#344054" text-anchor="middle">실제로 그려본 적은 없지만, 그 모양을 알기 때문에 추론이 가능해진다</text>
 </svg>

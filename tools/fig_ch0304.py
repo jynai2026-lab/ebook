@@ -63,7 +63,7 @@ def fig_skew():
 
 def fig_kurtosis():
     """첨도 — 가운데가 얼마나 뾰족한가"""
-    W, H = 900, 300
+    W, H = 900, 334
     b = []
     px0, px1, base, top = 90, 810, 218, 56
     sx = scale(-4.2, 4.2, px0, px1)
@@ -80,7 +80,7 @@ def fig_kurtosis():
         y = base + 32 + i * 24
         b.append(f'<rect x="{px0}" y="{y-11}" width="13" height="13" rx="3" fill="{c}"/>')
         b.append(text(px0 + 22, y, t, 14, INK, 700))
-        b.append(text(px0 + 190, y, n, 13.5, SOFT))
+        b.append(text(px0 + 200, y, n, 13.5, SOFT))
     b.append(caption(450, H - 10, '첨도가 크면 평균 근처와 극단값이 동시에 늘어난다. 절댓값 7을 넘으면 문제로 본다', 14))
     write('ch03-kurtosis.svg', svg(W, H, '\n'.join(b)))
 
@@ -116,36 +116,71 @@ def fig_clt(clt):
 
 
 def fig_sampling_concept():
-    """표집분포는 점수의 분포가 아니라 통계치의 분포"""
-    W, H = 900, 330
+    """표집분포는 점수의 분포가 아니라, 무한히 많은 표본평균이 이루는 분포"""
+    W, H = 900, 400
     b = []
-    b.append(panel(0, 0, 250, 250))
-    b.append(text(125, 32, '모집단', 17, NAVY, 800, 'middle'))
+
+    # ---- 왼쪽: 모집단 ----
+    b.append(panel(0, 24, 232, 252))
+    b.append(text(116, 56, '모집단', 17, NAVY, 800, 'middle'))
     random.seed(5)
-    for _ in range(60):
-        b.append(f'<circle cx="{random.uniform(30,220):.0f}" cy="{random.uniform(60,220):.0f}" r="4" fill="{FAINT}" opacity=".7"/>')
-    b.append(text(125, 238, '우리는 여기를 알고 싶다', 13, SOFT, None, 'middle'))
+    for _ in range(62):
+        b.append(f'<circle cx="{random.uniform(26,206):.0f}" cy="{random.uniform(82,236):.0f}" '
+                 f'r="4" fill="{FAINT}" opacity=".7"/>')
+    b.append(label_tex(116, 262, '우리가 알고 싶은 것은', r'\mu', 13, SOFT, None))
 
-    for i in range(3):
-        y = 62 + i * 62
-        b.append(f'<path d="M258,{y+16} L316,{y+16}" stroke="{RULE}" stroke-width="2"/>')
-        b.append(f'<rect x="320" y="{y}" width="128" height="34" rx="7" fill="{PAPER}" stroke="{TEAL}" stroke-width="2"/>')
-        b.append(text(384, y + 22, f'표본 {i+1} → M', 13.5, TEAL, 700, 'middle'))
-    b.append(text(384, 258, '표본을 무한히 반복해서 뽑는다면', 13, SOFT, None, 'middle'))
-    b.append(text(384, 278, '(실제로는 상상만 한다)', 13, FAINT, None, 'middle'))
+    # ---- 가운데: 표본을 무한히 뽑는다 ----
+    rows = [('1', 'M_1'), ('2', 'M_2'), ('3', 'M_3')]
+    for i, (idx, m) in enumerate(rows):
+        y = 56 + i * 52
+        b.append(f'<path d="M238,{y+17} L282,{y+17}" stroke="{RULE}" stroke-width="2"/>')
+        b.append(f'<rect x="288" y="{y}" width="166" height="34" rx="7" fill="{PAPER}" '
+                 f'stroke="{TEAL}" stroke-width="2"/>')
+        b.append(label_tex(371, y + 22, f'표본 {idx}  →', m, 13.5, TEAL, 700))
+    # 계속 이어진다는 표시
+    b.append(text(371, 236, '⋮', 22, FAINT, 700, 'middle'))
+    b.append(f'<rect x="282" y="250" width="178" height="34" rx="7" fill="{PAPER}" '
+             f'stroke="{TEAL_LINE}" stroke-width="2" stroke-dasharray="5 4"/>')
+    b.append(label_tex(371, 272, '표본', r'\infty \;\to\; M_\infty', 13.5, TEAL, 700))
+    b.append(text(371, 306, '같은 크기의 표본을 무한히 뽑는다면', 13, SOFT, None, 'middle'))
+    b.append(text(371, 326, '(머릿속에서만 하는 일이다)', 12.5, FAINT, None, 'middle'))
 
-    px0, px1, base, top = 490, 880, 214, 62
+    # ---- 오른쪽: 그 M들이 쌓여 만드는 분포 ----
+    px0, px1, base, top = 498, 888, 236, 78
     sx = scale(-3.4, 3.4, px0, px1)
     pts = normal_pts(0, 1, -3.4, 3.4, 120)
     peak = max(y for _, y in pts)
     line, area = curve_paths(pts, sx, base, top, peak)
-    b.append(f'<path d="{area}" fill="{TEAL_TINT}" opacity=".7"/>')
+    b.append(f'<path d="{area}" fill="{TEAL_TINT}" opacity=".65"/>')
     b.append(f'<path d="{line}" fill="none" stroke="{TEAL}" stroke-width="2.6"/>')
     b.append(axis(px0, px1, base))
-    b.append(text((px0 + px1) / 2, 34, '표집분포', 17, NAVY, 800, 'middle'))
-    b.append(text((px0 + px1) / 2, base + 26, '표본평균 M들이 이루는 분포', 13.5, SOFT, None, 'middle'))
-    b.append(caption(450, H - 34, '표집분포는 사람들의 점수가 모인 분포가 아니라, 표본평균이라는 통계치가 모인 분포다', 15, INK))
-    b.append(caption(450, H - 10, '실제로 그려본 적은 없지만, 그 모양을 알기 때문에 추론이 가능해진다', 14))
+    b.append(text((px0 + px1) / 2, 46, '표집분포', 17, NAVY, 800, 'middle'))
+
+    # 무한히 많은 M이 쌓인다는 것을 점으로 보인다
+    random.seed(11)
+    for _ in range(90):
+        v = random.gauss(0, 1)
+        if abs(v) > 3.3:
+            continue
+        b.append(f'<circle cx="{sx(v):.1f}" cy="{base - 6 - random.uniform(0, 26):.1f}" '
+                 f'r="2.4" fill="{TEAL}" opacity=".35"/>')
+    # 앞의 세 개만 이름을 붙여 어디서 왔는지 보인다
+    for v, m in ((-0.95, 'M_1'), (0.45, 'M_2'), (-0.15, 'M_3')):
+        b.append(f'<circle cx="{sx(v):.0f}" cy="{base}" r="5.5" fill="{TEAL}"/>')
+        b.append(tex(sx(v), base + 22, m, 13, TEAL, 'middle', w=60, baseline=True))
+    b.append(dashed(sx(0), base, top - 16, NAVY, 2))
+    b.append(tex(sx(0) + 14, top - 14, r'\mu', 14, NAVY, 'start', w=40, baseline=True))
+    b.append(text(sx(0) + 30, top - 14, '= M들의 평균', 13, NAVY, 700))
+    b.append(text((px0 + px1) / 2, base + 48, '표본평균 M이 쌓여 만든 분포', 13.5, SOFT, None, 'middle'))
+
+    # ---- 아래 설명 ----
+    b.append(caption(450, H - 56,
+                     '표집분포는 사람들의 점수가 모인 분포가 아니라, 표본평균이라는 통계치가 모인 분포다', 15, INK))
+    b.append(text(212, H - 30, '무한히 많은', 14, INK, None, 'end'))
+    b.append(tex(218, H - 30, r'M_1,\, M_2,\, M_3,\, \ldots,\, M_\infty', 14, INK, 'start',
+                 w=230, baseline=True))
+    b.append(text(378, H - 30, '를 모두 늘어놓으면 이 곡선이 된다', 14, INK))
+    b.append(caption(450, H - 8, '실제로 그려본 적은 없지만, 그 모양을 알기 때문에 추론이 가능해진다', 14))
     write('ch04-sampling-concept.svg', svg(W, H, '\n'.join(b)))
 
 
