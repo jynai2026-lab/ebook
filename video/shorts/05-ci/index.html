@@ -3,90 +3,122 @@
 <script src="../../lib/shorts-kit.js"></script>
 <script src="data.js"></script>
 <script>
-const { g, T, box, C, SAFE, CX, ease, clamp, strike, pill, measure, rise } = Shorts;
+const { g, T, box, C, SAFE, CX, ease, clamp, pill, rise } = Shorts;
 const MU = 3.5;
 const CI = window.CISIM;                        // 6장 모의실험: 100개 중 97개가 μ를 포함
 const hit = r => r.lo <= MU && MU <= r.hi;
 
+/* 고리 = 옆에서 본 납작한 타원. 말뚝을 사이에 끼우려면 뒤 반원 → 말뚝 → 앞 반원 순으로 그린다 */
+function ringHalf(cx, cy, rx, ry, color, lw, back) {
+  g.beginPath();
+  g.ellipse(cx, cy, rx, ry, 0, back ? Math.PI : 0, back ? 2 * Math.PI : Math.PI);
+  g.strokeStyle = color; g.lineWidth = lw; g.lineCap = 'round'; g.stroke();
+}
+function peg(x, top, bottom, w = 18) {
+  box(x - w / 2, top, w, bottom - top, w / 2, C.NAVY);
+  box(x - w / 2 + 4, top + 8, 4, bottom - top - 16, 2, 'rgba(255,255,255,.25)');
+}
+function ground(x0, x1, y) {
+  g.strokeStyle = C.RULE; g.lineWidth = 6; g.lineCap = 'round';
+  g.beginPath(); g.moveTo(x0, y); g.lineTo(x1, y); g.stroke();
+}
+
 Shorts.run(({ sec, on, at, beat }) => {
-  const Bw = at('why', 0.5), Cr = at('right', 0.5);
-  const A = 1 - Bw, B = Bw * (1 - Cr);
+  const toAn = at('analogy', 0.5), toFx = at('fixed', 0.5), toDm = at('demo', 0.5);
+  const A = 1 - toAn;                 // 흔한 해석
+  const B = toAn * (1 - toFx);        // 비유 소개
+  const Fx = toFx * (1 - toDm);       // 걸렸거나 안 걸렸거나
+  const D = toDm;                     // 100번 던지기 → 뜻
 
   /* ---------------- 흔한 해석 ---------------- */
   if (A > 0) {
     const dy = rise(A * at('hook', 0.5));
     T('95% 신뢰구간', CX, 560 + dy, 104, C.NAVY, 800);
-    T('이렇게 말하면 틀립니다', CX, 668 + dy, 52, C.CORAL, 700);
+    T('대부분 잘못 읽습니다', CX, 668 + dy, 52, C.CORAL, 700);
     if (on('wrong')) {
       g.globalAlpha = A * at('wrong', 0.5);
-      box(SAFE.left + 20, 770, SAFE.right - SAFE.left - 40, 190, 22, C.CORAL_TINT, C.CORAL, 4);
-      T('"모평균이 이 구간 안에', CX, 845, 46, C.INK, 700);
-      T('있을 확률이 95%다"', CX, 912, 46, C.INK, 700);
-      g.globalAlpha = A * at('wrong', 1.2);
-      pill('틀린 해석', CX, 770, 34, C.CORAL);
+      box(SAFE.left + 20, 780, SAFE.right - SAFE.left - 40, 190, 22, C.CORAL_TINT, C.CORAL, 4);
+      T('"모평균이 이 구간 안에', CX, 855, 46, C.INK, 700);
+      T('있을 확률이 95%다"', CX, 922, 46, C.INK, 700);
+      pill('틀린 해석', CX, 780, 34, C.CORAL);
     }
     g.globalAlpha = 1;
   }
 
-  /* ---------------- 모평균은 고정된 값 ---------------- */
+  /* ---------------- 비유: 말뚝과 고리 ---------------- */
   if (B > 0) {
     g.globalAlpha = B;
-    const x0 = SAFE.left + 60, x1 = SAFE.right - 60;
-    const sx = v => x0 + (v - 2.9) / (4.1 - 2.9) * (x1 - x0);
-    g.strokeStyle = C.NAVY; g.lineWidth = 5;
-    g.beginPath(); g.moveTo(sx(MU), 470); g.lineTo(sx(MU), 1000); g.stroke();
-    T('모평균 μ — 정해진 값, 움직이지 않는다', CX, 440, 36, C.NAVY, 800);
+    T('고리 던지기', CX, 420, 60, C.NAVY, 800);
+    const gy = 1080, top = 560;
+    ground(SAFE.left + 60, SAFE.right - 60, gy);
+    // 고리가 위에서 떨어져 말뚝에 걸린다
+    const fall = ease((sec - beat('analogy').start - 0.5) / 0.9);
+    const ry = 26, rx = 150, cy = 470 + (gy - 30 - 470) * fall, cx = CX - 24;
+    if (fall > 0) ringHalf(cx, cy, rx, ry, C.TEAL, 9, true);
+    peg(CX, top, gy);
+    if (fall > 0) ringHalf(cx, cy, rx, ry, C.TEAL, 9, false);
 
-    const rows = [[3.28, 3.72, true, '들어 있다'], [3.58, 3.98, false, '안 들어 있다']];
-    rows.forEach(([lo, hi, ok, lab], k) => {
-      const a = at('why', 0.6 + k * 0.5), y = 620 + k * 220;
-      g.globalAlpha = B * a;
-      const col = ok ? C.TEAL : C.CORAL;
-      box(sx(lo), y - 20, sx(hi) - sx(lo), 40, 12, ok ? C.TEAL_TINT : C.CORAL_TINT, col, 4);
-      g.fillStyle = col; g.beginPath(); g.arc((sx(lo) + sx(hi)) / 2, y, 9, 0, 7); g.fill();
-      pill(lab, (sx(lo) + sx(hi)) / 2, y + 74, 34, col);
-    });
-    g.globalAlpha = B * at('why', 2.0);
-    T('확률이 끼어들 자리가 없다: 둘 중 하나', CX, 1130, 38, C.INK, 700);
+    T('말뚝 = 모평균', CX + 36, 624, 42, C.NAVY, 800, 'left');
+    T('한 자리에 박혀 있다', CX + 36, 672, 32, C.SOFT, 600, 'left');
+    g.globalAlpha = B * ease((fall - 0.7) / 0.3);
+    T('고리 = 신뢰구간', CX, 1150, 42, C.TEAL, 800);
     g.globalAlpha = 1;
   }
 
-  /* ---------------- 95%는 방법의 성공률 → 100번 해 보기 ---------------- */
-  if (Cr > 0) {
-    const D = on('demo') ? at('demo', 0.5) : 0;
-    // 문장 하나일 때는 가운데 크게, 모의실험이 시작되면 위로 작게
-    const big = 1 - D;
-    g.globalAlpha = Cr * big;
-    T('95%는 구간 하나가 아니라', CX, 640, 54, C.INK, 700);
-    T('구간을 만드는 방법의 성공률', CX, 730, 58, C.TEAL, 800);
-
-    if (D > 0) {
-      g.globalAlpha = D;
-      const x0 = SAFE.left + 40, x1 = SAFE.right - 40, top = 470, bot = 1110;
-      const sx = v => x0 + (v - 2.48) / (4.52 - 2.48) * (x1 - x0);
-      const b = beat('demo');
-      // 문장 길이 안에서 100개가 차례로 그려진다
-      const shown = Math.floor(100 * clamp((sec - b.start - 0.3) / Math.max(1, b.end - b.start - 0.8)));
-      const rest = on('rest') ? at('rest', 0.5) : 0;
-      let ok = 0;
-      for (let i = 0; i < shown; i++) {
-        const r = CI[i], y = top + (bot - top) * i / 99, good = hit(r);
-        ok += good;
-        g.strokeStyle = good ? 'rgba(14,116,144,.55)' : C.CORAL;
-        g.lineWidth = good ? 3 : 5;
-        g.beginPath(); g.moveTo(sx(r.lo), y); g.lineTo(sx(r.hi), y); g.stroke();
-        if (!good && rest > 0) {
-          g.globalAlpha = D * rest; g.strokeStyle = C.CORAL; g.lineWidth = 4;
-          g.beginPath(); g.arc(r.lo > MU ? sx(r.hi) + 34 : sx(r.lo) - 34, y, 26, 0, 7); g.stroke();
-          g.globalAlpha = D;
-        }
+  /* ---------------- 이미 던진 고리는 둘 중 하나 ---------------- */
+  if (Fx > 0) {
+    const panels = [[SAFE.left, true], [CX + 10, false]];
+    panels.forEach(([x0, ok], k) => {
+      const w = (SAFE.right - SAFE.left - 20) / 2, pc = x0 + w / 2;
+      const a = at('fixed', 0.5 + k * 0.6);
+      g.globalAlpha = Fx * a;
+      box(x0, 420, w, 740, 22, C.PAPER, ok ? C.TEAL : C.CORAL, 4);
+      pill(ok ? '걸렸다' : '안 걸렸다', pc, 500, 40, ok ? C.TEAL : C.CORAL);
+      const gy = 1080;
+      ground(x0 + 30, x0 + w - 30, gy);
+      if (ok) {
+        ringHalf(pc - 10, gy - 26, 92, 20, C.TEAL, 8, true);
+        peg(pc, 640, gy);
+        ringHalf(pc - 10, gy - 26, 92, 20, C.TEAL, 8, false);
+      } else {
+        peg(pc - 70, 640, gy);
+        g.beginPath(); g.ellipse(pc + 80, gy - 10, 82, 18, 0, 0, 2 * Math.PI);
+        g.strokeStyle = C.CORAL; g.lineWidth = 8; g.stroke();
       }
-      g.strokeStyle = C.NAVY; g.lineWidth = 5;
-      g.beginPath(); g.moveTo(sx(MU), top - 30); g.lineTo(sx(MU), bot + 20); g.stroke();
-      T('μ', sx(MU), top - 42, 40, C.NAVY, 800);
-      T('방법의 성공률', SAFE.left, 400, 40, C.TEAL, 800, 'left');
-      T(`${ok} / ${shown}`, SAFE.right, 400, 48, C.NAVY, 800, 'right');
-      if (rest > 0) { g.globalAlpha = D * rest; pill('예정된 5%', SAFE.right - 110, 1170, 34, C.CORAL); }
+    });
+    g.globalAlpha = Fx * at('fixed', 2.2);
+    T('이 고리 하나에 "95% 확률"은 없다', CX, 380, 40, C.INK, 800);
+    g.globalAlpha = 1;
+  }
+
+  /* ---------------- 100번 던지기 → 95%의 뜻 ---------------- */
+  if (D > 0) {
+    const meaning = on('meaning') ? at('meaning', 0.5) : 0;
+    const x0 = SAFE.left + 40, x1 = SAFE.right - 40, top = 480, bot = 1110;
+    const sx = v => x0 + (v - 2.48) / (4.52 - 2.48) * (x1 - x0);
+    const b = beat('demo');
+    // 문장 길이 안에서 고리 100개가 차례로 떨어진다
+    const shown = Math.floor(100 * clamp((sec - b.start - 0.4) / Math.max(1, b.end - b.start - 0.9)));
+
+    g.globalAlpha = D * (1 - 0.7 * meaning);
+    peg(sx(MU), top - 40, bot + 30, 16);
+    let ok = 0;
+    for (let i = 0; i < shown; i++) {
+      const r = CI[i], y = top + (bot - top) * i / 99, good = hit(r);
+      ok += good;
+      const cx = (sx(r.lo) + sx(r.hi)) / 2, rx = (sx(r.hi) - sx(r.lo)) / 2;
+      g.beginPath(); g.ellipse(cx, y, rx, 2.6, 0, 0, 2 * Math.PI);
+      g.strokeStyle = good ? 'rgba(14,116,144,.6)' : C.CORAL; g.lineWidth = good ? 2.6 : 4.5; g.stroke();
+    }
+    T('표본 100번 = 고리 100번', SAFE.left, 410, 38, C.NAVY, 800, 'left');
+    T(`걸림 ${ok} / ${shown}`, SAFE.right, 410, 44, C.TEAL, 800, 'right');
+
+    if (meaning > 0) {
+      g.globalAlpha = meaning;
+      box(SAFE.left + 30, 600, SAFE.right - SAFE.left - 60, 400, 28, '#fff', C.TEAL, 5);
+      T('95%', CX, 760, 150, C.TEAL, 800);
+      T('던지는 방법의 성공률', CX, 850, 52, C.NAVY, 800);
+      T('고리 하나가 걸렸을 확률이 아니다', CX, 924, 36, C.SOFT, 600);
     }
     g.globalAlpha = 1;
   }
