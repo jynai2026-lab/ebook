@@ -19,6 +19,9 @@ const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium';
 const page_ = process.argv[2];
 const name = process.argv[3] || 'out';
 const seconds = Number(process.argv[4] || 8);
+// 세로(쇼츠) 영상이면 1080x1920, 아니면 1280x720
+const vertical = process.argv.includes('--vertical');
+const SIZE = vertical ? { width: 1080, height: 1920 } : { width: 1280, height: 720 };
 const FPS = 30;
 if (!page_ || !existsSync(page_)) { console.error('쓸 HTML을 지정하세요.'); process.exit(1); }
 
@@ -27,7 +30,7 @@ rmSync(frames, { recursive: true, force: true });
 mkdirSync(frames, { recursive: true });
 
 const browser = await chromium.launch({ executablePath: CHROME });
-const page = await browser.newPage({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 });
+const page = await browser.newPage({ viewport: SIZE, deviceScaleFactor: 1 });
 await page.goto('file://' + resolve(page_));
 await page.waitForFunction(() => window.__ready === true, null, { timeout: 15000 });
 

@@ -1,0 +1,88 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  @font-face { font-family:'Pretendard'; src:url('../shared/fonts/PretendardVariable.woff2') format('woff2-variations');
+               font-weight:45 920; font-display:block; }
+  html,body { margin:0; background:#fff; }
+  canvas { display:block; }
+</style>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script>
+const C=document.getElementById('c'), g=C.getContext('2d');
+const INK='#101828', MID='#344054', SOFT='#667085', FAINT='#98A2B3';
+const TEAL='#0E7490', TEAL_TINT='#ECF7F9', NAVY='#16243F', CORAL='#C2452F', RULE='#E4E7EC';
+
+function T(s,x,y,size,color,weight,align){
+  g.font=`${weight||400} ${size}px Pretendard, sans-serif`;
+  g.fillStyle=color; g.textAlign=align||'center'; g.textBaseline='alphabetic'; g.fillText(s,x,y);
+}
+const ease=t=>t<0?0:t>1?1:t*t*(3-2*t);
+// 구간 [a,b] 안에서의 진행도
+const seg=(t,a,b)=>ease((t-a)/(b-a));
+
+// 5장에서 실제로 돌린 값 (power.t.test, d=0.5, alpha=.05)
+const ROWS=[[20,.338],[30,.478],[50,.697],[64,.801],[100,.940]];
+const CX=540;
+
+window.renderFrame=function(t){
+  g.fillStyle='#fff'; g.fillRect(0,0,1080,1920);
+
+  // ---- 0~0.16 : 훅 ----
+  const hook=seg(t,0,.06);
+  g.globalAlpha=Math.min(1,hook);
+  T('각 집단 30명이면', CX, 300, 78, NAVY, 800);
+  T('충분하다고요?', CX, 400, 78, NAVY, 800);
+  g.globalAlpha=1;
+
+  // ---- 0.14~0.34 : 검정력 숫자 ----
+  const a2=seg(t,.14,.26);
+  if(a2>0){
+    g.globalAlpha=a2;
+    T('그 설계의 검정력', CX, 560, 40, SOFT, 600);
+    const shown=(0.478*Math.min(1,seg(t,.16,.30))).toFixed(3);
+    T(shown, CX, 700, 130, CORAL, 800);
+    // 게이지
+    const gw=760, gx=CX-gw/2, gy=760;
+    g.fillStyle=RULE; g.beginPath(); g.roundRect(gx,gy,gw,34,17); g.fill();
+    g.fillStyle=CORAL; g.beginPath();
+    g.roundRect(gx,gy,Math.max(34,gw*0.478*Math.min(1,seg(t,.16,.30))),34,17); g.fill();
+    g.globalAlpha=1;
+  }
+  const a3=seg(t,.30,.38);
+  if(a3>0){ g.globalAlpha=a3;
+    T('실재하는 효과의 절반 이상을', CX, 880, 44, INK, 700);
+    T('그냥 놓친다는 뜻입니다', CX, 940, 44, INK, 700);
+    g.globalAlpha=1; }
+
+  // ---- 0.42~0.82 : 막대 ----
+  const a4=seg(t,.42,.50);
+  if(a4>0){
+    g.globalAlpha=a4;
+    T('집단당 인원을 늘리면', CX, 1064, 40, SOFT, 600);
+    g.globalAlpha=1;
+    const bx=190, bw=700, y0=1160, rh=112;
+    // .80 기준선
+    const lx=bx+bw*0.80;
+    g.strokeStyle=NAVY; g.lineWidth=3; g.setLineDash([10,8]);
+    g.beginPath(); g.moveTo(lx,y0-30); g.lineTo(lx,y0+rh*4+30); g.stroke(); g.setLineDash([]);
+    T('목표 .80', lx, y0-48, 30, NAVY, 700);
+    ROWS.forEach(([n,p],i)=>{
+      const grow=Math.min(1, seg(t,.48+i*.055,.62+i*.055));
+      const y=y0+i*rh;
+      T('n = '+n, 150, y+12, 36, INK, 700, 'right');
+      g.fillStyle=RULE; g.beginPath(); g.roundRect(bx,y-26,bw,46,10); g.fill();
+      g.fillStyle=p>=.8?TEAL:'#A8D5DE';
+      g.beginPath(); g.roundRect(bx,y-26,Math.max(10,bw*p*grow),46,10); g.fill();
+      if(grow>.7) T(p.toFixed(3), bx+bw+22, y+12, 34, p>=.8?TEAL:SOFT, 800, 'left');
+    });
+  }
+
+  // ---- 0.84~1 : 마무리 ----
+  const a5=seg(t,.84,.92);
+  if(a5>0){ g.globalAlpha=a5;
+    g.fillStyle=NAVY; g.beginPath(); g.roundRect(120,1700,840,150,24); g.fill();
+    T('각 집단 64명', CX, 1768, 62, '#fff', 800);
+    T('표본크기는 연구자가 정할 수 있는 유일한 요인입니다', CX, 1820, 30, '#9FD6E4', 600);
+    g.globalAlpha=1; }
+};
+document.fonts.ready.then(()=>{ window.__ready=true; window.renderFrame(0); });
+</script>
