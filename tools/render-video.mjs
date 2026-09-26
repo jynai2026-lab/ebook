@@ -31,6 +31,7 @@ mkdirSync(frames, { recursive: true });
 
 const browser = await chromium.launch({ executablePath: CHROME });
 const page = await browser.newPage({ viewport: SIZE, deviceScaleFactor: 1 });
+page.on('pageerror', e => console.error('  페이지 오류:', e.message));
 await page.goto('file://' + resolve(page_));
 await page.waitForFunction(() => window.__ready === true, null, { timeout: 15000 });
 

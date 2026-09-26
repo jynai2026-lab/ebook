@@ -4,3 +4,5 @@ dist/
 *.tgz
 .figpreview/
 .frames/
+video/.cache/
+video/shorts/*/build/

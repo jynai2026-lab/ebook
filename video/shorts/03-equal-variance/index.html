@@ -1,0 +1,105 @@
+<!doctype html><meta charset="utf-8">
+<link rel="stylesheet" href="../../lib/shorts.css">
+<script src="../../lib/shorts-kit.js"></script>
+<script>
+const { g, T, box, C, SAFE, CX, ease, clamp, curve, strike, pill, measure, rise } = Shorts;
+
+function panel(y0, h, title, a) {
+  g.globalAlpha = a;
+  box(SAFE.left, y0, SAFE.right - SAFE.left, h, 20, C.PAPER, C.RULE, 3);
+  T(title, SAFE.left + 30, y0 + 52, 38, C.NAVY, 800, 'left');
+}
+
+Shorts.run(({ on, at }) => {
+  const B = at('meaning', 0.5) * (1 - at('bonus', 0.5));
+  const A = 1 - at('meaning', 0.5);
+  const Cc = at('bonus', 0.5);
+
+  /* ---------------- 질문과 흔한 답 ---------------- */
+  if (A > 0) {
+    const dy = rise(A * at('hook', 0.5));
+    T('등분산 검정', CX, 560 + dy, 112, C.NAVY, 800);
+    T('왜 할까요?', CX, 680 + dy, 72, C.INK, 700);
+    if (on('rote')) {
+      const r = at('rote', 0.5);
+      g.globalAlpha = A * r;
+      box(SAFE.left + 40, 790, SAFE.right - SAFE.left - 80, 120, 20, C.PAPER, C.RULE, 3);
+      T('"분산이 같아야 하니까"', CX, 868, 52, C.INK, 700);
+      const w = measure('"분산이 같아야 하니까"', 52, 700);
+      strike(CX - w / 2 - 8, CX + w / 2 + 8, 850, at('rote', 1.2) * 1.4 - 0.4);
+      g.globalAlpha = A * at('rote', 1.4);
+      pill('외운 것일 뿐, 이유가 아닙니다', CX, 990, 38, C.CORAL);
+    }
+    g.globalAlpha = 1;
+  }
+
+  /* ---------------- 두 경우를 나란히 ---------------- */
+  if (B > 0) {
+    const x0 = SAFE.left + 30, x1 = SAFE.right - 30;
+    const purpose = on('purpose') ? at('purpose', 0.5) : 0;
+
+    if (purpose > 0) {
+      g.globalAlpha = B * purpose;
+      T('같은 잣대로 비교해도 되는가?', CX, 386, 46, C.TEAL, 800);
+    }
+
+    // 위: 퍼진 정도가 같다
+    panel(420, 320, '분산이 같을 때', B);
+    const r1 = at('meaning', 1.0);
+    const p1 = curve(x0, x1, 700, 170, { mu: -0.9, sd: 1, color: C.NAVY, fill: 'rgba(22,36,63,.08)', reveal: r1 });
+    curve(x0, x1, 700, 170, { mu: 0.9, sd: 1, color: C.TEAL, fill: 'rgba(14,116,144,.10)', reveal: r1 });
+    g.strokeStyle = C.MID; g.lineWidth = 3;
+    g.beginPath(); g.moveTo(x0, 700); g.lineTo(x1, 700); g.stroke();
+    g.globalAlpha = B * at('meaning', 1.4);
+    // 두 '집단'이다. 시점(전·후)이 아니다
+    T('통제집단', p1.sx(-0.9), 690 - 188, 30, C.NAVY, 700);
+    T('처치집단', p1.sx(0.9), 690 - 188, 30, C.TEAL, 700);
+    if (purpose > 0) { g.globalAlpha = B * purpose; pill('비교 가능', SAFE.right - 120, 472, 32, C.TEAL); }
+
+    // 아래: 퍼진 정도가 다르다
+    if (on('differ')) {
+      const d = at('differ', 0.5);
+      panel(780, 330, '분산이 다를 때', B * d);
+      const r2 = at('differ', 1.0);
+      const p2 = curve(x0, x1, 1070, 105, { mu: -0.9, sd: 0.55, color: C.NAVY, fill: 'rgba(22,36,63,.08)', reveal: r2 });
+      curve(x0, x1, 1070, 105, { mu: 0.9, sd: 1.6, color: C.CORAL, fill: 'rgba(194,69,47,.10)', reveal: r2 });
+      g.strokeStyle = C.MID; g.lineWidth = 3;
+      g.beginPath(); g.moveTo(x0, 1070); g.lineTo(x1, 1070); g.stroke();
+
+      if (on('confound')) {
+        const c = at('confound', 0.5);
+        g.globalAlpha = B * c;
+        // 좁은 곡선의 꼭대기를 가리지 않도록 화살표는 바닥 가까이, 알약은 오른쪽 빈 곳에
+        const ya = 1040, xa = p2.sx(-0.9) + 30, xb = p2.sx(0.9) - 30;
+        g.strokeStyle = C.CORAL; g.lineWidth = 5; g.lineCap = 'round';
+        g.beginPath(); g.moveTo(xa, ya); g.lineTo(xb, ya); g.stroke();
+        for (const [x, s] of [[xa, 1], [xb, -1]]) {
+          g.beginPath(); g.moveTo(x + 16 * s, ya - 12); g.lineTo(x, ya); g.lineTo(x + 16 * s, ya + 12); g.stroke();
+        }
+        pill('처치 때문? 원래 차이?', p2.sx(1.75), 912, 32, C.CORAL);
+      }
+      if (purpose > 0) { g.globalAlpha = B * purpose; pill('비교 불가', SAFE.right - 120, 832, 32, C.CORAL); }
+    }
+    g.globalAlpha = 1;
+  }
+
+  /* ---------------- 덤: 이 검정은 p가 커야 좋다 ---------------- */
+  if (Cc > 0) {
+    const dy = rise(Cc);
+    T('p > .05', CX, 600 + dy, 150, C.TEAL, 800);
+    pill('등분산 통과', CX, 720 + dy, 44, C.TEAL);
+    g.globalAlpha = Cc * at('bonus', 1.2);
+    const rows = [['t검정', 'p < .05 이면', '차이 있음', C.NAVY],
+                  ['등분산 검정', 'p > .05 이면', '통과', C.TEAL]];
+    rows.forEach(([name, cond, res, col], k) => {
+      const y = 880 + k * 110;
+      box(SAFE.left + 20, y - 58, SAFE.right - SAFE.left - 40, 92, 18, C.PAPER, C.RULE, 3);
+      T(name, SAFE.left + 50, y + 4, 38, col, 800, 'left');
+      T(cond, CX + 40, y + 4, 36, C.INK, 600);
+      T(res, SAFE.right - 50, y + 4, 38, col, 800, 'right');
+    });
+    T('영가설이 무엇인지에 따라 방향이 반대입니다', CX, 1130, 34, C.SOFT, 600);
+    g.globalAlpha = 1;
+  }
+}, { tag: '통계, 왜 그렇게 하나' });
+</script>

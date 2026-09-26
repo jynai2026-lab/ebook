@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../shared/fonts/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 45 920;
+  font-display: block;
+}
+html, body { margin: 0; background: #fff; }
+canvas { display: block; }
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('../../shared/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500; font-display: block;
+}

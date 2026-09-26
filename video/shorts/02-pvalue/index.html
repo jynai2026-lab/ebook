@@ -1,0 +1,87 @@
+<!doctype html><meta charset="utf-8">
+<link rel="stylesheet" href="../../lib/shorts.css">
+<script src="../../lib/shorts-kit.js"></script>
+<script>
+const { g, T, box, C, SAFE, CX, ease, clamp, curve, strike, pill, measure, rise } = Shorts;
+
+// 양측 p = .03 이 되는 관측값: qnorm(1 - .03/2) = 2.17
+const Z = 2.17;
+
+Shorts.run(({ on, at }) => {
+  const B = at('assume', 0.5), A = 1 - B;
+
+  /* ---------------- 앞 장면: 흔한 오해 ---------------- */
+  if (A > 0) {
+    const h = at('hook', 0.5);
+    let dy = rise(A * h);
+    T('p = .03', CX, 590 + dy, 176, C.NAVY, 800);
+    T('영가설이 맞을 확률 3%?', CX, 720 + dy, 56, C.INK, 700);
+    if (on('no')) {
+      const w = measure('영가설이 맞을 확률 3%?', 56, 700);
+      g.globalAlpha = A;
+      strike(CX - w / 2 - 10, CX + w / 2 + 10, 702, at('no', 0.4));
+      g.globalAlpha = A * at('no', 0.5);
+      pill('가장 흔한 오해', CX, 840, 40, C.CORAL);
+    }
+    g.globalAlpha = 1;
+  }
+
+  /* ---------------- 뒤 장면: p값이 실제로 계산되는 방식 ---------------- */
+  if (B > 0) {
+    g.globalAlpha = B;
+    // 가정 → 계산 의 흐름
+    const lx = 290, rx = 730, py = 440;
+    const wrongPremise = on('so') ? at('so', 0.5) : 0;
+    pill('가정: 영가설이 참', lx, py, 34, wrongPremise > 0.5 ? C.CORAL : C.NAVY);
+    pill('p값 계산', rx, py, 34, C.TEAL);
+    g.strokeStyle = C.MID; g.lineWidth = 5; g.lineCap = 'round';
+    g.beginPath(); g.moveTo(455, py); g.lineTo(612, py); g.stroke();
+    g.beginPath(); g.moveTo(596, py - 14); g.lineTo(614, py); g.lineTo(596, py + 14); g.stroke();
+    if (wrongPremise > 0) {
+      const w = measure('가정: 영가설이 참', 34, 800);
+      strike(lx - w / 2, lx + w / 2, py, wrongPremise, '#fff', 5);
+    }
+
+    // 거꾸로는 못 간다: 계산 결과로 가정의 확률을 말할 수 없다
+    if (on('cannot')) {
+      const c = at('cannot', 0.5);
+      g.globalAlpha = B * c * (on('right') ? 0.35 : 1);
+      g.strokeStyle = C.CORAL; g.lineWidth = 5;
+      g.beginPath(); g.moveTo(612, py + 62); g.lineTo(455, py + 62); g.stroke();
+      g.beginPath(); g.moveTo(471, py + 48); g.lineTo(453, py + 62); g.lineTo(471, py + 76); g.stroke();
+      g.lineWidth = 7;
+      g.beginPath(); g.moveTo(516, py + 44); g.lineTo(552, py + 80);
+      g.moveTo(552, py + 44); g.lineTo(516, py + 80); g.stroke();
+      g.globalAlpha = B;
+    }
+
+    // 영가설이 참일 때 나올 수 있는 결과들
+    const x0 = SAFE.left + 30, x1 = SAFE.right - 30, base = 1000, h = 320;
+    T('영가설이 맞다면 나올 결과들', SAFE.left, 612, 30, C.SOFT, 600, 'left');
+    const tails = on('right') ? at('right', 0.6) : 0;
+    const shade = tails > 0 ? [[-3.6, -Z, `rgba(194,69,47,${0.85 * tails})`],
+                               [Z, 3.6, `rgba(194,69,47,${0.85 * tails})`]] : null;
+    const { sx, y } = curve(x0, x1, base, h, { fill: C.TEAL_TINT, color: C.NAVY,
+                                                reveal: at('assume', 1.2), shade });
+    g.strokeStyle = C.MID; g.lineWidth = 3;
+    g.beginPath(); g.moveTo(x0 - 10, base); g.lineTo(x1 + 10, base); g.stroke();
+
+    if (tails > 0) {
+      g.globalAlpha = B * tails;
+      g.setLineDash([10, 8]); g.strokeStyle = C.CORAL; g.lineWidth = 3;
+      g.beginPath(); g.moveTo(sx(Z), base); g.lineTo(sx(Z), 800); g.stroke(); g.setLineDash([]);
+      g.beginPath(); g.arc(sx(Z), base, 11, 0, 7); g.fillStyle = C.CORAL; g.fill();
+      T('내 결과', sx(Z), 786, 32, C.CORAL, 800);
+      T('1.5%', sx(-2.9), 952, 34, C.CORAL, 800);
+      T('1.5%', sx(2.9), 952, 34, C.CORAL, 800);
+      T('이만큼 극단적인 결과가 나올 확률: 합쳐서 3%', CX, 1064, 36, C.INK, 700);
+    }
+
+    if (wrongPremise > 0) {
+      g.globalAlpha = B * wrongPremise;
+      pill('→ 영가설 기각', CX, 1150, 38, C.NAVY);
+    }
+    g.globalAlpha = 1;
+  }
+}, { tag: '통계, 왜 그렇게 하나' });
+</script>

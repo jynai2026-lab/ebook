@@ -1,33 +1,92 @@
-# 개념 영상
+# 영상
 
-책의 그림과 같은 색·글꼴·데이터를 쓰는 캔버스 애니메이션을 MP4로 뽑는다.
+책의 그림과 같은 색·글꼴·데이터로 만드는 영상. 두 종류가 있다.
 
-## 만드는 법
+| 종류 | 폴더 | 만드는 도구 |
+| --- | --- | --- |
+| 쇼츠·릴스 (9:16, 내레이션) | `video/shorts/<번호-이름>/` | `tools/tts.mjs` → `tools/render-short.mjs` |
+| 무음 개념 애니메이션 | `video/*.html` | `tools/render-video.mjs` |
+
+## 쇼츠·릴스
+
+### 한 편 만들기
 
 ```bash
-node tools/render-video.mjs video/sampling.html      sampling      9
-node tools/render-video.mjs video/shorts-power.html  shorts-power  22 --vertical
+node tools/tts.mjs          video/shorts/01-power     # 1. 음성과 타임라인
+node tools/render-short.mjs video/shorts/01-power     # 2. 영상 (음성과 합쳐진 MP4)
 ```
 
-`--vertical`은 1080×1920(쇼츠), 없으면 1280×720(롱폼)이다.
-결과는 `dist/<이름>.mp4`.
+결과는 `dist/shorts/01-power.mp4`. 유튜브 쇼츠와 인스타 릴스에 같은 파일을 올린다.
 
-## 페이지가 지켜야 할 것
+### 다섯 편 한 번에
 
-HTML은 두 가지만 내놓으면 된다.
+```bash
+for d in video/shorts/0*; do node tools/tts.mjs $d && node tools/render-short.mjs $d; done
+```
 
-- `window.renderFrame(t)` — `t`는 0에서 1. 그 시점의 한 프레임을 그린다.
-- `window.__ready = true` — 글꼴이 다 실린 뒤에 세운다.
+### 음성 (Google Gemini TTS)
 
-렌더러가 `t`를 0부터 1까지 훑으며 프레임마다 스크린샷을 찍고 ffmpeg로 엮는다.
-프레임마다 같은 그림이 나와야 하므로 **난수는 고정 시드**를 써야 한다
-(`Math.random()`을 쓰면 프레임마다 그림이 달라져 화면이 떨린다).
+환경변수 `GEMINI_API_KEY`가 있으면 실제 음성을, 없으면 **길이만 어림한 무음 초안**을 만든다
+(파일 이름 끝에 `-draft`가 붙는다). 키는 채팅에 붙여넣지 말고 클라우드 환경 설정의
+환경변수로 넣는다. 새 세션부터 읽힌다.
+
+- 모델은 자동으로 고른다(정식판 flash TTS 우선). 바꾸려면 `GEMINI_TTS_MODEL`.
+- 목소리와 말투는 각 `script.json`의 `voice`, `style`에서 바꾼다.
+- 한 번 만든 문장은 `video/.cache/tts/`에 남아 다시 부르지 않는다. 무료 한도를 아끼려는 것.
+  문장이나 목소리를 바꾸면 그 문장만 새로 만든다.
+- 한도(HTTP 429)에 걸리면 서버가 알려 준 시간만큼 기다렸다 다시 시도한다.
+
+### 구조
+
+**음성이 먼저, 화면이 음성을 따른다.** `tts.mjs`가 문장별 음성 길이를 재서
+`build/timeline.json`을 만들고, 화면은 그 시각표대로 움직인다. 그래서 문장을 고쳐
+길이가 바뀌어도 싱크가 어긋나지 않는다.
+
+```
+video/shorts/01-power/
+  script.json     문장(beats) 목록 — say: TTS가 읽을 말, cap: 화면 자막
+  index.html      화면. Shorts.run(draw) 한 번만 부른다
+  data.js         (있으면) 책의 원자료에서 뽑은 데이터 — tools/short-data.py
+  build/          음성·타임라인 (커밋하지 않음)
+```
+
+`say`에는 숫자를 읽는 대로 풀어 쓴다(`30명` → `서른 명`, `0.478` → `영 점 사칠팔`).
+`cap`은 화면에 보일 글자이고, `**강조**`로 감싼 부분은 하늘색으로 나온다.
+
+### 틀 (video/lib/shorts-kit.js)
+
+- **안전 영역**: 아래(제목·계정명), 오른쪽(좋아요·댓글), 위(상단바)는 플랫폼 UI가 덮는다.
+  내용은 x 72–930, y 250–1440 안에만 둔다. `--safe`로 확인한다.
+- **자막**: 두 줄이 넘으면 글자를 줄이고, 두 줄일 때는 줄 길이가 비슷해지도록 나눈다.
+- **끝 카드**: 마지막 문장이 끝나면 전자책 안내와 계정 쪽을 가리키는 화살표가 나온다.
+
+화면 코드는 `draw({ sec, on, at, span, beat })`를 받는다.
+
+| 함수 | 뜻 |
+| --- | --- |
+| `on('bars')` | 그 문장이 시작됐는가 |
+| `at('bars', 0.6)` | 그 문장 시작 뒤 0.6초에 걸친 등장 진행도 (0→1) |
+| `span('bars')` | 그 문장 전체 길이에 걸친 진행도 |
+| `beat('bars')` | 그 문장의 `{ start, end }` |
+
+### 배치 확인
+
+```bash
+node tools/render-short.mjs video/shorts/01-power --still 12 --safe
+```
+
+그 시점 한 장만 `dist/shorts/`에 PNG로 떨군다. 붉은 곳이 UI가 덮는 자리다.
 
 ## 숫자는 책과 같아야 한다
 
-영상에 나오는 값은 책에 실린 값, 즉 R로 실제 실행한 결과와 같아야 한다.
-예를 들어 `shorts-power.html`의 검정력 0.338 / 0.478 / 0.697 / 0.801 / 0.940은
-5장의 `power.t.test(n, delta = 0.5, sd = 1, sig.level = .05)` 출력이다.
+영상의 모든 값은 책에 실린 값, 즉 R로 실제 실행한 결과와 같아야 한다.
 
-히스토그램을 그릴 때는 관측된 최댓값이 아니라 **이론 밀도로 정규화**해야
-곡선과 눈금이 맞는다 (`sampling.html` 참고).
+| 쇼츠 | 값 | 출처 |
+| --- | --- | --- |
+| 01 검정력 | 0.338 / 0.478 / 0.697 / 0.801 / 0.940 | 5장 `power.t.test` |
+| 02 p값 | 양측 3% → 관측값 z = 2.17, 꼬리 각 1.5% | 5장 |
+| 04 짝 t검정 | t = 6.36 vs 2.50, 차이 M 0.437 SD 0.435 | 8장, `prepost.csv` |
+| 05 신뢰구간 | 100개 중 97개가 모평균 포함 | 6장, `tools/ci_sim.csv` |
+
+난수를 쓰는 화면은 **고정 시드**를 써야 한다. 프레임마다 그림이 달라지면 화면이 떨린다.
+히스토그램은 관측 최댓값이 아니라 **이론 밀도로 정규화**해야 곡선과 눈금이 맞는다.

@@ -1,0 +1,123 @@
+<!doctype html><meta charset="utf-8">
+<link rel="stylesheet" href="../../lib/shorts.css">
+<script src="../../lib/shorts-kit.js"></script>
+<script src="data.js"></script>
+<script>
+const { g, T, box, C, SAFE, CX, ease, clamp, pill, measure, rise } = Shorts;
+const { pre, post } = window.PREPOST;
+const diff = pre.map((a, i) => post[i] - a);
+const mean = a => a.reduce((s, v) => s + v, 0) / a.length;
+
+// 점이 겹치지 않게 흩뿌리되, 프레임마다 같은 자리에 오도록 순번으로 정한다
+const jit = i => ((i * 37) % 17) / 16 - 0.5;
+
+function card(x, y, w, label, val, col, a) {
+  g.globalAlpha = a;
+  box(x, y, w, 250, 24, C.PAPER, col, 5);
+  T(label, x + w / 2, y + 62, 36, C.SOFT, 700);
+  T(val, x + w / 2, y + 190, 104, col, 800);
+}
+
+Shorts.run(({ sec, on, at, beat }) => {
+  const S = at('setup', 0.5), W = at('wrong', 0.5), K = at('code', 0.5);
+
+  /* ---------------- 훅: 같은 데이터, 다른 t ---------------- */
+  if (1 - S > 0) {
+    const h = at('hook', 0.5), a = (1 - S);
+    let dy = rise(a * h);
+    T('같은 데이터, 같은 평균 차이', CX, 470 + dy, 44, C.INK, 700);
+    const w = 350;   // 가운데 물음표 자리를 남긴다
+    card(SAFE.left + 20, 540 + dy, w, 't =', '2.50', C.CORAL, a * h);
+    card(SAFE.right - 20 - w, 540 + dy, w, 't =', '6.36', C.TEAL, a * at('hook', 0.9));
+    g.globalAlpha = a * at('hook', 1.2);
+    T('?', CX, 720 + dy, 90, C.NAVY, 800);
+    g.globalAlpha = 1;
+  }
+
+  /* ---------------- 같은 40명을 두 번 ---------------- */
+  const slope = S * (1 - W);
+  if (slope > 0) {
+    g.globalAlpha = slope;
+    const xa = 290, xb = 710, lo = 1.5, hi = 5.3;
+    const yv = v => 1080 - (v - lo) / (hi - lo) * 600;
+    const reveal = at('setup', 1.8);
+    pre.forEach((a, i) => {
+      if (i / pre.length > reveal) return;
+      g.strokeStyle = 'rgba(14,116,144,.35)'; g.lineWidth = 2.5;
+      g.beginPath(); g.moveTo(xa, yv(a)); g.lineTo(xb, yv(post[i])); g.stroke();
+      g.fillStyle = C.FAINT; g.beginPath(); g.arc(xa, yv(a), 7, 0, 7); g.fill();
+      g.fillStyle = C.TEAL; g.beginPath(); g.arc(xb, yv(post[i]), 7, 0, 7); g.fill();
+    });
+    T('사전', xa, 1150, 40, C.INK, 800);
+    T('사후', xb, 1150, 40, C.INK, 800);
+    T(`M = ${mean(pre).toFixed(2)}`, xa, 1196, 32, C.SOFT, 600);
+    T(`M = ${mean(post).toFixed(2)}`, xb, 1196, 32, C.SOFT, 600);
+    T('한 줄이 한 사람', CX, 430, 36, C.SOFT, 600);
+    g.globalAlpha = 1;
+  }
+
+  /* ---------------- 두 가지로 분석해 보면 ---------------- */
+  const cmp = W * (1 - K);
+  if (cmp > 0) {
+    const x0 = SAFE.left + 50, x1 = SAFE.right - 50;
+
+    // 위: 짝을 무시하고 두 무더기로 본다
+    g.globalAlpha = cmp;
+    box(SAFE.left, 380, SAFE.right - SAFE.left, 370, 22, C.PAPER, C.RULE, 3);
+    T('두 집단처럼 보면', SAFE.left + 30, 438, 38, C.NAVY, 800, 'left');
+    T('t = 2.50', SAFE.right - 30, 438, 46, C.CORAL, 800, 'right');
+    const sx = v => x0 + (v - 1.5) / (5.3 - 1.5) * (x1 - x0);
+    pre.forEach((v, i) => { g.fillStyle = 'rgba(152,162,179,.8)';
+      g.beginPath(); g.arc(sx(v), 540 + jit(i) * 50, 8, 0, 7); g.fill(); });
+    post.forEach((v, i) => { g.fillStyle = 'rgba(14,116,144,.8)';
+      g.beginPath(); g.arc(sx(v), 650 + jit(i + 7) * 50, 8, 0, 7); g.fill(); });
+    T('사전', x0 - 6, 548, 30, C.SOFT, 700, 'right');
+    T('사후', x0 - 6, 658, 30, C.TEAL, 700, 'right');
+    T('두 무더기가 넓게 겹친다', CX, 726, 32, C.SOFT, 600);
+
+    // 아래: 사람마다 뺀 변화량
+    if (on('right')) {
+      const r = at('right', 0.5);
+      g.globalAlpha = cmp * r;
+      box(SAFE.left, 790, SAFE.right - SAFE.left, 390, 22, C.PAPER, C.TEAL, 4);
+      T('짝을 지켜 보면', SAFE.left + 30, 848, 38, C.NAVY, 800, 'left');
+      T('t = 6.36', SAFE.right - 30, 848, 46, C.TEAL, 800, 'right');
+      const dx = v => x0 + (v + 1.0) / 3.0 * (x1 - x0);   // 변화량 −1 ~ 2
+      g.setLineDash([10, 8]); g.strokeStyle = C.CORAL; g.lineWidth = 3;
+      g.beginPath(); g.moveTo(dx(0), 890); g.lineTo(dx(0), 1070); g.stroke(); g.setLineDash([]);
+      T('0 (변화 없음)', dx(0), 1104, 30, C.CORAL, 700);
+      const fall = at('right', 1.2);
+      diff.forEach((v, i) => { g.fillStyle = C.TEAL;
+        g.beginPath(); g.arc(dx(v), 900 + (990 + jit(i) * 90 - 900) * fall, 8, 0, 7); g.fill(); });
+      g.strokeStyle = C.NAVY; g.lineWidth = 5;
+      g.beginPath(); g.moveTo(dx(mean(diff)), 930); g.lineTo(dx(mean(diff)), 1060); g.stroke();
+      T('사후 − 사전', SAFE.left + 30, 1150, 30, C.SOFT, 700, 'left');
+
+      if (on('why')) {
+        g.globalAlpha = cmp * at('why', 0.5);
+        pill('흩어짐 SD 0.65·0.89 → 0.43', SAFE.right - 230, 1150, 30, C.TEAL);
+      }
+    }
+    g.globalAlpha = 1;
+  }
+
+  /* ---------------- R에서는 한 줄 ---------------- */
+  if (K > 0) {
+    const dy = rise(K);
+    T('R에서 달라지는 건 한 군데', CX, 500 + dy, 44, C.INK, 700);
+    box(SAFE.left + 10, 560 + dy, SAFE.right - SAFE.left - 20, 250, 24, '#0F172A');
+    g.font = '500 44px "JetBrains Mono", monospace'; g.textAlign = 'left';
+    g.fillStyle = '#E2E8F0'; g.fillText('t.test(post, pre,', SAFE.left + 50, 660 + dy);
+    g.fillStyle = '#E2E8F0'; g.fillText('       ', SAFE.left + 50, 740 + dy);
+    const pad = g.measureText('       ').width;
+    const hw = g.measureText('paired = TRUE').width;
+    g.globalAlpha = K * at('code', 1.0);
+    box(SAFE.left + 42 + pad, 698 + dy, hw + 16, 60, 10, 'rgba(127,227,240,.18)');
+    g.globalAlpha = K;
+    g.fillStyle = C.HILITE; g.fillText('paired = TRUE', SAFE.left + 50 + pad, 740 + dy);
+    g.fillStyle = '#E2E8F0'; g.fillText(')', SAFE.left + 50 + pad + hw, 740 + dy);
+    T('이 옵션 하나가 t = 2.50 과 6.36 을 가른다', CX, 900 + dy, 36, C.SOFT, 600);
+    g.globalAlpha = 1;
+  }
+}, { tag: '통계, 왜 그렇게 하나' });
+</script>
