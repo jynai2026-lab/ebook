@@ -113,10 +113,10 @@ function preprocess(src, figDir) {
     keep(`<div class="formula">${tex(f, true)}${note ? `<small>${md.renderInline(note)}</small>` : ''}</div>`));
 
   const KIND = {
-    key:   ['callout', '핵심 정리'],
-    warn:  ['callout callout--warn', '흔한 실수'],
-    ok:    ['callout callout--ok', '이렇게 하세요'],
-    paper: ['callout callout--paper', '논문 작성 팁'],
+    key:   ['callout', '개념 정리'],
+    warn:  ['callout callout--warn', '유의 사항'],
+    ok:    ['callout callout--ok', '권장 절차'],
+    paper: ['callout callout--paper', '논문 보고'],
   };
   src = src.replace(/^:::(key|warn|ok|paper)(?:[ \t]+([^\n]+))?\n([\s\S]*?)\n:::[ \t]*$/gm, (_, kind, label, body) => {
     const [cls, def] = KIND[kind];
