@@ -142,39 +142,65 @@ function silences(file, db = -40, min = 0.18) {
 }
 
 /**
- * 통으로 읽힌 음성에서 문장별 발화 구간을 찾는다.
- * 문장 길이 비율로 경계가 올 자리를 어림하고, 그 근처에서 가장 긴 쉼을 경계로 삼는다.
- * 쉼표에서 쉬는 짧은 쉼보다 문장 사이 쉼이 길다는 점을 이용한다.
+ * 통으로 읽힌 음성에서 비트별 발화 구간을 찾는다.
+ *
+ * 한 비트에 문장이 둘 이상이면 비트 안의 문장 사이 쉼도 비트 사이 쉼만큼 길다.
+ * 그래서 비트가 아니라 **문장 경계를 모두** 한꺼번에 고른 뒤 비트로 묶는다.
+ * 문장 끝 쉼(0.35~1.2초)은 쉼표에서의 쉼(0.2~0.35초)보다 길다. 문장 경계 수만큼
+ * 쉼을 순서대로 고르되, 쉼이 길수록, 문장 길이 비율로 어림한 자리에 가까울수록
+ * 점수를 높게 준다(동적 계획법으로 합이 가장 큰 조합).
  */
+function sentences(text) {
+  return text.trim().split(/(?<=[.?!])\s+/).filter(Boolean);
+}
+
 function segment(file, texts) {
   const total = duration(file);
   const sil = silences(file);
   const speechStart = sil.length && sil[0][0] < 0.05 ? sil[0][1] : 0;
   const last = sil[sil.length - 1];
   const speechEnd = last && last[1] >= total - 0.05 ? last[0] : total;
-  const inner = sil.filter(([a, b]) => a > speechStart + 0.05 && b < speechEnd - 0.05);
+  const pauses = sil.filter(([a, b]) => a > speechStart + 0.05 && b < speechEnd - 0.05);
 
-  const w = texts.map(weight), W = w.reduce((a, b) => a + b, 0);
-  const len = speechEnd - speechStart, avg = len / texts.length;
-  const cuts = [];
-  let cum = 0, from = speechStart;
-  for (let k = 0; k < texts.length - 1; k++) {
-    cum += w[k];
-    const t = speechStart + len * cum / W;
-    const pool = inner.filter(([a]) => a > from + 0.3);
-    if (!pool.length) throw new Error(`문장 ${k + 1}과 ${k + 2} 사이의 쉼을 찾지 못했습니다.`);
-    const near = pool.filter(([a, b]) => Math.abs((a + b) / 2 - t) < avg * 0.45);
-    const pick = near.length
-      ? near.reduce((p, q) => (q[1] - q[0] > p[1] - p[0] ? q : p))
-      : pool.reduce((p, q) => (Math.abs((q[0] + q[1]) / 2 - t) < Math.abs((p[0] + p[1]) / 2 - t) ? q : p));
-    cuts.push(pick);
-    from = pick[1];
+  // 문장 목록과 각 문장이 속한 비트
+  const sents = texts.flatMap((t, k) => sentences(t).map(x => ({ beat: k, w: weight(x) })));
+  const W = sents.reduce((a, x) => a + x.w, 0);
+  const len = speechEnd - speechStart, avg = len / sents.length;
+  const K = sents.length - 1, m = pauses.length;
+  if (m < K) throw new Error(`문장 경계 ${K}곳에 비해 쉼이 ${m}곳뿐입니다. 음성을 확인해 주세요.`);
+
+  const expect = [];
+  for (let k = 0, cum = 0; k < K; k++) { cum += sents[k].w; expect.push(speechStart + len * cum / W); }
+  const score = (k, j) => {
+    const [a, b] = pauses[j];
+    return (b - a) - 0.2 * Math.abs((a + b) / 2 - expect[k]) / avg;
+  };
+  // dp[k][j]: 경계 k를 쉼 j에 둘 때까지의 최고 점수
+  const dp = [], from = [];
+  for (let k = 0; k < K; k++) {
+    dp.push(new Array(m).fill(-Infinity)); from.push(new Array(m).fill(-1));
+    let best = -Infinity, arg = -1;
+    for (let j = k; j <= m - (K - k); j++) {
+      if (k === 0) { dp[k][j] = score(k, j); continue; }
+      if (dp[k - 1][j - 1] > best) { best = dp[k - 1][j - 1]; arg = j - 1; }
+      dp[k][j] = best + score(k, j); from[k][j] = arg;
+    }
   }
-  return texts.map((_, k) => ({
-    start: k === 0 ? speechStart : cuts[k - 1][1],
-    end: k === texts.length - 1 ? speechEnd : cuts[k][0],
-    share: w[k] / W,
-  }));
+  const cut = new Array(K);
+  if (K) {
+    let j = dp[K - 1].reduce((bi, v, i, arr) => (v > arr[bi] ? i : bi), 0);
+    for (let k = K - 1; k >= 0; k--) { cut[k] = pauses[j]; j = from[k][j]; }
+  }
+
+  // 문장 구간 → 비트 구간
+  const out = texts.map(() => ({ start: Infinity, end: -Infinity, share: 0 }));
+  sents.forEach((x, i) => {
+    const o = out[x.beat];
+    o.start = Math.min(o.start, i === 0 ? speechStart : cut[i - 1][1]);
+    o.end = Math.max(o.end, i === K ? speechEnd : cut[i][0]);
+    o.share += x.w / W;
+  });
+  return out;
 }
 
 /* ---------------------------------------------------------------- 메인 */
