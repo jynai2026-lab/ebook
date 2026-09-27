@@ -34,7 +34,7 @@ const KEY = (process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY
              || (existsSync(KEY_FILE) ? readFileSync(KEY_FILE, 'utf8') : '')).trim();
 const API = 'https://generativelanguage.googleapis.com/v1beta';
 const RATE = 24000;                 // 모든 조각을 이 표본율로 맞춘다
-const LEAD = 0.35, GAP = 0.2, TAIL = 2.8;   // 앞 여백, 문장 사이, 끝 안내 카드
+const LEAD = 0.35, GAP = 0.28, TAIL = 2.8;  // 앞 여백, 문장 사이, 끝 안내 카드
 
 const build = join(dir, 'build');
 const cache = join(ROOT, 'video', '.cache', 'tts');
@@ -93,7 +93,10 @@ async function synth(model, text, voice, out) {
       if (!part) throw new Error('응답에 음성이 없습니다: ' + JSON.stringify(body).slice(0, 300));
       const rate = Number(/rate=(\d+)/.exec(part.inlineData.mimeType || '')?.[1] || 24000);
       writeFileSync(pcm, Buffer.from(part.inlineData.data, 'base64'));
+      // 문장 앞뒤에 붙어 나오는 무음은 잘라 낸다. 문장 사이 간격은 GAP으로 따로 준다.
+      const trim = 'silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.05';
       ff(['-f', 's16le', '-ar', String(rate), '-ac', '1', '-i', pcm,
+          '-af', `${trim},areverse,${trim},areverse`,
           '-ar', String(RATE), '-ac', '1', '-c:a', 'pcm_s16le', out]);
       [req, res, pcm].forEach(f => rmSync(f, { force: true }));
       return;
@@ -124,7 +127,10 @@ function estimate(say) {
 /* ---------------------------------------------------------------- 메인 */
 
 const voice = script.voice || 'Charon';
-const style = script.style || '';
+// 말투 지시("Read aloud in a calm voice:" 같은 것)는 넣지 않는다.
+// 이 TTS 모델은 문장 앞에 붙인 지시문까지 소리 내어 읽고(문장이 3.9초 → 8.9초),
+// systemInstruction으로 분리하면 "Developer instruction is not enabled"로 거절한다.
+// 톤은 목소리(voice) 선택으로만 맞춘다.
 const placeholder = !KEY;
 const model = placeholder ? null : await pickModel();
 
@@ -139,7 +145,7 @@ for (const [k, b] of script.beats.entries()) {
     clip = join(build, `.ph-${k}.wav`);
     silence(estimate(b.say), clip);
   } else {
-    const text = style ? `${style} ${b.say}` : b.say;
+    const text = b.say;
     const hash = createHash('sha1').update([model, voice, text].join('\u0000')).digest('hex').slice(0, 16);
     clip = join(cache, `${hash}.wav`);
     if (!existsSync(clip)) {

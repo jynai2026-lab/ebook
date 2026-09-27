@@ -10,18 +10,13 @@ import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
-import { chromium } from 'playwright-core';
+import { launchBrowser } from './tools/browser.mjs';
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib';
 import MarkdownIt from 'markdown-it';
 import attrs from 'markdown-it-attrs';
 import katex from 'katex';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
-const CHROME = [
-  '/opt/pw-browsers/chromium/chrome-linux/chrome',
-  '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
-  '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell',
-].find(existsSync);
 
 const md = new MarkdownIt({ html: true, breaks: false, typographer: false }).use(attrs);
 
@@ -264,7 +259,7 @@ ${chapters.map(buildChapter).join('\n')}
 
 /* ---------------------------------------------------------------- 렌더 */
 async function renderPdf(htmlPath, pdfPath) {
-  const browser = await chromium.launch({ executablePath: CHROME });
+  const browser = await launchBrowser();
   const page = await browser.newPage();
   await page.goto('file://' + htmlPath, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
@@ -301,9 +296,15 @@ async function stampPageNumbers(pdfPath, accentHex) {
 /** 1차 렌더 결과에서 장별 시작 쪽을 읽는다. 실패하면 목차 쪽번호만 비운다. */
 function readChapterPages(pdfPath) {
   try {
-    const out = execFileSync('python3', [join(ROOT, 'tools', 'toc-pages.py'), pdfPath],
-                             { encoding: 'utf8' });
-    return JSON.parse(out);
+    // Windows에는 python3가 없고 python 또는 py로 부른다
+    for (const py of ['python3', 'python', 'py']) {
+      try {
+        const out = execFileSync(py, [join(ROOT, 'tools', 'toc-pages.py'), pdfPath],
+                                 { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+        return JSON.parse(out);
+      } catch (e) { if (e.code !== 'ENOENT') throw e; }
+    }
+    throw new Error('파이썬을 찾지 못했습니다');
   } catch (e) {
     console.log('  - 목차 쪽번호를 읽지 못했습니다:', e.message.split('\n')[0]);
     return {};

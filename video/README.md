@@ -21,7 +21,7 @@ node tools/render-short.mjs video/shorts/01-power     # 2. 영상 (음성과 합
 ### 다섯 편 한 번에
 
 ```bash
-for d in video/shorts/0*; do node tools/tts.mjs $d && node tools/render-short.mjs $d; done
+node tools/make-shorts.mjs
 ```
 
 ### 음성 (Google Gemini TTS)
@@ -31,7 +31,9 @@ for d in video/shorts/0*; do node tools/tts.mjs $d && node tools/render-short.mj
 환경변수로 넣는다. 새 세션부터 읽힌다.
 
 - 모델은 자동으로 고른다(정식판 flash TTS 우선). 바꾸려면 `GEMINI_TTS_MODEL`.
-- 목소리와 말투는 각 `script.json`의 `voice`, `style`에서 바꾼다.
+- 목소리는 각 `script.json`의 `voice`에서 바꾼다. **말투 지시문은 넣지 않는다.**
+  이 모델은 문장 앞에 붙인 지시문까지 소리 내어 읽는다(문장 길이가 두 배가 된다).
+- 음성 앞뒤의 무음은 잘라 내고, 문장 사이 간격은 `tts.mjs`의 `GAP`으로 준다.
 - 한 번 만든 문장은 `video/.cache/tts/`에 남아 다시 부르지 않는다. 무료 한도를 아끼려는 것.
   문장이나 목소리를 바꾸면 그 문장만 새로 만든다.
 - 한도(HTTP 429)에 걸리면 서버가 알려 준 시간만큼 기다렸다 다시 시도한다.

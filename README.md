@@ -11,6 +11,42 @@ R 기반 사회과학 통계 입문서 4권 시리즈. 원고(Markdown)를 A4 PD
 | 3권 | 요인분석 | `books/03-factor-analysis/` |
 | 4권 | 구조방정식 | `books/04-sem/` |
 
+## 내 PC에서 돌리기
+
+macOS · Windows · Linux 모두 됩니다.
+
+**필요한 것**
+
+| 도구 | 용도 | 설치 |
+| --- | --- | --- |
+| Node.js 18 이상 | 모든 빌드 | nodejs.org |
+| Google Chrome | PDF·이미지·영상 렌더 | 평소 쓰는 크롬이면 됩니다 |
+| ffmpeg | 쇼츠 영상 | Mac `brew install ffmpeg` · Windows `winget install ffmpeg` |
+| Python + `pip install pymupdf` | 목차 쪽번호 (없으면 쪽번호만 빈칸) | 선택 |
+
+크롬은 자동으로 찾습니다. 못 찾으면 `CHROME_PATH` 환경변수로 경로를 알려 주세요.
+
+```bash
+git clone https://github.com/jynai2026-lab/ebook.git
+cd ebook
+npm install
+```
+
+| 하고 싶은 것 | 명령 | 결과 |
+| --- | --- | --- |
+| 전자책 PDF | `npm run build:1` | `dist/*.pdf` |
+| 상세페이지 이미지 | `node render-cards.mjs` | `dist/landing/` |
+| 쇼츠·릴스 5편 | `node tools/make-shorts.mjs` | `dist/shorts/*.mp4` |
+| 빌드 점검 | `node tools/audit.mjs` | 오류 목록 |
+
+쇼츠 음성은 Google AI Studio 키를 씁니다. 키는 저장소 밖에 둡니다.
+
+- Mac·Linux: `~/.config/ebook/gemini.key` 파일에 키 한 줄
+- Windows: `%USERPROFILE%\.config\ebook\gemini.key` 파일에 키 한 줄
+- 또는 환경변수 `GEMINI_API_KEY`
+
+키가 없으면 소리 없는 초안(`-draft.mp4`)이 나옵니다. 자세한 건 [video/README.md](video/README.md).
+
 ## 빌드
 
 ```bash

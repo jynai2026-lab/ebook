@@ -8,13 +8,9 @@
 import { existsSync, mkdirSync, readdirSync, rmSync, statSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { chromium } from 'playwright-core';
+import { launchBrowser } from './tools/browser.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
-const CHROME = [
-  '/opt/pw-browsers/chromium/chrome-linux/chrome',
-  '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
-].find(existsSync);
 
 const slug = process.argv[2] || '01-basic-statistics';
 const htmlPath = join(ROOT, 'landing', slug, 'cards.html');
@@ -29,7 +25,7 @@ if (existsSync(outDir)) {
 }
 mkdirSync(outDir, { recursive: true });
 
-const browser = await chromium.launch({ executablePath: CHROME });
+const browser = await launchBrowser();
 const page = await browser.newPage({
   viewport: { width: 1080, height: 1350 },
   deviceScaleFactor: 2,          // 2x 레티나 — 래피드에서 선명하게 보이도록

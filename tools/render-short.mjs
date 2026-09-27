@@ -14,10 +14,9 @@ import { readFileSync, mkdirSync, rmSync, existsSync } from 'fs';
 import { join, dirname, resolve, basename } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
-import { chromium } from 'playwright-core';
+import { launchBrowser } from './browser.mjs';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium';
 const FPS = 30;
 
 const argv = process.argv.slice(2);
@@ -32,7 +31,7 @@ const safe = argv.includes('--safe');
 const outDir = join(ROOT, 'dist', 'shorts');
 mkdirSync(outDir, { recursive: true });
 
-const browser = await chromium.launch({ executablePath: CHROME });
+const browser = await launchBrowser();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
 await page.addInitScript(tl => { window.TIMELINE = tl; }, TL);
 // 페이지 쪽 오류가 조용히 묻혀 시간 초과로만 보이지 않게 한다

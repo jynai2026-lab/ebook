@@ -2,7 +2,6 @@
   "title": "95% 신뢰구간, 대부분 잘못 읽습니다",
   "source": "6장 추정과 신뢰구간 — 표본 100번, 구간 100개 중 97개가 모평균 포함 (tools/ci_sim.csv)",
   "voice": "Charon",
-  "style": "Read aloud in a calm, clear, confident lecturer's voice, slightly brisk:",
   "beats": [
     {
       "id": "hook",

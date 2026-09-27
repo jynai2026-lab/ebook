@@ -10,13 +10,12 @@
 import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { chromium } from 'playwright-core';
+import { launchBrowser } from './browser.mjs';
 import katex from 'katex';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
 const FIG = join(ROOT, 'books', '01-basic-statistics', 'figures');
 const OUT = join(ROOT, '.figpreview');
-const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium';
 
 /** build.mjs 의 renderFigTex 와 같은 일을 한다 */
 const renderFigTex = svg => svg.replace(/<span data-tex="([^"]*)"\s*><\/span>/g, (_, raw) => {
@@ -50,7 +49,7 @@ const html = `<!doctype html><meta charset="utf-8">
 const htmlPath = join(OUT, 'sheet.html');
 writeFileSync(htmlPath, html);
 
-const browser = await chromium.launch({ executablePath: CHROME });
+const browser = await launchBrowser();
 const page = await browser.newPage({ viewport: { width: 1000, height: 1600 } });
 await page.goto('file://' + htmlPath);
 await page.evaluate(() => document.fonts.ready);

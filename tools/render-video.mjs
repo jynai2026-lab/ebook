@@ -11,10 +11,9 @@ import { mkdirSync, rmSync, existsSync } from 'fs';
 import { join, dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { execFileSync } from 'child_process';
-import { chromium } from 'playwright-core';
+import { launchBrowser } from './browser.mjs';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const CHROME = process.env.CHROME_PATH || '/opt/pw-browsers/chromium';
 
 const page_ = process.argv[2];
 const name = process.argv[3] || 'out';
@@ -29,7 +28,7 @@ const frames = join(ROOT, '.frames', name);
 rmSync(frames, { recursive: true, force: true });
 mkdirSync(frames, { recursive: true });
 
-const browser = await chromium.launch({ executablePath: CHROME });
+const browser = await launchBrowser();
 const page = await browser.newPage({ viewport: SIZE, deviceScaleFactor: 1 });
 page.on('pageerror', e => console.error('  페이지 오류:', e.message));
 await page.goto('file://' + resolve(page_));
