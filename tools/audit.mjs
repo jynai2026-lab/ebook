@@ -1,7 +1,7 @@
 /**
  * 빌드 결과 점검
  *
- *  node tools/audit.mjs
+ *  node tools/audit.mjs [권슬러그]        기본값 01-basic-statistics
  *
  * 렌더된 HTML(dist/*.html)을 훑어 다음을 잡아낸다.
  *   1) 복원되지 않은 자리표시자
@@ -15,7 +15,7 @@ import { join, dirname, basename } from 'path';
 import { fileURLToPath } from 'url';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const BOOK = join(ROOT, 'books', '01-basic-statistics');
+const BOOK = join(ROOT, 'books', process.argv[2] || '01-basic-statistics');
 const MAN = join(BOOK, 'manuscript');
 const FIGDIR = join(BOOK, 'figures');
 

@@ -1,0 +1,21 @@
+<svg viewBox="0 0 900 310" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M192.3,227.0 L347.8,151.8" stroke="#4338CA" stroke-width="2.6"/><path d="M357.7,147.0 L350.1,156.5 L345.5,147.0 Z" fill="#4338CA"/>
+<path d="M483.7,147.0 L597.1,221.0" stroke="#4338CA" stroke-width="2.6"/><path d="M606.3,227.0 L594.2,225.4 L600.0,216.6 Z" fill="#4338CA"/>
+<path d="M210.0,262.0 L569.0,262.0" stroke="#344054" stroke-width="2.2"/><path d="M580.0,262.0 L569.0,267.3 L569.0,256.7 Z" fill="#344054"/>
+<path d="M740.0,262.0 L759.0,262.0" stroke="#16243F" stroke-width="2.2"/><path d="M770.0,262.0 L759.0,267.3 L759.0,256.7 Z" fill="#16243F"/>
+<path d="M167.2,107.0 L266.2,180.4" stroke="#B54708" stroke-width="2.2" stroke-dasharray="6 4"/><path d="M275.0,187.0 L263.0,184.7 L269.3,176.2 Z" fill="#B54708"/>
+<circle cx="275" cy="187" r="4" fill="#B54708"/>
+<rect x="35" y="232" width="170" height="60" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="120" y="260" font-size="16" fill="#101828" font-weight="700" text-anchor="middle">직무스트레스</text><text x="120" y="277" font-size="11.52" fill="#667085" text-anchor="middle">stress</text>
+<rect x="355" y="82" width="150" height="60" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="430" y="110" font-size="16" fill="#101828" font-weight="700" text-anchor="middle">소진</text><text x="430" y="127" font-size="11.52" fill="#667085" text-anchor="middle">burnout</text>
+<rect x="585" y="232" width="150" height="60" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="660" y="260" font-size="16" fill="#101828" font-weight="700" text-anchor="middle">이직의도</text><text x="660" y="277" font-size="11.52" fill="#667085" text-anchor="middle">turnover</text>
+<rect x="775" y="232" width="110" height="60" rx="10" fill="#fff" stroke="#16243F" stroke-width="2"/><text x="830" y="260" font-size="16" fill="#101828" font-weight="700" text-anchor="middle">실제 퇴사</text><text x="830" y="277" font-size="11.52" fill="#667085" text-anchor="middle">quit</text>
+<rect x="35" y="42" width="170" height="60" rx="10" fill="#FEF0C7" stroke="#B54708" stroke-width="2"/><text x="120" y="70" font-size="16" fill="#101828" font-weight="700" text-anchor="middle">사회적지지</text><text x="120" y="87" font-size="11.52" fill="#667085" text-anchor="middle">support</text>
+<rect x="585" y="42" width="300" height="60" rx="10" fill="#fff" stroke="#E4E7EC" stroke-width="2"/><text x="735" y="70" font-size="15" fill="#344054" font-weight="700" text-anchor="middle">통제변수</text><text x="735" y="86" font-size="10.799999999999999" fill="#667085" text-anchor="middle">성별 · 연령 · 근속연수 · 자기효능감</text>
+<path d="M580.0,92.3 L520.9,100.1" stroke="#98A2B3" stroke-width="1.8" stroke-dasharray="5 4"/><path d="M510.0,101.5 L520.2,94.8 L521.6,105.3 Z" fill="#98A2B3"/>
+<text x="322" y="214" font-size="13" fill="#4338CA" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">1 · 2 · 3장</text>
+<text x="578" y="172" font-size="13" fill="#4338CA" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">9장 매개</text>
+<text x="390" y="290" font-size="13" fill="#344054" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">9장 직접효과</text>
+<text x="255" y="120" font-size="13" fill="#B54708" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">8장 조절 · 10장</text>
+<text x="752" y="232" font-size="13" fill="#16243F" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">11장</text>
+<text x="545" y="74" font-size="12" fill="#667085" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">7장</text>
+</svg>

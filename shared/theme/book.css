@@ -125,7 +125,7 @@ body {
 }
 .cover__title em {
   font-style: normal;
-  color: #7FE3F0;
+  color: var(--cover-hi, #7FE3F0);
 }
 .cover__sub {
   margin-top: 7mm;
@@ -135,7 +135,7 @@ body {
 }
 .cover__rule {
   margin-top: 11mm; width: 26mm; height: 3px;
-  background: #7FE3F0; border-radius: 2px;
+  background: var(--cover-hi, #7FE3F0); border-radius: 2px;
 }
 .cover__points {
   margin-top: auto; padding-top: 14mm;
@@ -150,7 +150,7 @@ body {
 .cover__points li::before {
   content: ''; position: absolute; left: 0; top: .62em;
   width: 3.6mm; height: 3.6mm; border-radius: 50%;
-  border: 1.6px solid #7FE3F0;
+  border: 1.6px solid var(--cover-hi, #7FE3F0);
 }
 .cover__foot {
   margin-top: 13mm; padding-top: 6mm;
@@ -460,7 +460,7 @@ figcaption b { color: var(--navy); font-weight: 700; }
   border-radius: 2mm;
   font-size: 9.8pt; line-height: 1.7;
 }
-.recap b, .recap strong { color: #7FE3F0; font-weight: 700; }
+.recap b, .recap strong { color: var(--cover-hi, #7FE3F0); font-weight: 700; }
 .recap em { color: #B9E6F0; }
 .recap p:last-child { margin-bottom: 0; }
 

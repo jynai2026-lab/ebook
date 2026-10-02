@@ -182,6 +182,27 @@ function parseChapter(raw, figDir) {
 }
 
 /* ---------------------------------------------------------------- 조립 */
+/** 표지 장식. 권마다 그 권을 상징하는 모양을 옅게 깐다. */
+function coverDeco(kind) {
+  if (kind === 'scatter') {
+    // 회귀: 점구름과 회귀선. 난수는 고정해 빌드마다 같은 그림이 나온다
+    let seed = 7;
+    const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const gauss = () => Math.sqrt(-2 * Math.log(rnd() + 1e-9)) * Math.cos(2 * Math.PI * rnd());
+    const dots = [];
+    for (let i = 0; i < 110; i++) {
+      const x = 20 + rnd() * 520;
+      const y = 172 - (x - 20) * 0.27 + gauss() * 16;
+      dots.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2.2 + rnd() * 1.6).toFixed(1)}" fill="#fff"/>`);
+    }
+    return `<svg class="cover__deco" viewBox="0 0 560 200" preserveAspectRatio="xMidYMid meet">
+    ${dots.join('')}<path d="M6,176 L554,28" stroke="#fff" stroke-width="2.4"/></svg>`;
+  }
+  return `<svg class="cover__deco" viewBox="0 0 400 160" preserveAspectRatio="none">
+    <path d="M0,160 C60,160 70,20 130,20 C150,20 155,8 200,8 C245,8 250,20 270,20 C330,20 340,160 400,160 Z" fill="#fff"/>
+  </svg>`;
+}
+
 function buildCover(cfg) {
   const pts = (cfg.coverPoints || []).map(p => `<li>${esc(p)}</li>`).join('');
   // 표지 제목: *강조* -> <em>, 줄바꿈 -> <br>
@@ -191,9 +212,7 @@ function buildCover(cfg) {
   return `
 <section class="cover">
   <div class="cover__grid"></div>
-  <svg class="cover__deco" viewBox="0 0 400 160" preserveAspectRatio="none">
-    <path d="M0,160 C60,160 70,20 130,20 C150,20 155,8 200,8 C245,8 250,20 270,20 C330,20 340,160 400,160 Z" fill="#fff"/>
-  </svg>
+  ${coverDeco(cfg.coverDeco)}
   <div class="cover__series">${esc(cfg.series || '')}</div>
   <div class="cover__vol">${esc(cfg.volumeLabel || '')}</div>
   <h1 class="cover__title">${title}</h1>

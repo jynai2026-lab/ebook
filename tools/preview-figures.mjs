@@ -2,6 +2,7 @@
  * 그림 검수용 대지(contact sheet)
  *
  *   node tools/preview-figures.mjs [이름조각 ...]
+ *   BOOK=02-regression node tools/preview-figures.mjs ch03     2권 그림
  *
  * 그림을 본문과 똑같은 조건(KaTeX 조판 + 본문 폰트)으로 한 장에 늘어놓고
  * PNG로 떨군다. 이름조각을 주면 그것이 들어간 그림만 그린다.
@@ -14,7 +15,7 @@ import { launchBrowser } from './browser.mjs';
 import katex from 'katex';
 
 const ROOT = dirname(dirname(fileURLToPath(import.meta.url)));
-const FIG = join(ROOT, 'books', '01-basic-statistics', 'figures');
+const FIG = join(ROOT, 'books', process.env.BOOK || '01-basic-statistics', 'figures');
 const OUT = join(ROOT, '.figpreview');
 
 /** build.mjs 의 renderFigTex 와 같은 일을 한다 */
@@ -57,9 +58,10 @@ await page.waitForTimeout(300);
 const h = await page.evaluate(() => document.body.scrollHeight);
 const parts = Math.ceil(h / 1600);
 for (let i = 0; i < parts; i++) {
-  await page.evaluate(y => window.scrollTo(0, y), i * 1600);
-  await page.waitForTimeout(150);
-  await page.screenshot({ path: join(OUT, `sheet-${i}.png`) });
+  // 마지막 장은 내용 높이만큼만 잘라 빈 여백을 남기지 않는다
+  const y = i * 1600, hh = Math.min(1600, h - y);
+  await page.screenshot({ path: join(OUT, `sheet-${i}.png`), fullPage: true,
+                          clip: { x: 0, y, width: 1000, height: hh } });
 }
 await browser.close();
 console.log(`그림 ${names.length}개 → ${parts}장  (.figpreview/sheet-*.png)`);
