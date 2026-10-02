@@ -11,7 +11,7 @@ import os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
-MODULES = ['fig2_ch00_03']
+MODULES = ['fig2_ch00_03', 'fig2_ch04_07']
 
 print('2권 그림 생성')
 for name in MODULES:

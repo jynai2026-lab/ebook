@@ -1,0 +1,45 @@
+<svg viewBox="0 0 900 290" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M300.0,30 L300.0,236" stroke="#E4E7EC" stroke-width="1"/>
+<text x="300" y="256" font-size="12.5" fill="#667085" text-anchor="middle">−0.4</text>
+<path d="M380.0,30 L380.0,236" stroke="#E4E7EC" stroke-width="1"/>
+<text x="380" y="256" font-size="12.5" fill="#667085" text-anchor="middle">−0.2</text>
+<path d="M460.0,30 L460.0,236" stroke="#98A2B3" stroke-width="1.6"/>
+<text x="460" y="256" font-size="12.5" fill="#667085" text-anchor="middle">0</text>
+<path d="M540.0,30 L540.0,236" stroke="#E4E7EC" stroke-width="1"/>
+<text x="540" y="256" font-size="12.5" fill="#667085" text-anchor="middle">0.2</text>
+<path d="M620.0,30 L620.0,236" stroke="#E4E7EC" stroke-width="1"/>
+<text x="620" y="256" font-size="12.5" fill="#667085" text-anchor="middle">0.4</text>
+<path d="M700.0,30 L700.0,236" stroke="#E4E7EC" stroke-width="1"/>
+<text x="700" y="256" font-size="12.5" fill="#667085" text-anchor="middle">0.6</text>
+<path d="M780.0,30 L780.0,236" stroke="#E4E7EC" stroke-width="1"/>
+<text x="780" y="256" font-size="12.5" fill="#667085" text-anchor="middle">0.8</text>
+<path d="M860.0,30 L860.0,236" stroke="#E4E7EC" stroke-width="1"/>
+<text x="860" y="256" font-size="12.5" fill="#667085" text-anchor="middle">1</text>
+<text x="20" y="42" font-size="13" fill="#C2452F" font-weight="800">업무과부하와 함께</text>
+<text x="280" y="69" font-size="14" fill="#101828" font-weight="700" text-anchor="end">스트레스 계수</text>
+<path d="M810.1,64.0 L644.7,64.0" stroke="#C2452F" stroke-width="2" stroke-opacity="0.5"/>
+<circle cx="810.1" cy="64" r="11" fill="#fff" stroke="#C2452F" stroke-width="2.4"/>
+<text x="810" y="69" font-size="13" fill="#C2452F" font-weight="800" text-anchor="middle">A</text>
+<text x="810" y="47" font-size="12.5" fill="#C2452F" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.875</text>
+<circle cx="644.7" cy="64" r="11" fill="#fff" stroke="#C2452F" stroke-width="2.4"/>
+<text x="645" y="69" font-size="13" fill="#C2452F" font-weight="800" text-anchor="middle">B</text>
+<text x="645" y="92" font-size="12.5" fill="#C2452F" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.462</text>
+<text x="280" y="131" font-size="14" fill="#101828" font-weight="700" text-anchor="end">업무과부하 계수</text>
+<path d="M337.8,126.0 L476.0,126.0" stroke="#C2452F" stroke-width="2" stroke-opacity="0.5"/>
+<circle cx="337.8" cy="126" r="11" fill="#fff" stroke="#C2452F" stroke-width="2.4"/>
+<text x="338" y="131" font-size="13" fill="#C2452F" font-weight="800" text-anchor="middle">A</text>
+<text x="338" y="109" font-size="12.5" fill="#C2452F" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">−0.305</text>
+<circle cx="476.0" cy="126" r="11" fill="#fff" stroke="#C2452F" stroke-width="2.4"/>
+<text x="476" y="131" font-size="13" fill="#C2452F" font-weight="800" text-anchor="middle">B</text>
+<text x="476" y="154" font-size="12.5" fill="#C2452F" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.040</text>
+<text x="20" y="178" font-size="13" fill="#4338CA" font-weight="800">업무과부하 뺌</text>
+<text x="280" y="205" font-size="14" fill="#101828" font-weight="700" text-anchor="end">스트레스 계수</text>
+<path d="M690.0,200.0 L660.3,200.0" stroke="#4338CA" stroke-width="2" stroke-opacity="0.5"/>
+<circle cx="690.0" cy="200" r="11" fill="#fff" stroke="#4338CA" stroke-width="2.4"/>
+<text x="690" y="205" font-size="13" fill="#4338CA" font-weight="800" text-anchor="middle">A</text>
+<text x="690" y="183" font-size="12.5" fill="#4338CA" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.575</text>
+<circle cx="660.3" cy="200" r="11" fill="#fff" stroke="#4338CA" stroke-width="2.4"/>
+<text x="660" y="205" font-size="13" fill="#4338CA" font-weight="800" text-anchor="middle">B</text>
+<text x="660" y="228" font-size="12.5" fill="#4338CA" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.501</text>
+<text x="580" y="280" font-size="13" fill="#344054" font-weight="600" text-anchor="middle">A, B = 무작위로 나눈 150명씩의 두 절반</text>
+</svg>

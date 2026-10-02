@@ -113,10 +113,10 @@ str(d)
 
 ## 준비
 
-1권에서 설치한 패키지에 두 개를 더합니다.
+1권에서 설치한 패키지에 세 개를 더합니다.
 
 ```r 최초 1회만 실행합니다
-install.packages(c("psych", "car", "effectsize", "lmtest", "lavaan"))
+install.packages(c("psych", "car", "effectsize", "lmtest", "sandwich", "lavaan"))
 ```
 
 | 패키지 | 쓰는 곳 |
@@ -124,7 +124,7 @@ install.packages(c("psych", "car", "effectsize", "lmtest", "lavaan"))
 | `psych` | 기술통계, 상관행렬 (1장) |
 | `car` | 분산팽창지수, 잔차 진단 (4장, 5장) |
 | `effectsize` | 표준화 회귀계수 (3장) |
-| `lmtest` | 등분산 검정, 강건한 표준오차 (4장) |
+| `lmtest`, `sandwich` | 등분산 검정, 강건한 표준오차 (4장) |
 | `lavaan` | 매개효과·조절된 매개의 부트스트랩 (9장, 10장). 4권 구조방정식에서도 그대로 씁니다 |
 
 회귀분석 자체는 R에 기본으로 들어 있는 `lm()` 함수 하나로 합니다. 이 책의 회귀분석 코드는 대부분 이 모양입니다.

@@ -1,0 +1,20 @@
+<svg viewBox="0 0 900 336" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="#C2452F" stroke-width="2.4"/></pattern></defs>
+<circle cx="450" cy="215" r="105" fill="#C7D0DE" fill-opacity=".5" stroke="#16243F" stroke-width="2"/>
+<clipPath id="notL"><path d="M0,0 H900 V320 H0 Z M567,120 a92,92 0 1,0 -184,0 a92,92 0 1,0 184,0 Z" clip-rule="evenodd"/></clipPath>
+<clipPath id="notS"><path d="M0,0 H900 V320 H0 Z M517,120 a92,92 0 1,0 -184,0 a92,92 0 1,0 184,0 Z" clip-rule="evenodd"/></clipPath>
+<circle cx="425" cy="120" r="92" fill="url(#hatch)" clip-path="url(#notL)"/>
+<circle cx="475" cy="120" r="92" fill="url(#hatch)" clip-path="url(#notS)"/>
+<circle cx="425" cy="120" r="92" fill="#4338CA" fill-opacity=".10" stroke="#4338CA" stroke-width="2"/>
+<circle cx="475" cy="120" r="92" fill="#0E7490" fill-opacity=".10" stroke="#0E7490" stroke-width="2"/>
+<text x="295" y="70" font-size="15" fill="#4338CA" font-weight="700" text-anchor="end">직무스트레스</text>
+<path d="M301.0,66.0 L355.0,80.0" stroke="#4338CA" stroke-width="1.4"/>
+<text x="605" y="70" font-size="15" fill="#0E7490" font-weight="700" text-anchor="start">업무과부하</text>
+<path d="M599.0,66.0 L545.0,80.0" stroke="#0E7490" stroke-width="1.4"/>
+<text x="450" y="74" font-size="14" fill="#101828" font-weight="700" text-anchor="middle">겹치는 부분</text>
+<foreignObject x="405" y="74" width="90" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:14px;color:#101828"><span data-tex="r = .89"></span></div></foreignObject>
+<text x="450" y="290" font-size="15" fill="#16243F" font-weight="700" text-anchor="middle">소진</text>
+<rect x="640" y="200" width="22" height="16" fill="url(#hatch)" stroke="#C2452F" stroke-width="1"/>
+<text x="672" y="213" font-size="13.5" fill="#C2452F" font-weight="700">고유한 부분</text>
+<text x="672" y="233" font-size="13" fill="#344054" font-weight="600">계수는 여기서만 계산된다</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 900 330" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M290.0,30 L290.0,270" stroke="#E4E7EC" stroke-width="1"/>
+<text x="290" y="290" font-size="12.5" fill="#667085" text-anchor="middle">−0.4</text>
+<path d="M371.4,30 L371.4,270" stroke="#E4E7EC" stroke-width="1"/>
+<text x="371" y="290" font-size="12.5" fill="#667085" text-anchor="middle">−0.2</text>
+<path d="M452.9,30 L452.9,270" stroke="#98A2B3" stroke-width="1.6"/>
+<text x="453" y="290" font-size="12.5" fill="#667085" text-anchor="middle">0</text>
+<path d="M534.3,30 L534.3,270" stroke="#E4E7EC" stroke-width="1"/>
+<text x="534" y="290" font-size="12.5" fill="#667085" text-anchor="middle">0.2</text>
+<path d="M615.7,30 L615.7,270" stroke="#E4E7EC" stroke-width="1"/>
+<text x="616" y="290" font-size="12.5" fill="#667085" text-anchor="middle">0.4</text>
+<path d="M697.1,30 L697.1,270" stroke="#E4E7EC" stroke-width="1"/>
+<text x="697" y="290" font-size="12.5" fill="#667085" text-anchor="middle">0.6</text>
+<path d="M778.6,30 L778.6,270" stroke="#E4E7EC" stroke-width="1"/>
+<text x="779" y="290" font-size="12.5" fill="#667085" text-anchor="middle">0.8</text>
+<path d="M860.0,30 L860.0,270" stroke="#E4E7EC" stroke-width="1"/>
+<text x="860" y="290" font-size="12.5" fill="#667085" text-anchor="middle">1</text>
+<text x="20" y="65" font-size="15" fill="#101828" font-weight="800">스트레스</text>
+<text x="270" y="65" font-size="13.5" fill="#4338CA" font-weight="700" text-anchor="end">업무과부하 없이</text>
+<path d="M632.0,60.0 L715.1,60.0" stroke="#4338CA" stroke-width="3"/>
+<path d="M632.0,53.0 L632.0,67.0" stroke="#4338CA" stroke-width="2.4"/>
+<path d="M715.1,53.0 L715.1,67.0" stroke="#4338CA" stroke-width="2.4"/>
+<circle cx="673.6" cy="60" r="7" fill="#4338CA"/>
+<text x="674" y="47" font-size="13" fill="#4338CA" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.542</text>
+<text x="270" y="120" font-size="13.5" fill="#C2452F" font-weight="700" text-anchor="end">업무과부하와 함께</text>
+<path d="M646.8,115.0 L823.8,115.0" stroke="#C2452F" stroke-width="3"/>
+<path d="M646.8,108.0 L646.8,122.0" stroke="#C2452F" stroke-width="2.4"/>
+<path d="M823.8,108.0 L823.8,122.0" stroke="#C2452F" stroke-width="2.4"/>
+<circle cx="735.3" cy="115" r="7" fill="#C2452F"/>
+<text x="735" y="102" font-size="13" fill="#C2452F" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.694</text>
+<text x="20" y="189" font-size="15" fill="#101828" font-weight="800">업무과부하</text>
+<text x="270" y="189" font-size="13.5" fill="#4338CA" font-weight="700" text-anchor="end">스트레스 없이</text>
+<path d="M575.7,184.0 L655.5,184.0" stroke="#4338CA" stroke-width="3"/>
+<path d="M575.7,177.0 L575.7,191.0" stroke="#4338CA" stroke-width="2.4"/>
+<path d="M655.5,177.0 L655.5,191.0" stroke="#4338CA" stroke-width="2.4"/>
+<circle cx="615.6" cy="184" r="7" fill="#4338CA"/>
+<text x="616" y="171" font-size="13" fill="#4338CA" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.400</text>
+<text x="270" y="244" font-size="13.5" fill="#C2452F" font-weight="700" text-anchor="end">스트레스와 함께</text>
+<path d="M309.4,239.0 L469.7,239.0" stroke="#C2452F" stroke-width="3"/>
+<path d="M309.4,232.0 L309.4,246.0" stroke="#C2452F" stroke-width="2.4"/>
+<path d="M469.7,232.0 L469.7,246.0" stroke="#C2452F" stroke-width="2.4"/>
+<circle cx="389.6" cy="239" r="7" fill="#C2452F"/>
+<text x="390" y="226" font-size="13" fill="#C2452F" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">−0.155</text>
+<text x="575" y="316" font-size="13" fill="#344054" font-weight="600" text-anchor="middle">회귀계수와 95% 신뢰구간</text>
+</svg>
