@@ -6,3 +6,4 @@ dist/
 .frames/
 video/.cache/
 video/shorts/*/build/
+__pycache__/
