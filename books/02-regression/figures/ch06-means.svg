@@ -1,0 +1,30 @@
+<svg viewBox="0 0 900 360" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M120,267.5 L720,267.5" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M120,202.5 L720,202.5" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M120,137.5 L720,137.5" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M120,72.5 L720,72.5" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M120,40 L120,300 L720,300" stroke="#98A2B3" stroke-width="1.4" fill="none"/>
+<text x="112" y="272" font-size="12.5" fill="#667085" text-anchor="end">3.0</text>
+<text x="112" y="207" font-size="12.5" fill="#667085" text-anchor="end">3.2</text>
+<text x="112" y="142" font-size="12.5" fill="#667085" text-anchor="end">3.4</text>
+<text x="112" y="77" font-size="12.5" fill="#667085" text-anchor="end">3.6</text>
+<text x="112" y="28" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">직무만족 평균</text>
+<path d="M120.0,248.7 L720.0,248.7" stroke="#4338CA" stroke-width="1.8" stroke-dasharray="7 5"/>
+<text x="220" y="324" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">사원</text>
+<circle cx="220.0" cy="248.7" r="9" fill="#4338CA"/>
+<text x="220" y="233" font-size="14" fill="#312E81" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">3.058</text>
+<text x="420" y="324" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">대리</text>
+<path d="M420.0,248.7 L420.0,206.3" stroke="#C2452F" stroke-width="2.6"/><path d="M420.0,196.3 L424.8,206.3 L415.2,206.3 Z" fill="#C2452F"/>
+<text x="432" y="223" font-size="15" fill="#C2452F" font-weight="800" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">+0.192</text>
+<circle cx="420.0" cy="186.3" r="9" fill="#4338CA"/>
+<text x="420" y="170" font-size="14" fill="#312E81" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">3.250</text>
+<text x="620" y="324" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">과장이상</text>
+<path d="M620.0,248.7 L620.0,108.8" stroke="#C2452F" stroke-width="2.6"/><path d="M620.0,98.8 L624.8,108.8 L615.2,108.8 Z" fill="#C2452F"/>
+<text x="632" y="174" font-size="15" fill="#C2452F" font-weight="800" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">+0.492</text>
+<circle cx="620.0" cy="88.8" r="9" fill="#4338CA"/>
+<text x="620" y="73" font-size="14" fill="#312E81" font-weight="700" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">3.550</text>
+<text x="740" y="254" font-size="14" fill="#312E81" font-weight="700">절편 = 사원 평균</text>
+<text x="740" y="120" font-size="13.5" fill="#C2452F" font-weight="700">빨간 화살표</text>
+<text x="740" y="140" font-size="13.5" fill="#C2452F" font-weight="700">= 더미의 계수</text>
+<text x="740" y="160" font-size="13" fill="#344054" font-weight="600">(사원과의 차이)</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg viewBox="0 0 900 300" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M110,250.0 L630,250.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,208.0 L630,208.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,166.0 L630,166.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,124.0 L630,124.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,82.0 L630,82.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,40.0 L630,40.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,40 L110,250 L630,250" stroke="#98A2B3" stroke-width="1.4" fill="none"/>
+<text x="102" y="254" font-size="12.5" fill="#667085" text-anchor="end">0</text>
+<text x="102" y="212" font-size="12.5" fill="#667085" text-anchor="end">.1</text>
+<text x="102" y="170" font-size="12.5" fill="#667085" text-anchor="end">.2</text>
+<text x="102" y="128" font-size="12.5" fill="#667085" text-anchor="end">.3</text>
+<text x="102" y="86" font-size="12.5" fill="#667085" text-anchor="end">.4</text>
+<text x="102" y="44" font-size="12.5" fill="#667085" text-anchor="end">.5</text>
+<rect x="180.0" y="244.5" width="120" height="5.5" fill="#16243F"/>
+<text x="240" y="274" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">모형 1</text>
+<foreignObject x="0" y="210" width="480" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:14px;color:#101828"><span data-tex="R^2 = .013"></span></div></foreignObject>
+<rect x="440.0" y="244.5" width="120" height="5.5" fill="#16243F"/>
+<rect x="440.0" y="79.6" width="120" height="164.9" fill="#4338CA"/>
+<text x="500" y="274" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">모형 2</text>
+<foreignObject x="120" y="45" width="760" height="39"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:14px;color:#101828"><span data-tex="R^2 = .406"></span></div></foreignObject>
+<path d="M572.0,244.5 L580.0,244.5 L580.0,79.6 L572.0,79.6" fill="none" stroke="#312E81" stroke-width="2"/>
+<foreignObject x="590" y="128" width="310" height="45"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:16px;color:#312E81"><span data-tex="\Delta R^2 = .393"></span></div></foreignObject>
+<text x="590" y="180" font-size="13.5" fill="#312E81" font-weight="700">직무 변수가 더한 몫</text>
+<rect x="700" y="196" width="16" height="16" fill="#16243F"/>
+<text x="724" y="209" font-size="13" fill="#344054" font-weight="600">통제변수 (성별·연령·근속)</text>
+<rect x="700" y="222" width="16" height="16" fill="#4338CA"/>
+<text x="724" y="235" font-size="13" fill="#344054" font-weight="600">직무스트레스·지지·효능감</text>
+</svg>

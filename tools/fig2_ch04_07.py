@@ -1,5 +1,6 @@
 """2권 4~7장 그림"""
-import random
+import os, random
+import figlib
 from fig2lib import *
 
 
@@ -275,5 +276,92 @@ def fig_split():
     write('ch05-split.svg', svg(W, H, '\n'.join(b)))
 
 
+
+# ================================================================ 6장
+def _csv(name):
+    import csv
+    with open(os.path.join(figlib.ROOT, 'books', '02-regression', 'data', name), encoding='utf-8') as f:
+        return list(csv.DictReader(f))
+
+
+def fig_means6():
+    rows = _csv('survey.csv')
+    order = ['사원', '대리', '과장이상']
+    m = {g: sum(float(r['satisfaction']) for r in rows if r['position'] == g) /
+         sum(1 for r in rows if r['position'] == g) for g in order}
+    W, H = 900, 360
+    b, sx, sy = frame(120, 40, 600, 260, (0, 3), (2.9, 3.7), [], [3.0, 3.2, 3.4, 3.6], None, '직무만족 평균',
+                      yfmt=lambda v: f'{v:.1f}')
+    base = m['사원']
+    xs = {g: sx(i + 0.5) for i, g in enumerate(order)}
+    b.append(line(120, sy(base), 720, sy(base), ACC, 1.8, '7 5'))
+    for i, g in enumerate(order):
+        b.append(text(xs[g], 324, g, 15, INK, 700, 'middle'))
+        if i:
+            b.append(arrow(xs[g], sy(base), xs[g], sy(m[g]) + 10, CORAL, 2.6, 10))
+            b.append(halo(xs[g] + 12, (sy(base) + sy(m[g])) / 2 + 5, f'+{m[g] - base:.3f}', 15, CORAL, 800, 'start'))
+        b.append(f'<circle cx="{xs[g]:.1f}" cy="{sy(m[g]):.1f}" r="9" fill="{ACC}"/>')
+        b.append(halo(xs[g], sy(m[g]) - 16, f'{m[g]:.3f}', 14, ACC_DEEP, 700))
+    b.append(text(740, sy(base) + 5, '절편 = 사원 평균', 14, ACC_DEEP, 700))
+    b.append(text(740, 120, '빨간 화살표', 13.5, CORAL, 700))
+    b.append(text(740, 140, '= 더미의 계수', 13.5, CORAL, 700))
+    b.append(text(740, 160, '(사원과의 차이)', 13, MID, 600))
+    write('ch06-means.svg', svg(W, H, '\n'.join(b)))
+
+
+def fig_ttest_line():
+    rows = _csv('sample_data.csv')
+    g = random.Random(3)
+    W, H = 900, 380
+    b, sx, sy = frame(170, 40, 520, 270, (-0.5, 1.5), (1, 5), [], [1, 2, 3, 4, 5], None, '자아존중감')
+    pts = {0: [], 1: []}
+    for r in rows:
+        k = 0 if r['gender'] == '1' else 1
+        pts[k].append(float(r['selfesteem']))
+    for k in (0, 1):
+        xs = [k + g.uniform(-0.18, 0.18) for _ in pts[k]]
+        b.append(dots(xs, pts[k], sx, sy, [ACC, TEAL][k], 3.4, .3))
+    m0 = sum(pts[0]) / len(pts[0]); m1 = sum(pts[1]) / len(pts[1])
+    b.append(line(sx(-0.3), sy(m0 - 0.3 * (m1 - m0)), sx(1.3), sy(m1 + 0.3 * (m1 - m0)), INK, 3))
+    for k, mm in ((0, m0), (1, m1)):
+        b.append(f'<circle cx="{sx(k):.1f}" cy="{sy(mm):.1f}" r="9" fill="#fff" stroke="{INK}" stroke-width="3"/>')
+    b.append(text(sx(0), 334, '남성 (0)', 15, ACC_DEEP, 700, 'middle'))
+    b.append(text(sx(1), 334, '여성 (1)', 15, TEAL, 700, 'middle'))
+    b.append(halo(sx(0) - 26, sy(m0) + 5, f'{m0:.3f}', 14, INK, 700, 'end'))
+    b.append(halo(sx(1) + 26, sy(m1) + 5, f'{m1:.3f}', 14, INK, 700, 'start'))
+    b.append(text(720, 140, '평균끼리 이은 선의 기울기', 14, INK, 700))
+    b.append(rich(720, 166, [('m', f'= {m1:.3f} - {m0:.3f}')], 14, MID, 'start', 600))
+    b.append(rich(720, 192, [('m', f'= {m1 - m0:.3f}')], 15, CORAL, 'start', 800))
+    b.append(text(720, 222, '= 회귀계수 = 평균 차이', 14, CORAL, 700))
+    write('ch06-ttest-line.svg', svg(W, H, '\n'.join(b)))
+
+
+
+# ================================================================ 7장
+def fig_blocks():
+    W, H = 900, 300
+    b, sx, sy = frame(110, 40, 520, 210, (0, 2), (0, .5), [], [0, .1, .2, .3, .4, .5], None, None,
+                      yfmt=lambda v: f'{v:.1f}'.replace('0.', '.') if v else '0')
+    r1, r2 = .0130, .4056
+    bw = 120
+    for i, (lab, top, parts) in enumerate([('모형 1', r1, [(0, r1, NAVY)]),
+                                           ('모형 2', r2, [(0, r1, NAVY), (r1, r2, ACC)])]):
+        cx = sx(i + 0.5)
+        for lo, hi, c in parts:
+            b.append(f'<rect x="{cx - bw / 2:.1f}" y="{sy(hi):.1f}" width="{bw}" height="{max(sy(lo) - sy(hi), 1.5):.1f}" fill="{c}"/>')
+        b.append(text(cx, 274, lab, 15, INK, 700, 'middle'))
+        b.append(rich(cx, sy(top) - 10, [('m', f'R^2 = .{round(top * 1000):03d}')], 14, INK, 'middle', 700))
+    cx2 = sx(1.5)
+    b.append(f'<path d="M{cx2 + bw / 2 + 12:.1f},{sy(r1):.1f} L{cx2 + bw / 2 + 20:.1f},{sy(r1):.1f} L{cx2 + bw / 2 + 20:.1f},{sy(r2):.1f} L{cx2 + bw / 2 + 12:.1f},{sy(r2):.1f}" fill="none" stroke="{ACC_DEEP}" stroke-width="2"/>')
+    b.append(rich(cx2 + bw / 2 + 30, (sy(r1) + sy(r2)) / 2 - 6, [('m', r'\Delta R^2 = .393')], 16, ACC_DEEP, 'start', 800))
+    b.append(text(cx2 + bw / 2 + 30, (sy(r1) + sy(r2)) / 2 + 18, '직무 변수가 더한 몫', 13.5, ACC_DEEP, 700))
+    b.append(f'<rect x="700" y="196" width="16" height="16" fill="{NAVY}"/>')
+    b.append(text(724, 209, '통제변수 (성별·연령·근속)', 13, MID, 600))
+    b.append(f'<rect x="700" y="222" width="16" height="16" fill="{ACC}"/>')
+    b.append(text(724, 235, '직무스트레스·지지·효능감', 13, MID, 600))
+    write('ch07-blocks.svg', svg(W, H, '\n'.join(b)))
+
+
 ALL = [fig_model_picture, fig_resid_fitted, fig_patterns, fig_curve, fig_qq, fig_influence, fig_cook,
-       fig_coef_ci, fig_overlap5, fig_vif_curve, fig_split]
+       fig_coef_ci, fig_overlap5, fig_vif_curve, fig_split,
+       fig_means6, fig_ttest_line, fig_blocks]
