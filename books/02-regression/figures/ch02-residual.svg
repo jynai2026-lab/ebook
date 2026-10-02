@@ -1,0 +1,55 @@
+<svg viewBox="0 0 900 400" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M90,285.4 L850,285.4" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M90,229.6 L850,229.6" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M90,173.8 L850,173.8" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M90,118.1 L850,118.1" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M90,62.3 L850,62.3" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M90,40 L90,330 L850,330" stroke="#98A2B3" stroke-width="1.4" fill="none"/>
+<text x="171" y="348" font-size="12.5" fill="#667085" text-anchor="middle">2.75</text>
+<text x="307" y="348" font-size="12.5" fill="#667085" text-anchor="middle">3.00</text>
+<text x="443" y="348" font-size="12.5" fill="#667085" text-anchor="middle">3.25</text>
+<text x="579" y="348" font-size="12.5" fill="#667085" text-anchor="middle">3.50</text>
+<text x="714" y="348" font-size="12.5" fill="#667085" text-anchor="middle">3.75</text>
+<text x="850" y="348" font-size="12.5" fill="#667085" text-anchor="middle">4.00</text>
+<text x="82" y="290" font-size="12.5" fill="#667085" text-anchor="end">2</text>
+<text x="82" y="234" font-size="12.5" fill="#667085" text-anchor="end">2.5</text>
+<text x="82" y="178" font-size="12.5" fill="#667085" text-anchor="end">3</text>
+<text x="82" y="122" font-size="12.5" fill="#667085" text-anchor="end">3.5</text>
+<text x="82" y="67" font-size="12.5" fill="#667085" text-anchor="end">4</text>
+<text x="470" y="369" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">직무스트레스</text>
+<text x="82" y="28" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">소진</text>
+<path d="M757.7,137.0 L757.7,139.2" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M757.7,161.6 L757.7,139.2" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M128.0,222.9 L128.0,217.0" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M128.0,260.8 L128.0,217.0" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M128.0,210.7 L128.0,217.0" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M399.4,173.8 L399.4,183.5" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M486.3,99.1 L486.3,172.7" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M486.3,198.4 L486.3,172.7" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M757.7,149.3 L757.7,139.2" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M214.9,210.7 L214.9,206.3" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M486.3,111.4 L486.3,172.7" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M757.7,99.1 L757.7,139.2" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M757.7,86.8 L757.7,139.2" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M578.6,198.4 L578.6,161.3" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M578.6,149.3 L578.6,161.3" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M486.3,99.1 L486.3,172.7" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M214.9,149.3 L214.9,206.3" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M214.9,210.7 L214.9,206.3" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M214.9,186.1 L214.9,206.3" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M399.4,149.3 L399.4,183.5" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M399.4,309.9 L399.4,183.5" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M214.9,173.8 L214.9,206.3" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M399.4,322.2 L399.4,183.5" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M214.9,186.1 L214.9,206.3" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M578.6,236.3 L578.6,161.3" stroke="#C2452F" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M399.4,149.3 L399.4,183.5" stroke="#4338CA" stroke-width="1.6" stroke-opacity="0.7"/>
+<path d="M100.9,220.4 L839.1,129.1" stroke="#312E81" stroke-width="3"/>
+<circle cx="757.7" cy="137.0" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="757.7" cy="161.6" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="128.0" cy="222.9" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="128.0" cy="260.8" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="128.0" cy="210.7" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="399.4" cy="173.8" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="486.3" cy="99.1" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="486.3" cy="198.4" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="757.7" cy="149.3" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="214.9" cy="210.7" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="486.3" cy="111.4" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="757.7" cy="99.1" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="757.7" cy="86.8" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="578.6" cy="198.4" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="578.6" cy="149.3" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="486.3" cy="99.1" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="214.9" cy="149.3" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="214.9" cy="210.7" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="214.9" cy="186.1" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="399.4" cy="149.3" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="399.4" cy="309.9" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="214.9" cy="173.8" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="399.4" cy="322.2" r="4.4" fill="#344054" fill-opacity="0.55"/><circle cx="214.9" cy="186.1" r="4.4" fill="#344054" fill-opacity="0.55"/>
+<circle cx="578.6" cy="236.3" r="6.5" fill="#C2452F"/>
+<text x="591" y="241" font-size="14" fill="#C2452F" font-weight="700" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">잔차 −0.67</text>
+<circle cx="399.4" cy="149.3" r="6.5" fill="#4338CA"/>
+<text x="411" y="154" font-size="14" fill="#4338CA" font-weight="700" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">잔차 +0.31</text>
+<text x="823" y="117" font-size="13.5" fill="#312E81" font-weight="700" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">회귀선</text>
+<text x="850" y="392" font-size="12" fill="#98A2B3" text-anchor="end">일부 사례만 표시</text>
+</svg>

@@ -87,3 +87,79 @@ def to_point(b, x, y, c=MID, w=2.2, gap=5, dash=None):
     """상자 b에서 임의의 점(다른 화살표의 중간 등)으로 가는 화살표."""
     x0, y0 = _edge_point(b, x, y, gap)
     return arrow(x0, y0, x, y, c, w, dash=dash)
+
+
+# ---------------------------------------------------------------- 좌표 평면
+def frame(x0, y0, w, h, xr, yr, xticks, yticks, xlabel=None, ylabel=None,
+          xfmt=None, yfmt=None, size=12.5, grid=True):
+    """자료 그림의 틀. (조각들, x변환, y변환)을 돌려준다.
+    (x0, y0)은 그림 영역의 왼쪽 위, w·h는 크기. 축 이름은 x축 아래, y축 위에 가로로 쓴다."""
+    xfmt = xfmt or (lambda v: f'{v:g}')
+    yfmt = yfmt or (lambda v: f'{v:g}')
+    sx = lambda v: x0 + (v - xr[0]) / (xr[1] - xr[0]) * w
+    sy = lambda v: y0 + h - (v - yr[0]) / (yr[1] - yr[0]) * h
+    b = []
+    if grid:
+        for t in yticks:
+            b.append(f'<path d="M{x0},{sy(t):.1f} L{x0 + w},{sy(t):.1f}" stroke="{RULE}" stroke-width="1"/>')
+    b.append(f'<path d="M{x0},{y0} L{x0},{y0 + h} L{x0 + w},{y0 + h}" stroke="{FAINT}" stroke-width="1.4" fill="none"/>')
+    for t in xticks:
+        b.append(text(sx(t), y0 + h + size + 6, xfmt(t), size, SOFT, None, 'middle'))
+    for t in yticks:
+        b.append(text(x0 - 8, sy(t) + size * 0.35, yfmt(t), size, SOFT, None, 'end'))
+    if xlabel:
+        b.append(text(x0 + w / 2, y0 + h + size * 2 + 14, xlabel, size + 1, MID, 600, 'middle'))
+    if ylabel:
+        b.append(text(x0 - 8, y0 - 12, ylabel, size + 1, MID, 600, 'start' if x0 < 60 else 'middle'))
+    return b, sx, sy
+
+
+def dots(xs, ys, sx, sy, c=None, r=4.2, op=.45, stroke=None):
+    c = c or ACC
+    st = f' stroke="{stroke}" stroke-width="1"' if stroke else ''
+    return ''.join(f'<circle cx="{sx(x):.1f}" cy="{sy(y):.1f}" r="{r}" fill="{c}" fill-opacity="{op}"{st}/>'
+                   for x, y in zip(xs, ys))
+
+
+def line(x0, y0, x1, y1, c=INK, w=2.4, dash=None, op=1):
+    d = f' stroke-dasharray="{dash}"' if dash else ''
+    o = f' stroke-opacity="{op}"' if op != 1 else ''
+    return f'<path d="M{x0:.1f},{y0:.1f} L{x1:.1f},{y1:.1f}" stroke="{c}" stroke-width="{w}"{d}{o}/>'
+
+
+def ols(xs, ys):
+    """최소제곱 절편과 기울기."""
+    n = len(xs)
+    mx, my = sum(xs) / n, sum(ys) / n
+    sxy = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    sxx = sum((x - mx) ** 2 for x in xs)
+    b1 = sxy / sxx
+    return my - b1 * mx, b1
+
+
+def corr(xs, ys):
+    n = len(xs)
+    mx, my = sum(xs) / n, sum(ys) / n
+    sxy = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    sxx = sum((x - mx) ** 2 for x in xs)
+    syy = sum((y - my) ** 2 for y in ys)
+    return sxy / math.sqrt(sxx * syy)
+
+
+def exact_r(r, n=100, seed=1):
+    """표본 상관계수가 정확히 r인 (x, y) 표준점수 쌍."""
+    import random
+    g = random.Random(seed)
+    x = [g.gauss(0, 1) for _ in range(n)]
+    e = [g.gauss(0, 1) for _ in range(n)]
+
+    def std(v):
+        m = sum(v) / len(v)
+        s = math.sqrt(sum((a - m) ** 2 for a in v) / (len(v) - 1))
+        return [(a - m) / s for a in v]
+    x = std(x)
+    # e에서 x 성분을 빼 x와 정확히 직교하게 만든다
+    k = sum(a * b for a, b in zip(x, e)) / sum(a * a for a in x)
+    e = std([b - k * a for a, b in zip(x, e)])
+    y = [r * a + math.sqrt(1 - r * r) * b for a, b in zip(x, e)]
+    return x, y

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 900 300" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<circle cx="388.9" cy="150" r="105" fill="#ECF7F9" stroke="#0E7490" stroke-width="2"/>
+<circle cx="511.1" cy="150" r="105" fill="#EEF0FB" fill-opacity=".75" stroke="#4338CA" stroke-width="2"/>
+<clipPath id="c1"><circle cx="388.9" cy="150" r="105"/></clipPath>
+<circle cx="511.1" cy="150" r="105" fill="#4338CA" fill-opacity=".28" clip-path="url(#c1)"/>
+<text x="337" y="31" font-size="15" fill="#0E7490" font-weight="700" text-anchor="middle">직무스트레스의 변동</text>
+<text x="563" y="31" font-size="15" fill="#312E81" font-weight="700" text-anchor="middle">소진의 변동</text>
+<foreignObject x="395" y="118" width="110" height="48"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#312E81"><span data-tex="r^2 = .30"></span></div></foreignObject>
+<text x="450" y="174" font-size="13" fill="#312E81" font-weight="600" text-anchor="middle">함께 나눠</text>
+<text x="450" y="191" font-size="13" fill="#312E81" font-weight="600" text-anchor="middle">가진 몫</text>
+<text x="557" y="144" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">스트레스로</text>
+<text x="557" y="162" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">설명되지 않는</text>
+<text x="557" y="180" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">70%</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg viewBox="0 0 900 360" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M70,60 L70,300 L430,300" stroke="#98A2B3" stroke-width="1.4" fill="none"/>
+<rect x="115.0" y="228.0" width="10.5" height="10.5" fill="#4338CA" fill-opacity=".16" stroke="#4338CA" stroke-width="1.2"/>
+<rect x="160.0" y="217.3" width="19.7" height="19.7" fill="#4338CA" fill-opacity=".16" stroke="#4338CA" stroke-width="1.2"/>
+<rect x="205.0" y="180.0" width="16.1" height="16.1" fill="#4338CA" fill-opacity=".16" stroke="#4338CA" stroke-width="1.2"/>
+<rect x="250.0" y="174.9" width="17.1" height="17.1" fill="#4338CA" fill-opacity=".16" stroke="#4338CA" stroke-width="1.2"/>
+<rect x="273.4" y="132.0" width="21.6" height="21.6" fill="#4338CA" fill-opacity=".16" stroke="#4338CA" stroke-width="1.2"/>
+<rect x="319.4" y="132.4" width="20.6" height="20.6" fill="#4338CA" fill-opacity=".16" stroke="#4338CA" stroke-width="1.2"/>
+<rect x="375.8" y="102.0" width="9.2" height="9.2" fill="#4338CA" fill-opacity=".16" stroke="#4338CA" stroke-width="1.2"/>
+<path d="M83.5,253.3 L416.5,96.4" stroke="#4338CA" stroke-width="2.8"/>
+<circle cx="115.0" cy="228.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="160.0" cy="237.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="205.0" cy="180.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="250.0" cy="192.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="295.0" cy="132.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="340.0" cy="153.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="385.0" cy="102.0" r="5" fill="#101828" fill-opacity="0.9"/>
+<text x="250" y="36" font-size="16" fill="#4338CA" font-weight="800" text-anchor="middle">최소제곱선</text>
+<foreignObject x="0" y="308" width="500" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#4338CA"><span style="white-space:pre;font-weight:700;">잔차제곱합 </span><span data-tex="= 2.25"></span></div></foreignObject>
+<path d="M510,60 L510,300 L870,300" stroke="#98A2B3" stroke-width="1.4" fill="none"/>
+<rect x="555.0" y="197.4" width="30.6" height="30.6" fill="#C2452F" fill-opacity=".16" stroke="#C2452F" stroke-width="1.2"/>
+<rect x="600.0" y="189.9" width="47.1" height="47.1" fill="#C2452F" fill-opacity=".16" stroke="#C2452F" stroke-width="1.2"/>
+<rect x="645.0" y="180.0" width="2.4" height="2.4" fill="#C2452F" fill-opacity=".16" stroke="#C2452F" stroke-width="1.2"/>
+<rect x="690.0" y="174.9" width="17.1" height="17.1" fill="#C2452F" fill-opacity=".16" stroke="#C2452F" stroke-width="1.2"/>
+<rect x="699.6" y="132.0" width="35.4" height="35.4" fill="#C2452F" fill-opacity=".16" stroke="#C2452F" stroke-width="1.2"/>
+<rect x="773.1" y="153.0" width="6.9" height="6.9" fill="#C2452F" fill-opacity=".16" stroke="#C2452F" stroke-width="1.2"/>
+<rect x="774.6" y="102.0" width="50.4" height="50.4" fill="#C2452F" fill-opacity=".16" stroke="#C2452F" stroke-width="1.2"/>
+<path d="M523.5,202.6 L856.5,147.1" stroke="#C2452F" stroke-width="2.8"/>
+<circle cx="555.0" cy="228.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="600.0" cy="237.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="645.0" cy="180.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="690.0" cy="192.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="735.0" cy="132.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="780.0" cy="153.0" r="5" fill="#101828" fill-opacity="0.9"/><circle cx="825.0" cy="102.0" r="5" fill="#101828" fill-opacity="0.9"/>
+<text x="690" y="36" font-size="16" fill="#C2452F" font-weight="800" text-anchor="middle">다른 직선</text>
+<foreignObject x="480" y="308" width="420" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#C2452F"><span style="white-space:pre;font-weight:700;">잔차제곱합 </span><span data-tex="= 8.10"></span></div></foreignObject>
+</svg>

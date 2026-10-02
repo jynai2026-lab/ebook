@@ -1,0 +1,33 @@
+<svg viewBox="0 0 900 270" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M230.0,40 L230.0,206" stroke="#E4E7EC" stroke-width="1"/>
+<text x="230" y="228" font-size="12.5" fill="#667085" text-anchor="middle">−.4</text>
+<path d="M352.0,40 L352.0,206" stroke="#E4E7EC" stroke-width="1"/>
+<text x="352" y="228" font-size="12.5" fill="#667085" text-anchor="middle">−.2</text>
+<path d="M474.0,40 L474.0,206" stroke="#98A2B3" stroke-width="1.6"/>
+<text x="474" y="228" font-size="12.5" fill="#667085" text-anchor="middle">0</text>
+<path d="M596.0,40 L596.0,206" stroke="#E4E7EC" stroke-width="1"/>
+<text x="596" y="228" font-size="12.5" fill="#667085" text-anchor="middle">.2</text>
+<path d="M718.0,40 L718.0,206" stroke="#E4E7EC" stroke-width="1"/>
+<text x="718" y="228" font-size="12.5" fill="#667085" text-anchor="middle">.4</text>
+<path d="M840.0,40 L840.0,206" stroke="#E4E7EC" stroke-width="1"/>
+<text x="840" y="228" font-size="12.5" fill="#667085" text-anchor="middle">.6</text>
+<text x="210" y="79" font-size="15" fill="#101828" font-weight="700" text-anchor="end">직무스트레스</text>
+<path d="M711.9,74.0 L821.7,74.0" stroke="#4338CA" stroke-width="3"/>
+<path d="M711.9,67.0 L711.9,81.0" stroke="#4338CA" stroke-width="2.4"/>
+<path d="M821.7,67.0 L821.7,81.0" stroke="#4338CA" stroke-width="2.4"/>
+<circle cx="766.8" cy="74" r="7.5" fill="#4338CA"/>
+<text x="836" y="79" font-size="14" fill="#4338CA" font-weight="700" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">.48</text>
+<text x="210" y="135" font-size="15" fill="#101828" font-weight="700" text-anchor="end">사회적지지</text>
+<path d="M297.1,130.0 L413.0,130.0" stroke="#C2452F" stroke-width="3"/>
+<path d="M297.1,123.0 L297.1,137.0" stroke="#C2452F" stroke-width="2.4"/>
+<path d="M413.0,123.0 L413.0,137.0" stroke="#C2452F" stroke-width="2.4"/>
+<circle cx="352.0" cy="130" r="7.5" fill="#C2452F"/>
+<text x="427" y="135" font-size="14" fill="#C2452F" font-weight="700" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">−.20</text>
+<text x="210" y="191" font-size="15" fill="#101828" font-weight="700" text-anchor="end">자기효능감</text>
+<path d="M303.2,186.0 L419.1,186.0" stroke="#C2452F" stroke-width="3"/>
+<path d="M303.2,179.0 L303.2,193.0" stroke="#C2452F" stroke-width="2.4"/>
+<path d="M419.1,179.0 L419.1,193.0" stroke="#C2452F" stroke-width="2.4"/>
+<circle cx="358.1" cy="186" r="7.5" fill="#C2452F"/>
+<text x="433" y="191" font-size="14" fill="#C2452F" font-weight="700" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">−.19</text>
+<foreignObject x="444" y="229" width="60" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#344054"><span data-tex="\beta"></span></div></foreignObject>
+</svg>

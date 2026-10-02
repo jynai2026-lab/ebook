@@ -1,0 +1,13 @@
+<svg viewBox="0 0 900 250" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<text x="136" y="66" font-size="15" fill="#16243F" font-weight="700" text-anchor="end">전체</text>
+<rect x="150" y="44" width="700" height="34" rx="4" fill="#C7D0DE"/>
+<foreignObject x="120" y="41" width="760" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#16243F"><span data-tex="SS_T"></span><span style="white-space:pre;font-weight:700;"> = 136.41</span></div></foreignObject>
+<text x="136" y="136" font-size="15" fill="#344054" font-weight="700" text-anchor="end">쪼개면</text>
+<rect x="150" y="114" width="212.1" height="34" rx="4" fill="#4338CA"/>
+<rect x="365.1" y="114" width="484.9" height="34" rx="4" fill="#E4E7EC"/>
+<foreignObject x="0" y="111" width="512" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#fff"><span data-tex="SS_R"></span><span style="white-space:pre;font-weight:700;"> = 41.34</span></div></foreignObject>
+<foreignObject x="312" y="111" width="588" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#344054"><span data-tex="SS_E"></span><span style="white-space:pre;font-weight:700;"> = 95.07</span></div></foreignObject>
+<text x="256" y="172" font-size="13.5" fill="#312E81" font-weight="700" text-anchor="middle">스트레스로 설명</text>
+<text x="606" y="172" font-size="13.5" fill="#667085" font-weight="700" text-anchor="middle">설명되지 않음</text>
+<foreignObject x="240" y="190" width="420" height="56"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:17px;color:#312E81"><span data-tex="R^2 = \frac{SS_R}{SS_T} = \frac{41.34}{136.41} = .303"></span></div></foreignObject>
+</svg>

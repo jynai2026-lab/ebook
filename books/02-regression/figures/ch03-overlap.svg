@@ -1,0 +1,21 @@
+<svg viewBox="0 0 900 380" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<circle cx="450" cy="225" r="112" fill="#C7D0DE" fill-opacity=".55" stroke="#16243F" stroke-width="2"/>
+<circle cx="380" cy="140" r="100" fill="#4338CA" fill-opacity=".12" stroke="#4338CA" stroke-width="2"/>
+<circle cx="520" cy="140" r="100" fill="#0E7490" fill-opacity=".12" stroke="#0E7490" stroke-width="2"/>
+<text x="320" y="30" font-size="15" fill="#4338CA" font-weight="700" text-anchor="middle">독립변수 1</text>
+<text x="580" y="30" font-size="15" fill="#0E7490" font-weight="700" text-anchor="middle">독립변수 2</text>
+<text x="450" y="366" font-size="15" fill="#16243F" font-weight="700" text-anchor="middle">종속변수 (소진)</text>
+<circle cx="362" cy="215" r="15" fill="#fff" stroke="#312E81" stroke-width="2"/>
+<text x="362" y="221" font-size="17" fill="#312E81" font-weight="800" text-anchor="middle">a</text>
+<circle cx="538" cy="215" r="15" fill="#fff" stroke="#0E7490" stroke-width="2"/>
+<text x="538" y="221" font-size="17" fill="#0E7490" font-weight="800" text-anchor="middle">b</text>
+<circle cx="450" cy="178" r="15" fill="#fff" stroke="#101828" stroke-width="2"/>
+<text x="450" y="184" font-size="17" fill="#101828" font-weight="800" text-anchor="middle">c</text>
+<text x="450" y="296" font-size="13.5" fill="#667085" font-weight="600" text-anchor="middle">설명되지 않는 몫</text>
+<text x="690" y="206" font-size="13.5" fill="#344054" font-weight="600">a  변수 1만의 몫</text>
+<text x="690" y="232" font-size="13.5" fill="#344054" font-weight="600">b  변수 2만의 몫</text>
+<text x="690" y="258" font-size="13.5" fill="#344054" font-weight="600">c  둘이 함께 나눠 가진 몫</text>
+<text x="40" y="206" font-size="13.5" fill="#312E81" font-weight="700">단순회귀 1:  a + c</text>
+<text x="40" y="232" font-size="13.5" fill="#0E7490" font-weight="700">단순회귀 2:  b + c</text>
+<text x="40" y="258" font-size="13.5" fill="#101828" font-weight="700">다중회귀:  a + b + c</text>
+</svg>

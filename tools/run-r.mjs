@@ -58,6 +58,7 @@ function rLiteral(s) {
 function run(list) {
   const lines = [
     'options(width = 80, warn = 1)',
+    'pdf(NULL)                       # plot()은 그리되 파일은 남기지 않는다',
     `setwd(${rLiteral(BOOK)})`,
     '.blk <- function(i, code) {',
     '  cat(sprintf("\\n@@BLOCK %d@@\\n", i))',
@@ -87,7 +88,9 @@ function run(list) {
   for (let k = 1; k < parts.length; k += 2) {
     res[+parts[k]] = parts[k + 1].replace(/\n@@END@@\n?$/, '').replace(/^\n+/, '').replace(/\s+$/, '');
   }
-  const warn = (r.stderr || '').split('\n').filter(l => /^Warning|^경고|Error/.test(l));
+  // 한글 축 이름을 그림 장치(pdf)가 못 그려 나는 경고는 책 내용과 무관하므로 뺀다
+  const warn = (r.stderr || '').split('\n')
+    .filter(l => /^Warning|^경고|Error/.test(l) && !/in (title|text|axis|mtext)\(|conversion failure/.test(l));
   return { res, warn };
 }
 
