@@ -1,0 +1,21 @@
+<svg viewBox="0 0 900 400" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M315.0,50.0 L674.0,50.0" stroke="#16243F" stroke-width="2.8"/><path d="M685.0,50.0 L674.0,55.3 L674.0,44.7 Z" fill="#16243F"/>
+<rect x="160" y="23" width="150" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="235" y="55" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">직무스트레스</text>
+<rect x="690" y="23" width="130" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="755" y="55" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">이직의도</text>
+<foreignObject x="115" y="12" width="760" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#16243F"><span data-tex="c"></span><span style="white-space:pre;font-weight:800;"> = 0.584  (총효과)</span></div></foreignObject>
+<text x="40" y="54" font-size="13.5" fill="#667085" font-weight="700">소진을</text>
+<text x="40" y="72" font-size="13.5" fill="#667085" font-weight="700">빼면</text>
+<path d="M40.0,130.0 L860.0,130.0" stroke="#E4E7EC" stroke-width="1.4" stroke-dasharray="4 4"/>
+<text x="40" y="214" font-size="13.5" fill="#667085" font-weight="700">소진을</text>
+<text x="40" y="232" font-size="13.5" fill="#667085" font-weight="700">넣으면</text>
+<path d="M315.0,222.3 L419.6,186.1" stroke="#4338CA" stroke-width="2.6"/><path d="M430.0,182.5 L421.3,191.1 L417.9,181.1 Z" fill="#4338CA"/>
+<path d="M560.0,182.5 L674.6,222.2" stroke="#4338CA" stroke-width="2.6"/><path d="M685.0,225.8 L672.9,227.2 L676.3,217.2 Z" fill="#4338CA"/>
+<path d="M315.0,250.0 L674.0,250.0" stroke="#344054" stroke-width="2.4"/><path d="M685.0,250.0 L674.0,255.3 L674.0,244.7 Z" fill="#344054"/>
+<rect x="160" y="223" width="150" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="235" y="255" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">직무스트레스</text>
+<rect x="435" y="133" width="120" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="495" y="165" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">소진</text>
+<rect x="690" y="223" width="130" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="755" y="255" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">이직의도</text>
+<foreignObject x="0" y="170" width="358" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-end;font-size:15px;color:#312E81"><span data-tex="a"></span><span style="white-space:pre;font-weight:700;"> = 0.602</span></div></foreignObject>
+<foreignObject x="636" y="172" width="264" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:15px;color:#312E81"><span data-tex="b"></span><span style="white-space:pre;font-weight:700;"> = 0.562</span></div></foreignObject>
+<foreignObject x="120" y="248" width="760" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#344054"><span data-tex="c'"></span><span style="white-space:pre;font-weight:700;"> = 0.245  (직접효과)</span></div></foreignObject>
+<foreignObject x="115" y="336" width="760" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:15px;color:#312E81"><span style="white-space:pre;font-weight:800;">간접효과  </span><span data-tex="a \times b = 0.602 \times 0.562 = 0.338"></span><span style="white-space:pre;font-weight:800;">   (총효과의 58%)</span></div></foreignObject>
+</svg>

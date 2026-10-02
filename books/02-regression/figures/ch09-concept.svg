@@ -1,0 +1,13 @@
+<svg viewBox="0 0 900 290" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M240.0,140.3 L344.6,104.1" stroke="#4338CA" stroke-width="2.6"/><path d="M355.0,100.5 L346.3,109.1 L342.9,99.1 Z" fill="#4338CA"/>
+<path d="M485.0,100.5 L599.6,140.2" stroke="#4338CA" stroke-width="2.6"/><path d="M610.0,143.8 L597.9,145.2 L601.3,135.2 Z" fill="#4338CA"/>
+<path d="M240.0,168.0 L599.0,168.0" stroke="#344054" stroke-width="2.4"/><path d="M610.0,168.0 L599.0,173.3 L599.0,162.7 Z" fill="#344054"/>
+<rect x="85" y="141" width="150" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="160" y="173" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">직무스트레스</text>
+<rect x="360" y="51" width="120" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="420" y="83" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">소진</text>
+<rect x="615" y="141" width="130" height="54" rx="10" fill="#EEF0FB" stroke="#4338CA" stroke-width="2"/><text x="680" y="173" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">이직의도</text>
+<foreignObject x="244" y="85" width="40" height="50"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-end;font-size:18px;color:#312E81"><span data-tex="a"></span></div></foreignObject>
+<foreignObject x="562" y="87" width="40" height="50"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:18px;color:#312E81"><span data-tex="b"></span></div></foreignObject>
+<foreignObject x="395" y="165" width="60" height="50"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:18px;color:#344054"><span data-tex="c'"></span></div></foreignObject>
+<text x="430" y="20" font-size="14" fill="#312E81" font-weight="700" text-anchor="middle">간접경로: 소진을 거쳐 감 (a × b)</text>
+<text x="425" y="220" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">직접경로: 소진을 거치지 않음</text>
+</svg>

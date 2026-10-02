@@ -71,3 +71,21 @@ out(list(b = unname(b), mx = mean(d$stress), mw = mean(d$support), sw = s, me = 
          jn_w = ws + mean(d$support), jn_sl = unname(sl), jn_lo = unname(sl - crit * se), jn_hi = unname(sl + crit * se)),
     "ch08.json")
 cat("figdata 8장 완료\n")
+
+# ---- 9장 (부트스트랩 2,000회: 원고와 같은 시드)
+suppressPackageStartupMessages(library(lavaan))
+model9 <- '
+  burnout  ~ a * stress
+  turnover ~ b * burnout + cp * stress
+  indirect := a * b
+  total    := cp + a * b
+'
+set.seed(2026)
+fit9 <- sem(model9, data = d, se = "bootstrap", bootstrap = 2000)
+pe9 <- parameterEstimates(fit9, boot.ci.type = "perc")
+bt9 <- lavInspect(fit9, "boot")
+out(list(ab = unname(bt9[, "a"] * bt9[, "b"]),
+         est = pe9$est[pe9$label == "indirect"],
+         lo = pe9$ci.lower[pe9$label == "indirect"], hi = pe9$ci.upper[pe9$label == "indirect"]),
+    "ch09-boot.json")
+cat("figdata 9장 완료\n")

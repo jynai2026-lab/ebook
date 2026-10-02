@@ -100,4 +100,85 @@ def fig_jn():
     write('ch08-jn.svg', svg(W, H + 10, '\n'.join(b)))
 
 
-ALL = [fig_concept8, fig_simple_slopes, fig_jn]
+
+# ================================================================ 9장
+def _med(b, cx0, cy0, nums=None, w=900):
+    """매개 삼각형. nums = (a, b, c') 문자열이면 경로에 숫자를 단다."""
+    X, bx = box(cx0, cy0 + 90, 150, 54, '직무스트레스', size=14.5)
+    M, bm = box(cx0 + 260, cy0, 120, 54, '소진', fill=ACC_TINT, stroke=ACC, size=15)
+    Y, by = box(cx0 + 520, cy0 + 90, 130, 54, '이직의도', size=14.5)
+    a, p0, p1 = link(bx, bm, ACC, 2.6)
+    bb, q0, q1 = link(bm, by, ACC, 2.6)
+    c, r0, r1 = link(bx, by, MID, 2.4)
+    b += [a, bb, c, X, M, Y]
+    ma = ((p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2)
+    mb = ((q0[0] + q1[0]) / 2, (q0[1] + q1[1]) / 2)
+    mc = ((r0[0] + r1[0]) / 2, r0[1])
+    if nums:
+        b.append(rich(ma[0] - 14, ma[1] - 6, [('m', 'a'), ('t', ' = ' + nums[0])], 15, ACC_DEEP, 'end', 700))
+        b.append(rich(mb[0] + 14, mb[1] - 6, [('m', 'b'), ('t', ' = ' + nums[1])], 15, ACC_DEEP, 'start', 700))
+        b.append(rich(mc[0], mc[1] + 24, [('m', "c'"), ('t', ' = ' + nums[2] + '  (직접효과)')], 15, MID, 'middle', 700))
+    else:
+        b.append(tex(ma[0] - 14, ma[1] - 10, 'a', 18, ACC_DEEP, 'end', 40))
+        b.append(tex(mb[0] + 14, mb[1] - 10, 'b', 18, ACC_DEEP, 'start', 40))
+        b.append(tex(mc[0], mc[1] + 22, "c'", 18, MID, 'middle', 60))
+    return ma, mb, mc
+
+
+def fig_concept9():
+    W, H = 900, 290
+    b = []
+    ma, mb, mc = _med(b, 160, 78)
+    b.append(text(430, 20, '간접경로: 소진을 거쳐 감 (a × b)', 14, ACC_DEEP, 700, 'middle'))
+    b.append(text(mc[0], mc[1] + 52, '직접경로: 소진을 거치지 않음', 13.5, MID, 700, 'middle'))
+    write('ch09-concept.svg', svg(W, H, '\n'.join(b)))
+
+
+def fig_decompose():
+    W, H = 900, 400
+    b = []
+    X, bx = box(235, 50, 150, 54, '직무스트레스', size=14.5)
+    Y, by = box(755, 50, 130, 54, '이직의도', size=14.5)
+    a, p0, p1 = link(bx, by, NAVY, 2.8)
+    b += [a, X, Y]
+    b.append(rich(495, 38, [('m', 'c'), ('t', ' = 0.584  (총효과)')], 15, NAVY, 'middle', 800))
+    b.append(text(40, 54, '소진을', 13.5, SOFT, 700))
+    b.append(text(40, 72, '빼면', 13.5, SOFT, 700))
+    b.append(line(40, 130, 860, 130, RULE, 1.4, '4 4'))
+    b.append(text(40, 214, '소진을', 13.5, SOFT, 700))
+    b.append(text(40, 232, '넣으면', 13.5, SOFT, 700))
+    _med(b, 235, 160, ('0.602', '0.562', '0.245'))
+    b.append(rich(495, 362, [('t', '간접효과  '), ('m', r'a \times b = 0.602 \times 0.562 = 0.338'), ('t', '   (총효과의 58%)')], 15, ACC_DEEP, 'middle', 800))
+    write('ch09-decompose.svg', svg(W, H, '\n'.join(b)))
+
+
+def fig_boot():
+    D = load('ch09-boot.json')
+    ab = D['ab']
+    W, H = 900, 360
+    lo_x, hi_x, step = 0.0, 0.56, 0.01
+    nb = int((hi_x - lo_x) / step)
+    counts = [0] * nb
+    for v in ab:
+        k = int((v - lo_x) / step)
+        if 0 <= k < nb:
+            counts[k] += 1
+    ymax = max(counts) * 1.12
+    fr, sx, sy = frame(90, 50, 760, 230, (lo_x, hi_x), (0, ymax), [0, .1, .2, .3, .4, .5], [],
+                       '간접효과 a × b (2,000개)', None, grid=False, xfmt=lambda v: f'{v:.1f}')
+    b = fr
+    for k, n in enumerate(counts):
+        x0 = lo_x + k * step
+        inside = D['lo'] <= x0 + step / 2 <= D['hi']
+        b.append(f'<rect x="{sx(x0) + .6:.1f}" y="{sy(n):.1f}" width="{sx(x0 + step) - sx(x0) - 1.2:.1f}" '
+                 f'height="{sy(0) - sy(n):.1f}" fill="{ACC if inside else FAINT}" fill-opacity="{.75 if inside else .6}"/>')
+    for v, lab, anc in ((D['lo'], f'2.5%  {D["lo"]:.3f}', 'end'), (D['hi'], f'97.5%  {D["hi"]:.3f}', 'start')):
+        b.append(line(sx(v), 50, sx(v), sy(0), CORAL, 2, '6 4'))
+        b.append(halo(sx(v) + (-8 if anc == 'end' else 8), 66, lab, 13.5, CORAL, 700, anc))
+    b.append(line(sx(D['est']), 40, sx(D['est']), sy(0), INK, 2.4))
+    b.append(halo(sx(D['est']), 32, f'추정값 {D["est"]:.3f}', 14, INK, 800))
+    b.append(halo(sx(0) + 8, sy(0) - 12, '0은 한참 바깥', 13, MID, 700, 'start'))
+    write('ch09-boot.svg', svg(W, H, '\n'.join(b)))
+
+
+ALL = [fig_concept8, fig_simple_slopes, fig_jn, fig_concept9, fig_decompose, fig_boot]
