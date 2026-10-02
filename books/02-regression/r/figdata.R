@@ -56,3 +56,18 @@ out(list(stress_alone = ci(m_s, "stress"), stress_both = ci(m_both, "stress"),
          split_one = list(A = unname(coef(lm(fo, A))[2]), B = unname(coef(lm(fo, B))[2]))),
     "ch05.json")
 cat("figdata 5장 완료\n")
+
+# ---- 8장
+d$stress_c <- d$stress - mean(d$stress); d$support_c <- d$support - mean(d$support)
+m_int <- lm(burnout ~ efficacy + stress_c * support_c, d)
+b <- coef(m_int); V <- vcov(m_int); s <- sd(d$support)
+ws <- seq(min(d$support), max(d$support), by = .01) - mean(d$support)
+sl <- b["stress_c"] + b["stress_c:support_c"] * ws
+se <- sqrt(V["stress_c", "stress_c"] + ws^2 * V["stress_c:support_c", "stress_c:support_c"] +
+           2 * ws * V["stress_c", "stress_c:support_c"])
+crit <- qt(.975, df.residual(m_int))
+out(list(b = unname(b), mx = mean(d$stress), mw = mean(d$support), sw = s, me = mean(d$efficacy),
+         x = d$stress, y = d$burnout, w = d$support,
+         jn_w = ws + mean(d$support), jn_sl = unname(sl), jn_lo = unname(sl - crit * se), jn_hi = unname(sl + crit * se)),
+    "ch08.json")
+cat("figdata 8장 완료\n")
