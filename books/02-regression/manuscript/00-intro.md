@@ -113,10 +113,11 @@ str(d)
 
 ## 준비
 
-1권에서 설치한 패키지에 세 개를 더합니다.
+1권에서 설치한 패키지(`psych`, `car`, `effectsize`)에 몇 개를 더합니다.
 
 ```r 최초 1회만 실행합니다
-install.packages(c("psych", "car", "effectsize", "lmtest", "sandwich", "lavaan"))
+install.packages(c("psych", "car", "effectsize", "lmtest", "sandwich",
+                   "emmeans", "lavaan", "performance"))
 ```
 
 | 패키지 | 쓰는 곳 |
@@ -125,7 +126,9 @@ install.packages(c("psych", "car", "effectsize", "lmtest", "sandwich", "lavaan")
 | `car` | 분산팽창지수, 잔차 진단 (4장, 5장) |
 | `effectsize` | 표준화 회귀계수 (3장) |
 | `lmtest`, `sandwich` | 등분산 검정, 강건한 표준오차 (4장) |
+| `emmeans` | 다중비교, 단순기울기 (6장, 8장) |
 | `lavaan` | 매개효과·조절된 매개의 부트스트랩 (9장, 10장). 4권 구조방정식에서도 그대로 씁니다 |
+| `performance` | 로지스틱 회귀의 유사 결정계수와 적합도 (11장) |
 
 회귀분석 자체는 R에 기본으로 들어 있는 `lm()` 함수 하나로 합니다. 이 책의 회귀분석 코드는 대부분 이 모양입니다.
 

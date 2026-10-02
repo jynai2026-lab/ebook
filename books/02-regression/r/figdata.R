@@ -108,3 +108,14 @@ g <- function(l) unname(unlist(pe10[pe10$label == l, c("est", "ci.lower", "ci.up
 out(list(low = g("ind_low"), mid = g("ind_mid"), high = g("ind_high"), index = g("index"),
          mw = mean(d$support), sw = s10), "ch10.json")
 cat("figdata 10장 완료\n")
+
+# ---- 11장
+m_lin <- lm(quit ~ turnover, d); m_u <- glm(quit ~ turnover, binomial, d)
+m_log <- glm(quit ~ turnover + satisfaction, binomial, d)
+ph <- predict(m_log, type = "response")
+out(list(x = d$turnover, y = d$quit, lin = unname(coef(m_lin)), uni = unname(coef(m_u)),
+         multi = unname(coef(m_log)), ms = mean(d$satisfaction),
+         tab = list(tn = sum(d$quit == 0 & ph < .5), fp = sum(d$quit == 0 & ph >= .5),
+                    fn = sum(d$quit == 1 & ph < .5), tp = sum(d$quit == 1 & ph >= .5))),
+    "ch11.json")
+cat("figdata 11장 완료\n")

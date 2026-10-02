@@ -1,0 +1,37 @@
+<svg viewBox="0 0 900 360" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M110,290.0 L690,290.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,240.0 L690,240.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,190.0 L690,190.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,140.0 L690,140.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,90.0 L690,90.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,40.0 L690,40.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M110,40 L110,290 L690,290" stroke="#98A2B3" stroke-width="1.4" fill="none"/>
+<text x="110" y="308" font-size="12.5" fill="#667085" text-anchor="middle">1</text>
+<text x="255" y="308" font-size="12.5" fill="#667085" text-anchor="middle">2</text>
+<text x="400" y="308" font-size="12.5" fill="#667085" text-anchor="middle">3</text>
+<text x="545" y="308" font-size="12.5" fill="#667085" text-anchor="middle">4</text>
+<text x="690" y="308" font-size="12.5" fill="#667085" text-anchor="middle">5</text>
+<text x="102" y="294" font-size="12.5" fill="#667085" text-anchor="end">0.0</text>
+<text x="102" y="244" font-size="12.5" fill="#667085" text-anchor="end">0.2</text>
+<text x="102" y="194" font-size="12.5" fill="#667085" text-anchor="end">0.4</text>
+<text x="102" y="144" font-size="12.5" fill="#667085" text-anchor="end">0.6</text>
+<text x="102" y="94" font-size="12.5" fill="#667085" text-anchor="end">0.8</text>
+<text x="102" y="44" font-size="12.5" fill="#667085" text-anchor="end">1.0</text>
+<text x="400" y="329" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">이직의도</text>
+<text x="102" y="28" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">퇴사 예측 확률</text>
+<path d="M110.0,284.5 L115.8,284.2 L121.6,284.0 L127.4,283.7 L133.2,283.3 L139.0,283.0 L144.8,282.7 L150.6,282.3 L156.4,281.9 L162.2,281.5 L168.0,281.1 L173.8,280.7 L179.6,280.3 L185.4,279.8 L191.2,279.3 L197.0,278.8 L202.8,278.2 L208.6,277.7 L214.4,277.1 L220.2,276.5 L226.0,275.8 L231.8,275.1 L237.6,274.4 L243.4,273.7 L249.2,272.9 L255.0,272.1 L260.8,271.3 L266.6,270.4 L272.4,269.5 L278.2,268.6 L284.0,267.6 L289.8,266.6 L295.6,265.5 L301.4,264.4 L307.2,263.2 L313.0,262.0 L318.8,260.8 L324.6,259.5 L330.4,258.1 L336.2,256.7 L342.0,255.3 L347.8,253.8 L353.6,252.2 L359.4,250.6 L365.2,249.0 L371.0,247.2 L376.8,245.5 L382.6,243.6 L388.4,241.7 L394.2,239.8 L400.0,237.8 L405.8,235.7 L411.6,233.6 L417.4,231.4 L423.2,229.2 L429.0,226.9 L434.8,224.5 L440.6,222.1 L446.4,219.7 L452.2,217.1 L458.0,214.6 L463.8,212.0 L469.6,209.3 L475.4,206.6 L481.2,203.8 L487.0,201.0 L492.8,198.2 L498.6,195.3 L504.4,192.4 L510.2,189.4 L516.0,186.4 L521.8,183.4 L527.6,180.4 L533.4,177.4 L539.2,174.3 L545.0,171.3 L550.8,168.2 L556.6,165.1 L562.4,162.0 L568.2,158.9 L574.0,155.9 L579.8,152.8 L585.6,149.8 L591.4,146.7 L597.2,143.7 L603.0,140.8 L608.8,137.8 L614.6,134.9 L620.4,132.0 L626.2,129.2 L632.0,126.4 L637.8,123.6 L643.6,120.9 L649.4,118.2 L655.2,115.6 L661.0,113.0 L666.8,110.5 L672.6,108.0 L678.4,105.6 L684.2,103.3 L690.0,101.0" fill="none" stroke="#312E81" stroke-width="3.2"/>
+<path d="M255.0,290.0 L255.0,272.1" stroke="#98A2B3" stroke-width="1.4" stroke-dasharray="4 4"/>
+<circle cx="255.0" cy="272.1" r="7" fill="#4338CA"/>
+<text x="245" y="264" font-size="14" fill="#312E81" font-weight="800" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">7.1%</text>
+<path d="M400.0,290.0 L400.0,237.8" stroke="#98A2B3" stroke-width="1.4" stroke-dasharray="4 4"/>
+<circle cx="400.0" cy="237.8" r="7" fill="#4338CA"/>
+<text x="390" y="230" font-size="14" fill="#312E81" font-weight="800" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">20.9%</text>
+<path d="M545.0,290.0 L545.0,171.3" stroke="#98A2B3" stroke-width="1.4" stroke-dasharray="4 4"/>
+<circle cx="545.0" cy="171.3" r="7" fill="#4338CA"/>
+<text x="535" y="163" font-size="14" fill="#312E81" font-weight="800" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">47.5%</text>
+<text x="714" y="110" font-size="13.5" fill="#101828" font-weight="700">오즈비는 어디서나 3.43</text>
+<text x="714" y="132" font-size="13.5" fill="#344054" font-weight="600">확률의 배수는</text>
+<text x="714" y="152" font-size="13.5" fill="#344054" font-weight="600">2→3점 2.9배</text>
+<text x="714" y="172" font-size="13.5" fill="#344054" font-weight="600">3→4점 2.3배</text>
+<text x="714" y="214" font-size="12.5" fill="#667085" font-weight="600">직무만족은 평균에 고정</text>
+</svg>

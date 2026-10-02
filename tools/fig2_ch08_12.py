@@ -234,5 +234,117 @@ def fig_conditional():
     write('ch10-conditional.svg', svg(W, H, '\n'.join(b)))
 
 
+
+# ================================================================ 11장
+def _logistic(z):
+    return 1 / (1 + math.exp(-z))
+
+
+def fig_linear_vs_logit():
+    D = load('ch11.json')
+    g = random.Random(5)
+    W, H = 900, 380
+    fr, sx, sy = frame(110, 40, 640, 270, (1, 5), (-0.25, 1.15), [1, 2, 3, 4, 5], [0, 0.5, 1],
+                       '이직의도', '퇴사 (확률)', yfmt=lambda v: f'{v:g}')
+    b = fr
+    b.append(f'<rect x="110" y="{sy(0):.1f}" width="640" height="{sy(-0.25) - sy(0):.1f}" fill="{CORAL}" fill-opacity=".07"/>')
+    b.append(line(110, sy(0), 750, sy(0), FAINT, 1.2))
+    b.append(line(110, sy(1), 750, sy(1), FAINT, 1.2))
+    xs = [x + g.uniform(-.05, .05) for x in D['x']]
+    ys = [y + g.uniform(-.05, .05) for y in D['y']]
+    b.append(dots(xs, ys, sx, sy, MID, 3.4, .35))
+    l0, l1 = D['lin']
+    b.append(line(sx(1), sy(l0 + l1), sx(5), sy(l0 + l1 * 5), CORAL, 2.6, '8 5'))
+    u0, u1 = D['uni']
+    pts = [1 + 4 * i / 100 for i in range(101)]
+    b.append('<path d="M' + ' L'.join(f'{sx(x):.1f},{sy(_logistic(u0 + u1 * x)):.1f}' for x in pts) +
+             f'" fill="none" stroke="{ACC_DEEP}" stroke-width="3.2"/>')
+    b.append(halo(sx(1.55), sy(-0.18), '직선은 확률 0 아래로 내려간다', 13.5, CORAL, 700, 'start'))
+    b.append(text(770, 120, '실선', 14, ACC_DEEP, 800))
+    b.append(text(770, 140, '로지스틱 곡선', 13.5, ACC_DEEP, 700))
+    b.append(text(770, 160, '0과 1 사이에 머문다', 13, MID, 600))
+    b.append(text(770, 210, '점선', 14, CORAL, 800))
+    b.append(text(770, 230, '직선 회귀', 13.5, CORAL, 700))
+    write('ch11-linear-vs-logit.svg', svg(W, H, '\n'.join(b)))
+
+
+def fig_logit_map():
+    W, H = 900, 360
+    fr, sx, sy = frame(110, 40, 620, 250, (-5, 5), (0, 1), [-4, -2, 0, 2, 4], [0, .21, .5, .79, 1],
+                       '로짓 (로그오즈)', '확률', yfmt=lambda v: f'{v:g}'.replace('0.', '.'),
+                       xfmt=lambda v: f'{v:g}'.replace('-', '−'))
+    b = fr
+    pts = [-5 + 10 * i / 200 for i in range(201)]
+    b.append('<path d="M' + ' L'.join(f'{sx(z):.1f},{sy(_logistic(z)):.1f}' for z in pts) +
+             f'" fill="none" stroke="{ACC_DEEP}" stroke-width="3.2"/>')
+    for p, c in ((.21, CORAL), (.5, INK), (.79, TEAL)):
+        z = math.log(p / (1 - p))
+        b.append(line(sx(-5), sy(p), sx(z), sy(p), c, 1.4, '4 4'))
+        b.append(line(sx(z), sy(p), sx(z), sy(0), c, 1.4, '4 4'))
+        b.append(f'<circle cx="{sx(z):.1f}" cy="{sy(p):.1f}" r="6" fill="{c}"/>')
+        lab = '로짓 0' if abs(z) < 1e-9 else f'로짓 {z:+.2f}'.replace('-', '−')
+        b.append(halo(sx(z) + 10, sy(p) + 18, lab, 13, c, 700, 'start'))
+    b.append(tex(750, 100, r'p = \dfrac{1}{1 + e^{-\text{로짓}}}', 19, ACC_DEEP, 'start', 150, 70))
+    b.append(text(750, 160, '로짓은 어떤 값이든', 13.5, MID, 600))
+    b.append(text(750, 180, '확률은 0과 1 사이', 13.5, MID, 600))
+    write('ch11-logit-map.svg', svg(W, H, '\n'.join(b)))
+
+
+def fig_prob():
+    D = load('ch11.json')
+    c0, c1, c2 = D['multi']
+    ms = D['ms']
+    W, H = 900, 360
+    fr, sx, sy = frame(110, 40, 580, 250, (1, 5), (0, 1), [1, 2, 3, 4, 5], [0, .2, .4, .6, .8, 1],
+                       '이직의도', '퇴사 예측 확률', yfmt=lambda v: f'{v:.1f}')
+    b = fr
+    pts = [1 + 4 * i / 100 for i in range(101)]
+    pr = lambda x: _logistic(c0 + c1 * x + c2 * ms)
+    b.append('<path d="M' + ' L'.join(f'{sx(x):.1f},{sy(pr(x)):.1f}' for x in pts) +
+             f'" fill="none" stroke="{ACC_DEEP}" stroke-width="3.2"/>')
+    for x in (2, 3, 4):
+        p = pr(x)
+        b.append(line(sx(x), sy(0), sx(x), sy(p), FAINT, 1.4, '4 4'))
+        b.append(f'<circle cx="{sx(x):.1f}" cy="{sy(p):.1f}" r="7" fill="{ACC}"/>')
+        b.append(halo(sx(x) - 10, sy(p) - 8, f'{p * 100:.1f}%', 14, ACC_DEEP, 800, 'end'))
+    b.append(text(714, 110, '오즈비는 어디서나 3.43', 13.5, INK, 700))
+    b.append(text(714, 132, '확률의 배수는', 13.5, MID, 600))
+    b.append(text(714, 152, '2→3점 2.9배', 13.5, MID, 600))
+    b.append(text(714, 172, '3→4점 2.3배', 13.5, MID, 600))
+    b.append(text(714, 214, '직무만족은 평균에 고정', 12.5, SOFT, 600))
+    write('ch11-prob.svg', svg(W, H, '\n'.join(b)))
+
+
+def fig_classification():
+    D = load('ch11.json')['tab']
+    W, H = 900, 300
+    b = []
+    x0, y0, cw, ch = 300, 70, 170, 80
+    b.append(text(x0 + cw, 30, '예측', 15, INK, 800, 'middle'))
+    b.append(text(x0 + cw / 2, 58, '재직 (0)', 14, MID, 700, 'middle'))
+    b.append(text(x0 + cw * 1.5, 58, '퇴사 (1)', 14, MID, 700, 'middle'))
+    b.append(text(x0 - 120, y0 + ch + 6, '실제', 15, INK, 800, 'middle'))
+    b.append(text(x0 - 14, y0 + ch / 2 + 5, '재직 (0)', 14, MID, 700, 'end'))
+    b.append(text(x0 - 14, y0 + ch * 1.5 + 5, '퇴사 (1)', 14, MID, 700, 'end'))
+    cells = [(0, 0, D['tn'], '맞음', ACC_TINT, ACC_DEEP), (1, 0, D['fp'], '틀림', CORAL_TINT, CORAL),
+             (0, 1, D['fn'], '틀림 — 놓친 퇴사자', CORAL_TINT, CORAL), (1, 1, D['tp'], '맞음', ACC_TINT, ACC_DEEP)]
+    for i, j, n, lab, fill, c in cells:
+        x, y = x0 + i * cw, y0 + j * ch
+        b.append(f'<rect x="{x}" y="{y}" width="{cw}" height="{ch}" fill="{fill}" stroke="#fff" stroke-width="3"/>')
+        b.append(text(x + cw / 2, y + 40, f'{n}', 26, c, 800, 'middle'))
+        b.append(text(x + cw / 2, y + 62, lab, 12.5, c, 700, 'middle'))
+    tot = D['tn'] + D['fp'] + D['fn'] + D['tp']
+    acc = (D['tn'] + D['tp']) / tot
+    sens = D['tp'] / (D['tp'] + D['fn'])
+    spec = D['tn'] / (D['tn'] + D['fp'])
+    base = (D['tn'] + D['fp']) / tot
+    lx = 680
+    for k, (name, v, c) in enumerate([('정확도', acc, INK), ('모두 재직으로 찍으면', base, SOFT),
+                                       ('민감도 (퇴사자 적중)', sens, CORAL), ('특이도 (재직자 적중)', spec, ACC_DEEP)]):
+        b.append(text(lx, 92 + k * 42, name, 13.5, MID, 600))
+        b.append(text(lx, 112 + k * 42, f'{v * 100:.1f}%', 17, c, 800))
+    write('ch11-classification.svg', svg(W, H, '\n'.join(b)))
+
+
 ALL = [fig_concept8, fig_simple_slopes, fig_jn, fig_concept9, fig_decompose, fig_boot,
-       fig_concept10, fig_conditional]
+       fig_concept10, fig_conditional, fig_linear_vs_logit, fig_logit_map, fig_prob, fig_classification]
