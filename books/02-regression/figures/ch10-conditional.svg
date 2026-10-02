@@ -1,0 +1,43 @@
+<svg viewBox="0 0 900 340" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M140,270.0 L700,270.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M140,231.7 L700,231.7" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M140,193.3 L700,193.3" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M140,155.0 L700,155.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M140,116.7 L700,116.7" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M140,78.3 L700,78.3" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M140,40.0 L700,40.0" stroke="#E4E7EC" stroke-width="1"/>
+<path d="M140,40 L140,270 L700,270" stroke="#98A2B3" stroke-width="1.4" fill="none"/>
+<text x="132" y="274" font-size="12.5" fill="#667085" text-anchor="end">0.0</text>
+<text x="132" y="236" font-size="12.5" fill="#667085" text-anchor="end">0.1</text>
+<text x="132" y="198" font-size="12.5" fill="#667085" text-anchor="end">0.2</text>
+<text x="132" y="159" font-size="12.5" fill="#667085" text-anchor="end">0.3</text>
+<text x="132" y="121" font-size="12.5" fill="#667085" text-anchor="end">0.4</text>
+<text x="132" y="83" font-size="12.5" fill="#667085" text-anchor="end">0.5</text>
+<text x="132" y="44" font-size="12.5" fill="#667085" text-anchor="end">0.6</text>
+<text x="132" y="28" font-size="13.5" fill="#344054" font-weight="600" text-anchor="middle">간접효과</text>
+<path d="M233.3,151.9 L233.3,56.1" stroke="#C2452F" stroke-width="3"/>
+<path d="M225.3,151.9 L241.3,151.9" stroke="#C2452F" stroke-width="2.4"/>
+<path d="M225.3,56.1 L241.3,56.1" stroke="#C2452F" stroke-width="2.4"/>
+<circle cx="233.3" cy="106.3" r="8" fill="#C2452F"/>
+<text x="249" y="111" font-size="14" fill="#C2452F" font-weight="800" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.427</text>
+<text x="233" y="292" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">지지 낮음</text>
+<text x="233" y="310" font-size="12.5" fill="#667085" font-weight="600" text-anchor="middle">−1 SD</text>
+<path d="M420.0,186.8 L420.0,118.5" stroke="#4338CA" stroke-width="3"/>
+<path d="M412.0,186.8 L428.0,186.8" stroke="#4338CA" stroke-width="2.4"/>
+<path d="M412.0,118.5 L428.0,118.5" stroke="#4338CA" stroke-width="2.4"/>
+<circle cx="420.0" cy="155.2" r="8" fill="#4338CA"/>
+<text x="436" y="160" font-size="14" fill="#4338CA" font-weight="800" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.300</text>
+<text x="420" y="292" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">지지 평균</text>
+<path d="M606.7,236.6 L606.7,168.0" stroke="#0E7490" stroke-width="3"/>
+<path d="M598.7,236.6 L614.7,236.6" stroke="#0E7490" stroke-width="2.4"/>
+<path d="M598.7,168.0 L614.7,168.0" stroke="#0E7490" stroke-width="2.4"/>
+<circle cx="606.7" cy="204.1" r="8" fill="#0E7490"/>
+<text x="623" y="209" font-size="14" fill="#0E7490" font-weight="800" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="5" stroke-linejoin="round">0.172</text>
+<text x="607" y="292" font-size="14.5" fill="#101828" font-weight="700" text-anchor="middle">지지 높음</text>
+<text x="607" y="310" font-size="12.5" fill="#667085" font-weight="600" text-anchor="middle">+1 SD</text>
+<path d="M233.3,106.3 L420.0,155.2 L606.7,204.1" fill="none" stroke="#344054" stroke-width="1.6" stroke-dasharray="5 4"/>
+<text x="730" y="110" font-size="14.5" fill="#101828" font-weight="800">조절된 매개지수</text>
+<foreignObject x="730" y="110" width="170" height="42"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:15px;color:#C2452F"><span data-tex="a_3 \times b = -0.214"></span></div></foreignObject>
+<text x="730" y="162" font-size="13.5" fill="#344054" font-weight="600">95% CI [−0.329, −0.112]</text>
+<text x="730" y="186" font-size="13.5" fill="#344054" font-weight="600">0을 포함하지 않음</text>
+</svg>

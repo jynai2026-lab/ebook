@@ -75,7 +75,7 @@ for (const f of onDiskEarly()) {
   const svg = readFileSync(join(FIGDIR, f), 'utf8');
   for (const m of svg.matchAll(/<text[^>]*>([^<]*)<\/text>/g)) {
     const t = m[1];
-    if (/√|[∑Σ]|[A-Za-z가-힣]\s*[²³]|\b[A-Za-z]+\s*\/\s*[A-Za-z(]/.test(t)) rawMath.push(`${f}: "${t}"`);
+    if (/√|[∑Σ]|[₀-₉]|[A-Za-z가-힣]\s*[²³]|\b[A-Za-z]+\s*\/\s*[A-Za-z(]/.test(t)) rawMath.push(`${f}: "${t}"`);
   }
 }
 bad('그림 안에 <text>로 찍힌 수식', rawMath);

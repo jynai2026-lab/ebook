@@ -8,6 +8,6 @@
 <foreignObject x="244" y="85" width="40" height="50"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-end;font-size:18px;color:#312E81"><span data-tex="a"></span></div></foreignObject>
 <foreignObject x="562" y="87" width="40" height="50"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:flex-start;font-size:18px;color:#312E81"><span data-tex="b"></span></div></foreignObject>
 <foreignObject x="395" y="165" width="60" height="50"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:18px;color:#344054"><span data-tex="c'"></span></div></foreignObject>
-<text x="430" y="20" font-size="14" fill="#312E81" font-weight="700" text-anchor="middle">간접경로: 소진을 거쳐 감 (a × b)</text>
+<foreignObject x="50" y="-2" width="760" height="41"><div xmlns="http://www.w3.org/1999/xhtml" class="figtex" style="justify-content:center;font-size:14.5px;color:#312E81"><span style="white-space:pre;font-weight:700;">간접경로: 소진을 거쳐 감  </span><span data-tex="a \times b"></span></div></foreignObject>
 <text x="425" y="220" font-size="13.5" fill="#344054" font-weight="700" text-anchor="middle">직접경로: 소진을 거치지 않음</text>
 </svg>

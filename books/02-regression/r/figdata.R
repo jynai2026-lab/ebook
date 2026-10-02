@@ -89,3 +89,22 @@ out(list(ab = unname(bt9[, "a"] * bt9[, "b"]),
          lo = pe9$ci.lower[pe9$label == "indirect"], hi = pe9$ci.upper[pe9$label == "indirect"]),
     "ch09-boot.json")
 cat("figdata 9장 완료\n")
+
+# ---- 10장 (원고와 같은 모형, 같은 시드)
+d$stress_c <- d$stress - mean(d$stress); d$support_c <- d$support - mean(d$support)
+d$sxw <- d$stress_c * d$support_c; s10 <- sd(d$support)
+model10 <- sprintf('
+  burnout  ~ a1 * stress_c + a2 * support_c + a3 * sxw + efficacy
+  turnover ~ b * burnout + cp * stress_c
+  ind_low  := (a1 - %.4f * a3) * b
+  ind_mid  := a1 * b
+  ind_high := (a1 + %.4f * a3) * b
+  index    := a3 * b
+', s10, s10)
+set.seed(2026)
+fit10 <- sem(model10, data = d, se = "bootstrap", bootstrap = 2000)
+pe10 <- parameterEstimates(fit10, boot.ci.type = "perc")
+g <- function(l) unname(unlist(pe10[pe10$label == l, c("est", "ci.lower", "ci.upper")]))
+out(list(low = g("ind_low"), mid = g("ind_mid"), high = g("ind_high"), index = g("index"),
+         mw = mean(d$support), sw = s10), "ch10.json")
+cat("figdata 10장 완료\n")

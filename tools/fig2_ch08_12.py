@@ -129,7 +129,7 @@ def fig_concept9():
     W, H = 900, 290
     b = []
     ma, mb, mc = _med(b, 160, 78)
-    b.append(text(430, 20, '간접경로: 소진을 거쳐 감 (a × b)', 14, ACC_DEEP, 700, 'middle'))
+    b.append(rich(430, 24, [('t', '간접경로: 소진을 거쳐 감  '), ('m', r'a \times b')], 14.5, ACC_DEEP, 'middle', 700))
     b.append(text(mc[0], mc[1] + 52, '직접경로: 소진을 거치지 않음', 13.5, MID, 700, 'middle'))
     write('ch09-concept.svg', svg(W, H, '\n'.join(b)))
 
@@ -181,4 +181,58 @@ def fig_boot():
     write('ch09-boot.svg', svg(W, H, '\n'.join(b)))
 
 
-ALL = [fig_concept8, fig_simple_slopes, fig_jn, fig_concept9, fig_decompose, fig_boot]
+
+# ================================================================ 10장
+def fig_concept10():
+    W, H = 900, 300
+    b = []
+    X, bx = box(160, 200, 150, 54, '직무스트레스', size=14.5)
+    M, bm = box(430, 110, 120, 54, '소진', fill=ACC_TINT, stroke=ACC, size=15)
+    Y, by = box(700, 200, 130, 54, '이직의도', size=14.5)
+    Wb, bw = box(160, 50, 150, 54, '사회적지지', fill=AMBER_TINT, stroke=AMBER, size=14.5)
+    a, p0, p1 = link(bx, bm, ACC, 2.8)
+    bb, _, _ = link(bm, by, ACC, 2.8)
+    c, r0, r1 = link(bx, by, MID, 2.2)
+    b += [a, bb, c]
+    mx, my = (p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2
+    b.append(to_point(bw, mx, my, AMBER, 2.4, dash='6 4'))
+    b.append(f'<circle cx="{mx:.0f}" cy="{my:.0f}" r="4.5" fill="{AMBER}"/>')
+    b += [X, M, Y, Wb]
+    b.append(tex(mx + 22, my + 22, r'a_1 + a_3 W', 15, ACC_DEEP, 'start', 120))
+    b.append(tex(585, 142, 'b', 16, ACC_DEEP, 'start', 30))
+    b.append(tex(430, 218, "c'", 16, MID, 'middle', 40))
+    b.append(rich(560, 274, [('t', '간접효과 '), ('m', r'= (a_1 + a_3 W) \times b'), ('t', '   →  지지(W)에 따라 달라진다')], 14.5, INK, 'middle', 700))
+    write('ch10-concept.svg', svg(W, H, '\n'.join(b)))
+
+
+def fig_conditional():
+    D = load('ch10.json')
+    W, H = 900, 340
+    fr, sx, sy = frame(140, 40, 560, 230, (0, 3), (0, 0.6), [], [0, .1, .2, .3, .4, .5, .6], None, '간접효과',
+                       yfmt=lambda v: f'{v:.1f}')
+    b = fr
+    pts = [('low', '지지 낮음', '−1 SD', CORAL), ('mid', '지지 평균', '', ACC), ('high', '지지 높음', '+1 SD', TEAL)]
+    xy = []
+    for i, (k, lab, sub, c) in enumerate(pts):
+        est, lo, hi = D[k]
+        x = sx(i + 0.5)
+        xy.append((x, sy(est)))
+        b.append(line(x, sy(lo), x, sy(hi), c, 3))
+        for v in (lo, hi):
+            b.append(line(x - 8, sy(v), x + 8, sy(v), c, 2.4))
+        b.append(f'<circle cx="{x:.1f}" cy="{sy(est):.1f}" r="8" fill="{c}"/>')
+        b.append(halo(x + 16, sy(est) + 5, f'{est:.3f}', 14, c, 800, 'start'))
+        b.append(text(x, 292, lab, 14.5, INK, 700, 'middle'))
+        if sub:
+            b.append(text(x, 310, sub, 12.5, SOFT, 600, 'middle'))
+    b.append('<path d="M' + ' L'.join(f'{x:.1f},{y:.1f}' for x, y in xy) + f'" fill="none" stroke="{MID}" stroke-width="1.6" stroke-dasharray="5 4"/>')
+    est, lo, hi = D['index']
+    b.append(text(730, 110, '조절된 매개지수', 14.5, INK, 800))
+    b.append(rich(730, 136, [('m', r'a_3 \times b = ' + f'{est:.3f}'.replace('-', '-'))], 15, CORAL, 'start', 700))
+    b.append(text(730, 162, f'95% CI [{lo:.3f}, {hi:.3f}]'.replace('-', '−'), 13.5, MID, 600))
+    b.append(text(730, 186, '0을 포함하지 않음', 13.5, MID, 600))
+    write('ch10-conditional.svg', svg(W, H, '\n'.join(b)))
+
+
+ALL = [fig_concept8, fig_simple_slopes, fig_jn, fig_concept9, fig_decompose, fig_boot,
+       fig_concept10, fig_conditional]
