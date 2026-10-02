@@ -1,5 +1,5 @@
 ---
-part: 모형을 점검하다
+part: 모형을 점검하고 넓히다
 partNum: PART 2
 num: 04
 title: 이 결과를 믿어도 되는가 — 가정과 진단

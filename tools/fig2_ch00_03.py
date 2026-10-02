@@ -1,4 +1,5 @@
 """2권 0~3장 그림"""
+import random
 from fig2lib import *
 
 
@@ -175,9 +176,9 @@ def fig_third():
     b, sx, sy = frame(90, 40, 600, 300, (0, 20), (1, 5), [0, 5, 10, 15, 20], [1, 2, 3, 4, 5],
                       '근속연수(년)', '직무만족')
     cols = {'사원': TEAL, '대리': AMBER, '과장이상': ACC}
-    jit = {}
+    jit = random.Random(9)            # 겹친 점을 살짝 흩는다 (빌드마다 같은 그림)
     for x, y, g in zip(D['x'], D['y'], D['g']):
-        b.append(f'<circle cx="{sx(x) + ((hash((x, y, g)) % 7) - 3) * 0.9:.1f}" cy="{sy(y):.1f}" r="4" '
+        b.append(f'<circle cx="{sx(x) + jit.uniform(-2.7, 2.7):.1f}" cy="{sy(y):.1f}" r="4" '
                  f'fill="{cols[g]}" fill-opacity=".45"/>')
     a0, a1 = ols(D['x'], D['y'])
     b.append(line(sx(0), sy(a0), sx(19), sy(a0 + a1 * 19), SOFT, 2.4, '7 5'))

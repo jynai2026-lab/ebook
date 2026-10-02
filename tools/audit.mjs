@@ -38,10 +38,12 @@ bad('자리표시자 복원', [...html.matchAll(/<!--BLK\d+-->|\uE000\d+\uE001/g
 const stripped = html
   .replace(/<pre[\s\S]*?<\/pre>/g, '')
   .replace(/<code[\s\S]*?<\/code>/g, '')
-  .replace(/<span class="katex[\s\S]*?<\/span><\/span>/g, '');
+  .replace(/<span class="katex[\s\S]*?<\/span><\/span>/g, '')
+  .replace(/\*{1,3}<em>p<\/em>/g, '');          // 표 주의 유의 표시 (*p, **p, ***p)
 bad('처리되지 않은 **강조**', [...stripped.matchAll(/\*\*[^*\n]{1,40}\*\*/g)].map(m => m[0]));
 bad('처리되지 않은 $수식$', [...stripped.matchAll(/\$[^$\n]{1,40}\$/g)].map(m => m[0]));
 bad('빈 캡션 / 깨진 표', [...html.matchAll(/<figcaption>\s*<\/figcaption>/g)].map(() => '빈 figcaption'));
+bad('목차 쪽번호', [...html.matchAll(/<li><b>([^<]*)<\/b><i>([^<]*)<\/i><em><\/em><\/li>/g)].map(m => `${m[1]} ${m[2]}`));
 bad('조판되지 않은 그림 수식', [...html.matchAll(/data-tex="([^"]*)"/g)].map(m => m[1]));
 
 const onDiskEarly = () => readdirSync(FIGDIR).filter(f => f.endsWith('.svg'));

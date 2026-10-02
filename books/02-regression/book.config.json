@@ -20,5 +20,6 @@
     "accent-line": "#C3C7F2",
     "cover-hi": "#AEB8FF"
   },
-  "coverDeco": "scatter"
+  "coverDeco": "scatter",
+  "tocDense": true
 }

@@ -227,7 +227,8 @@ function buildCover(cfg) {
 }
 
 function buildToc(cfg, chapters, pageOf = {}) {
-  let html = `<section class="toc"><h1 class="toc__title">목차</h1>`;
+  // 장과 파트가 많아 한 쪽을 넘기는 권은 tocDense로 줄 간격을 좁힌다
+  let html = `<section class="toc${cfg.tocDense ? ' toc--dense' : ''}"><h1 class="toc__title">목차</h1>`;
   if (cfg.tocLead) html += `<p class="toc__lead">${esc(cfg.tocLead)}</p>`;
   let part = null, open = false;
   for (const ch of chapters) {
@@ -273,10 +274,26 @@ ${vars ? `<style>:root{${vars}}</style>` : ''}
 ${buildCover(cfg)}
 ${buildToc(cfg, chapters, pageOf)}
 ${chapters.map(buildChapter).join('\n')}
+<div class="pagemark">§CHEND§</div>
 </body></html>`;
 }
 
 /* ---------------------------------------------------------------- 렌더 */
+/**
+ * 크로미움이 드물게 PDF를 끝까지 찍지 않고 중간에서 멈춘다(같은 HTML인데도 115쪽, 132쪽,
+ * 137쪽으로 달라졌다). 책 맨 끝에 심은 표식(§CHEND§)이 PDF에 있는지 확인하고, 없으면
+ * 다시 찍는다. 파이썬이 없어 확인할 수 없으면 그대로 넘어간다.
+ */
+async function renderChecked(htmlPath, pdfPath) {
+  for (let k = 1; k <= 4; k++) {
+    await renderPdf(htmlPath, pdfPath);
+    const pages = readChapterPages(pdfPath);
+    if (!Object.keys(pages).length || pages.END != null) return pages;
+    console.log(`  - PDF가 끝까지 찍히지 않았습니다 (${k}회째). 다시 찍습니다.`);
+  }
+  throw new Error('PDF가 네 번 모두 끝까지 찍히지 않았습니다.');
+}
+
 async function renderPdf(htmlPath, pdfPath) {
   const browser = await launchBrowser();
   const page = await browser.newPage();
@@ -349,13 +366,13 @@ async function buildBook(slug) {
 
   // 1차: 쪽번호 없이 한 번 찍어서 각 장이 몇 쪽에서 시작하는지 알아낸다.
   writeFileSync(htmlPath, assemble(cfg, chapters));
-  await renderPdf(htmlPath, pdfPath);
-  const pageOf = readChapterPages(pdfPath);
+  const pageOf = await renderChecked(htmlPath, pdfPath);
+  delete pageOf.END;
 
   // 2차: 목차에 그 쪽번호를 넣어 다시 찍는다.
   if (Object.keys(pageOf).length) {
     writeFileSync(htmlPath, assemble(cfg, chapters, pageOf));
-    await renderPdf(htmlPath, pdfPath);
+    await renderChecked(htmlPath, pdfPath);
   }
   const n = await stampPageNumbers(pdfPath, (cfg.accent || {}).accent);
   const kb = (readFileSync(pdfPath).length / 1024).toFixed(0);

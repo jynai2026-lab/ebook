@@ -346,5 +346,48 @@ def fig_classification():
     write('ch11-classification.svg', svg(W, H, '\n'.join(b)))
 
 
+
+# ================================================================ 12장
+def fig_flowchart():
+    W, H = 900, 520
+    b = []
+    T, bt = box(450, 34, 220, 46, '종속변수는?', fill=NAVY, stroke=NAVY, color='#fff', size=16)
+    L, bl = box(300, 110, 230, 46, '연속형 → lm()', fill='#fff', stroke=ACC, size=15)
+    R, br = box(760, 110, 210, 46, '0 또는 1 → glm()', fill='#fff', stroke=NAVY, size=15)
+    a1, _, _ = link(bt, bl, FAINT, 2)
+    a2, _, _ = link(bt, br, FAINT, 2)
+    b += [a1, a2, T, L, R]
+    Lg, blg = box(760, 196, 210, 50, '로지스틱 회귀', sub='11장', fill=ACC_TINT, stroke=NAVY, size=15)
+    a3, _, _ = link(br, blg, FAINT, 2)
+    b += [a3, Lg]
+    rows = [('함께 움직이는가', '상관', '1장'),
+            ('1 높으면 얼마나 높은가', '단순회귀', '2장'),
+            ('다른 변수가 같을 때도 그런가', '다중회귀', '3장'),
+            ('변수 묶음이 더 설명하는가', '위계적 회귀', '7장'),
+            ('언제, 누구에게 더 강한가', '조절효과', '8장'),
+            ('어떤 경로로 이어지는가', '매개효과', '9장'),
+            ('그 경로가 조건에 따라 다른가', '조절된 매개', '10장')]
+    y0, dy = 176, 40
+    trunk_x = 90
+    b.append(line(300, 133, 300, 150, FAINT, 2))
+    b.append(line(trunk_x, 150, 300, 150, FAINT, 2))
+    b.append(line(trunk_x, 150, trunk_x, y0 + dy * (len(rows) - 1), FAINT, 2))
+    for i, (q, an, ch) in enumerate(rows):
+        y = y0 + i * dy
+        b.append(line(trunk_x, y, 112, y, FAINT, 2))
+        b.append(f'<rect x="112" y="{y - 15}" width="268" height="30" rx="6" fill="{PAPER}" stroke="{RULE}" stroke-width="1.4"/>')
+        b.append(text(124, y + 5, q, 13.5, MID, 600))
+        b.append(arrow(384, y, 424, y, ACC, 2, 9))
+        b.append(f'<rect x="428" y="{y - 15}" width="200" height="30" rx="6" fill="{ACC_TINT}" stroke="{ACC}" stroke-width="1.6"/>')
+        b.append(text(442, y + 5, an, 14, ACC_DEEP, 800))
+        b.append(text(616, y + 5, ch, 12.5, SOFT, 700, 'end'))
+    fy = 474
+    b.append(f'<rect x="40" y="{fy - 22}" width="820" height="58" rx="8" fill="#F5F7FA" stroke="{RULE}" stroke-width="1.4"/>')
+    b.append(text(450, fy - 2, '독립변수에 범주형이 있으면 → 더미변수 (6장)', 14, INK, 700, 'middle'))
+    b.append(text(450, fy + 22, '어느 회귀든 → 가정 진단 (4장) · 다중공선성 점검 (5장)', 14, INK, 700, 'middle'))
+    write('ch12-flowchart.svg', svg(W, H, '\n'.join(b)))
+
+
 ALL = [fig_concept8, fig_simple_slopes, fig_jn, fig_concept9, fig_decompose, fig_boot,
-       fig_concept10, fig_conditional, fig_linear_vs_logit, fig_logit_map, fig_prob, fig_classification]
+       fig_concept10, fig_conditional, fig_linear_vs_logit, fig_logit_map, fig_prob, fig_classification,
+       fig_flowchart]

@@ -23,6 +23,7 @@ macOS · Windows · Linux 모두 됩니다.
 | Google Chrome | PDF·이미지·영상 렌더 | 평소 쓰는 크롬이면 됩니다 |
 | ffmpeg | 쇼츠 영상 | Mac `brew install ffmpeg` · Windows `winget install ffmpeg` |
 | Python + `pip install pymupdf` | 목차 쪽번호 (없으면 쪽번호만 빈칸) | 선택 |
+| R + 책에 나오는 패키지 | 원고의 R 출력 검증, 그림 자료 재생성 | 선택 (r-project.org) |
 
 크롬은 자동으로 찾습니다. 못 찾으면 `CHROME_PATH` 환경변수로 경로를 알려 주세요.
 
@@ -34,10 +35,12 @@ npm install
 
 | 하고 싶은 것 | 명령 | 결과 |
 | --- | --- | --- |
-| 전자책 PDF | `npm run build:1` | `dist/*.pdf` |
+| 전자책 PDF | `npm run build:1` · `npm run build:2` | `dist/*.pdf` |
 | 상세페이지 이미지 | `node render-cards.mjs` | `dist/landing/` |
 | 쇼츠·릴스 5편 | `node tools/make-shorts.mjs` | `dist/shorts/*.mp4` |
-| 빌드 점검 | `node tools/audit.mjs` | 오류 목록 |
+| 빌드 점검 | `node tools/audit.mjs 02-regression` | 오류 목록 |
+| 원고의 R 출력 검증 | `node tools/run-r.mjs 02-regression` | 출력이 다르면 실패 (`--write`로 채움) |
+| 2권 그림 다시 그리기 | `Rscript books/02-regression/r/figdata.R` → `python3 tools/build-figures-2.py` | `books/02-regression/figures/` |
 
 쇼츠 음성은 Google AI Studio 키를 씁니다. 키는 저장소 밖에 둡니다.
 

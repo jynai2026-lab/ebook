@@ -1,5 +1,5 @@
 ---
-part: 모형을 점검하다
+part: 모형을 점검하고 넓히다
 partNum: PART 2
 num: 05
 title: 비슷한 변수를 함께 넣으면 — 다중공선성

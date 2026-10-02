@@ -191,6 +191,9 @@ body {
   font-style: normal; color: var(--ink-faint); font-size: 9pt;
   font-variant-numeric: tabular-nums;
 }
+.toc--dense .toc__lead { margin-bottom: 6mm; }
+.toc--dense .toc__part { margin: 5mm 0 1.6mm; padding-bottom: 1.8mm; }
+.toc--dense li { padding: 1.5mm 0; margin-bottom: 0; }
 
 /* ==========================================================================
    6. 챕터 오프너
@@ -277,6 +280,7 @@ hr {
   display: block;
   font-size: 8.6pt; font-weight: 800; letter-spacing: .1em;
   color: var(--accent-deep); margin-bottom: 2.2mm;
+  break-after: avoid;               /* 제목만 쪽 끝에 홀로 남지 않게 */
 }
 .callout p:last-child, .callout ul:last-child { margin-bottom: 0; }
 

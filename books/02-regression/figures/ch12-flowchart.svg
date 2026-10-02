@@ -1,0 +1,64 @@
+<svg viewBox="0 0 900 520" font-family="Pretendard, sans-serif" xmlns="http://www.w3.org/2000/svg">
+<path d="M394.7,62.0 L365.1,77.0" stroke="#98A2B3" stroke-width="2"/><path d="M355.3,82.0 L362.7,72.3 L367.5,81.7 Z" fill="#98A2B3"/>
+<path d="M564.2,62.0 L639.3,80.4" stroke="#98A2B3" stroke-width="2"/><path d="M650.0,83.0 L638.1,85.5 L640.6,75.3 Z" fill="#98A2B3"/>
+<rect x="340" y="11" width="220" height="46" rx="10" fill="#16243F" stroke="#16243F" stroke-width="2"/><text x="450" y="40" font-size="16" fill="#fff" font-weight="700" text-anchor="middle">종속변수는?</text>
+<rect x="185" y="87" width="230" height="46" rx="10" fill="#fff" stroke="#4338CA" stroke-width="2"/><text x="300" y="115" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">연속형 → lm()</text>
+<rect x="655" y="87" width="210" height="46" rx="10" fill="#fff" stroke="#16243F" stroke-width="2"/><text x="760" y="115" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">0 또는 1 → glm()</text>
+<path d="M760.0,138.0 L760.0,155.0" stroke="#98A2B3" stroke-width="2"/><path d="M760.0,166.0 L754.7,155.0 L765.3,155.0 Z" fill="#98A2B3"/>
+<rect x="655" y="171" width="210" height="50" rx="10" fill="#EEF0FB" stroke="#16243F" stroke-width="2"/><text x="760" y="194" font-size="15" fill="#101828" font-weight="700" text-anchor="middle">로지스틱 회귀</text><text x="760" y="210" font-size="10.799999999999999" fill="#667085" text-anchor="middle">11장</text>
+<path d="M300.0,133.0 L300.0,150.0" stroke="#98A2B3" stroke-width="2"/>
+<path d="M90.0,150.0 L300.0,150.0" stroke="#98A2B3" stroke-width="2"/>
+<path d="M90.0,150.0 L90.0,416.0" stroke="#98A2B3" stroke-width="2"/>
+<path d="M90.0,176.0 L112.0,176.0" stroke="#98A2B3" stroke-width="2"/>
+<rect x="112" y="161" width="268" height="30" rx="6" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="124" y="181" font-size="13.5" fill="#344054" font-weight="600">함께 움직이는가</text>
+<path d="M384.0,176.0 L415.0,176.0" stroke="#4338CA" stroke-width="2"/><path d="M424.0,176.0 L415.0,180.3 L415.0,171.7 Z" fill="#4338CA"/>
+<rect x="428" y="161" width="200" height="30" rx="6" fill="#EEF0FB" stroke="#4338CA" stroke-width="1.6"/>
+<text x="442" y="181" font-size="14" fill="#312E81" font-weight="800">상관</text>
+<text x="616" y="181" font-size="12.5" fill="#667085" font-weight="700" text-anchor="end">1장</text>
+<path d="M90.0,216.0 L112.0,216.0" stroke="#98A2B3" stroke-width="2"/>
+<rect x="112" y="201" width="268" height="30" rx="6" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="124" y="221" font-size="13.5" fill="#344054" font-weight="600">1 높으면 얼마나 높은가</text>
+<path d="M384.0,216.0 L415.0,216.0" stroke="#4338CA" stroke-width="2"/><path d="M424.0,216.0 L415.0,220.3 L415.0,211.7 Z" fill="#4338CA"/>
+<rect x="428" y="201" width="200" height="30" rx="6" fill="#EEF0FB" stroke="#4338CA" stroke-width="1.6"/>
+<text x="442" y="221" font-size="14" fill="#312E81" font-weight="800">단순회귀</text>
+<text x="616" y="221" font-size="12.5" fill="#667085" font-weight="700" text-anchor="end">2장</text>
+<path d="M90.0,256.0 L112.0,256.0" stroke="#98A2B3" stroke-width="2"/>
+<rect x="112" y="241" width="268" height="30" rx="6" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="124" y="261" font-size="13.5" fill="#344054" font-weight="600">다른 변수가 같을 때도 그런가</text>
+<path d="M384.0,256.0 L415.0,256.0" stroke="#4338CA" stroke-width="2"/><path d="M424.0,256.0 L415.0,260.3 L415.0,251.7 Z" fill="#4338CA"/>
+<rect x="428" y="241" width="200" height="30" rx="6" fill="#EEF0FB" stroke="#4338CA" stroke-width="1.6"/>
+<text x="442" y="261" font-size="14" fill="#312E81" font-weight="800">다중회귀</text>
+<text x="616" y="261" font-size="12.5" fill="#667085" font-weight="700" text-anchor="end">3장</text>
+<path d="M90.0,296.0 L112.0,296.0" stroke="#98A2B3" stroke-width="2"/>
+<rect x="112" y="281" width="268" height="30" rx="6" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="124" y="301" font-size="13.5" fill="#344054" font-weight="600">변수 묶음이 더 설명하는가</text>
+<path d="M384.0,296.0 L415.0,296.0" stroke="#4338CA" stroke-width="2"/><path d="M424.0,296.0 L415.0,300.3 L415.0,291.7 Z" fill="#4338CA"/>
+<rect x="428" y="281" width="200" height="30" rx="6" fill="#EEF0FB" stroke="#4338CA" stroke-width="1.6"/>
+<text x="442" y="301" font-size="14" fill="#312E81" font-weight="800">위계적 회귀</text>
+<text x="616" y="301" font-size="12.5" fill="#667085" font-weight="700" text-anchor="end">7장</text>
+<path d="M90.0,336.0 L112.0,336.0" stroke="#98A2B3" stroke-width="2"/>
+<rect x="112" y="321" width="268" height="30" rx="6" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="124" y="341" font-size="13.5" fill="#344054" font-weight="600">언제, 누구에게 더 강한가</text>
+<path d="M384.0,336.0 L415.0,336.0" stroke="#4338CA" stroke-width="2"/><path d="M424.0,336.0 L415.0,340.3 L415.0,331.7 Z" fill="#4338CA"/>
+<rect x="428" y="321" width="200" height="30" rx="6" fill="#EEF0FB" stroke="#4338CA" stroke-width="1.6"/>
+<text x="442" y="341" font-size="14" fill="#312E81" font-weight="800">조절효과</text>
+<text x="616" y="341" font-size="12.5" fill="#667085" font-weight="700" text-anchor="end">8장</text>
+<path d="M90.0,376.0 L112.0,376.0" stroke="#98A2B3" stroke-width="2"/>
+<rect x="112" y="361" width="268" height="30" rx="6" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="124" y="381" font-size="13.5" fill="#344054" font-weight="600">어떤 경로로 이어지는가</text>
+<path d="M384.0,376.0 L415.0,376.0" stroke="#4338CA" stroke-width="2"/><path d="M424.0,376.0 L415.0,380.3 L415.0,371.7 Z" fill="#4338CA"/>
+<rect x="428" y="361" width="200" height="30" rx="6" fill="#EEF0FB" stroke="#4338CA" stroke-width="1.6"/>
+<text x="442" y="381" font-size="14" fill="#312E81" font-weight="800">매개효과</text>
+<text x="616" y="381" font-size="12.5" fill="#667085" font-weight="700" text-anchor="end">9장</text>
+<path d="M90.0,416.0 L112.0,416.0" stroke="#98A2B3" stroke-width="2"/>
+<rect x="112" y="401" width="268" height="30" rx="6" fill="#FBFCFD" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="124" y="421" font-size="13.5" fill="#344054" font-weight="600">그 경로가 조건에 따라 다른가</text>
+<path d="M384.0,416.0 L415.0,416.0" stroke="#4338CA" stroke-width="2"/><path d="M424.0,416.0 L415.0,420.3 L415.0,411.7 Z" fill="#4338CA"/>
+<rect x="428" y="401" width="200" height="30" rx="6" fill="#EEF0FB" stroke="#4338CA" stroke-width="1.6"/>
+<text x="442" y="421" font-size="14" fill="#312E81" font-weight="800">조절된 매개</text>
+<text x="616" y="421" font-size="12.5" fill="#667085" font-weight="700" text-anchor="end">10장</text>
+<rect x="40" y="452" width="820" height="58" rx="8" fill="#F5F7FA" stroke="#E4E7EC" stroke-width="1.4"/>
+<text x="450" y="472" font-size="14" fill="#101828" font-weight="700" text-anchor="middle">독립변수에 범주형이 있으면 → 더미변수 (6장)</text>
+<text x="450" y="496" font-size="14" fill="#101828" font-weight="700" text-anchor="middle">어느 회귀든 → 가정 진단 (4장) · 다중공선성 점검 (5장)</text>
+</svg>
