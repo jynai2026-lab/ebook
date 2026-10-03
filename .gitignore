@@ -1,5 +1,11 @@
 node_modules/
-dist/
+# 빌드 결과는 무시하되, 완성본 PDF와 쇼츠 영상만 저장소에 둔다
+dist/*
+!dist/*.pdf
+!dist/shorts/
+dist/shorts/*
+!dist/shorts/*.mp4
+dist/shorts/*-draft.mp4
 .build.html
 *.tgz
 .figpreview/
